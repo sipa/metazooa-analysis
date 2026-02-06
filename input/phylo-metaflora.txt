@@ -1,0 +1,769 @@
+Viridiplantae
++-Chlorophyta
+| \-core chlorophytes
+|   \-Ulvophyceae
+|     \-TCBD clade
+|       \-Bryopsidales
+|         \-Halimedineae
+|           \-Caulerpaceae
+|             \-Caulerpa
+|               \-Caulerpa prolifera
+\-Streptophyta
+  \-Streptophytina
+    \-Embryophyta
+      +-Bryophyta
+      | \-Bryophytina
+      |   \-Bryopsida
+      |     \-Dicranidae
+      |       \-Dicranales
+      |         \-Leucobryaceae
+      |           \-Leucobryum
+      |             \-Leucobryum glaucum
+      \-Tracheophyta
+        \-Euphyllophyta
+          +-Polypodiopsida
+          | \-Polypodiidae
+          |   \-Cyatheales
+          |     \-Cyatheaceae
+          |       \-Sphaeropteris
+          |         \-Sphaeropteris medullaris
+          \-Spermatophyta
+            +-Acrogymnospermae
+            | +-Pinopsida
+            | | \-Pinidae
+            | |   +-Conifers II
+            | |   | \-Cupressales
+            | |   |   \-Cupressaceae
+            | |   |     \-Sequoiadendron
+            | |   |       \-Sequoiadendron giganteum
+            | |   \-Conifers I
+            | |     \-Pinales
+            | |       \-Pinaceae
+            | |         +-Cedrus
+            | |         | \-Cedrus libani
+            | |         +-Pseudotsuga
+            | |         | \-Pseudotsuga menziesii
+            | |         +-Pinus
+            | |         | \-Pinus subgen. Pinus
+            | |         |   \-Pinus sylvestris
+            | |         \-Picea
+            | |           +-Picea pungens
+            | |           \-Picea abies
+            | \-Ginkgoopsida
+            |   \-Ginkgoidae
+            |     \-Ginkgoales
+            |       \-Ginkgoaceae
+            |         \-Ginkgo
+            |           \-Ginkgo biloba
+            \-Magnoliopsida
+              +-Nymphaeales
+              | \-Nymphaeaceae
+              |   \-Nymphaea
+              |     \-Nymphaea alba
+              \-Mesangiospermae
+                +-Liliopsida
+                | +-Petrosaviidae
+                | | +-Dioscoreales
+                | | | \-Dioscoreaceae
+                | | |   \-Dioscorea
+                | | |     \-Dioscorea cayenensis
+                | | +-Liliales
+                | | | \-Liliaceae
+                | | |   +-Lilium
+                | | |   | \-Lilium lancifolium
+                | | |   \-Tulipa
+                | | |     \-Tulipa gesneriana
+                | | +-Asparagales
+                | | | +-Hyacinthaceae
+                | | | | \-Hyacinthoideae
+                | | | |   \-Hyacintheae
+                | | | |     \-Hyacinthus
+                | | | |       \-Hyacinthus orientalis
+                | | | +-Orchidaceae
+                | | | | +-Orchidoideae
+                | | | | | \-Orchideae
+                | | | | |   \-Orchidinae
+                | | | | |     \-Ophrys
+                | | | | |       \-Ophrys apifera
+                | | | | \-Vanilloideae
+                | | | |   \-Vanilleae
+                | | | |     \-Vanilla
+                | | | |       \-Vanilla planifolia
+                | | | +-Asphodelaceae
+                | | | | \-Asphodeloideae
+                | | | |   \-Aloe
+                | | | |     \-Aloe vera
+                | | | +-Asparagaceae
+                | | | | +-Agavoideae
+                | | | | | \-Agave
+                | | | | |   \-Agave americana
+                | | | | \-Asparagoideae
+                | | | |   \-Asparagus
+                | | | |     \-Asparagus officinalis
+                | | | \-Amaryllidaceae
+                | | |   +-Amaryllidoideae
+                | | |   | \-Narcissus
+                | | |   |   \-Narcissus poeticus
+                | | |   \-Allioideae
+                | | |     \-Allieae
+                | | |       \-Allium
+                | | |         +-Allium sativum
+                | | |         +-Allium ampeloprasum
+                | | |         \-Allium cepa
+                | | \-commelinids
+                | |   +-Zingiberales
+                | |   | +-Zingiberaceae
+                | |   | | +-Curcuma
+                | |   | | | \-Curcuma longa
+                | |   | | +-Elettaria
+                | |   | | | \-Elettaria cardamomum
+                | |   | | \-Zingiber
+                | |   | |   \-Zingiber officinale
+                | |   | \-Musaceae
+                | |   |   \-Musa
+                | |   |     \-Musa x paradisiaca
+                | |   +-Arecales
+                | |   | \-Arecaceae
+                | |   |   +-Coryphoideae
+                | |   |   | \-Phoeniceae
+                | |   |   |   \-Phoenix
+                | |   |   |     \-Phoenix dactylifera
+                | |   |   \-Arecoideae
+                | |   |     \-Cocoseae
+                | |   |       +-Elaeidinae
+                | |   |       | \-Elaeis
+                | |   |       |   \-Elaeis guineensis
+                | |   |       \-Attaleinae
+                | |   |         \-Cocos
+                | |   |           \-Cocos nucifera
+                | |   \-Poales
+                | |     +-Bromeliaceae
+                | |     | \-Bromelioideae
+                | |     |   \-Ananas
+                | |     |     \-Ananas comosus
+                | |     \-Poaceae
+                | |       +-PACMAD clade
+                | |       | \-Panicoideae
+                | |       |   +-Andropogonodae
+                | |       |   | \-Andropogoneae
+                | |       |   |   +-Anthistiriinae
+                | |       |   |   | \-Cymbopogon
+                | |       |   |   |   \-Cymbopogon citratus
+                | |       |   |   +-Tripsacinae
+                | |       |   |   | \-Zea
+                | |       |   |   |   \-Zea mays
+                | |       |   |   \-Saccharinae
+                | |       |   |     \-Saccharum
+                | |       |   |       \-Saccharum officinarum species complex
+                | |       |   |         \-Saccharum officinarum
+                | |       |   \-Panicodae
+                | |       |     \-Paniceae
+                | |       |       \-Cenchrinae
+                | |       |         \-Cenchrus
+                | |       |           \-Cenchrus americanus
+                | |       \-BOP clade
+                | |         +-Bambusoideae
+                | |         | \-Bambusodae
+                | |         |   \-Bambuseae
+                | |         |     \-Bambusinae
+                | |         |       \-Bambusa
+                | |         |         \-Bambusa textilis
+                | |         +-Oryzoideae
+                | |         | \-Oryzeae
+                | |         |   \-Oryzinae
+                | |         |     \-Oryza
+                | |         |       \-Oryza sativa
+                | |         \-Pooideae
+                | |           +-Triticodae
+                | |           | \-Triticeae
+                | |           |   +-Triticinae
+                | |           |   | \-Triticum
+                | |           |   |   +-Triticum spelta
+                | |           |   |   \-Triticum aestivum
+                | |           |   \-Hordeinae
+                | |           |     +-Secale
+                | |           |     | \-Secale cereale
+                | |           |     \-Hordeum
+                | |           |       \-Hordeum vulgare
+                | |           \-Poodae
+                | |             \-Poeae
+                | |               +-Poeae Chloroplast Group 2 (Poeae type)
+                | |               | \-Loliodinae
+                | |               |   \-Dactylidinae
+                | |               |     \-Dactylis
+                | |               |       \-Dactylis glomerata
+                | |               \-Poeae Chloroplast Group 1 (Aveneae type)
+                | |                 \-Aveninae
+                | |                   \-Avena
+                | |                     \-Avena sativa
+                | \-Alismatales
+                |   \-Araceae
+                |     \-Aroideae
+                |       \-Colocasieae
+                |         \-Colocasia
+                |           \-Colocasia esculenta
+                +-Proteales
+                | +-Proteaceae
+                | | \-Macadamia
+                | |   \-Macadamia integrifolia
+                | +-Nelumbonaceae
+                | | \-Nelumbo
+                | |   \-Nelumbo nucifera
+                | \-Platanaceae
+                |   \-Platanus
+                |     \-Platanus occidentalis
+                +-Ranunculales
+                | \-Papaveraceae
+                |   \-Papaveroideae
+                |     \-Papaver
+                |       \-Papaver somniferum
+                +-Magnoliidae
+                | +-Piperales
+                | | \-Piperaceae
+                | |   \-Piper
+                | |     \-Piper nigrum
+                | +-Magnoliales
+                | | +-Magnoliaceae
+                | | | \-Magnolia
+                | | |   \-Magnolia sieboldii
+                | | +-Myristicaceae
+                | | | \-Myristica
+                | | |   \-Myristica fragrans
+                | | \-Annonaceae
+                | |   \-Annonoideae
+                | |     \-Annoneae
+                | |       \-Asimina
+                | |         \-Asimina triloba
+                | \-Laurales
+                |   \-Lauraceae
+                |     +-Cinnamomum
+                |     | \-Cinnamomum verum
+                |     \-Persea
+                |       \-Persea americana
+                \-eudicotyledons
+                  \-Gunneridae
+                    \-Pentapetalae
+                      +-Saxifragales
+                      | +-Grossulariaceae
+                      | | \-Ribes
+                      | |   \-Ribes uva-crispa
+                      | \-Paeoniaceae
+                      |   \-Paeonia
+                      |     \-Paeonia officinalis
+                      +-Santalales
+                      | +-Santalaceae
+                      | | \-Santalum
+                      | |   \-Santalum album
+                      | \-Viscaceae
+                      |   \-Viscum
+                      |     \-Viscum album
+                      +-asterids
+                      | +-lamiids
+                      | | +-Boraginales
+                      | | | \-Boraginaceae
+                      | | |   \-Cynoglossoideae
+                      | | |     \-Myosotideae
+                      | | |       \-Myosotis
+                      | | |         \-Myosotis scorpioides
+                      | | +-Gentianales
+                      | | | \-Rubiaceae
+                      | | |   \-Ixoroideae
+                      | | |     \-Gardenieae complex
+                      | | |       \-Bertiereae - Coffeeae clade
+                      | | |         \-Coffeeae
+                      | | |           \-Coffea
+                      | | |             \-Coffea arabica
+                      | | +-Lamiales
+                      | | | +-Lamiaceae
+                      | | | | \-Nepetoideae
+                      | | | |   +-Ocimeae
+                      | | | |   | +-Ociminae
+                      | | | |   | | \-Ocimum
+                      | | | |   | |   \-Ocimum basilicum
+                      | | | |   | \-Lavandulinae
+                      | | | |   |   \-Lavandula
+                      | | | |   |     \-Lavandula angustifolia
+                      | | | |   \-Mentheae
+                      | | | |     +-Thymus
+                      | | | |     | \-Thymus vulgaris
+                      | | | |     +-Salviinae
+                      | | | |     | \-Salvia
+                      | | | |     |   +-Salvia subgen. Rosmarinus
+                      | | | |     |   | \-Salvia rosmarinus
+                      | | | |     |   \-Salvia subgen. Salvia
+                      | | | |     |     \-Salvia officinalis
+                      | | | |     \-Menthinae
+                      | | | |       \-Mentha
+                      | | | |         \-Mentha spicata
+                      | | | +-Pedaliaceae
+                      | | | | \-Sesamum
+                      | | | |   \-Sesamum indicum
+                      | | | \-Oleaceae
+                      | | |   +-Jasmineae
+                      | | |   | \-Jasminum
+                      | | |   |   \-Jasminum officinale
+                      | | |   \-Oleeae
+                      | | |     \-Olea
+                      | | |       \-Olea europaea
+                      | | \-Solanales
+                      | |   +-Convolvulaceae
+                      | |   | \-Ipomoeeae
+                      | |   |   \-Ipomoea
+                      | |   |     \-Ipomoea batatas
+                      | |   \-Solanaceae
+                      | |     +-Petunioideae
+                      | |     | \-Petunia
+                      | |     |   \-Petunia integrifolia
+                      | |     +-Nicotianoideae
+                      | |     | \-Nicotianeae
+                      | |     |   \-Nicotiana
+                      | |     |     \-Nicotiana tabacum
+                      | |     \-Solanoideae
+                      | |       +-Solaneae
+                      | |       | \-Solanum
+                      | |       |   +-Solanum tuberosum
+                      | |       |   +-Solanum melongena
+                      | |       |   \-Solanum subgen. Lycopersicon
+                      | |       |     \-Solanum lycopersicum
+                      | |       \-Capsiceae
+                      | |         \-Capsicum
+                      | |           \-Capsicum annuum
+                      | +-campanulids
+                      | | +-Aquifoliales
+                      | | | \-Aquifoliaceae
+                      | | |   \-Ilex
+                      | | |     \-Ilex aquifolium
+                      | | +-Asterales
+                      | | | \-Asteraceae
+                      | | |   +-Carduoideae
+                      | | |   | \-Cardueae
+                      | | |   |   \-Carduinae
+                      | | |   |     \-Cynara
+                      | | |   |       \-Cynara cardunculus
+                      | | |   +-Cichorioideae
+                      | | |   | \-Cichorieae
+                      | | |   |   +-Crepidinae
+                      | | |   |   | \-Taraxacum
+                      | | |   |   |   \-Taraxacum officinale
+                      | | |   |   +-Cichoriinae
+                      | | |   |   | \-Cichorium
+                      | | |   |   |   \-Cichorium intybus
+                      | | |   |   \-Lactucinae
+                      | | |   |     \-Lactuca
+                      | | |   |       \-Lactuca sativa
+                      | | |   \-Asteroideae
+                      | | |     +-Anthemideae
+                      | | |     | +-Mediterranean clade
+                      | | |     | | \-Glebionidinae
+                      | | |     | |   \-Glebionis
+                      | | |     | |     \-Glebionis coronaria
+                      | | |     | +-Matricariinae
+                      | | |     | | \-Matricaria
+                      | | |     | |   \-Matricaria chamomilla
+                      | | |     | \-Artemisiinae
+                      | | |     |   +-Chrysanthemum
+                      | | |     |   | \-Chrysanthemum indicum
+                      | | |     |   \-Artemisia
+                      | | |     |     \-Artemisia absinthium
+                      | | |     \-Heliantheae alliance
+                      | | |       +-Coreopsideae
+                      | | |       | \-Dahlia
+                      | | |       |   \-Dahlia pinnata
+                      | | |       \-Heliantheae
+                      | | |         \-Helianthus
+                      | | |           \-Helianthus annuus
+                      | | +-Dipsacales
+                      | | | +-Caprifoliaceae
+                      | | | | \-Lonicera
+                      | | | |   \-Lonicera japonica
+                      | | | \-Adoxaceae
+                      | | |   \-Sambucus
+                      | | |     \-Sambucus nigra
+                      | | \-Apiales
+                      | |   \-Apiineae
+                      | |     +-Araliaceae
+                      | |     | +-Panax
+                      | |     | | \-Panax ginseng
+                      | |     | \-Hedera
+                      | |     |   \-Hedera helix
+                      | |     \-Apiaceae
+                      | |       \-Apioideae
+                      | |         +-apioid superclade
+                      | |         | +-Pimpinelleae
+                      | |         | | \-Pimpinella
+                      | |         | |   \-Pimpinella anisum
+                      | |         | +-Coriandreae
+                      | |         | | \-Coriandrum
+                      | |         | |   \-Coriandrum sativum
+                      | |         | +-Apieae
+                      | |         | | +-Anethum
+                      | |         | | | +-Anethum foeniculum
+                      | |         | | | \-Anethum graveolens
+                      | |         | | +-Apium
+                      | |         | | | \-Apium graveolens
+                      | |         | | \-Petroselinum
+                      | |         | |   \-Petroselinum crispum
+                      | |         | \-Tordylieae
+                      | |         |   \-Tordyliinae
+                      | |         |     \-Pastinaca
+                      | |         |       \-Pastinaca sativa
+                      | |         \-Scandiceae
+                      | |           \-Daucinae
+                      | |             \-Daucus
+                      | |               \-Daucus sect. Daucus
+                      | |                 \-Daucus carota
+                      | \-Ericales
+                      |   +-Sapotaceae
+                      |   | \-Sapotoideae
+                      |   |   \-Vitellaria
+                      |   |     \-Vitellaria paradoxa
+                      |   +-Ericaceae
+                      |   | \-Vaccinioideae
+                      |   |   \-Vaccinieae
+                      |   |     \-Vaccinium
+                      |   |       +-Vaccinium uliginosum
+                      |   |       \-Vaccinium macrocarpon
+                      |   +-Ebenaceae
+                      |   | \-Diospyros
+                      |   |   \-Diospyros virginiana
+                      |   +-Theaceae
+                      |   | \-Camellia
+                      |   |   \-Camellia sinensis
+                      |   +-Lecythidaceae
+                      |   | \-Bertholletia
+                      |   |   \-Bertholletia excelsa
+                      |   \-Actinidiaceae
+                      |     \-Actinidia
+                      |       \-Actinidia deliciosa
+                      +-Caryophyllales
+                      | +-Nepenthaceae
+                      | | \-Nepenthes
+                      | |   \-Nepenthes attenboroughii
+                      | +-Cactineae
+                      | | \-Cactaceae
+                      | |   +-Opuntioideae
+                      | |   | \-Opuntia
+                      | |   |   \-Opuntia macrorhiza
+                      | |   \-Cactoideae
+                      | |     +-Hylocereeae
+                      | |     | \-Selenicereus
+                      | |     |   \-Selenicereus costaricensis
+                      | |     \-Cacteae
+                      | |       +-Ferocactus
+                      | |       | \-Ferocactus flavovirens
+                      | |       \-Echinocactus
+                      | |         \-Echinocactus grusonii
+                      | +-Droseraceae
+                      | | \-Dionaea
+                      | |   \-Dionaea muscipula
+                      | +-Polygonaceae
+                      | | \-Polygonoideae
+                      | |   +-Rumiceae
+                      | |   | \-Rheum
+                      | |   |   \-Rheum rhabarbarum
+                      | |   \-Fagopyreae
+                      | |     \-Fagopyrum
+                      | |       \-Fagopyrum esculentum
+                      | +-Caryophyllaceae
+                      | | \-Caryophylleae
+                      | |   \-Dianthus
+                      | |     \-Dianthus caryophyllus
+                      | \-Chenopodiaceae
+                      |   +-Salsoloideae
+                      |   | \-Salsoleae
+                      |   |   \-Salsola
+                      |   |     \-Salsola tragus
+                      |   +-Betoideae
+                      |   | \-Beta
+                      |   |   \-Beta vulgaris
+                      |   \-Chenopodioideae
+                      |     +-Atripliceae
+                      |     | \-Chenopodium
+                      |     |   \-Chenopodium quinoa
+                      |     \-Anserineae
+                      |       \-Spinacia
+                      |         \-Spinacia oleracea
+                      \-rosids
+                        +-rosids incertae sedis
+                        | \-Vitales
+                        |   \-Vitaceae
+                        |     \-Viteae
+                        |       \-Vitis
+                        |         \-Vitis vinifera
+                        +-fabids
+                        | +-Malpighiales
+                        | | +-Erythroxylaceae
+                        | | | \-Erythroxylum
+                        | | |   \-Erythroxylum coca
+                        | | +-Violaceae
+                        | | | \-Viola
+                        | | |   \-Viola subgen. Viola
+                        | | |     \-Viola sect. Nosphinium
+                        | | |       \-Viola subsect. Borealiamericanae
+                        | | |         \-Viola cucullata
+                        | | +-Passifloraceae
+                        | | | \-Passiflora
+                        | | |   \-Passiflora edulis
+                        | | +-Salicaceae
+                        | | | \-Saliceae
+                        | | |   \-Salix
+                        | | |     \-Salix babylonica
+                        | | +-Clusiaceae
+                        | | | \-Garcinieae
+                        | | |   \-Garcinia
+                        | | |     \-Garcinia mangostana
+                        | | +-Rhizophoraceae
+                        | | | \-Rhizophora
+                        | | |   \-Rhizophora mangle
+                        | | +-Linaceae
+                        | | | \-Linum
+                        | | |   \-Linum usitatissimum
+                        | | \-Euphorbiaceae
+                        | |   +-Acalyphoideae
+                        | |   | \-Acalypheae
+                        | |   |   \-Ricinus
+                        | |   |     \-Ricinus communis
+                        | |   \-Crotonoideae
+                        | |     +-Manihoteae
+                        | |     | \-Manihot
+                        | |     |   \-Manihot esculenta
+                        | |     \-Micrandreae
+                        | |       \-Hevea
+                        | |         \-Hevea brasiliensis
+                        | +-Fabales
+                        | | \-Fabaceae
+                        | |   +-Caesalpinioideae
+                        | |   | +-mimosoid clade
+                        | |   | | +-Acacieae
+                        | |   | | | \-Vachellia
+                        | |   | | |   \-Vachellia nilotica
+                        | |   | | \-Mimoseae
+                        | |   | |   \-Mimosa
+                        | |   | |     \-Mimosa pudica
+                        | |   | \-Cassieae
+                        | |   |   \-Senna
+                        | |   |     \-Senna alexandrina
+                        | |   +-Detarioideae
+                        | |   | \-Amherstieae
+                        | |   |   \-Tamarindus
+                        | |   |     \-Tamarindus indica
+                        | |   +-Ceratonia clade
+                        | |   | \-Ceratonia
+                        | |   |   \-Ceratonia siliqua
+                        | |   \-Papilionoideae
+                        | |     \-50 kb inversion clade
+                        | |       +-genistoids sensu lato
+                        | |       | \-core genistoids
+                        | |       |   +-Crotalarieae
+                        | |       |   | \-Aspalathus
+                        | |       |   |   \-Aspalathus linearis
+                        | |       |   \-Genisteae
+                        | |       |     \-Ulex
+                        | |       |       \-Ulex europaeus
+                        | |       +-NPAAA clade
+                        | |       | +-indigoferoid/millettioid clade
+                        | |       | | +-Wisterieae
+                        | |       | | | \-Wisteria
+                        | |       | | |   \-Wisteria floribunda
+                        | |       | | \-Phaseoleae
+                        | |       | |   +-Vigna
+                        | |       | |   | \-Vigna unguiculata
+                        | |       | |   +-Phaseolus
+                        | |       | |   | \-Phaseolus vulgaris
+                        | |       | |   \-Glycine
+                        | |       | |     \-Glycine subgen. Soja
+                        | |       | |       \-Glycine max
+                        | |       | \-Hologalegina
+                        | |       |   \-IRL clade
+                        | |       |     +-Galegeae
+                        | |       |     | \-Glycyrrhiza
+                        | |       |     |   \-Glycyrrhiza glabra
+                        | |       |     +-Trifolieae
+                        | |       |     | +-Trifolium
+                        | |       |     | | \-Trifolium dubium
+                        | |       |     | \-Medicago
+                        | |       |     |   \-Medicago sativa
+                        | |       |     +-Fabeae
+                        | |       |     | +-Vicia
+                        | |       |     | | \-Vicia faba
+                        | |       |     | +-Lens
+                        | |       |     | | \-Lens culinaris
+                        | |       |     | \-Lathyrus
+                        | |       |     |   +-Pisum sativum
+                        | |       |     |   \-Lathyrus odoratus
+                        | |       |     \-Cicereae
+                        | |       |       \-Cicer
+                        | |       |         \-Cicer arietinum
+                        | |       \-dalbergioids sensu lato
+                        | |         \-Dalbergieae
+                        | |           \-Pterocarpus clade
+                        | |             \-Arachis
+                        | |               \-Arachis hypogaea
+                        | +-Cucurbitales
+                        | | \-Cucurbitaceae
+                        | |   +-Cucurbiteae
+                        | |   | \-Cucurbita
+                        | |   |   +-Cucurbita pepo
+                        | |   |   \-Cucurbita moschata
+                        | |   \-Benincaseae
+                        | |     +-Cucumis
+                        | |     | +-Cucumis sativus
+                        | |     | \-Cucumis melo
+                        | |     \-Citrullus
+                        | |       \-Citrullus lanatus
+                        | +-Fagales
+                        | | +-Fagaceae
+                        | | | +-Quercus
+                        | | | | \-Quercus robur
+                        | | | +-Fagus
+                        | | | | \-Fagus sylvatica
+                        | | | \-Castanea
+                        | | |   \-Castanea sativa
+                        | | +-Juglandaceae
+                        | | | +-Carya
+                        | | | | \-Carya illinoinensis
+                        | | | \-Juglans
+                        | | |   \-Juglans nigra
+                        | | \-Betulaceae
+                        | |   +-Corylus
+                        | |   | \-Corylus avellana
+                        | |   \-Betula
+                        | |     \-Betula pendula
+                        | \-Rosales
+                        |   +-Rosaceae
+                        |   | +-Amygdaloideae
+                        |   | | +-Amygdaleae
+                        |   | | | \-Prunus
+                        |   | | |   +-Prunus avium
+                        |   | | |   +-Prunus armeniaca
+                        |   | | |   +-Prunus persica
+                        |   | | |   +-Prunus domestica
+                        |   | | |   \-Prunus dulcis
+                        |   | | \-Maleae
+                        |   | |   +-Eriobotrya
+                        |   | |   | \-Eriobotrya japonica
+                        |   | |   +-Pyrus
+                        |   | |   | \-Pyrus communis
+                        |   | |   \-Malus
+                        |   | |     \-Malus sylvestris
+                        |   | \-Rosoideae
+                        |   |   +-Rosoideae incertae sedis
+                        |   |   | +-Rosa
+                        |   |   | | \-Rosa x centifolia
+                        |   |   | \-Rubus
+                        |   |   |   +-Rubus allegheniensis
+                        |   |   |   \-Rubus idaeus
+                        |   |   \-Potentilleae
+                        |   |     \-Fragariinae
+                        |   |       \-Fragaria
+                        |   |         \-Fragaria x ananassa
+                        |   +-Urticaceae
+                        |   | \-Urtica
+                        |   |   \-Urtica dioica
+                        |   +-Moraceae
+                        |   | +-Moreae
+                        |   | | \-Morus
+                        |   | |   \-Morus alba
+                        |   | +-Ficeae
+                        |   | | \-Ficus
+                        |   | |   \-Ficus carica
+                        |   | \-Artocarpeae
+                        |   |   \-Artocarpus
+                        |   |     +-Artocarpus altilis
+                        |   |     \-Artocarpus heterophyllus
+                        |   \-Cannabaceae
+                        |     +-Humulus
+                        |     | \-Humulus lupulus
+                        |     \-Cannabis
+                        |       \-Cannabis sativa
+                        \-malvids
+                          +-Geraniales
+                          | \-Geraniaceae
+                          |   \-Geranium
+                          |     \-Geranium phaeum
+                          +-Myrtales
+                          | +-Myrtaceae
+                          | | \-Myrtoideae
+                          | |   +-Myrteae
+                          | |   | +-Pimenta group
+                          | |   | | \-Psidium
+                          | |   | |   \-Psidium guajava
+                          | |   | \-ungrouped Myrteae 1
+                          | |   |   \-Myrtus
+                          | |   |     \-Myrtus communis
+                          | |   \-Eucalypteae
+                          | |     \-Eucalyptus
+                          | |       \-Eucalyptus obliqua
+                          | \-Lythraceae
+                          |   +-Lawsonia
+                          |   | \-Lawsonia inermis
+                          |   \-Punica
+                          |     \-Punica granatum
+                          +-Brassicales
+                          | +-Capparaceae
+                          | | \-Capparis
+                          | |   \-Capparis spinosa
+                          | +-Brassicaceae
+                          | | +-Eutremeae
+                          | | | \-Eutrema
+                          | | |   \-Eutrema japonicum
+                          | | +-Brassiceae
+                          | | | +-Raphanus
+                          | | | | \-Raphanus sativus
+                          | | | \-Brassica
+                          | | |   +-Brassica oleracea
+                          | | |   +-Brassica rapa
+                          | | |   \-Brassica nigra
+                          | | \-Cardamineae
+                          | |   +-Nasturtium
+                          | |   | \-Nasturtium officinale
+                          | |   \-Armoracia
+                          | |     \-Armoracia rusticana
+                          | \-Caricaceae
+                          |   \-Carica
+                          |     \-Carica papaya
+                          +-Malvales
+                          | \-Malvaceae
+                          |   +-Bombacoideae
+                          |   | \-Adansonia
+                          |   |   \-Adansonia digitata
+                          |   +-Helicteroideae
+                          |   | \-Durio
+                          |   |   \-Durio zibethinus
+                          |   +-Byttnerioideae
+                          |   | \-Theobroma
+                          |   |   \-Theobroma cacao
+                          |   \-Malvoideae
+                          |     +-Abelmoschus
+                          |     | \-Abelmoschus esculentus
+                          |     +-Hibiscus
+                          |     | \-Hibiscus syriacus
+                          |     \-Gossypium
+                          |       \-Gossypium hirsutum
+                          \-Sapindales
+                            +-Anacardiaceae
+                            | +-Anacardium
+                            | | \-Anacardium occidentale
+                            | +-Pistacia
+                            | | \-Pistacia vera
+                            | +-Toxicodendron
+                            | | \-Toxicodendron radicans
+                            | \-Mangifera
+                            |   \-Mangifera indica
+                            +-Sapindaceae
+                            | +-Litchi
+                            | | \-Litchi chinensis
+                            | \-Hippocastanoideae
+                            |   \-Acereae
+                            |     \-Acer
+                            |       \-Acer saccharum
+                            \-Rutaceae
+                              \-Aurantioideae
+                                \-Citrus
+                                  +-Citrus medica
+                                  +-Citrus x aurantiifolia
+                                  +-Citrus reticulata
+                                  +-Citrus x paradisi
+                                  +-Citrus sinensis
+                                  \-Citrus x limon
+-----------------------------------

@@ -1,0 +1,342 @@
+* Viridiplantae: (215 species)
+  * Caulerpa prolifera: seaweed
+  * Embryophyta: (214 species)
+    * Leucobryum glaucum: moss
+    * Euphyllophyta: (213 species)
+      * Sphaeropteris medullaris: fern
+      * Spermatophyta: (212 species)
+        * Acrogymnospermae: (7 species)
+          * Pinidae: (6 species)
+            * Sequoiadendron giganteum: giant sequoia
+            * Pinaceae: (5 species)
+              * Cedrus libani: cedar of lebanon
+              * Pseudotsuga menziesii: douglas fir
+              * Pinus sylvestris: baltic pine
+              * Picea: (2 species)
+                * Picea pungens: blue spruce
+                * Picea abies: spruce
+          * Ginkgo biloba: ginkgo
+        * Magnoliopsida: (205 species)
+          * Nymphaea alba: water lily
+          * Mesangiospermae: (204 species)
+            * Liliopsida: (34 species)
+              * Petrosaviidae: (33 species)
+                * Dioscorea cayenensis: yam
+                * Liliaceae: (2 species)
+                  * Lilium lancifolium: tiger lily
+                  * Tulipa gesneriana: tulip
+                * Asparagales: (10 species)
+                  * Hyacinthus orientalis: hyacinth
+                  * Orchidaceae: (2 species)
+                    * Ophrys apifera: orchid
+                    * Vanilla planifolia: vanilla
+                  * Aloe vera: aloe
+                  * Asparagaceae: (2 species)
+                    * Agave americana: agave
+                    * Asparagus officinalis: asparagus
+                  * Amaryllidaceae: (4 species)
+                    * Narcissus poeticus: daffodil
+                    * Allium: (3 species)
+                      * Allium sativum: garlic
+                      * Allium ampeloprasum: leek
+                      * Allium cepa: onion
+                * commelinids: (20 species)
+                  * Zingiberales: (4 species)
+                    * Zingiberaceae: (3 species)
+                      * Curcuma longa: turmeric
+                      * Elettaria cardamomum: cardamom
+                      * Zingiber officinale: ginger
+                    * Musa x paradisiaca: banana
+                  * Arecaceae: (3 species)
+                    * Phoenix dactylifera: date
+                    * Cocoseae: (2 species)
+                      * Elaeis guineensis: oil palm
+                      * Cocos nucifera: coconut
+                  * Poales: (13 species)
+                    * Ananas comosus: pineapple
+                    * Poaceae: (12 species)
+                      * Panicoideae: (4 species)
+                        * Andropogoneae: (3 species)
+                          * Cymbopogon citratus: lemongrass
+                          * Zea mays: corn
+                          * Saccharum officinarum: sugarcane
+                        * Cenchrus americanus: pearl millet
+                      * BOP clade: (8 species)
+                        * Bambusa textilis: bamboo
+                        * Oryza sativa: rice
+                        * Pooideae: (6 species)
+                          * Triticeae: (4 species)
+                            * Triticum: (2 species)
+                              * Triticum spelta: spelt
+                              * Triticum aestivum: wheat
+                            * Hordeinae: (2 species)
+                              * Secale cereale: rye
+                              * Hordeum vulgare: barley
+                          * Poeae: (2 species)
+                            * Dactylis glomerata: orchard grass
+                            * Avena sativa: oat
+              * Colocasia esculenta: taro
+            * Proteales: (3 species)
+              * Macadamia integrifolia: macadamia nut
+              * Nelumbo nucifera: lotus
+              * Platanus occidentalis: sycamore
+            * Papaver somniferum: poppy
+            * Magnoliidae: (6 species)
+              * Piper nigrum: black pepper
+              * Magnoliales: (3 species)
+                * Magnolia sieboldii: magnolia
+                * Myristica fragrans: mace
+                * Asimina triloba: pawpaw
+              * Lauraceae: (2 species)
+                * Cinnamomum verum: cinnamon
+                * Persea americana: avocado
+            * Pentapetalae: (160 species)
+              * Saxifragales: (2 species)
+                * Ribes uva-crispa: gooseberry
+                * Paeonia officinalis: peony
+              * Santalales: (2 species)
+                * Santalum album: sandalwood
+                * Viscum album: mistletoe
+              * asterids: (48 species)
+                * lamiids: (18 species)
+                  * Myosotis scorpioides: forget-me-not
+                  * Coffea arabica: coffee
+                  * Lamiales: (9 species)
+                    * Nepetoideae: (6 species)
+                      * Ocimeae: (2 species)
+                        * Ocimum basilicum: basil
+                        * Lavandula angustifolia: lavender
+                      * Mentheae: (4 species)
+                        * Thymus vulgaris: thyme
+                        * Salvia: (2 species)
+                          * Salvia rosmarinus: rosemary
+                          * Salvia officinalis: sage
+                        * Mentha spicata: spearmint
+                    * Sesamum indicum: sesame
+                    * Oleaceae: (2 species)
+                      * Jasminum officinale: jasmine
+                      * Olea europaea: olive
+                  * Solanales: (7 species)
+                    * Ipomoea batatas: sweet potato
+                    * Solanaceae: (6 species)
+                      * Petunia integrifolia: petunia
+                      * Nicotiana tabacum: tobacco
+                      * Solanoideae: (4 species)
+                        * Solanum: (3 species)
+                          * Solanum tuberosum: potato
+                          * Solanum melongena: eggplant
+                          * Solanum lycopersicum: tomato
+                        * Capsicum annuum: sweet pepper
+                * campanulids: (23 species)
+                  * Ilex aquifolium: holly
+                  * Asteraceae: (10 species)
+                    * Cynara cardunculus: artichoke
+                    * Cichorieae: (3 species)
+                      * Taraxacum officinale: dandelion
+                      * Cichorium intybus: chicory
+                      * Lactuca sativa: lettuce
+                    * Asteroideae: (6 species)
+                      * Anthemideae: (4 species)
+                        * Glebionis coronaria: daisy
+                        * Matricaria chamomilla: chamomile
+                        * Artemisiinae: (2 species)
+                          * Chrysanthemum indicum: chrysanthemum
+                          * Artemisia absinthium: common wormwood
+                      * Heliantheae alliance: (2 species)
+                        * Dahlia pinnata: dahlia
+                        * Helianthus annuus: sunflower
+                  * Dipsacales: (2 species)
+                    * Lonicera japonica: honeysuckle
+                    * Sambucus nigra: black elderberry
+                  * Apiineae: (10 species)
+                    * Araliaceae: (2 species)
+                      * Panax ginseng: ginseng
+                      * Hedera helix: common ivy
+                    * Apioideae: (8 species)
+                      * apioid superclade: (7 species)
+                        * Pimpinella anisum: anise
+                        * Coriandrum sativum: coriander
+                        * Apieae: (4 species)
+                          * Anethum: (2 species)
+                            * Anethum foeniculum: fennel
+                            * Anethum graveolens: dill
+                          * Apium graveolens: celery
+                          * Petroselinum crispum: parsley
+                        * Pastinaca sativa: parsnip
+                      * Daucus carota: carrot
+                * Ericales: (7 species)
+                  * Vitellaria paradoxa: shea nut
+                  * Vaccinium: (2 species)
+                    * Vaccinium uliginosum: blueberry
+                    * Vaccinium macrocarpon: cranberry
+                  * Diospyros virginiana: persimmon
+                  * Camellia sinensis: tea
+                  * Bertholletia excelsa: brazil nut
+                  * Actinidia deliciosa: kiwi
+              * Caryophyllales: (13 species)
+                * Nepenthes attenboroughii: pitcher plant
+                * Cactaceae: (4 species)
+                  * Opuntia macrorhiza: prickly pear
+                  * Cactoideae: (3 species)
+                    * Selenicereus costaricensis: dragon fruit
+                    * Cacteae: (2 species)
+                      * Ferocactus flavovirens: cactus
+                      * Echinocactus grusonii: barrel cactus
+                * Dionaea muscipula: venus flytrap
+                * Polygonoideae: (2 species)
+                  * Rheum rhabarbarum: rhubarb
+                  * Fagopyrum esculentum: buckwheat
+                * Dianthus caryophyllus: carnation
+                * Chenopodiaceae: (4 species)
+                  * Salsola tragus: tumbleweed
+                  * Beta vulgaris: beetroot
+                  * Chenopodioideae: (2 species)
+                    * Chenopodium quinoa: quinoa
+                    * Spinacia oleracea: spinach
+              * rosids: (95 species)
+                * Vitis vinifera: grape
+                * fabids: (61 species)
+                  * Malpighiales: (10 species)
+                    * Erythroxylum coca: coca
+                    * Viola cucullata: violet
+                    * Passiflora edulis: passionfruit
+                    * Salix babylonica: weeping willow
+                    * Garcinia mangostana: mangosteen
+                    * Rhizophora mangle: red mangrove
+                    * Linum usitatissimum: flax
+                    * Euphorbiaceae: (3 species)
+                      * Ricinus communis: ricin
+                      * Crotonoideae: (2 species)
+                        * Manihot esculenta: cassava
+                        * Hevea brasiliensis: rubber
+                  * Fabaceae: (20 species)
+                    * Caesalpinioideae: (3 species)
+                      * mimosoid clade: (2 species)
+                        * Vachellia nilotica: gum arabic tree
+                        * Mimosa pudica: touch-me-not
+                      * Senna alexandrina: senna
+                    * Tamarindus indica: tamarind
+                    * Ceratonia siliqua: carob
+                    * 50 kb inversion clade: (15 species)
+                      * core genistoids: (2 species)
+                        * Aspalathus linearis: rooibos
+                        * Ulex europaeus: gorse
+                      * NPAAA clade: (12 species)
+                        * indigoferoid/millettioid clade: (4 species)
+                          * Wisteria floribunda: wisteria
+                          * Phaseoleae: (3 species)
+                            * Vigna unguiculata: black eyed pea
+                            * Phaseolus vulgaris: common bean
+                            * Glycine max: soy bean
+                        * IRL clade: (8 species)
+                          * Glycyrrhiza glabra: licorice
+                          * Trifolieae: (2 species)
+                            * Trifolium dubium: clover
+                            * Medicago sativa: alfalfa
+                          * Fabeae: (4 species)
+                            * Vicia faba: fava bean
+                            * Lens culinaris: lentil
+                            * Lathyrus: (2 species)
+                              * Pisum sativum: garden pea
+                              * Lathyrus odoratus: sweet pea
+                          * Cicer arietinum: chickpea
+                      * Arachis hypogaea: peanut
+                  * Cucurbitaceae: (5 species)
+                    * Cucurbita: (2 species)
+                      * Cucurbita pepo: pumpkin
+                      * Cucurbita moschata: butternut squash
+                    * Benincaseae: (3 species)
+                      * Cucumis: (2 species)
+                        * Cucumis sativus: cucumber
+                        * Cucumis melo: melon
+                      * Citrullus lanatus: watermelon
+                  * Fagales: (7 species)
+                    * Fagaceae: (3 species)
+                      * Quercus robur: oak
+                      * Fagus sylvatica: common beech
+                      * Castanea sativa: chestnut
+                    * Juglandaceae: (2 species)
+                      * Carya illinoinensis: pecan
+                      * Juglans nigra: walnut
+                    * Betulaceae: (2 species)
+                      * Corylus avellana: hazelnut
+                      * Betula pendula: silver birch
+                  * Rosales: (19 species)
+                    * Rosaceae: (12 species)
+                      * Amygdaloideae: (8 species)
+                        * Prunus: (5 species)
+                          * Prunus avium: cherry
+                          * Prunus armeniaca: apricot
+                          * Prunus persica: peach
+                          * Prunus domestica: plum
+                          * Prunus dulcis: almond
+                        * Maleae: (3 species)
+                          * Eriobotrya japonica: loquat
+                          * Pyrus communis: pear
+                          * Malus sylvestris: apple
+                      * Rosoideae: (4 species)
+                        * Rosoideae incertae sedis: (3 species)
+                          * Rosa x centifolia: rose
+                          * Rubus: (2 species)
+                            * Rubus allegheniensis: blackberry
+                            * Rubus idaeus: raspberry
+                        * Fragaria x ananassa: strawberry
+                    * Urtica dioica: nettle
+                    * Moraceae: (4 species)
+                      * Morus alba: silkworm mulberry
+                      * Ficus carica: fig
+                      * Artocarpus: (2 species)
+                        * Artocarpus altilis: breadfruit
+                        * Artocarpus heterophyllus: jackfruit
+                    * Cannabaceae: (2 species)
+                      * Humulus lupulus: hop
+                      * Cannabis sativa: hemp
+                * malvids: (33 species)
+                  * Geranium phaeum: geranium
+                  * Myrtales: (5 species)
+                    * Myrtoideae: (3 species)
+                      * Myrteae: (2 species)
+                        * Psidium guajava: guava
+                        * Myrtus communis: myrtle
+                      * Eucalyptus obliqua: eucalyptus tree
+                    * Lythraceae: (2 species)
+                      * Lawsonia inermis: henna
+                      * Punica granatum: pomegranate
+                  * Brassicales: (9 species)
+                    * Capparis spinosa: caper
+                    * Brassicaceae: (7 species)
+                      * Eutrema japonicum: wasabi
+                      * Brassiceae: (4 species)
+                        * Raphanus sativus: radish
+                        * Brassica: (3 species)
+                          * Brassica oleracea: cabbage
+                          * Brassica rapa: bok choy
+                          * Brassica nigra: black mustard
+                      * Cardamineae: (2 species)
+                        * Nasturtium officinale: watercress
+                        * Armoracia rusticana: horseradish
+                    * Carica papaya: papaya
+                  * Malvaceae: (6 species)
+                    * Adansonia digitata: baobab
+                    * Durio zibethinus: durian
+                    * Theobroma cacao: cacao
+                    * Malvoideae: (3 species)
+                      * Abelmoschus esculentus: okra
+                      * Hibiscus syriacus: hibiscus
+                      * Gossypium hirsutum: cotton
+                  * Sapindales: (12 species)
+                    * Anacardiaceae: (4 species)
+                      * Anacardium occidentale: cashew
+                      * Pistacia vera: pistachio
+                      * Toxicodendron radicans: poison ivy
+                      * Mangifera indica: mango
+                    * Sapindaceae: (2 species)
+                      * Litchi chinensis: lychee
+                      * Acer saccharum: sugar maple
+                    * Citrus: (6 species)
+                      * Citrus medica: citron
+                      * Citrus x aurantiifolia: lime
+                      * Citrus reticulata: mandarin
+                      * Citrus x paradisi: grapefruit
+                      * Citrus sinensis: orange
+                      * Citrus x limon: lemon

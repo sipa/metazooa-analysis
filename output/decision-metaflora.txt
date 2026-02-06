@@ -1,0 +1,215 @@
+* Viridiplantae: garden pea
+  * 50 kb inversion clade: gorse
+    * 50 kb inversion clade: peanut
+    * core genistoids: rooibos
+  * Embryophyta: moss
+  * Euphyllophyta: fern
+  * Fabaceae: gum arabic tree
+    * Caesalpinioideae: senna
+    * Fabaceae: carob
+      * Fabaceae: tamarind
+    * mimosoid clade: touch-me-not
+  * Fabeae: fava bean
+    * Fabeae: lentil
+  * IRL clade: alfalfa
+    * IRL clade: chickpea
+      * IRL clade: licorice
+    * Trifolieae: clover
+  * Lathyrus: sweet pea
+  * Magnoliopsida: water lily
+  * Mesangiospermae: barley
+    * BOP clade: bamboo
+      * BOP clade: rice
+    * Hordeinae: rye
+    * Liliopsida: taro
+    * Mesangiospermae: mace
+      * Magnoliales: magnolia
+        * Magnoliales: pawpaw
+      * Magnoliidae: avocado
+        * Lauraceae: cinnamon
+        * Magnoliidae: black pepper
+      * Mesangiospermae: lotus
+        * Mesangiospermae: poppy
+        * Proteales: macadamia nut
+          * Proteales: sycamore
+    * Petrosaviidae: garlic
+      * Allium: leek
+        * Allium: onion
+      * Amaryllidaceae: daffodil
+      * Asparagales: agave
+        * Asparagaceae: asparagus
+        * Asparagales: orchid
+          * Asparagales: aloe
+            * Asparagales: hyacinth
+          * Orchidaceae: vanilla
+      * Petrosaviidae: tiger lily
+        * Liliaceae: tulip
+        * Petrosaviidae: yam
+    * Poaceae: corn
+      * Andropogoneae: lemongrass
+        * Andropogoneae: sugarcane
+      * Panicoideae: pearl millet
+    * Poales: pineapple
+    * Pooideae: oat
+      * Poeae: orchard grass
+    * Triticeae: spelt
+      * Triticum: wheat
+    * commelinids: cardamom
+      * Zingiberaceae: ginger
+        * Zingiberaceae: turmeric
+      * Zingiberales: banana
+      * commelinids: coconut
+        * Arecaceae: date
+        * Cocoseae: oil palm
+  * NPAAA clade: black eyed pea
+    * Phaseoleae: common bean
+      * Phaseoleae: soy bean
+    * indigoferoid/millettioid clade: wisteria
+  * Pentapetalae: dill
+    * Anethum: fennel
+    * Apieae: celery
+      * Apieae: parsley
+    * Apiineae: common ivy
+      * Araliaceae: ginseng
+    * Apioideae: carrot
+    * Pentapetalae: barrel cactus
+      * Cactaceae: prickly pear
+      * Cacteae: cactus
+      * Cactoideae: dragon fruit
+      * Caryophyllales: quinoa
+        * Caryophyllales: buckwheat
+          * Caryophyllales: carnation
+            * Caryophyllales: pitcher plant
+              * Caryophyllales: venus flytrap
+          * Polygonoideae: rhubarb
+        * Chenopodiaceae: beetroot
+          * Chenopodiaceae: tumbleweed
+        * Chenopodioideae: spinach
+      * Pentapetalae: gooseberry
+        * Pentapetalae: mistletoe
+          * Santalales: sandalwood
+        * Saxifragales: peony
+    * apioid superclade: anise
+      * apioid superclade: coriander
+        * apioid superclade: parsnip
+    * asterids: rosemary
+      * Lamiales: jasmine
+        * Lamiales: sesame
+        * Oleaceae: olive
+      * Mentheae: spearmint
+        * Mentheae: thyme
+      * Nepetoideae: basil
+        * Ocimeae: lavender
+      * Salvia: sage
+      * asterids: blueberry
+        * Ericales: brazil nut
+          * Ericales: kiwi
+            * Ericales: persimmon
+              * Ericales: shea nut
+                * Ericales: tea
+        * Vaccinium: cranberry
+      * lamiids: eggplant
+        * Solanaceae: petunia
+          * Solanaceae: tobacco
+        * Solanales: sweet potato
+        * Solanoideae: sweet pepper
+        * Solanum: potato
+          * Solanum: tomato
+        * lamiids: coffee
+          * lamiids: forget-me-not
+    * campanulids: chrysanthemum
+      * Anthemideae: chamomile
+        * Anthemideae: daisy
+      * Artemisiinae: common wormwood
+      * Asteraceae: chicory
+        * Asteraceae: artichoke
+        * Cichorieae: dandelion
+          * Cichorieae: lettuce
+      * Asteroideae: dahlia
+        * Heliantheae alliance: sunflower
+      * campanulids: black elderberry
+        * Dipsacales: honeysuckle
+        * campanulids: holly
+  * Spermatophyta: blue spruce
+    * Acrogymnospermae: ginkgo
+    * Picea: spruce
+    * Pinaceae: baltic pine
+      * Pinaceae: cedar of lebanon
+        * Pinaceae: douglas fir
+    * Pinidae: giant sequoia
+  * Viridiplantae: seaweed
+  * fabids: almond
+    * Amygdaloideae: apple
+      * Maleae: loquat
+        * Maleae: pear
+    * Prunus: apricot
+      * Prunus: cherry
+        * Prunus: peach
+          * Prunus: plum
+    * Rosaceae: blackberry
+      * Rosoideae: strawberry
+      * Rosoideae incertae sedis: rose
+      * Rubus: raspberry
+    * Rosales: breadfruit
+      * Artocarpus: jackfruit
+      * Moraceae: fig
+        * Moraceae: silkworm mulberry
+      * Rosales: hemp
+        * Cannabaceae: hop
+        * Rosales: nettle
+    * fabids: cassava
+      * Crotonoideae: rubber
+      * Euphorbiaceae: ricin
+      * Malpighiales: coca
+        * Malpighiales: flax
+          * Malpighiales: mangosteen
+            * Malpighiales: passionfruit
+              * Malpighiales: red mangrove
+                * Malpighiales: violet
+                  * Malpighiales: weeping willow
+      * fabids: chestnut
+        * Fagaceae: common beech
+          * Fagaceae: oak
+        * Fagales: hazelnut
+          * Betulaceae: silver birch
+          * Fagales: pecan
+            * Juglandaceae: walnut
+        * fabids: cucumber
+          * Benincaseae: watermelon
+          * Cucumis: melon
+          * Cucurbitaceae: butternut squash
+            * Cucurbita: pumpkin
+  * rosids: citron
+    * Citrus: grapefruit
+      * Citrus: lemon
+        * Citrus: lime
+          * Citrus: mandarin
+            * Citrus: orange
+    * Sapindales: cashew
+      * Anacardiaceae: mango
+        * Anacardiaceae: pistachio
+          * Anacardiaceae: poison ivy
+      * Sapindales: lychee
+        * Sapindaceae: sugar maple
+    * malvids: black mustard
+      * Brassica: bok choy
+        * Brassica: cabbage
+      * Brassicaceae: horseradish
+        * Brassicaceae: wasabi
+        * Cardamineae: watercress
+      * Brassicales: caper
+        * Brassicales: papaya
+      * Brassiceae: radish
+      * malvids: cotton
+        * Malvaceae: baobab
+          * Malvaceae: cacao
+            * Malvaceae: durian
+        * Malvoideae: hibiscus
+          * Malvoideae: okra
+        * malvids: guava
+          * Myrtales: henna
+            * Lythraceae: pomegranate
+          * Myrteae: myrtle
+          * Myrtoideae: eucalyptus tree
+          * malvids: geranium
+    * rosids: grape

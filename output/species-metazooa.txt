@@ -1,0 +1,554 @@
+* Metazoa: (329 species)
+  * Aplysina fistularis: sea sponge
+  * Eumetazoa: (328 species)
+    * Bilateria: (322 species)
+      * Deuterostomia: (247 species)
+        * Vertebrata: (243 species)
+          * Eudontomyzon mariae: lamprey
+          * Gnathostomata: (242 species)
+            * Euteleostomi: (235 species)
+              * Teleostei: (28 species)
+                * Enchelycore pardalis: moray eel
+                * Clupeocephala: (27 species)
+                  * Euteleosteomorpha: (21 species)
+                    * Acanthomorphata: (18 species)
+                      * Regalecus glesne: oarfish
+                      * Percomorphaceae: (16 species)
+                        * Anabantaria: (2 species)
+                          * Betta tussyae: betta fish
+                          * Mastacembelus erythrotaenia: fire eel
+                        * Hippocampus comes: seahorse
+                        * Carangaria: (3 species)
+                          * Hippoglossus stenolepis: halibut
+                          * Sphyraena barracuda: barracuda
+                          * Xiphias gladius: swordfish
+                        * Scombrinae: (2 species)
+                          * Scomber australasicus: mackerel
+                          * Thunnus albacares: tuna
+                        * Ovalentaria: (4 species)
+                          * Amphiprion percula: clownfish
+                          * Oreochromis tanganicae: tilapia
+                          * Atherinomorphae: (2 species)
+                            * Cheilopogon melanurus: flying fish
+                            * Poecilia reticulata: guppy
+                        * Eupercaria: (4 species)
+                          * Arothron meleagris: pufferfish
+                          * Micropterus salmoides: bass
+                          * Perca flavescens: perch
+                          * Lophius piscatorius: anglerfish
+                      * Gadus morhua: cod
+                    * Protacanthopterygii: (3 species)
+                      * Salmoninae: (2 species)
+                        * Salmo salar: salmon
+                        * Oncorhynchus mykiss: trout
+                      * Esox lucius: pike
+                  * Otomorpha: (6 species)
+                    * Otophysi: (5 species)
+                      * Characiphysae: (3 species)
+                        * Pygocentrus nattereri: piranha
+                        * Electrophorus electricus: electric eel
+                        * Ictalurus punctatus: catfish
+                      * Cyprininae: (2 species)
+                        * Cyprinus carpio: carp
+                        * Carassius auratus: goldfish
+                    * Clupea harengus: herring
+              * Sarcopterygii: (207 species)
+                * Tetrapoda: (206 species)
+                  * Amniota: (200 species)
+                    * Mammalia: (124 species)
+                      * Theria: (122 species)
+                        * Eutheria: (115 species)
+                          * Xenarthra: (3 species)
+                            * Chaetophractus vellerosus: armadillo
+                            * Pilosa: (2 species)
+                              * Cyclopes didactylus: anteater
+                              * Choloepus didactylus: two-toed sloth
+                          * Afrotheria: (4 species)
+                            * Orycteropus afer: aardvark
+                            * Procavia capensis: hyrax
+                            * Loxodonta africana: elephant
+                            * Trichechus manatus: manatee
+                          * Boreoeutheria: (108 species)
+                            * Euarchontoglires: (30 species)
+                              * Glires: (17 species)
+                                * Rodentia: (15 species)
+                                  * Castor canadensis: beaver
+                                  * Hystricomorpha: (5 species)
+                                    * Heterocephalus glaber: naked mole rat
+                                    * Chinchilla chinchilla: chinchilla
+                                    * Hydrochoerus hydrochaeris: capybara
+                                    * Cavia porcellus: guinea pig
+                                    * Hystrix africaeaustralis: porcupine
+                                  * Muroidea: (4 species)
+                                    * Muridae: (3 species)
+                                      * Murinae: (2 species)
+                                        * Rattus norvegicus: rat
+                                        * Mus musculus: mouse
+                                      * Meriones unguiculatus: gerbil
+                                    * Mesocricetus auratus: hamster
+                                  * Sciuridae: (5 species)
+                                    * Sciurinae: (2 species)
+                                      * Hylopetes nigripes: flying squirrel
+                                      * Sciurus carolinensis: squirrel
+                                    * Marmotini: (3 species)
+                                      * Cynomys ludovicianus: prairie dog
+                                      * Tamias striatus: chipmunk
+                                      * Marmota monax: groundhog
+                                * Leporidae: (2 species)
+                                  * Lepus californicus: hare
+                                  * Oryctolagus cuniculus: rabbit
+                              * Primates: (13 species)
+                                * Simiiformes: (12 species)
+                                  * Platyrrhini: (3 species)
+                                    * Alouatta pigra: howler monkey
+                                    * Cebidae: (2 species)
+                                      * Cebus olivaceus: capuchin
+                                      * Leontopithecus rosalia: tamarin
+                                  * Catarrhini: (9 species)
+                                    * Hominoidea: (6 species)
+                                      * Nomascus leucogenys: gibbon
+                                      * Hominidae: (5 species)
+                                        * Pongo abelii: orangutan
+                                        * Homininae: (4 species)
+                                          * Homo sapiens: human
+                                          * Pan: (2 species)
+                                            * Pan troglodytes: chimpanzee
+                                            * Pan paniscus: bonobo
+                                          * Gorilla gorilla: gorilla
+                                    * Cercopithecinae: (3 species)
+                                      * Papio papio: baboon
+                                      * Mandrillus sphinx: mandrill
+                                      * Macaca fuscata: macaque
+                                * Lemur catta: lemur
+                            * Laurasiatheria: (78 species)
+                              * Manis javanica: pangolin
+                              * Perissodactyla: (5 species)
+                                * Ceratotherium simum: rhinoceros
+                                * Tapirus indicus: tapir
+                                * Equus: (3 species)
+                                  * Equus quagga: zebra
+                                  * Equus caballus: horse
+                                  * Equus asinus: donkey
+                              * Artiodactyla: (29 species)
+                                * Pecora: (15 species)
+                                  * Bovidae: (10 species)
+                                    * Gazella dorcas: gazelle
+                                    * Hippotragus niger: antelope
+                                    * Connochaetes taurinus: wildebeest
+                                    * Caprinae: (3 species)
+                                      * Ovis aries: sheep
+                                      * Capra: (2 species)
+                                        * Capra ibex: ibex
+                                        * Capra hircus: goat
+                                    * Bovinae: (4 species)
+                                      * Bubalus bubalis: water buffalo
+                                      * Bos: (2 species)
+                                        * Bos grunniens: yak
+                                        * Bos taurus: cattle
+                                      * Bison bison: bison
+                                  * Giraffa camelopardalis: giraffe
+                                  * Cervidae: (4 species)
+                                    * Cervus canadensis: elk
+                                    * Odocoileinae: (3 species)
+                                      * Odocoileus virginianus: deer
+                                      * Rangifer tarandus: caribou
+                                      * Alces alces: moose
+                                * Camelidae: (3 species)
+                                  * Vicugna pacos: alpaca
+                                  * Lama glama: llama
+                                  * Camelus dromedarius: camel
+                                * Suidae: (2 species)
+                                  * Phacochoerus africanus: warthog
+                                  * Sus scrofa: pig
+                                * Whippomorpha: (9 species)
+                                  * Hippopotamus amphibius: hippopotamus
+                                  * Cetacea: (8 species)
+                                    * Balaenopteridae: (2 species)
+                                      * Megaptera novaeangliae: humpback whale
+                                      * Balaenoptera musculus: blue whale
+                                    * Odontoceti: (6 species)
+                                      * Physeter macrocephalus: sperm whale
+                                      * Monodontidae: (2 species)
+                                        * Monodon monoceros: narwhal
+                                        * Delphinapterus leucas: beluga whale
+                                      * Phocoena phocoena: porpoise
+                                      * Delphinidae: (2 species)
+                                        * Tursiops truncatus: dolphin
+                                        * Orcinus orca: orca
+                              * Carnivora: (39 species)
+                                * Feliformia: (14 species)
+                                  * Civettictis civetta: civet
+                                  * Herpestidae: (2 species)
+                                    * Suricata suricatta: meerkat
+                                    * Herpestes ichneumon: mongoose
+                                  * Felidae: (10 species)
+                                    * Panthera: (4 species)
+                                      * Panthera tigris: tiger
+                                      * Panthera pardus: leopard
+                                      * Panthera onca: jaguar
+                                      * Panthera leo: lion
+                                    * Felinae: (6 species)
+                                      * Leopardus pardalis: ocelot
+                                      * Acinonyx jubatus: cheetah
+                                      * Lynx: (2 species)
+                                        * Lynx rufus: bobcat
+                                        * Lynx lynx: lynx
+                                      * Puma concolor: puma
+                                      * Felis catus: cat
+                                  * Crocuta crocuta: hyena
+                                * Caniformia: (25 species)
+                                  * Pinnipedia: (3 species)
+                                    * Halichoerus grypus: seal
+                                    * Odobenus rosmarus: walrus
+                                    * Zalophus californianus: sea lion
+                                  * Musteloidea: (11 species)
+                                    * Mephitis mephitis: skunk
+                                    * Mustelidae: (7 species)
+                                      * Gulo gulo: wolverine
+                                      * Lutrinae: (2 species)
+                                        * Lontra canadensis: river otter
+                                        * Enhydra lutris: sea otter
+                                      * Taxidea taxus: badger
+                                      * Mustelinae: (3 species)
+                                        * Neogale frenata: weasel
+                                        * Mustela: (2 species)
+                                          * Mustela putorius furo: ferret
+                                          * Mustela lutreola: mink
+                                    * Procyonidae: (2 species)
+                                      * Potos flavus: kinkajou
+                                      * Procyon lotor: raccoon
+                                    * Ailurus fulgens: red panda
+                                  * Ursidae: (4 species)
+                                    * Ailuropoda melanoleuca: giant panda
+                                    * Ursus: (3 species)
+                                      * Ursus maritimus: polar bear
+                                      * Ursus arctos: brown bear
+                                      * Ursus americanus: black bear
+                                  * Canidae: (7 species)
+                                    * Nyctereutes viverrinus: tanuki
+                                    * Vulpes: (2 species)
+                                      * Vulpes lagopus: arctic fox
+                                      * Vulpes vulpes: red fox
+                                    * Canis: (4 species)
+                                      * Canis aureus: jackal
+                                      * Canis latrans: coyote
+                                      * Canis lupus: wolf
+                              * Chiroptera: (2 species)
+                                * Acerodon jubatus: fruit bat
+                                * Desmodus rotundus: vampire bat
+                              * Eulipotyphla: (2 species)
+                                * Talpa europaea: mole
+                                * Erinaceus europaeus: hedgehog
+                        * Metatheria: (7 species)
+                          * Diprotodontia: (5 species)
+                            * Phascolarctos cinereus: koala
+                            * Petaurus breviceps: sugar glider
+                            * Vombatus ursinus: wombat
+                            * Pseudocheirus peregrinus: possum
+                            * Osphranter rufus: kangaroo
+                          * Sarcophilus harrisii: tasmanian devil
+                          * Didelphis marsupialis: opossum
+                      * Monotremata: (2 species)
+                        * Tachyglossus aculeatus: echidna
+                        * Ornithorhynchus anatinus: platypus
+                    * Sauria: (76 species)
+                      * Bifurcata: (15 species)
+                        * Lygodactylus capensis: gecko
+                        * Unidentata: (14 species)
+                          * Tiliqua gigas: skink
+                          * Toxicofera: (13 species)
+                            * Serpentes: (9 species)
+                              * Colubroidea: (5 species)
+                                * Viperidae: (2 species)
+                                  * Crotalus atrox: rattlesnake
+                                  * Cerastes cerastes: viper
+                                * Elapidae: (3 species)
+                                  * Hydrophis platurus: sea snake
+                                  * Elapinae: (2 species)
+                                    * Ophiophagus hannah: king cobra
+                                    * Dendroaspis polylepis: black mamba
+                              * Henophidia: (4 species)
+                                * Pythonidae: (2 species)
+                                  * Python bivittatus: burmese python
+                                  * Morelia viridis: green tree python
+                                * Boinae: (2 species)
+                                  * Eunectes murinus: anaconda
+                                  * Boa constrictor: boa constrictor
+                            * Anguimorpha: (2 species)
+                              * Varanus komodoensis: komodo dragon
+                              * Heloderma suspectum: gila monster
+                            * Iguania: (2 species)
+                              * Chamaeleo chamaeleon: chameleon
+                              * Iguana iguana: iguana
+                      * Archelosauria: (61 species)
+                        * Archosauria: (57 species)
+                          * Aves: (54 species)
+                            * Neognathae: (50 species)
+                              * Neoaves: (43 species)
+                                * Phoenicopterus roseus: flamingo
+                                * Columbidae: (2 species)
+                                  * Hemiphaga novaeseelandiae: pigeon
+                                  * Leptotila verreauxi: dove
+                                * Charadriiformes: (2 species)
+                                  * Larus argentatus: seagull
+                                  * Fratercula arctica: puffin
+                                * Aequornithes: (5 species)
+                                  * Ardea: (2 species)
+                                    * Ardea alba: egret
+                                    * Ardea herodias: heron
+                                  * Diomedea exulans: albatross
+                                  * Spheniscidae: (2 species)
+                                    * Eudyptes chrysolophus: macaroni penguin
+                                    * Aptenodytes forsteri: emperor penguin
+                                * Telluraves: (31 species)
+                                  * Strigiformes: (2 species)
+                                    * Bubo scandiacus: snowy owl
+                                    * Tyto alba: barn owl
+                                  * Piciformes: (2 species)
+                                    * Ramphastos toco: toucan
+                                    * Dryocopus pileatus: woodpecker
+                                  * Australaves: (20 species)
+                                    * Psittaciformes: (5 species)
+                                      * Psittacidae: (3 species)
+                                        * Psittacus erithacus: grey parrot
+                                        * Aratinga nenday: parakeet
+                                        * Anodorhynchus hyacinthinus: macaw
+                                      * Cacatuidae: (2 species)
+                                        * Nymphicus hollandicus: cockatiel
+                                        * Cacatua goffiniana: cockatoo
+                                    * Passeriformes: (13 species)
+                                      * Mimus polyglottos: mockingbird
+                                      * Hirundo rustica: swallow
+                                      * Passeroidea: (3 species)
+                                        * Passer domesticus: sparrow
+                                        * Fringillidae: (2 species)
+                                          * Crithagra flaviventris: canary
+                                          * Pyrrhula pyrrhula: finch
+                                      * Troglodytes troglodytes: wren
+                                      * Corvidae: (4 species)
+                                        * Corvus: (2 species)
+                                          * Corvus brachyrhynchos: crow
+                                          * Corvus corax: raven
+                                        * Pica pica: magpie
+                                        * Cyanocitta cristata: blue jay
+                                      * Turdidae: (3 species)
+                                        * Luscinia megarhynchos: nightingale
+                                        * Erithacus rubecula: robin
+                                        * Turdus merula: blackbird
+                                    * Falco: (2 species)
+                                      * Falco sparverius: kestrel
+                                      * Falco peregrinus: falcon
+                                  * Accipitriformes: (7 species)
+                                    * Pandion haliaetus: osprey
+                                    * Accipitrinae: (3 species)
+                                      * Accipiter gundlachi: hawk
+                                      * Milvus migrans: kite
+                                      * Haliaeetus leucocephalus: bald eagle
+                                    * Cathartidae: (3 species)
+                                      * Cathartes aura: turkey vulture
+                                      * Coragyps atratus: black vulture
+                                      * Vultur gryphus: condor
+                                * Apodiformes: (2 species)
+                                  * Mellisuga helenae: hummingbird
+                                  * Apus apus: swift
+                              * Galloanserae: (7 species)
+                                * Phasianidae: (4 species)
+                                  * Meleagris gallopavo: turkey
+                                  * Phasianinae: (3 species)
+                                    * Pavo cristatus: peacock
+                                    * Lophura bulweri: pheasant
+                                    * Gallus gallus: chicken
+                                * Anatidae: (3 species)
+                                  * Anserinae: (2 species)
+                                    * Cygnus olor: swan
+                                    * Branta canadensis: goose
+                                  * Anas platyrhynchos: duck
+                            * Palaeognathae: (4 species)
+                              * Apteryx rowi: kiwi
+                              * Struthio camelus: ostrich
+                              * Casuariiformes: (2 species)
+                                * Dromaius novaehollandiae: emu
+                                * Casuarius casuarius: cassowary
+                          * Crocodylia: (3 species)
+                            * Crocodylus porosus: crocodile
+                            * Alligatoridae: (2 species)
+                              * Caiman latirostris: caiman
+                              * Alligator mississippiensis: alligator
+                        * Durocryptodira: (4 species)
+                          * Testudinoidea: (2 species)
+                            * Terrapene carolina: box turtle
+                            * Chelonoidis niger: tortoise
+                          * Americhelydia: (2 species)
+                            * Dermochelys coriacea: sea turtle
+                            * Chelydra serpentina: snapping turtle
+                  * Batrachia: (6 species)
+                    * Neobatrachia: (3 species)
+                      * Aquarana catesbeiana: bullfrog
+                      * Hyloidea: (2 species)
+                        * Oophaga histrionica: poison frog
+                        * Bufo bufo: toad
+                    * Caudata: (3 species)
+                      * Hynobius retardatus: salamander
+                      * Salamandroidea: (2 species)
+                        * Ichthyosaura alpestris: newt
+                        * Ambystoma mexicanum: axolotl
+                * Latimeria chalumnae: coelacanth
+            * Elasmobranchii: (7 species)
+              * Myliobatiformes: (2 species)
+                * Hypanus americanus: sting ray
+                * Mobula birostris: manta ray
+              * Galeoidea: (5 species)
+                * Rhincodon typus: whale shark
+                * Lamniformes: (2 species)
+                  * Mitsukurina owstoni: goblin shark
+                  * Carcharodon carcharias: great white shark
+                * Carcharhinidae: (2 species)
+                  * Sphyrna mokarran: hammerhead shark
+                  * Galeocerdo cuvier: tiger shark
+        * Eleutherozoa: (4 species)
+          * Echinozoa: (3 species)
+            * Actinopyga echinites: sea cucumber
+            * Euechinoidea: (2 species)
+              * Mellita quinquiesperforata: sand dollar
+              * Strongylocentrotus droebachiensis: sea urchin
+          * Asterias rubens: starfish
+      * Protostomia: (75 species)
+        * Ecdysozoa: (59 species)
+          * Panarthropoda: (57 species)
+            * Eoperipatus totoro: velvet worm
+            * Milnesium tardigradum: tardigrade
+            * Arthropoda: (55 species)
+              * Chelicerata: (11 species)
+                * Arachnida: (10 species)
+                  * Rilaena triangularis: harvestman
+                  * Scorpiones: (2 species)
+                    * Centruroides sculpturatus: bark scorpion
+                    * Pandinus imperator: emperor scorpion
+                  * Ixodes ricinus: tick
+                  * Araneae: (6 species)
+                    * Theraphosa blondi: tarantula
+                    * Araneomorphae: (5 species)
+                      * Entelegynae: (3 species)
+                        * Heteropoda maxima: huntsman spider
+                        * Araneoidea: (2 species)
+                          * Nephila pilipes: orbweaver spider
+                          * Latrodectus tredecimguttatus: black widow
+                      * Haplogynae: (2 species)
+                        * Pholcus opilionoides: cellar spider
+                        * Loxosceles reclusa: brown recluse
+                * Limulus polyphemus: horseshoe crab
+              * Mandibulata: (44 species)
+                * Myriapoda: (3 species)
+                  * Oxidus gracilis: millipede
+                  * Chilopoda: (2 species)
+                    * Scolopendra cataracta: giant centipede
+                    * Scutigera coleoptrata: house centipede
+                * Pancrustacea: (41 species)
+                  * Dicondylia: (31 species)
+                    * Lepisma saccharinum: silverfish
+                    * Pterygota: (30 species)
+                      * Palaeoptera: (2 species)
+                        * Rhithrogena germanica: mayfly
+                        * Aeshna canadensis: dragonfly
+                      * Neoptera: (28 species)
+                        * Hemiptera: (2 species)
+                          * Lethocerus indicus: water bug
+                          * Magicicada septendecim: cicada
+                        * Endopterygota: (18 species)
+                          * Ctenocephalides canis: flea
+                          * Aculeata: (7 species)
+                            * Pepsis grossa: tarantula hawk wasp
+                            * Formicidae: (2 species)
+                              * Camponotus floridanus: carpenter ant
+                              * Solenopsis invicta: fire ant
+                            * Apinae: (2 species)
+                              * Bombus impatiens: bumble bee
+                              * Apis mellifera: honey bee
+                            * Vespinae: (2 species)
+                              * Vespula pensylvanica: wasp
+                              * Vespa crabro: hornet
+                          * Diptera: (3 species)
+                            * Schizophora: (2 species)
+                              * Musca domestica: house fly
+                              * Drosophila melanogaster: fruit fly
+                            * Aedes aegypti: mosquito
+                          * Obtectomera: (3 species)
+                            * Danaus plexippus: monarch butterfly
+                            * Bombycoidea: (2 species)
+                              * Attacus atlas: atlas moth
+                              * Bombyx mori: silkworm
+                          * Polyphaga: (4 species)
+                            * Scarabaeidae: (2 species)
+                              * Dynastes hercules: hercules beetle
+                              * Scarabaeus sacer: dung beetle
+                            * Coccinella septempunctata: ladybug
+                            * Nipponoluciola cruciata: firefly
+                        * Polyneoptera: (8 species)
+                          * Forficula auricularia: earwig
+                          * Carausius morosus: stick bug
+                          * Orthoptera: (3 species)
+                            * Gryllus campestris: cricket
+                            * Schistocerca: (2 species)
+                              * Schistocerca gregaria: locust
+                              * Schistocerca americana: grasshopper
+                          * Dictyoptera: (3 species)
+                            * Mantis religiosa: praying mantis
+                            * Blattoidea: (2 species)
+                              * Coptotermes formosanus: termite
+                              * Periplaneta americana: cockroach
+                  * Multicrustacea: (10 species)
+                    * Balanus glandula: barnacle
+                    * Eumalacostraca: (9 species)
+                      * Odontodactylus scyllarus: mantis shrimp
+                      * Armadillidium vulgare: pillbug
+                      * Eucarida: (7 species)
+                        * Euphausia pacifica: krill
+                        * Decapoda: (6 species)
+                          * Pleocyemata: (5 species)
+                            * Alpheus digitalis: pistol shrimp
+                            * Tubuca urvillei: fiddler crab
+                            * Paguroidea: (2 species)
+                              * Dardanus calidus: hermit crab
+                              * Birgus latro: coconut crab
+                            * Homarus gammarus: lobster
+                          * Penaeus monodon: tiger prawn
+          * Rhabditida: (2 species)
+            * Dirofilaria immitis: heartworm
+            * Caenorhabditis elegans: nematode
+        * Lophotrochozoa: (16 species)
+          * Mollusca: (13 species)
+            * Cephalopoda: (7 species)
+              * Nautilus belauensis: nautilus
+              * Coleoidea: (6 species)
+                * Octopodiformes: (3 species)
+                  * Octopodidae: (2 species)
+                    * Enteroctopus dofleini: giant octopus
+                    * Hapalochlaena lunulata: blue-ringed octopus
+                  * Vampyroteuthis infernalis: vampire squid
+                * Decapodiformes: (3 species)
+                  * Architeuthis dux: giant squid
+                  * Sepioteuthis lessoniana: bigfin squid
+                  * Sepia officinalis: cuttlefish
+            * Autobranchia: (4 species)
+              * Spisula solidissima: sea clam
+              * Pteriomorphia: (3 species)
+                * Pecten novaezelandiae: scallop
+                * Magallana gigas: oyster
+                * Mytilus edulis: mussel
+            * Helicina: (2 species)
+              * Ariolimax columbianus: banana slug
+              * Helix pomatia: snail
+          * Clitellata: (2 species)
+            * Hirudo medicinalis: leech
+            * Lumbricus terrestris: earthworm
+          * Taenia saginata: tapeworm
+    * Cnidaria: (6 species)
+      * Semaeostomeae: (2 species)
+        * Cyanea capillata: lions mane jellyfish
+        * Aurelia aurita: jellyfish
+      * Hexacorallia: (2 species)
+        * Diploria labyrinthiformis: brain coral
+        * Actinia tenebrosa: anemone
+      * Hydroidolina: (2 species)
+        * Physalia physalis: man o war
+        * Hydra vulgaris: freshwater polyp

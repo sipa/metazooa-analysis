@@ -1,0 +1,329 @@
+* Metazoa: ferret
+  * Amniota: crow
+    * Archelosauria: box turtle
+      * Durocryptodira: sea turtle
+        * Americhelydia: snapping turtle
+      * Testudinoidea: tortoise
+    * Archosauria: alligator
+      * Alligatoridae: caiman
+      * Crocodylia: crocodile
+    * Australaves: grey parrot
+      * Australaves: falcon
+        * Falco: kestrel
+      * Psittacidae: macaw
+        * Psittacidae: parakeet
+      * Psittaciformes: cockatiel
+        * Cacatuidae: cockatoo
+    * Aves: cassowary
+      * Casuariiformes: emu
+      * Palaeognathae: kiwi
+        * Palaeognathae: ostrich
+    * Corvidae: blue jay
+      * Corvidae: magpie
+    * Corvus: raven
+    * Neoaves: egret
+      * Aequornithes: emperor penguin
+        * Aequornithes: albatross
+        * Spheniscidae: macaroni penguin
+      * Ardea: heron
+      * Neoaves: dove
+        * Columbidae: pigeon
+        * Neoaves: hummingbird
+          * Apodiformes: swift
+          * Neoaves: puffin
+            * Charadriiformes: seagull
+            * Neoaves: flamingo
+    * Neognathae: chicken
+      * Galloanserae: goose
+        * Anatidae: duck
+        * Anserinae: swan
+      * Phasianidae: turkey
+      * Phasianinae: peacock
+        * Phasianinae: pheasant
+    * Passeriformes: canary
+      * Fringillidae: finch
+      * Passeriformes: blackbird
+        * Passeriformes: mockingbird
+          * Passeriformes: swallow
+            * Passeriformes: wren
+        * Turdidae: nightingale
+          * Turdidae: robin
+      * Passeroidea: sparrow
+    * Sauria: black mamba
+      * Bifurcata: gecko
+      * Colubroidea: rattlesnake
+        * Viperidae: viper
+      * Elapidae: sea snake
+      * Elapinae: king cobra
+      * Serpentes: anaconda
+        * Boinae: boa constrictor
+        * Henophidia: burmese python
+          * Pythonidae: green tree python
+      * Toxicofera: chameleon
+        * Iguania: iguana
+        * Toxicofera: gila monster
+          * Anguimorpha: komodo dragon
+      * Unidentata: skink
+    * Telluraves: bald eagle
+      * Accipitriformes: black vulture
+        * Accipitriformes: osprey
+        * Cathartidae: condor
+          * Cathartidae: turkey vulture
+      * Accipitrinae: hawk
+        * Accipitrinae: kite
+      * Telluraves: barn owl
+        * Strigiformes: snowy owl
+        * Telluraves: toucan
+          * Piciformes: woodpecker
+  * Bilateria: bumble bee
+    * Aculeata: carpenter ant
+      * Aculeata: hornet
+        * Aculeata: tarantula hawk wasp
+        * Vespinae: wasp
+      * Formicidae: fire ant
+    * Apinae: honey bee
+    * Arthropoda: black widow
+      * Arachnida: bark scorpion
+        * Arachnida: harvestman
+          * Arachnida: tick
+        * Scorpiones: emperor scorpion
+      * Araneae: tarantula
+      * Araneoidea: orbweaver spider
+      * Araneomorphae: brown recluse
+        * Haplogynae: cellar spider
+      * Chelicerata: horseshoe crab
+      * Entelegynae: huntsman spider
+    * Dicondylia: silverfish
+    * Ecdysozoa: heartworm
+      * Rhabditida: nematode
+    * Endopterygota: dung beetle
+      * Endopterygota: atlas moth
+        * Bombycoidea: silkworm
+        * Endopterygota: fruit fly
+          * Diptera: mosquito
+          * Endopterygota: flea
+          * Schizophora: house fly
+        * Obtectomera: monarch butterfly
+      * Polyphaga: firefly
+        * Polyphaga: ladybug
+      * Scarabaeidae: hercules beetle
+    * Mandibulata: giant centipede
+      * Chilopoda: house centipede
+      * Myriapoda: millipede
+    * Neoptera: cockroach
+      * Blattoidea: termite
+      * Dictyoptera: praying mantis
+      * Neoptera: cicada
+        * Hemiptera: water bug
+      * Polyneoptera: grasshopper
+        * Orthoptera: cricket
+        * Polyneoptera: earwig
+          * Polyneoptera: stick bug
+        * Schistocerca: locust
+    * Panarthropoda: tardigrade
+      * Panarthropoda: velvet worm
+    * Pancrustacea: coconut crab
+      * Decapoda: tiger prawn
+      * Eucarida: krill
+      * Eumalacostraca: mantis shrimp
+        * Eumalacostraca: pillbug
+      * Multicrustacea: barnacle
+      * Paguroidea: hermit crab
+      * Pleocyemata: fiddler crab
+        * Pleocyemata: lobster
+          * Pleocyemata: pistol shrimp
+    * Protostomia: blue-ringed octopus
+      * Cephalopoda: nautilus
+      * Coleoidea: bigfin squid
+        * Decapodiformes: cuttlefish
+          * Decapodiformes: giant squid
+      * Lophotrochozoa: earthworm
+        * Clitellata: leech
+        * Lophotrochozoa: tapeworm
+      * Mollusca: mussel
+        * Autobranchia: sea clam
+        * Mollusca: banana slug
+          * Helicina: snail
+        * Pteriomorphia: oyster
+          * Pteriomorphia: scallop
+      * Octopodidae: giant octopus
+      * Octopodiformes: vampire squid
+    * Pterygota: dragonfly
+      * Palaeoptera: mayfly
+  * Boreoeutheria: chipmunk
+    * Euarchontoglires: bonobo
+      * Catarrhini: baboon
+        * Cercopithecinae: macaque
+          * Cercopithecinae: mandrill
+      * Hominidae: orangutan
+      * Homininae: gorilla
+        * Homininae: human
+      * Hominoidea: gibbon
+      * Pan: chimpanzee
+      * Primates: lemur
+      * Simiiformes: capuchin
+        * Cebidae: tamarin
+        * Platyrrhini: howler monkey
+    * Glires: hare
+      * Leporidae: rabbit
+    * Marmotini: groundhog
+      * Marmotini: prairie dog
+    * Rodentia: capybara
+      * Hystricomorpha: chinchilla
+        * Hystricomorpha: guinea pig
+          * Hystricomorpha: naked mole rat
+            * Hystricomorpha: porcupine
+      * Rodentia: mouse
+        * Muridae: gerbil
+        * Murinae: rat
+        * Muroidea: hamster
+        * Rodentia: beaver
+    * Sciuridae: flying squirrel
+      * Sciurinae: squirrel
+  * Caniformia: dog
+    * Canidae: arctic fox
+      * Canidae: tanuki
+      * Vulpes: red fox
+    * Caniformia: black bear
+      * Caniformia: sea lion
+        * Pinnipedia: seal
+          * Pinnipedia: walrus
+      * Ursidae: giant panda
+      * Ursus: brown bear
+        * Ursus: polar bear
+    * Canis: coyote
+      * Canis: jackal
+    * Canis lupus: wolf
+  * Carnivora: bobcat
+    * Felidae: jaguar
+      * Panthera: leopard
+        * Panthera: lion
+          * Panthera: tiger
+    * Feliformia: meerkat
+      * Feliformia: civet
+        * Feliformia: hyena
+      * Herpestidae: mongoose
+    * Felinae: cat
+      * Felinae: cheetah
+        * Felinae: ocelot
+          * Felinae: puma
+    * Lynx: lynx
+  * Deuterostomia: sand dollar
+    * Echinozoa: sea cucumber
+    * Eleutherozoa: starfish
+    * Euechinoidea: sea urchin
+  * Eumetazoa: anemone
+    * Cnidaria: freshwater polyp
+      * Cnidaria: jellyfish
+        * Semaeostomeae: lions mane jellyfish
+      * Hydroidolina: man o war
+    * Hexacorallia: brain coral
+  * Euteleostomi: flying fish
+    * Acanthomorphata: cod
+      * Acanthomorphata: oarfish
+    * Atherinomorphae: guppy
+    * Clupeocephala: catfish
+      * Characiphysae: electric eel
+        * Characiphysae: piranha
+      * Otomorpha: herring
+      * Otophysi: carp
+        * Cyprininae: goldfish
+    * Euteleosteomorpha: salmon
+      * Protacanthopterygii: pike
+      * Salmoninae: trout
+    * Ovalentaria: clownfish
+      * Ovalentaria: tilapia
+    * Percomorphaceae: anglerfish
+      * Eupercaria: bass
+        * Eupercaria: perch
+          * Eupercaria: pufferfish
+      * Percomorphaceae: barracuda
+        * Carangaria: halibut
+          * Carangaria: swordfish
+        * Percomorphaceae: betta fish
+          * Anabantaria: fire eel
+          * Percomorphaceae: mackerel
+            * Percomorphaceae: seahorse
+            * Scombrinae: tuna
+    * Teleostei: moray eel
+  * Eutheria: aardvark
+    * Afrotheria: elephant
+      * Afrotheria: hyrax
+        * Afrotheria: manatee
+    * Eutheria: anteater
+      * Pilosa: two-toed sloth
+      * Xenarthra: armadillo
+  * Gnathostomata: goblin shark
+    * Elasmobranchii: manta ray
+      * Myliobatiformes: sting ray
+    * Galeoidea: hammerhead shark
+      * Carcharhinidae: tiger shark
+      * Galeoidea: whale shark
+    * Lamniformes: great white shark
+  * Laurasiatheria: cattle
+    * Artiodactyla: beluga whale
+      * Artiodactyla: alpaca
+        * Artiodactyla: pig
+          * Suidae: warthog
+        * Camelidae: camel
+          * Camelidae: llama
+      * Cetacea: blue whale
+        * Balaenopteridae: humpback whale
+      * Monodontidae: narwhal
+      * Odontoceti: dolphin
+        * Delphinidae: orca
+        * Odontoceti: porpoise
+          * Odontoceti: sperm whale
+      * Whippomorpha: hippopotamus
+    * Bos: yak
+    * Bovidae: goat
+      * Bovidae: antelope
+        * Bovidae: gazelle
+          * Bovidae: wildebeest
+      * Capra: ibex
+      * Caprinae: sheep
+    * Bovinae: bison
+      * Bovinae: water buffalo
+    * Laurasiatheria: donkey
+      * Equus: horse
+        * Equus: zebra
+      * Laurasiatheria: fruit bat
+        * Chiroptera: vampire bat
+        * Laurasiatheria: hedgehog
+          * Eulipotyphla: mole
+          * Laurasiatheria: pangolin
+      * Perissodactyla: rhinoceros
+        * Perissodactyla: tapir
+    * Pecora: caribou
+      * Cervidae: elk
+      * Odocoileinae: deer
+        * Odocoileinae: moose
+      * Pecora: giraffe
+  * Mammalia: echidna
+    * Monotremata: platypus
+  * Metazoa: sea sponge
+  * Mustela: mink
+  * Mustelidae: river otter
+    * Lutrinae: sea otter
+    * Mustelidae: badger
+      * Mustelidae: wolverine
+  * Mustelinae: weasel
+  * Musteloidea: kinkajou
+    * Musteloidea: red panda
+      * Musteloidea: skunk
+    * Procyonidae: raccoon
+  * Sarcopterygii: coelacanth
+  * Tetrapoda: axolotl
+    * Batrachia: poison frog
+      * Hyloidea: toad
+      * Neobatrachia: bullfrog
+    * Caudata: salamander
+    * Salamandroidea: newt
+  * Theria: kangaroo
+    * Diprotodontia: koala
+      * Diprotodontia: possum
+        * Diprotodontia: sugar glider
+          * Diprotodontia: wombat
+    * Metatheria: opossum
+      * Metatheria: tasmanian devil
+  * Vertebrata: lamprey
