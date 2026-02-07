@@ -43,10 +43,11 @@ class TreeNode:
             print("  " * indent + f"* {self.scientific}: {self.species}", file=f)
         elif len(self.children) == 1:
             next(iter(self.children)).print_tree(f, indent)
+            return
         else:
             print("  " * indent + f"* {self.scientific}: ({len(self.leaves)} species)", file=f)
-            for child in self.children:
-                child.print_tree(f, indent + 1)
+        for child in self.children:
+            child.print_tree(f, indent + 1)
 
 def calculate_depth(line):
     """

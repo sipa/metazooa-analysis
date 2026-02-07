@@ -233,6 +233,7 @@
                                       * Canis aureus: jackal
                                       * Canis latrans: coyote
                                       * Canis lupus: wolf
+                                        * Canis lupus familiaris: dog
                               * Chiroptera: (2 species)
                                 * Acerodon jubatus: fruit bat
                                 * Desmodus rotundus: vampire bat
