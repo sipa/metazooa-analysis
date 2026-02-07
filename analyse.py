@@ -184,13 +184,13 @@ def get_successors(poss, guess):
     return ret
 
 def build_minavg_order(node):
-    child_orders = [(sub, build_minavg_order(sub)) for sub in node.children]
-    child_orders.sort(key=lambda x: (-len(x[0].leaves), x[1]))
-    ret = []
-    for _, sub_order in child_orders:
-        ret += sub_order
+    child_orders = [build_minavg_order(sub) for sub in node.children]
     if node.species is not None:
-        ret.append(node.species)
+        child_orders.append([node.species])
+    child_orders.sort(key=lambda x: (-len(x), x))
+    ret = []
+    for child_order in child_orders:
+        ret.extend(child_order)
     return ret
 
 def order_to_decision_tree(node, poss, order):
