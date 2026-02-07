@@ -186,12 +186,15 @@ def get_successors(poss, guess):
 def build_minavg_order(node):
     child_orders = [build_minavg_order(sub) for sub in node.children]
     if node.species is not None:
-        child_orders.append([node.species])
-    child_orders.sort(key=lambda x: (-len(x), x))
+        child_orders.append(([node.species], 1))
+    child_orders.sort(key=lambda x: (-len(x[0]), -x[1], x[0]))
+    new_depth = 0
+    for i in range(len(child_orders)):
+        new_depth = max(new_depth, i + child_orders[i][1])
     ret = []
     for child_order in child_orders:
-        ret.extend(child_order)
-    return ret
+        ret.extend(child_order[0])
+    return ret, new_depth
 
 def order_to_decision_tree(node, poss, order):
     guess = None
@@ -241,7 +244,7 @@ def print_decision_tree(tree, guesses=None):
 with open(f"output/species-{DATASET}.txt", "w") as f:
     TREE.print_tree(f)
 
-ORDER = build_minavg_order(TREE)
+ORDER, _ = build_minavg_order(TREE)
 DECIDE = order_to_decision_tree(TREE, set(TREE.leaves), ORDER)
 
 with open(f"output/decision-{DATASET}.txt", "w") as f:
