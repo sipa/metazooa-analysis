@@ -1,215 +1,215 @@
-* Viridiplantae: garden pea
-  * 50 kb inversion clade: gorse
-    * 50 kb inversion clade: peanut
-    * core genistoids: rooibos
-  * Embryophyta: moss
-  * Euphyllophyta: fern
-  * Fabaceae: gum arabic tree
-    * Caesalpinioideae: senna
-    * Fabaceae: carob
-      * Fabaceae: tamarind
-    * mimosoid clade: touch-me-not
-  * Fabeae: fava bean
-    * Fabeae: lentil
-  * IRL clade: alfalfa
-    * IRL clade: chickpea
-      * IRL clade: licorice
-    * Trifolieae: clover
-  * Lathyrus: sweet pea
-  * Magnoliopsida: water lily
-  * Mesangiospermae: barley
-    * BOP clade: bamboo
-      * BOP clade: rice
-    * Hordeinae: rye
-    * Liliopsida: taro
-    * Mesangiospermae: mace
-      * Magnoliales: magnolia
-        * Magnoliales: pawpaw
-      * Magnoliidae: avocado
-        * Lauraceae: cinnamon
-        * Magnoliidae: black pepper
-      * Mesangiospermae: lotus
-        * Mesangiospermae: poppy
-        * Proteales: macadamia nut
-          * Proteales: sycamore
-    * Petrosaviidae: garlic
-      * Allium: leek
-        * Allium: onion
-      * Amaryllidaceae: daffodil
-      * Asparagales: agave
-        * Asparagaceae: asparagus
-        * Asparagales: orchid
-          * Asparagales: aloe
-            * Asparagales: hyacinth
-          * Orchidaceae: vanilla
-      * Petrosaviidae: tiger lily
-        * Liliaceae: tulip
-        * Petrosaviidae: yam
-    * Poaceae: corn
-      * Andropogoneae: lemongrass
-        * Andropogoneae: sugarcane
-      * Panicoideae: pearl millet
-    * Poales: pineapple
-    * Pooideae: oat
-      * Poeae: orchard grass
-    * Triticeae: spelt
-      * Triticum: wheat
-    * commelinids: cardamom
-      * Zingiberaceae: ginger
-        * Zingiberaceae: turmeric
-      * Zingiberales: banana
-      * commelinids: coconut
-        * Arecaceae: date
-        * Cocoseae: oil palm
-  * NPAAA clade: black eyed pea
-    * Phaseoleae: common bean
-      * Phaseoleae: soy bean
-    * indigoferoid/millettioid clade: wisteria
-  * Pentapetalae: dill
-    * Anethum: fennel
-    * Apieae: celery
-      * Apieae: parsley
-    * Apiineae: common ivy
-      * Araliaceae: ginseng
-    * Apioideae: carrot
-    * Pentapetalae: barrel cactus
-      * Cactaceae: prickly pear
-      * Cacteae: cactus
-      * Cactoideae: dragon fruit
-      * Caryophyllales: quinoa
-        * Caryophyllales: buckwheat
-          * Caryophyllales: carnation
-            * Caryophyllales: pitcher plant
-              * Caryophyllales: venus flytrap
-          * Polygonoideae: rhubarb
-        * Chenopodiaceae: beetroot
-          * Chenopodiaceae: tumbleweed
-        * Chenopodioideae: spinach
-      * Pentapetalae: gooseberry
-        * Pentapetalae: mistletoe
-          * Santalales: sandalwood
-        * Saxifragales: peony
-    * apioid superclade: anise
-      * apioid superclade: coriander
-        * apioid superclade: parsnip
-    * asterids: rosemary
-      * Lamiales: jasmine
-        * Lamiales: sesame
-        * Oleaceae: olive
-      * Mentheae: spearmint
-        * Mentheae: thyme
-      * Nepetoideae: basil
-        * Ocimeae: lavender
-      * Salvia: sage
-      * asterids: blueberry
-        * Ericales: brazil nut
-          * Ericales: kiwi
-            * Ericales: persimmon
-              * Ericales: shea nut
-                * Ericales: tea
-        * Vaccinium: cranberry
-      * lamiids: eggplant
-        * Solanaceae: petunia
-          * Solanaceae: tobacco
-        * Solanales: sweet potato
-        * Solanoideae: sweet pepper
-        * Solanum: potato
-          * Solanum: tomato
-        * lamiids: coffee
-          * lamiids: forget-me-not
-    * campanulids: chrysanthemum
-      * Anthemideae: chamomile
-        * Anthemideae: daisy
-      * Artemisiinae: common wormwood
-      * Asteraceae: chicory
-        * Asteraceae: artichoke
-        * Cichorieae: dandelion
-          * Cichorieae: lettuce
-      * Asteroideae: dahlia
-        * Heliantheae alliance: sunflower
-      * campanulids: black elderberry
-        * Dipsacales: honeysuckle
-        * campanulids: holly
-  * Spermatophyta: blue spruce
-    * Acrogymnospermae: ginkgo
-    * Picea: spruce
-    * Pinaceae: baltic pine
-      * Pinaceae: cedar of lebanon
-        * Pinaceae: douglas fir
-    * Pinidae: giant sequoia
-  * Viridiplantae: seaweed
-  * fabids: almond
-    * Amygdaloideae: apple
-      * Maleae: loquat
-        * Maleae: pear
-    * Prunus: apricot
-      * Prunus: cherry
-        * Prunus: peach
-          * Prunus: plum
-    * Rosaceae: blackberry
-      * Rosoideae: strawberry
-      * Rosoideae incertae sedis: rose
-      * Rubus: raspberry
-    * Rosales: breadfruit
-      * Artocarpus: jackfruit
-      * Moraceae: fig
-        * Moraceae: silkworm mulberry
-      * Rosales: hemp
-        * Cannabaceae: hop
-        * Rosales: nettle
-    * fabids: cassava
-      * Crotonoideae: rubber
-      * Euphorbiaceae: ricin
-      * Malpighiales: coca
-        * Malpighiales: flax
-          * Malpighiales: mangosteen
-            * Malpighiales: passionfruit
-              * Malpighiales: red mangrove
-                * Malpighiales: violet
-                  * Malpighiales: weeping willow
-      * fabids: chestnut
-        * Fagaceae: common beech
-          * Fagaceae: oak
-        * Fagales: hazelnut
-          * Betulaceae: silver birch
-          * Fagales: pecan
-            * Juglandaceae: walnut
-        * fabids: cucumber
-          * Benincaseae: watermelon
-          * Cucumis: melon
-          * Cucurbitaceae: butternut squash
-            * Cucurbita: pumpkin
-  * rosids: citron
-    * Citrus: grapefruit
-      * Citrus: lemon
-        * Citrus: lime
-          * Citrus: mandarin
-            * Citrus: orange
-    * Sapindales: cashew
-      * Anacardiaceae: mango
-        * Anacardiaceae: pistachio
-          * Anacardiaceae: poison ivy
-      * Sapindales: lychee
-        * Sapindaceae: sugar maple
-    * malvids: black mustard
-      * Brassica: bok choy
-        * Brassica: cabbage
-      * Brassicaceae: horseradish
-        * Brassicaceae: wasabi
-        * Cardamineae: watercress
-      * Brassicales: caper
-        * Brassicales: papaya
-      * Brassiceae: radish
-      * malvids: cotton
-        * Malvaceae: baobab
-          * Malvaceae: cacao
-            * Malvaceae: durian
-        * Malvoideae: hibiscus
-          * Malvoideae: okra
-        * malvids: guava
-          * Myrtales: henna
-            * Lythraceae: pomegranate
-          * Myrteae: myrtle
-          * Myrtoideae: eucalyptus tree
-          * malvids: geranium
-    * rosids: grape
+* Viridiplantae: garden pea (max 10, avg 4.437, cnt 215)
+  * Viridiplantae: seaweed (max 1, avg 1, cnt 1)
+  * Embryophyta: moss (max 1, avg 1, cnt 1)
+  * Euphyllophyta: fern (max 1, avg 1, cnt 1)
+  * Spermatophyta: blue spruce (max 4, avg 2.286, cnt 7)
+    * Acrogymnospermae: ginkgo (max 1, avg 1, cnt 1)
+    * Pinidae: giant sequoia (max 1, avg 1, cnt 1)
+    * Pinaceae: baltic pine (max 3, avg 2, cnt 3)
+      * Pinaceae: cedar of lebanon (max 2, avg 1.5, cnt 2)
+        * Pinaceae: douglas fir (max 1, avg 1, cnt 1)
+    * Picea: spruce (max 1, avg 1, cnt 1)
+  * Magnoliopsida: water lily (max 1, avg 1, cnt 1)
+  * Mesangiospermae: barley (max 6, avg 3.25, cnt 44)
+    * Mesangiospermae: mace (max 4, avg 2.6, cnt 10)
+      * Mesangiospermae: lotus (max 3, avg 2, cnt 4)
+        * Mesangiospermae: poppy (max 1, avg 1, cnt 1)
+        * Proteales: macadamia nut (max 2, avg 1.5, cnt 2)
+          * Proteales: sycamore (max 1, avg 1, cnt 1)
+      * Magnoliidae: avocado (max 2, avg 1.667, cnt 3)
+        * Magnoliidae: black pepper (max 1, avg 1, cnt 1)
+        * Lauraceae: cinnamon (max 1, avg 1, cnt 1)
+      * Magnoliales: magnolia (max 2, avg 1.5, cnt 2)
+        * Magnoliales: pawpaw (max 1, avg 1, cnt 1)
+    * Liliopsida: taro (max 1, avg 1, cnt 1)
+    * Petrosaviidae: garlic (max 5, avg 2.846, cnt 13)
+      * Petrosaviidae: tiger lily (max 2, avg 1.667, cnt 3)
+        * Petrosaviidae: yam (max 1, avg 1, cnt 1)
+        * Liliaceae: tulip (max 1, avg 1, cnt 1)
+      * Asparagales: agave (max 4, avg 2.5, cnt 6)
+        * Asparagales: orchid (max 3, avg 2, cnt 4)
+          * Asparagales: aloe (max 2, avg 1.5, cnt 2)
+            * Asparagales: hyacinth (max 1, avg 1, cnt 1)
+          * Orchidaceae: vanilla (max 1, avg 1, cnt 1)
+        * Asparagaceae: asparagus (max 1, avg 1, cnt 1)
+      * Amaryllidaceae: daffodil (max 1, avg 1, cnt 1)
+      * Allium: leek (max 2, avg 1.5, cnt 2)
+        * Allium: onion (max 1, avg 1, cnt 1)
+    * commelinids: cardamom (max 3, avg 2.286, cnt 7)
+      * commelinids: coconut (max 2, avg 1.667, cnt 3)
+        * Arecaceae: date (max 1, avg 1, cnt 1)
+        * Cocoseae: oil palm (max 1, avg 1, cnt 1)
+      * Zingiberales: banana (max 1, avg 1, cnt 1)
+      * Zingiberaceae: ginger (max 2, avg 1.5, cnt 2)
+        * Zingiberaceae: turmeric (max 1, avg 1, cnt 1)
+    * Poales: pineapple (max 1, avg 1, cnt 1)
+    * Poaceae: corn (max 3, avg 2, cnt 4)
+      * Panicoideae: pearl millet (max 1, avg 1, cnt 1)
+      * Andropogoneae: lemongrass (max 2, avg 1.5, cnt 2)
+        * Andropogoneae: sugarcane (max 1, avg 1, cnt 1)
+    * BOP clade: bamboo (max 2, avg 1.5, cnt 2)
+      * BOP clade: rice (max 1, avg 1, cnt 1)
+    * Pooideae: oat (max 2, avg 1.5, cnt 2)
+      * Poeae: orchard grass (max 1, avg 1, cnt 1)
+    * Triticeae: spelt (max 2, avg 1.5, cnt 2)
+      * Triticum: wheat (max 1, avg 1, cnt 1)
+    * Hordeinae: rye (max 1, avg 1, cnt 1)
+  * Pentapetalae: dill (max 8, avg 3.769, cnt 65)
+    * Pentapetalae: barrel cactus (max 6, avg 3.118, cnt 17)
+      * Pentapetalae: gooseberry (max 3, avg 2, cnt 4)
+        * Pentapetalae: mistletoe (max 2, avg 1.5, cnt 2)
+          * Santalales: sandalwood (max 1, avg 1, cnt 1)
+        * Saxifragales: peony (max 1, avg 1, cnt 1)
+      * Caryophyllales: quinoa (max 5, avg 2.778, cnt 9)
+        * Caryophyllales: buckwheat (max 4, avg 2.4, cnt 5)
+          * Caryophyllales: carnation (max 3, avg 2, cnt 3)
+            * Caryophyllales: pitcher plant (max 2, avg 1.5, cnt 2)
+              * Caryophyllales: venus flytrap (max 1, avg 1, cnt 1)
+          * Polygonoideae: rhubarb (max 1, avg 1, cnt 1)
+        * Chenopodiaceae: beetroot (max 2, avg 1.5, cnt 2)
+          * Chenopodiaceae: tumbleweed (max 1, avg 1, cnt 1)
+        * Chenopodioideae: spinach (max 1, avg 1, cnt 1)
+      * Cactaceae: prickly pear (max 1, avg 1, cnt 1)
+      * Cactoideae: dragon fruit (max 1, avg 1, cnt 1)
+      * Cacteae: cactus (max 1, avg 1, cnt 1)
+    * asterids: rosemary (max 7, avg 3.2, cnt 25)
+      * asterids: blueberry (max 6, avg 3.286, cnt 7)
+        * Ericales: brazil nut (max 5, avg 3, cnt 5)
+          * Ericales: kiwi (max 4, avg 2.5, cnt 4)
+            * Ericales: persimmon (max 3, avg 2, cnt 3)
+              * Ericales: shea nut (max 2, avg 1.5, cnt 2)
+                * Ericales: tea (max 1, avg 1, cnt 1)
+        * Vaccinium: cranberry (max 1, avg 1, cnt 1)
+      * lamiids: eggplant (max 3, avg 2.222, cnt 9)
+        * lamiids: coffee (max 2, avg 1.5, cnt 2)
+          * lamiids: forget-me-not (max 1, avg 1, cnt 1)
+        * Solanales: sweet potato (max 1, avg 1, cnt 1)
+        * Solanaceae: petunia (max 2, avg 1.5, cnt 2)
+          * Solanaceae: tobacco (max 1, avg 1, cnt 1)
+        * Solanoideae: sweet pepper (max 1, avg 1, cnt 1)
+        * Solanum: potato (max 2, avg 1.5, cnt 2)
+          * Solanum: tomato (max 1, avg 1, cnt 1)
+      * Lamiales: jasmine (max 2, avg 1.667, cnt 3)
+        * Lamiales: sesame (max 1, avg 1, cnt 1)
+        * Oleaceae: olive (max 1, avg 1, cnt 1)
+      * Nepetoideae: basil (max 2, avg 1.5, cnt 2)
+        * Ocimeae: lavender (max 1, avg 1, cnt 1)
+      * Mentheae: spearmint (max 2, avg 1.5, cnt 2)
+        * Mentheae: thyme (max 1, avg 1, cnt 1)
+      * Salvia: sage (max 1, avg 1, cnt 1)
+    * campanulids: chrysanthemum (max 4, avg 2.538, cnt 13)
+      * campanulids: black elderberry (max 2, avg 1.667, cnt 3)
+        * campanulids: holly (max 1, avg 1, cnt 1)
+        * Dipsacales: honeysuckle (max 1, avg 1, cnt 1)
+      * Asteraceae: chicory (max 3, avg 2, cnt 4)
+        * Asteraceae: artichoke (max 1, avg 1, cnt 1)
+        * Cichorieae: dandelion (max 2, avg 1.5, cnt 2)
+          * Cichorieae: lettuce (max 1, avg 1, cnt 1)
+      * Asteroideae: dahlia (max 2, avg 1.5, cnt 2)
+        * Heliantheae alliance: sunflower (max 1, avg 1, cnt 1)
+      * Anthemideae: chamomile (max 2, avg 1.5, cnt 2)
+        * Anthemideae: daisy (max 1, avg 1, cnt 1)
+      * Artemisiinae: common wormwood (max 1, avg 1, cnt 1)
+    * Apiineae: common ivy (max 2, avg 1.5, cnt 2)
+      * Araliaceae: ginseng (max 1, avg 1, cnt 1)
+    * Apioideae: carrot (max 1, avg 1, cnt 1)
+    * apioid superclade: anise (max 3, avg 2, cnt 3)
+      * apioid superclade: coriander (max 2, avg 1.5, cnt 2)
+        * apioid superclade: parsnip (max 1, avg 1, cnt 1)
+    * Apieae: celery (max 2, avg 1.5, cnt 2)
+      * Apieae: parsley (max 1, avg 1, cnt 1)
+    * Anethum: fennel (max 1, avg 1, cnt 1)
+  * rosids: citron (max 6, avg 3.853, cnt 34)
+    * rosids: grape (max 1, avg 1, cnt 1)
+    * malvids: black mustard (max 5, avg 3.143, cnt 21)
+      * malvids: cotton (max 4, avg 2.75, cnt 12)
+        * malvids: guava (max 3, avg 2, cnt 6)
+          * malvids: geranium (max 1, avg 1, cnt 1)
+          * Myrtales: henna (max 2, avg 1.5, cnt 2)
+            * Lythraceae: pomegranate (max 1, avg 1, cnt 1)
+          * Myrtoideae: eucalyptus tree (max 1, avg 1, cnt 1)
+          * Myrteae: myrtle (max 1, avg 1, cnt 1)
+        * Malvaceae: baobab (max 3, avg 2, cnt 3)
+          * Malvaceae: cacao (max 2, avg 1.5, cnt 2)
+            * Malvaceae: durian (max 1, avg 1, cnt 1)
+        * Malvoideae: hibiscus (max 2, avg 1.5, cnt 2)
+          * Malvoideae: okra (max 1, avg 1, cnt 1)
+      * Brassicales: caper (max 2, avg 1.5, cnt 2)
+        * Brassicales: papaya (max 1, avg 1, cnt 1)
+      * Brassicaceae: horseradish (max 2, avg 1.667, cnt 3)
+        * Brassicaceae: wasabi (max 1, avg 1, cnt 1)
+        * Cardamineae: watercress (max 1, avg 1, cnt 1)
+      * Brassiceae: radish (max 1, avg 1, cnt 1)
+      * Brassica: bok choy (max 2, avg 1.5, cnt 2)
+        * Brassica: cabbage (max 1, avg 1, cnt 1)
+    * Sapindales: cashew (max 4, avg 2.5, cnt 6)
+      * Sapindales: lychee (max 2, avg 1.5, cnt 2)
+        * Sapindaceae: sugar maple (max 1, avg 1, cnt 1)
+      * Anacardiaceae: mango (max 3, avg 2, cnt 3)
+        * Anacardiaceae: pistachio (max 2, avg 1.5, cnt 2)
+          * Anacardiaceae: poison ivy (max 1, avg 1, cnt 1)
+    * Citrus: grapefruit (max 5, avg 3, cnt 5)
+      * Citrus: lemon (max 4, avg 2.5, cnt 4)
+        * Citrus: lime (max 3, avg 2, cnt 3)
+          * Citrus: mandarin (max 2, avg 1.5, cnt 2)
+            * Citrus: orange (max 1, avg 1, cnt 1)
+  * fabids: almond (max 9, avg 4.024, cnt 41)
+    * fabids: cassava (max 8, avg 3.864, cnt 22)
+      * fabids: chestnut (max 4, avg 2.75, cnt 12)
+        * fabids: cucumber (max 3, avg 2, cnt 5)
+          * Cucurbitaceae: butternut squash (max 2, avg 1.5, cnt 2)
+            * Cucurbita: pumpkin (max 1, avg 1, cnt 1)
+          * Benincaseae: watermelon (max 1, avg 1, cnt 1)
+          * Cucumis: melon (max 1, avg 1, cnt 1)
+        * Fagales: hazelnut (max 3, avg 2, cnt 4)
+          * Fagales: pecan (max 2, avg 1.5, cnt 2)
+            * Juglandaceae: walnut (max 1, avg 1, cnt 1)
+          * Betulaceae: silver birch (max 1, avg 1, cnt 1)
+        * Fagaceae: common beech (max 2, avg 1.5, cnt 2)
+          * Fagaceae: oak (max 1, avg 1, cnt 1)
+      * Malpighiales: coca (max 7, avg 4, cnt 7)
+        * Malpighiales: flax (max 6, avg 3.5, cnt 6)
+          * Malpighiales: mangosteen (max 5, avg 3, cnt 5)
+            * Malpighiales: passionfruit (max 4, avg 2.5, cnt 4)
+              * Malpighiales: red mangrove (max 3, avg 2, cnt 3)
+                * Malpighiales: violet (max 2, avg 1.5, cnt 2)
+                  * Malpighiales: weeping willow (max 1, avg 1, cnt 1)
+      * Euphorbiaceae: ricin (max 1, avg 1, cnt 1)
+      * Crotonoideae: rubber (max 1, avg 1, cnt 1)
+    * Rosales: breadfruit (max 3, avg 2.286, cnt 7)
+      * Rosales: hemp (max 2, avg 1.667, cnt 3)
+        * Rosales: nettle (max 1, avg 1, cnt 1)
+        * Cannabaceae: hop (max 1, avg 1, cnt 1)
+      * Moraceae: fig (max 2, avg 1.5, cnt 2)
+        * Moraceae: silkworm mulberry (max 1, avg 1, cnt 1)
+      * Artocarpus: jackfruit (max 1, avg 1, cnt 1)
+    * Rosaceae: blackberry (max 2, avg 1.75, cnt 4)
+      * Rosoideae: strawberry (max 1, avg 1, cnt 1)
+      * Rosoideae incertae sedis: rose (max 1, avg 1, cnt 1)
+      * Rubus: raspberry (max 1, avg 1, cnt 1)
+    * Amygdaloideae: apple (max 3, avg 2, cnt 3)
+      * Maleae: loquat (max 2, avg 1.5, cnt 2)
+        * Maleae: pear (max 1, avg 1, cnt 1)
+    * Prunus: apricot (max 4, avg 2.5, cnt 4)
+      * Prunus: cherry (max 3, avg 2, cnt 3)
+        * Prunus: peach (max 2, avg 1.5, cnt 2)
+          * Prunus: plum (max 1, avg 1, cnt 1)
+  * Fabaceae: gum arabic tree (max 3, avg 2, cnt 5)
+    * Fabaceae: carob (max 2, avg 1.5, cnt 2)
+      * Fabaceae: tamarind (max 1, avg 1, cnt 1)
+    * Caesalpinioideae: senna (max 1, avg 1, cnt 1)
+    * mimosoid clade: touch-me-not (max 1, avg 1, cnt 1)
+  * 50 kb inversion clade: gorse (max 2, avg 1.667, cnt 3)
+    * 50 kb inversion clade: peanut (max 1, avg 1, cnt 1)
+    * core genistoids: rooibos (max 1, avg 1, cnt 1)
+  * NPAAA clade: black eyed pea (max 3, avg 2, cnt 4)
+    * indigoferoid/millettioid clade: wisteria (max 1, avg 1, cnt 1)
+    * Phaseoleae: common bean (max 2, avg 1.5, cnt 2)
+      * Phaseoleae: soy bean (max 1, avg 1, cnt 1)
+  * IRL clade: alfalfa (max 3, avg 2, cnt 4)
+    * IRL clade: chickpea (max 2, avg 1.5, cnt 2)
+      * IRL clade: licorice (max 1, avg 1, cnt 1)
+    * Trifolieae: clover (max 1, avg 1, cnt 1)
+  * Fabeae: fava bean (max 2, avg 1.5, cnt 2)
+    * Fabeae: lentil (max 1, avg 1, cnt 1)
+  * Lathyrus: sweet pea (max 1, avg 1, cnt 1)

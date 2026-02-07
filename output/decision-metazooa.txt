@@ -1,329 +1,329 @@
-* Metazoa: ferret
-  * Amniota: crow
-    * Archelosauria: box turtle
-      * Durocryptodira: sea turtle
-        * Americhelydia: snapping turtle
-      * Testudinoidea: tortoise
-    * Archosauria: alligator
-      * Alligatoridae: caiman
-      * Crocodylia: crocodile
-    * Australaves: grey parrot
-      * Australaves: falcon
-        * Falco: kestrel
-      * Psittacidae: macaw
-        * Psittacidae: parakeet
-      * Psittaciformes: cockatiel
-        * Cacatuidae: cockatoo
-    * Aves: cassowary
-      * Casuariiformes: emu
-      * Palaeognathae: kiwi
-        * Palaeognathae: ostrich
-    * Corvidae: blue jay
-      * Corvidae: magpie
-    * Corvus: raven
-    * Neoaves: egret
-      * Aequornithes: emperor penguin
-        * Aequornithes: albatross
-        * Spheniscidae: macaroni penguin
-      * Ardea: heron
-      * Neoaves: dove
-        * Columbidae: pigeon
-        * Neoaves: hummingbird
-          * Apodiformes: swift
-          * Neoaves: puffin
-            * Charadriiformes: seagull
-            * Neoaves: flamingo
-    * Neognathae: chicken
-      * Galloanserae: goose
-        * Anatidae: duck
-        * Anserinae: swan
-      * Phasianidae: turkey
-      * Phasianinae: peacock
-        * Phasianinae: pheasant
-    * Passeriformes: canary
-      * Fringillidae: finch
-      * Passeriformes: blackbird
-        * Passeriformes: mockingbird
-          * Passeriformes: swallow
-            * Passeriformes: wren
-        * Turdidae: nightingale
-          * Turdidae: robin
-      * Passeroidea: sparrow
-    * Sauria: black mamba
-      * Bifurcata: gecko
-      * Colubroidea: rattlesnake
-        * Viperidae: viper
-      * Elapidae: sea snake
-      * Elapinae: king cobra
-      * Serpentes: anaconda
-        * Boinae: boa constrictor
-        * Henophidia: burmese python
-          * Pythonidae: green tree python
-      * Toxicofera: chameleon
-        * Iguania: iguana
-        * Toxicofera: gila monster
-          * Anguimorpha: komodo dragon
-      * Unidentata: skink
-    * Telluraves: bald eagle
-      * Accipitriformes: black vulture
-        * Accipitriformes: osprey
-        * Cathartidae: condor
-          * Cathartidae: turkey vulture
-      * Accipitrinae: hawk
-        * Accipitrinae: kite
-      * Telluraves: barn owl
-        * Strigiformes: snowy owl
-        * Telluraves: toucan
-          * Piciformes: woodpecker
-  * Bilateria: bumble bee
-    * Aculeata: carpenter ant
-      * Aculeata: hornet
-        * Aculeata: tarantula hawk wasp
-        * Vespinae: wasp
-      * Formicidae: fire ant
-    * Apinae: honey bee
-    * Arthropoda: black widow
-      * Arachnida: bark scorpion
-        * Arachnida: harvestman
-          * Arachnida: tick
-        * Scorpiones: emperor scorpion
-      * Araneae: tarantula
-      * Araneoidea: orbweaver spider
-      * Araneomorphae: brown recluse
-        * Haplogynae: cellar spider
-      * Chelicerata: horseshoe crab
-      * Entelegynae: huntsman spider
-    * Dicondylia: silverfish
-    * Ecdysozoa: heartworm
-      * Rhabditida: nematode
-    * Endopterygota: dung beetle
-      * Endopterygota: atlas moth
-        * Bombycoidea: silkworm
-        * Endopterygota: fruit fly
-          * Diptera: mosquito
-          * Endopterygota: flea
-          * Schizophora: house fly
-        * Obtectomera: monarch butterfly
-      * Polyphaga: firefly
-        * Polyphaga: ladybug
-      * Scarabaeidae: hercules beetle
-    * Mandibulata: giant centipede
-      * Chilopoda: house centipede
-      * Myriapoda: millipede
-    * Neoptera: cockroach
-      * Blattoidea: termite
-      * Dictyoptera: praying mantis
-      * Neoptera: cicada
-        * Hemiptera: water bug
-      * Polyneoptera: grasshopper
-        * Orthoptera: cricket
-        * Polyneoptera: earwig
-          * Polyneoptera: stick bug
-        * Schistocerca: locust
-    * Panarthropoda: tardigrade
-      * Panarthropoda: velvet worm
-    * Pancrustacea: coconut crab
-      * Decapoda: tiger prawn
-      * Eucarida: krill
-      * Eumalacostraca: mantis shrimp
-        * Eumalacostraca: pillbug
-      * Multicrustacea: barnacle
-      * Paguroidea: hermit crab
-      * Pleocyemata: fiddler crab
-        * Pleocyemata: lobster
-          * Pleocyemata: pistol shrimp
-    * Protostomia: blue-ringed octopus
-      * Cephalopoda: nautilus
-      * Coleoidea: bigfin squid
-        * Decapodiformes: cuttlefish
-          * Decapodiformes: giant squid
-      * Lophotrochozoa: earthworm
-        * Clitellata: leech
-        * Lophotrochozoa: tapeworm
-      * Mollusca: mussel
-        * Autobranchia: sea clam
-        * Mollusca: banana slug
-          * Helicina: snail
-        * Pteriomorphia: oyster
-          * Pteriomorphia: scallop
-      * Octopodidae: giant octopus
-      * Octopodiformes: vampire squid
-    * Pterygota: dragonfly
-      * Palaeoptera: mayfly
-  * Boreoeutheria: chipmunk
-    * Euarchontoglires: bonobo
-      * Catarrhini: baboon
-        * Cercopithecinae: macaque
-          * Cercopithecinae: mandrill
-      * Hominidae: orangutan
-      * Homininae: gorilla
-        * Homininae: human
-      * Hominoidea: gibbon
-      * Pan: chimpanzee
-      * Primates: lemur
-      * Simiiformes: capuchin
-        * Cebidae: tamarin
-        * Platyrrhini: howler monkey
-    * Glires: hare
-      * Leporidae: rabbit
-    * Marmotini: groundhog
-      * Marmotini: prairie dog
-    * Rodentia: capybara
-      * Hystricomorpha: chinchilla
-        * Hystricomorpha: guinea pig
-          * Hystricomorpha: naked mole rat
-            * Hystricomorpha: porcupine
-      * Rodentia: mouse
-        * Muridae: gerbil
-        * Murinae: rat
-        * Muroidea: hamster
-        * Rodentia: beaver
-    * Sciuridae: flying squirrel
-      * Sciurinae: squirrel
-  * Caniformia: dog
-    * Canidae: arctic fox
-      * Canidae: tanuki
-      * Vulpes: red fox
-    * Caniformia: black bear
-      * Caniformia: sea lion
-        * Pinnipedia: seal
-          * Pinnipedia: walrus
-      * Ursidae: giant panda
-      * Ursus: brown bear
-        * Ursus: polar bear
-    * Canis: coyote
-      * Canis: jackal
-    * Canis lupus: wolf
-  * Carnivora: bobcat
-    * Felidae: jaguar
-      * Panthera: leopard
-        * Panthera: lion
-          * Panthera: tiger
-    * Feliformia: meerkat
-      * Feliformia: civet
-        * Feliformia: hyena
-      * Herpestidae: mongoose
-    * Felinae: cat
-      * Felinae: cheetah
-        * Felinae: ocelot
-          * Felinae: puma
-    * Lynx: lynx
-  * Deuterostomia: sand dollar
-    * Echinozoa: sea cucumber
-    * Eleutherozoa: starfish
-    * Euechinoidea: sea urchin
-  * Eumetazoa: anemone
-    * Cnidaria: freshwater polyp
-      * Cnidaria: jellyfish
-        * Semaeostomeae: lions mane jellyfish
-      * Hydroidolina: man o war
-    * Hexacorallia: brain coral
-  * Euteleostomi: flying fish
-    * Acanthomorphata: cod
-      * Acanthomorphata: oarfish
-    * Atherinomorphae: guppy
-    * Clupeocephala: catfish
-      * Characiphysae: electric eel
-        * Characiphysae: piranha
-      * Otomorpha: herring
-      * Otophysi: carp
-        * Cyprininae: goldfish
-    * Euteleosteomorpha: salmon
-      * Protacanthopterygii: pike
-      * Salmoninae: trout
-    * Ovalentaria: clownfish
-      * Ovalentaria: tilapia
-    * Percomorphaceae: anglerfish
-      * Eupercaria: bass
-        * Eupercaria: perch
-          * Eupercaria: pufferfish
-      * Percomorphaceae: barracuda
-        * Carangaria: halibut
-          * Carangaria: swordfish
-        * Percomorphaceae: betta fish
-          * Anabantaria: fire eel
-          * Percomorphaceae: mackerel
-            * Percomorphaceae: seahorse
-            * Scombrinae: tuna
-    * Teleostei: moray eel
-  * Eutheria: aardvark
-    * Afrotheria: elephant
-      * Afrotheria: hyrax
-        * Afrotheria: manatee
-    * Eutheria: anteater
-      * Pilosa: two-toed sloth
-      * Xenarthra: armadillo
-  * Gnathostomata: goblin shark
-    * Elasmobranchii: manta ray
-      * Myliobatiformes: sting ray
-    * Galeoidea: hammerhead shark
-      * Carcharhinidae: tiger shark
-      * Galeoidea: whale shark
-    * Lamniformes: great white shark
-  * Laurasiatheria: cattle
-    * Artiodactyla: beluga whale
-      * Artiodactyla: alpaca
-        * Artiodactyla: pig
-          * Suidae: warthog
-        * Camelidae: camel
-          * Camelidae: llama
-      * Cetacea: blue whale
-        * Balaenopteridae: humpback whale
-      * Monodontidae: narwhal
-      * Odontoceti: dolphin
-        * Delphinidae: orca
-        * Odontoceti: porpoise
-          * Odontoceti: sperm whale
-      * Whippomorpha: hippopotamus
-    * Bos: yak
-    * Bovidae: goat
-      * Bovidae: antelope
-        * Bovidae: gazelle
-          * Bovidae: wildebeest
-      * Capra: ibex
-      * Caprinae: sheep
-    * Bovinae: bison
-      * Bovinae: water buffalo
-    * Laurasiatheria: donkey
-      * Equus: horse
-        * Equus: zebra
-      * Laurasiatheria: fruit bat
-        * Chiroptera: vampire bat
-        * Laurasiatheria: hedgehog
-          * Eulipotyphla: mole
-          * Laurasiatheria: pangolin
-      * Perissodactyla: rhinoceros
-        * Perissodactyla: tapir
-    * Pecora: caribou
-      * Cervidae: elk
-      * Odocoileinae: deer
-        * Odocoileinae: moose
-      * Pecora: giraffe
-  * Mammalia: echidna
-    * Monotremata: platypus
-  * Metazoa: sea sponge
-  * Mustela: mink
-  * Mustelidae: river otter
-    * Lutrinae: sea otter
-    * Mustelidae: badger
-      * Mustelidae: wolverine
-  * Mustelinae: weasel
-  * Musteloidea: kinkajou
-    * Musteloidea: red panda
-      * Musteloidea: skunk
-    * Procyonidae: raccoon
-  * Sarcopterygii: coelacanth
-  * Tetrapoda: axolotl
-    * Batrachia: poison frog
-      * Hyloidea: toad
-      * Neobatrachia: bullfrog
-    * Caudata: salamander
-    * Salamandroidea: newt
-  * Theria: kangaroo
-    * Diprotodontia: koala
-      * Diprotodontia: possum
-        * Diprotodontia: sugar glider
-          * Diprotodontia: wombat
-    * Metatheria: opossum
-      * Metatheria: tasmanian devil
-  * Vertebrata: lamprey
+* Metazoa: ferret (max 7, avg 4.146, cnt 329)
+  * Metazoa: sea sponge (max 1, avg 1, cnt 1)
+  * Eumetazoa: anemone (max 4, avg 2.5, cnt 6)
+    * Cnidaria: freshwater polyp (max 3, avg 2, cnt 4)
+      * Cnidaria: jellyfish (max 2, avg 1.5, cnt 2)
+        * Semaeostomeae: lions mane jellyfish (max 1, avg 1, cnt 1)
+      * Hydroidolina: man o war (max 1, avg 1, cnt 1)
+    * Hexacorallia: brain coral (max 1, avg 1, cnt 1)
+  * Bilateria: bumble bee (max 5, avg 3.333, cnt 75)
+    * Protostomia: blue-ringed octopus (max 4, avg 2.688, cnt 16)
+      * Lophotrochozoa: earthworm (max 2, avg 1.667, cnt 3)
+        * Lophotrochozoa: tapeworm (max 1, avg 1, cnt 1)
+        * Clitellata: leech (max 1, avg 1, cnt 1)
+      * Mollusca: mussel (max 3, avg 2.167, cnt 6)
+        * Mollusca: banana slug (max 2, avg 1.5, cnt 2)
+          * Helicina: snail (max 1, avg 1, cnt 1)
+        * Autobranchia: sea clam (max 1, avg 1, cnt 1)
+        * Pteriomorphia: oyster (max 2, avg 1.5, cnt 2)
+          * Pteriomorphia: scallop (max 1, avg 1, cnt 1)
+      * Cephalopoda: nautilus (max 1, avg 1, cnt 1)
+      * Coleoidea: bigfin squid (max 3, avg 2, cnt 3)
+        * Decapodiformes: cuttlefish (max 2, avg 1.5, cnt 2)
+          * Decapodiformes: giant squid (max 1, avg 1, cnt 1)
+      * Octopodiformes: vampire squid (max 1, avg 1, cnt 1)
+      * Octopodidae: giant octopus (max 1, avg 1, cnt 1)
+    * Ecdysozoa: heartworm (max 2, avg 1.5, cnt 2)
+      * Rhabditida: nematode (max 1, avg 1, cnt 1)
+    * Panarthropoda: tardigrade (max 2, avg 1.5, cnt 2)
+      * Panarthropoda: velvet worm (max 1, avg 1, cnt 1)
+    * Arthropoda: black widow (max 4, avg 2.364, cnt 11)
+      * Chelicerata: horseshoe crab (max 1, avg 1, cnt 1)
+      * Arachnida: bark scorpion (max 3, avg 2, cnt 4)
+        * Arachnida: harvestman (max 2, avg 1.5, cnt 2)
+          * Arachnida: tick (max 1, avg 1, cnt 1)
+        * Scorpiones: emperor scorpion (max 1, avg 1, cnt 1)
+      * Araneae: tarantula (max 1, avg 1, cnt 1)
+      * Araneomorphae: brown recluse (max 2, avg 1.5, cnt 2)
+        * Haplogynae: cellar spider (max 1, avg 1, cnt 1)
+      * Entelegynae: huntsman spider (max 1, avg 1, cnt 1)
+      * Araneoidea: orbweaver spider (max 1, avg 1, cnt 1)
+    * Mandibulata: giant centipede (max 2, avg 1.667, cnt 3)
+      * Myriapoda: millipede (max 1, avg 1, cnt 1)
+      * Chilopoda: house centipede (max 1, avg 1, cnt 1)
+    * Pancrustacea: coconut crab (max 4, avg 2.3, cnt 10)
+      * Multicrustacea: barnacle (max 1, avg 1, cnt 1)
+      * Eumalacostraca: mantis shrimp (max 2, avg 1.5, cnt 2)
+        * Eumalacostraca: pillbug (max 1, avg 1, cnt 1)
+      * Eucarida: krill (max 1, avg 1, cnt 1)
+      * Decapoda: tiger prawn (max 1, avg 1, cnt 1)
+      * Pleocyemata: fiddler crab (max 3, avg 2, cnt 3)
+        * Pleocyemata: lobster (max 2, avg 1.5, cnt 2)
+          * Pleocyemata: pistol shrimp (max 1, avg 1, cnt 1)
+      * Paguroidea: hermit crab (max 1, avg 1, cnt 1)
+    * Dicondylia: silverfish (max 1, avg 1, cnt 1)
+    * Pterygota: dragonfly (max 2, avg 1.5, cnt 2)
+      * Palaeoptera: mayfly (max 1, avg 1, cnt 1)
+    * Neoptera: cockroach (max 4, avg 2.5, cnt 10)
+      * Neoptera: cicada (max 2, avg 1.5, cnt 2)
+        * Hemiptera: water bug (max 1, avg 1, cnt 1)
+      * Polyneoptera: grasshopper (max 3, avg 2, cnt 5)
+        * Polyneoptera: earwig (max 2, avg 1.5, cnt 2)
+          * Polyneoptera: stick bug (max 1, avg 1, cnt 1)
+        * Orthoptera: cricket (max 1, avg 1, cnt 1)
+        * Schistocerca: locust (max 1, avg 1, cnt 1)
+      * Dictyoptera: praying mantis (max 1, avg 1, cnt 1)
+      * Blattoidea: termite (max 1, avg 1, cnt 1)
+    * Endopterygota: dung beetle (max 4, avg 2.818, cnt 11)
+      * Endopterygota: atlas moth (max 3, avg 2.286, cnt 7)
+        * Endopterygota: fruit fly (max 2, avg 1.75, cnt 4)
+          * Endopterygota: flea (max 1, avg 1, cnt 1)
+          * Diptera: mosquito (max 1, avg 1, cnt 1)
+          * Schizophora: house fly (max 1, avg 1, cnt 1)
+        * Obtectomera: monarch butterfly (max 1, avg 1, cnt 1)
+        * Bombycoidea: silkworm (max 1, avg 1, cnt 1)
+      * Polyphaga: firefly (max 2, avg 1.5, cnt 2)
+        * Polyphaga: ladybug (max 1, avg 1, cnt 1)
+      * Scarabaeidae: hercules beetle (max 1, avg 1, cnt 1)
+    * Aculeata: carpenter ant (max 3, avg 2.2, cnt 5)
+      * Aculeata: hornet (max 2, avg 1.667, cnt 3)
+        * Aculeata: tarantula hawk wasp (max 1, avg 1, cnt 1)
+        * Vespinae: wasp (max 1, avg 1, cnt 1)
+      * Formicidae: fire ant (max 1, avg 1, cnt 1)
+    * Apinae: honey bee (max 1, avg 1, cnt 1)
+  * Deuterostomia: sand dollar (max 2, avg 1.75, cnt 4)
+    * Eleutherozoa: starfish (max 1, avg 1, cnt 1)
+    * Echinozoa: sea cucumber (max 1, avg 1, cnt 1)
+    * Euechinoidea: sea urchin (max 1, avg 1, cnt 1)
+  * Vertebrata: lamprey (max 1, avg 1, cnt 1)
+  * Gnathostomata: goblin shark (max 3, avg 2.286, cnt 7)
+    * Elasmobranchii: manta ray (max 2, avg 1.5, cnt 2)
+      * Myliobatiformes: sting ray (max 1, avg 1, cnt 1)
+    * Galeoidea: hammerhead shark (max 2, avg 1.667, cnt 3)
+      * Galeoidea: whale shark (max 1, avg 1, cnt 1)
+      * Carcharhinidae: tiger shark (max 1, avg 1, cnt 1)
+    * Lamniformes: great white shark (max 1, avg 1, cnt 1)
+  * Euteleostomi: flying fish (max 6, avg 3.357, cnt 28)
+    * Teleostei: moray eel (max 1, avg 1, cnt 1)
+    * Clupeocephala: catfish (max 3, avg 2.167, cnt 6)
+      * Otomorpha: herring (max 1, avg 1, cnt 1)
+      * Otophysi: carp (max 2, avg 1.5, cnt 2)
+        * Cyprininae: goldfish (max 1, avg 1, cnt 1)
+      * Characiphysae: electric eel (max 2, avg 1.5, cnt 2)
+        * Characiphysae: piranha (max 1, avg 1, cnt 1)
+    * Euteleosteomorpha: salmon (max 2, avg 1.667, cnt 3)
+      * Protacanthopterygii: pike (max 1, avg 1, cnt 1)
+      * Salmoninae: trout (max 1, avg 1, cnt 1)
+    * Acanthomorphata: cod (max 2, avg 1.5, cnt 2)
+      * Acanthomorphata: oarfish (max 1, avg 1, cnt 1)
+    * Percomorphaceae: anglerfish (max 5, avg 3.333, cnt 12)
+      * Percomorphaceae: barracuda (max 4, avg 2.75, cnt 8)
+        * Percomorphaceae: betta fish (max 3, avg 2.2, cnt 5)
+          * Percomorphaceae: mackerel (max 2, avg 1.667, cnt 3)
+            * Percomorphaceae: seahorse (max 1, avg 1, cnt 1)
+            * Scombrinae: tuna (max 1, avg 1, cnt 1)
+          * Anabantaria: fire eel (max 1, avg 1, cnt 1)
+        * Carangaria: halibut (max 2, avg 1.5, cnt 2)
+          * Carangaria: swordfish (max 1, avg 1, cnt 1)
+      * Eupercaria: bass (max 3, avg 2, cnt 3)
+        * Eupercaria: perch (max 2, avg 1.5, cnt 2)
+          * Eupercaria: pufferfish (max 1, avg 1, cnt 1)
+    * Ovalentaria: clownfish (max 2, avg 1.5, cnt 2)
+      * Ovalentaria: tilapia (max 1, avg 1, cnt 1)
+    * Atherinomorphae: guppy (max 1, avg 1, cnt 1)
+  * Sarcopterygii: coelacanth (max 1, avg 1, cnt 1)
+  * Tetrapoda: axolotl (max 3, avg 2.167, cnt 6)
+    * Batrachia: poison frog (max 2, avg 1.667, cnt 3)
+      * Neobatrachia: bullfrog (max 1, avg 1, cnt 1)
+      * Hyloidea: toad (max 1, avg 1, cnt 1)
+    * Caudata: salamander (max 1, avg 1, cnt 1)
+    * Salamandroidea: newt (max 1, avg 1, cnt 1)
+  * Amniota: crow (max 6, avg 3.474, cnt 76)
+    * Sauria: black mamba (max 4, avg 2.533, cnt 15)
+      * Bifurcata: gecko (max 1, avg 1, cnt 1)
+      * Unidentata: skink (max 1, avg 1, cnt 1)
+      * Toxicofera: chameleon (max 3, avg 2, cnt 4)
+        * Toxicofera: gila monster (max 2, avg 1.5, cnt 2)
+          * Anguimorpha: komodo dragon (max 1, avg 1, cnt 1)
+        * Iguania: iguana (max 1, avg 1, cnt 1)
+      * Serpentes: anaconda (max 3, avg 2, cnt 4)
+        * Henophidia: burmese python (max 2, avg 1.5, cnt 2)
+          * Pythonidae: green tree python (max 1, avg 1, cnt 1)
+        * Boinae: boa constrictor (max 1, avg 1, cnt 1)
+      * Colubroidea: rattlesnake (max 2, avg 1.5, cnt 2)
+        * Viperidae: viper (max 1, avg 1, cnt 1)
+      * Elapidae: sea snake (max 1, avg 1, cnt 1)
+      * Elapinae: king cobra (max 1, avg 1, cnt 1)
+    * Archelosauria: box turtle (max 3, avg 2, cnt 4)
+      * Durocryptodira: sea turtle (max 2, avg 1.5, cnt 2)
+        * Americhelydia: snapping turtle (max 1, avg 1, cnt 1)
+      * Testudinoidea: tortoise (max 1, avg 1, cnt 1)
+    * Archosauria: alligator (max 2, avg 1.667, cnt 3)
+      * Crocodylia: crocodile (max 1, avg 1, cnt 1)
+      * Alligatoridae: caiman (max 1, avg 1, cnt 1)
+    * Aves: cassowary (max 3, avg 2, cnt 4)
+      * Palaeognathae: kiwi (max 2, avg 1.5, cnt 2)
+        * Palaeognathae: ostrich (max 1, avg 1, cnt 1)
+      * Casuariiformes: emu (max 1, avg 1, cnt 1)
+    * Neognathae: chicken (max 3, avg 2.286, cnt 7)
+      * Galloanserae: goose (max 2, avg 1.667, cnt 3)
+        * Anatidae: duck (max 1, avg 1, cnt 1)
+        * Anserinae: swan (max 1, avg 1, cnt 1)
+      * Phasianidae: turkey (max 1, avg 1, cnt 1)
+      * Phasianinae: peacock (max 2, avg 1.5, cnt 2)
+        * Phasianinae: pheasant (max 1, avg 1, cnt 1)
+    * Neoaves: egret (max 5, avg 3.083, cnt 12)
+      * Neoaves: dove (max 4, avg 2.714, cnt 7)
+        * Neoaves: hummingbird (max 3, avg 2.2, cnt 5)
+          * Neoaves: puffin (max 2, avg 1.667, cnt 3)
+            * Neoaves: flamingo (max 1, avg 1, cnt 1)
+            * Charadriiformes: seagull (max 1, avg 1, cnt 1)
+          * Apodiformes: swift (max 1, avg 1, cnt 1)
+        * Columbidae: pigeon (max 1, avg 1, cnt 1)
+      * Aequornithes: emperor penguin (max 2, avg 1.667, cnt 3)
+        * Aequornithes: albatross (max 1, avg 1, cnt 1)
+        * Spheniscidae: macaroni penguin (max 1, avg 1, cnt 1)
+      * Ardea: heron (max 1, avg 1, cnt 1)
+    * Telluraves: bald eagle (max 4, avg 2.727, cnt 11)
+      * Telluraves: barn owl (max 3, avg 2, cnt 4)
+        * Telluraves: toucan (max 2, avg 1.5, cnt 2)
+          * Piciformes: woodpecker (max 1, avg 1, cnt 1)
+        * Strigiformes: snowy owl (max 1, avg 1, cnt 1)
+      * Accipitriformes: black vulture (max 3, avg 2, cnt 4)
+        * Accipitriformes: osprey (max 1, avg 1, cnt 1)
+        * Cathartidae: condor (max 2, avg 1.5, cnt 2)
+          * Cathartidae: turkey vulture (max 1, avg 1, cnt 1)
+      * Accipitrinae: hawk (max 2, avg 1.5, cnt 2)
+        * Accipitrinae: kite (max 1, avg 1, cnt 1)
+    * Australaves: grey parrot (max 3, avg 2.286, cnt 7)
+      * Australaves: falcon (max 2, avg 1.5, cnt 2)
+        * Falco: kestrel (max 1, avg 1, cnt 1)
+      * Psittaciformes: cockatiel (max 2, avg 1.5, cnt 2)
+        * Cacatuidae: cockatoo (max 1, avg 1, cnt 1)
+      * Psittacidae: macaw (max 2, avg 1.5, cnt 2)
+        * Psittacidae: parakeet (max 1, avg 1, cnt 1)
+    * Passeriformes: canary (max 5, avg 2.889, cnt 9)
+      * Passeriformes: blackbird (max 4, avg 2.5, cnt 6)
+        * Passeriformes: mockingbird (max 3, avg 2, cnt 3)
+          * Passeriformes: swallow (max 2, avg 1.5, cnt 2)
+            * Passeriformes: wren (max 1, avg 1, cnt 1)
+        * Turdidae: nightingale (max 2, avg 1.5, cnt 2)
+          * Turdidae: robin (max 1, avg 1, cnt 1)
+      * Passeroidea: sparrow (max 1, avg 1, cnt 1)
+      * Fringillidae: finch (max 1, avg 1, cnt 1)
+    * Corvidae: blue jay (max 2, avg 1.5, cnt 2)
+      * Corvidae: magpie (max 1, avg 1, cnt 1)
+    * Corvus: raven (max 1, avg 1, cnt 1)
+  * Mammalia: echidna (max 2, avg 1.5, cnt 2)
+    * Monotremata: platypus (max 1, avg 1, cnt 1)
+  * Theria: kangaroo (max 5, avg 2.857, cnt 7)
+    * Metatheria: opossum (max 2, avg 1.5, cnt 2)
+      * Metatheria: tasmanian devil (max 1, avg 1, cnt 1)
+    * Diprotodontia: koala (max 4, avg 2.5, cnt 4)
+      * Diprotodontia: possum (max 3, avg 2, cnt 3)
+        * Diprotodontia: sugar glider (max 2, avg 1.5, cnt 2)
+          * Diprotodontia: wombat (max 1, avg 1, cnt 1)
+  * Eutheria: aardvark (max 4, avg 2.571, cnt 7)
+    * Eutheria: anteater (max 2, avg 1.667, cnt 3)
+      * Xenarthra: armadillo (max 1, avg 1, cnt 1)
+      * Pilosa: two-toed sloth (max 1, avg 1, cnt 1)
+    * Afrotheria: elephant (max 3, avg 2, cnt 3)
+      * Afrotheria: hyrax (max 2, avg 1.5, cnt 2)
+        * Afrotheria: manatee (max 1, avg 1, cnt 1)
+  * Boreoeutheria: chipmunk (max 6, avg 3.3, cnt 30)
+    * Euarchontoglires: bonobo (max 4, avg 2.385, cnt 13)
+      * Primates: lemur (max 1, avg 1, cnt 1)
+      * Simiiformes: capuchin (max 2, avg 1.667, cnt 3)
+        * Platyrrhini: howler monkey (max 1, avg 1, cnt 1)
+        * Cebidae: tamarin (max 1, avg 1, cnt 1)
+      * Catarrhini: baboon (max 3, avg 2, cnt 3)
+        * Cercopithecinae: macaque (max 2, avg 1.5, cnt 2)
+          * Cercopithecinae: mandrill (max 1, avg 1, cnt 1)
+      * Hominoidea: gibbon (max 1, avg 1, cnt 1)
+      * Hominidae: orangutan (max 1, avg 1, cnt 1)
+      * Homininae: gorilla (max 2, avg 1.5, cnt 2)
+        * Homininae: human (max 1, avg 1, cnt 1)
+      * Pan: chimpanzee (max 1, avg 1, cnt 1)
+    * Glires: hare (max 2, avg 1.5, cnt 2)
+      * Leporidae: rabbit (max 1, avg 1, cnt 1)
+    * Rodentia: capybara (max 5, avg 2.9, cnt 10)
+      * Rodentia: mouse (max 2, avg 1.8, cnt 5)
+        * Rodentia: beaver (max 1, avg 1, cnt 1)
+        * Muroidea: hamster (max 1, avg 1, cnt 1)
+        * Muridae: gerbil (max 1, avg 1, cnt 1)
+        * Murinae: rat (max 1, avg 1, cnt 1)
+      * Hystricomorpha: chinchilla (max 4, avg 2.5, cnt 4)
+        * Hystricomorpha: guinea pig (max 3, avg 2, cnt 3)
+          * Hystricomorpha: naked mole rat (max 2, avg 1.5, cnt 2)
+            * Hystricomorpha: porcupine (max 1, avg 1, cnt 1)
+    * Sciuridae: flying squirrel (max 2, avg 1.5, cnt 2)
+      * Sciurinae: squirrel (max 1, avg 1, cnt 1)
+    * Marmotini: groundhog (max 2, avg 1.5, cnt 2)
+      * Marmotini: prairie dog (max 1, avg 1, cnt 1)
+  * Laurasiatheria: cattle (max 5, avg 3.385, cnt 39)
+    * Laurasiatheria: donkey (max 4, avg 2.7, cnt 10)
+      * Laurasiatheria: fruit bat (max 3, avg 2.2, cnt 5)
+        * Laurasiatheria: hedgehog (max 2, avg 1.667, cnt 3)
+          * Laurasiatheria: pangolin (max 1, avg 1, cnt 1)
+          * Eulipotyphla: mole (max 1, avg 1, cnt 1)
+        * Chiroptera: vampire bat (max 1, avg 1, cnt 1)
+      * Perissodactyla: rhinoceros (max 2, avg 1.5, cnt 2)
+        * Perissodactyla: tapir (max 1, avg 1, cnt 1)
+      * Equus: horse (max 2, avg 1.5, cnt 2)
+        * Equus: zebra (max 1, avg 1, cnt 1)
+    * Artiodactyla: beluga whale (max 4, avg 2.714, cnt 14)
+      * Artiodactyla: alpaca (max 3, avg 2.2, cnt 5)
+        * Artiodactyla: pig (max 2, avg 1.5, cnt 2)
+          * Suidae: warthog (max 1, avg 1, cnt 1)
+        * Camelidae: camel (max 2, avg 1.5, cnt 2)
+          * Camelidae: llama (max 1, avg 1, cnt 1)
+      * Whippomorpha: hippopotamus (max 1, avg 1, cnt 1)
+      * Cetacea: blue whale (max 2, avg 1.5, cnt 2)
+        * Balaenopteridae: humpback whale (max 1, avg 1, cnt 1)
+      * Odontoceti: dolphin (max 3, avg 2, cnt 4)
+        * Odontoceti: porpoise (max 2, avg 1.5, cnt 2)
+          * Odontoceti: sperm whale (max 1, avg 1, cnt 1)
+        * Delphinidae: orca (max 1, avg 1, cnt 1)
+      * Monodontidae: narwhal (max 1, avg 1, cnt 1)
+    * Pecora: caribou (max 3, avg 2, cnt 5)
+      * Pecora: giraffe (max 1, avg 1, cnt 1)
+      * Cervidae: elk (max 1, avg 1, cnt 1)
+      * Odocoileinae: deer (max 2, avg 1.5, cnt 2)
+        * Odocoileinae: moose (max 1, avg 1, cnt 1)
+    * Bovidae: goat (max 4, avg 2.333, cnt 6)
+      * Bovidae: antelope (max 3, avg 2, cnt 3)
+        * Bovidae: gazelle (max 2, avg 1.5, cnt 2)
+          * Bovidae: wildebeest (max 1, avg 1, cnt 1)
+      * Caprinae: sheep (max 1, avg 1, cnt 1)
+      * Capra: ibex (max 1, avg 1, cnt 1)
+    * Bovinae: bison (max 2, avg 1.5, cnt 2)
+      * Bovinae: water buffalo (max 1, avg 1, cnt 1)
+    * Bos: yak (max 1, avg 1, cnt 1)
+  * Carnivora: bobcat (max 5, avg 3.071, cnt 14)
+    * Feliformia: meerkat (max 3, avg 2, cnt 4)
+      * Feliformia: civet (max 2, avg 1.5, cnt 2)
+        * Feliformia: hyena (max 1, avg 1, cnt 1)
+      * Herpestidae: mongoose (max 1, avg 1, cnt 1)
+    * Felidae: jaguar (max 4, avg 2.5, cnt 4)
+      * Panthera: leopard (max 3, avg 2, cnt 3)
+        * Panthera: lion (max 2, avg 1.5, cnt 2)
+          * Panthera: tiger (max 1, avg 1, cnt 1)
+    * Felinae: cat (max 4, avg 2.5, cnt 4)
+      * Felinae: cheetah (max 3, avg 2, cnt 3)
+        * Felinae: ocelot (max 2, avg 1.5, cnt 2)
+          * Felinae: puma (max 1, avg 1, cnt 1)
+    * Lynx: lynx (max 1, avg 1, cnt 1)
+  * Caniformia: dog (max 5, avg 2.857, cnt 14)
+    * Caniformia: black bear (max 4, avg 2.429, cnt 7)
+      * Caniformia: sea lion (max 3, avg 2, cnt 3)
+        * Pinnipedia: seal (max 2, avg 1.5, cnt 2)
+          * Pinnipedia: walrus (max 1, avg 1, cnt 1)
+      * Ursidae: giant panda (max 1, avg 1, cnt 1)
+      * Ursus: brown bear (max 2, avg 1.5, cnt 2)
+        * Ursus: polar bear (max 1, avg 1, cnt 1)
+    * Canidae: arctic fox (max 2, avg 1.667, cnt 3)
+      * Canidae: tanuki (max 1, avg 1, cnt 1)
+      * Vulpes: red fox (max 1, avg 1, cnt 1)
+    * Canis: coyote (max 2, avg 1.5, cnt 2)
+      * Canis: jackal (max 1, avg 1, cnt 1)
+    * Canis lupus: wolf (max 1, avg 1, cnt 1)
+  * Musteloidea: kinkajou (max 3, avg 2, cnt 4)
+    * Musteloidea: red panda (max 2, avg 1.5, cnt 2)
+      * Musteloidea: skunk (max 1, avg 1, cnt 1)
+    * Procyonidae: raccoon (max 1, avg 1, cnt 1)
+  * Mustelidae: river otter (max 3, avg 2, cnt 4)
+    * Mustelidae: badger (max 2, avg 1.5, cnt 2)
+      * Mustelidae: wolverine (max 1, avg 1, cnt 1)
+    * Lutrinae: sea otter (max 1, avg 1, cnt 1)
+  * Mustelinae: weasel (max 1, avg 1, cnt 1)
+  * Mustela: mink (max 1, avg 1, cnt 1)

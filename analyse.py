@@ -155,7 +155,7 @@ def lca_2nodes(a, b):
         a = a.parent
     while b.depth > a.depth:
         b = b.parent
-    while a.scientific != b.scientific:
+    while a is not b:
         a = a.parent
         b = b.parent
     return a
@@ -167,31 +167,74 @@ def lca_species(*lst):
     return ret
 
 def get_successors(poss, guess):
-    ret = {}
+    ret = []
     for real in poss:
         if real == guess:
             continue
-        new_lca = lca_species(guess, real).scientific
-        ret.setdefault(new_lca, set()).add(real)
-    return ret, sorted([len(x) for x in ret.values()], reverse=True)
+        new_lca = lca_species(guess, real)
+        found = False
+        for i in range(len(ret)):
+            if ret[i][0] == new_lca:
+                ret[i][1].add(real)
+                found = True
+                break
+        if not found:
+            ret.append((new_lca, set([real])))
+    return ret
 
-def build_decision_tree(f, depth, scientific, poss):
+def build_decision_tree(node, poss):
     bestguess = None
     bestret = None
-    bestbits = [1000000000000000.0]
+    bestscore = [1000000000000000]
     for guess in sorted(poss):
-        ret, bits = get_successors(poss, guess)
-        if bits < bestbits:
-            bestguess, bestret, bestbits = guess, ret, bits
+        ret = get_successors(poss, guess)
+        score = sorted([len(x[1]) for x in ret], reverse=True)
+        if score < bestscore:
+            bestguess, bestret, bestscore = guess, ret, score
     assert bestret is not None
-    print("  " * depth + f"* {scientific}: {bestguess}", file=f)
-    ret = 0
-    for next_scientific in sorted(bestret.keys()):
-        ret += build_decision_tree(f, depth + 1, next_scientific, bestret[next_scientific])
-    return ret + depth + 1
+    return node, bestguess, [build_decision_tree(*x) for x in bestret]
+
+def print_decision_tree(tree, guesses=None):
+    node, guess, subs = tree
+
+    # Sort children
+    subs.sort(key=lambda x: x[0].depth) # sort phylogenetically
+#   subs.sort(key=lambda x: (x[0].scientific, x[0].depth)) # sort lexicographically
+
+    # Recurse to print tree structure.
+    subdesc = ""
+    max_guesses = 1
+    sum_guesses = 1
+    species = set([guess])
+    sub_guesses = guesses | species
+    for sub in subs:
+        substr, submax, subsum, subspec = print_decision_tree(sub, sub_guesses)
+        subdesc += substr
+        max_guesses = max(max_guesses, submax + 1)
+        sum_guesses += subsum + len(subspec)
+        assert len(species & subspec) == 0
+        species |= subspec
+
+    # sanity checks
+    for spec in species:
+        best_lca = TREE
+        for old_guess in guesses:
+            lca = lca_species(spec, old_guess)
+            if best_lca is None or lca.depth > best_lca.depth:
+                best_lca = lca
+        assert best_lca == node
+    desc = "  " * len(guesses) + f"* {node.scientific}: {guess} (max {max_guesses}, avg {sum_guesses / len(species):.4g}, cnt {len(species)})\n" + subdesc
+    assert species.issubset(node.leaves)
+
+    # output resulting string + statistics
+    return desc, max_guesses, sum_guesses, species
 
 with open(f"output/species-{DATASET}.txt", "w") as f:
     TREE.print_tree(f)
 
+DECIDE = build_decision_tree(TREE, set(TREE.leaves))
+
 with open(f"output/decision-{DATASET}.txt", "w") as f:
-    build_decision_tree(f, 0, TREE.scientific, set(SPECIES.keys()))
+    desc, _, _, species = print_decision_tree(DECIDE, set())
+    assert species == TREE.leaves
+    f.write(desc)
