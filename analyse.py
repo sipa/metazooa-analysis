@@ -19,7 +19,7 @@ class TreeNode:
         self.children = []
         self.parent = None
         self.leaves = set()
-        self.is_species = False
+        self.species = None
         SCIENTIFIC[scientific] = self
 
     def add_child(self, child):
@@ -39,8 +39,8 @@ class TreeNode:
 
     def print_tree(self, f, indent=0):
         """Print tree in indented format."""
-        if self.is_species:
-            print("  " * indent + f"* {self.scientific}: {next(iter(self.leaves))}", file=f)
+        if self.species is not None:
+            print("  " * indent + f"* {self.scientific}: {self.species}", file=f)
         elif len(self.children) == 1:
             next(iter(self.children)).print_tree(f, indent)
         else:
@@ -144,7 +144,7 @@ with open(f"input/game-{DATASET}.json") as f:
     species = json.load(f)
     for s in species:
         t = SCIENTIFIC[s['scientific']]
-        t.is_species = True
+        t.species = s['name']
         SPECIES[s['name']] = t
         while t is not None:
             t.leaves.add(s['name'])
@@ -182,17 +182,25 @@ def get_successors(poss, guess):
             ret.append((new_lca, set([real])))
     return ret
 
-def build_decision_tree(node, poss):
-    bestguess = None
-    bestret = None
-    bestscore = [1000000000000000]
-    for guess in sorted(poss):
-        ret = get_successors(poss, guess)
-        score = sorted([len(x[1]) for x in ret], reverse=True)
-        if score < bestscore:
-            bestguess, bestret, bestscore = guess, ret, score
-    assert bestret is not None
-    return node, bestguess, [build_decision_tree(*x) for x in bestret]
+def build_minavg_order(node):
+    child_orders = [(sub, build_minavg_order(sub)) for sub in node.children]
+    child_orders.sort(key=lambda x: (-len(x[0].leaves), x[1]))
+    ret = []
+    for _, sub_order in child_orders:
+        ret += sub_order
+    if node.species is not None:
+        ret.append(node.species)
+    return ret
+
+def order_to_decision_tree(node, poss, order):
+    guess = None
+    for species in order:
+        if species in poss:
+            guess = species
+            break
+    assert guess is not None
+    succ = get_successors(poss, guess)
+    return node, guess, [order_to_decision_tree(x[0], x[1], order) for x in succ]
 
 def print_decision_tree(tree, guesses=None):
     node, guess, subs = tree
@@ -232,7 +240,8 @@ def print_decision_tree(tree, guesses=None):
 with open(f"output/species-{DATASET}.txt", "w") as f:
     TREE.print_tree(f)
 
-DECIDE = build_decision_tree(TREE, set(TREE.leaves))
+ORDER = build_minavg_order(TREE)
+DECIDE = order_to_decision_tree(TREE, set(TREE.leaves), ORDER)
 
 with open(f"output/decision-{DATASET}.txt", "w") as f:
     desc, _, _, species = print_decision_tree(DECIDE, set())
