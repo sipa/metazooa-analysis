@@ -206,7 +206,25 @@ def order_to_decision_tree(node, poss, order):
     succ = get_successors(poss, guess)
     return node, guess, [order_to_decision_tree(x[0], x[1], order) for x in succ]
 
-def print_decision_tree(tree, guesses=None):
+def check_decision_tree(tree, guesses):
+    node, guess, subs = tree
+    species = set([guess])
+    sub_guesses = guesses | species
+    for sub in subs:
+        subspec = check_decision_tree(sub, sub_guesses)
+        assert len(species & subspec) == 0
+        species |= subspec
+    for spec in species:
+        best_lca = TREE
+        for old_guess in guesses:
+            lca = lca_species(spec, old_guess)
+            if best_lca is None or lca.depth > best_lca.depth:
+                best_lca = lca
+        assert best_lca == node
+    assert species.issubset(node.leaves)
+    return species
+
+def print_decision_tree(tree, depth=0):
     node, guess, subs = tree
 
     # Sort children
@@ -217,37 +235,26 @@ def print_decision_tree(tree, guesses=None):
     subdesc = ""
     max_guesses = 1
     sum_guesses = 1
-    species = set([guess])
-    sub_guesses = guesses | species
+    tot_species = 1
     for sub in subs:
-        substr, submax, subsum, subspec = print_decision_tree(sub, sub_guesses)
+        substr, submax, subsum, subcnt = print_decision_tree(sub, depth + 1)
         subdesc += substr
         max_guesses = max(max_guesses, submax + 1)
-        sum_guesses += subsum + len(subspec)
-        assert len(species & subspec) == 0
-        species |= subspec
+        sum_guesses += subsum + subcnt
+        tot_species += subcnt
 
-    # sanity checks
-    for spec in species:
-        best_lca = TREE
-        for old_guess in guesses:
-            lca = lca_species(spec, old_guess)
-            if best_lca is None or lca.depth > best_lca.depth:
-                best_lca = lca
-        assert best_lca == node
-    desc = "  " * len(guesses) + f"* {node.scientific}: {guess} (max {max_guesses}, avg {sum_guesses / len(species):.4g}, cnt {len(species)})\n" + subdesc
-    assert species.issubset(node.leaves)
+    desc = "  " * depth + f"* {node.scientific}: {guess} (max {max_guesses}, avg {sum_guesses / tot_species:.4g}, cnt {tot_species})\n" + subdesc
 
     # output resulting string + statistics
-    return desc, max_guesses, sum_guesses, species
+    return desc, max_guesses, sum_guesses, tot_species
 
 with open(f"output/species-{DATASET}.txt", "w") as f:
     TREE.print_tree(f)
 
 ORDER, _ = build_minavg_order(TREE)
 DECIDE = order_to_decision_tree(TREE, set(TREE.leaves), ORDER)
+assert check_decision_tree(DECIDE, set()) == TREE.leaves
 
 with open(f"output/decision-{DATASET}.txt", "w") as f:
-    desc, _, _, species = print_decision_tree(DECIDE, set())
-    assert species == TREE.leaves
+    desc, _, _, species = print_decision_tree(DECIDE, 0)
     f.write(desc)
