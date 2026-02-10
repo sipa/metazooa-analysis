@@ -492,6 +492,53 @@ function totalActive() {
 }
 let strategyMode = 'minavg'; /* 'minavg' or 'minimax' */
 
+/* ── Precompute layout sort order (all-active, both strategies) ── */
+/* These values are fixed and independent of guesses. */
+(function precomputeLayoutOrder() {
+  /* Compute A with all nodes active */
+  function allActiveA(node) {
+    let a = node.data.label ? 1 : 0;
+    if (node.children) for (const c of node.children) a += allActiveA(c);
+    node._layoutA = a;
+    return a;
+  }
+  allActiveA(root);
+  /* Compute max guesses for a given sort mode, storing on nodes */
+  function computeLayoutStats(node, mode, prop) {
+    if (node._layoutA === 0) { node[prop] = 0; return { avg: 0, max: 0 }; }
+    const parts = [];
+    if (node.children) {
+      for (const c of node.children) {
+        if (c._layoutA > 0) {
+          const s = computeLayoutStats(c, mode, prop);
+          parts.push({ A: c._layoutA, avg: s.avg, max: s.max, name: c.data.name });
+        } else {
+          c[prop] = 0;
+        }
+      }
+    }
+    if (node.data.label) parts.push({ A: 1, avg: 1, max: 1, name: node.data.name });
+    if (parts.length <= 1) {
+      const r = parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
+      node[prop] = r.max; return r;
+    }
+    if (mode === 'minimax') {
+      parts.sort((a, b) => b.max - a.max || b.A - a.A || a.name.localeCompare(b.name));
+    } else {
+      parts.sort((a, b) => b.A - a.A || b.max - a.max || a.name.localeCompare(b.name));
+    }
+    let wSum = 0, aSum = 0;
+    parts.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
+    const avg = aSum > 0 ? wSum / aSum : 0;
+    let mx = 0;
+    parts.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+    node[prop] = mx;
+    return { avg, max: mx };
+  }
+  computeLayoutStats(root, 'minavg', '_layoutMaxAvg');
+  computeLayoutStats(root, 'minimax', '_layoutMaxMinimax');
+})();
+
 /* Unified child ordering: returns sorted array of parts */
 function sortParts(parts) {
   if (strategyMode === 'minimax') {
@@ -573,16 +620,24 @@ let layoutMode = 'tidy'; /* 'radial' or 'tidy' */
 let treeCx = 0, treeCy = 0, treeRange = RADIUS * 2 + 200;
 
 function applyLayout() {
+  /* Sort hierarchy using precomputed all-active values */
+  function strategicSort(a, b) {
+    const aA = a._layoutA || 0, bA = b._layoutA || 0;
+    if (strategyMode === 'minimax') {
+      const aM = a._layoutMaxMinimax || 0, bM = b._layoutMaxMinimax || 0;
+      return bM - aM || bA - aA || a.data.name.localeCompare(b.data.name);
+    }
+    const aM = a._layoutMaxAvg || 0, bM = b._layoutMaxAvg || 0;
+    return bA - aA || bM - aM || a.data.name.localeCompare(b.data.name);
+  }
+  root.sort(strategicSort);
   if (layoutMode === 'radial') {
-    /* Sort hierarchy so subtrees are contiguous in angular space (prevents crossings) */
-    root.sort((a, b) => a.height - b.height || a.data.name.localeCompare(b.data.name));
     d3.cluster().size([2 * Math.PI, RADIUS]).separation(() => 1)(root);
     allNodes.forEach(d => {
       d._rx = d.y * Math.cos(d.x - Math.PI / 2);
       d._ry = d.y * Math.sin(d.x - Math.PI / 2);
     });
   } else {
-    root.sort((a, b) => a.height - b.height || a.data.name.localeCompare(b.data.name));
     d3.cluster().size([totalLabeled * 9, RADIUS * 1.6]).separation(() => 1)(root);
     allNodes.forEach(d => { d._rx = d.y; d._ry = d.x; });
   }
@@ -1207,6 +1262,8 @@ document.getElementById('switch-minavg').onclick = () => {
   document.getElementById('switch-minavg').classList.add('tog-active');
   document.getElementById('switch-minimax').classList.remove('tog-active');
   updateAll();
+  applyLayout();
+  transitionLayout();
   showToast('Switched to min-average strategy');
 };
 document.getElementById('switch-minimax').onclick = () => {
@@ -1215,6 +1272,8 @@ document.getElementById('switch-minimax').onclick = () => {
   document.getElementById('switch-minimax').classList.add('tog-active');
   document.getElementById('switch-minavg').classList.remove('tog-active');
   updateAll();
+  applyLayout();
+  transitionLayout();
   showToast('Switched to minimax strategy');
 };
 
