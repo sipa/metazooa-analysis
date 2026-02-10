@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Metazooa MetaTree Solver (Unofficial)</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    :root{
+      --bg:#05070d;
+      --text:#e6ecff;
+      --muted:#9aa6cc;
+
+      --link:#1a2550;
+      --linkActive:#2b46a8; /* brighter for paths to active nodes */
+
+      --unlabeled:#2a3a7a;
+      --active:#38f3a7;
+      --inactive:#51608a;
+      --best:#ff3df5;
+      --bestGlow: rgba(255, 61, 245, 0.55);
+
+      --found:#ffd166;
+      --foundGlow: rgba(255, 209, 102, 0.65);
+
+      --btn:#1b2a5a;
+      --btn2:#24377a;
+      --danger:#ff4d6d;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: radial-gradient(1200px 800px at 30% 10%, #0a1340 0%, var(--bg) 60%, #02030a 100%);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      overflow:hidden;
+    }
+
+    .app{ height:100%; display:flex; flex-direction:column; }
+
+    .topbar{
+      flex: 0 0 auto;
+      padding: 10px 12px 8px 12px;
+      background: linear-gradient(180deg, rgba(11,16,32,0.95), rgba(11,16,32,0.55));
+      border-bottom: 1px solid rgba(120,140,220,0.18);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    }
+
+    .titleRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .title{
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space: nowrap;
+    }
+    .pill{
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid rgba(160,180,255,0.25);
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: rgba(10,18,45,0.65);
+    }
+
+    .rightControls{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      margin-left:auto;
+    }
+
+    .stats{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .stat{
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid rgba(160,180,255,0.18);
+      border-radius: 10px;
+      padding: 3px 8px;
+      background: rgba(6,10,22,0.55);
+      white-space: nowrap;
+    }
+    .stat b{ color: var(--text); font-weight:700; }
+
+    /* Search UI */
+    .searchWrap{
+      position: relative;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .searchBox{
+      width: min(360px, 44vw);
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(6,10,22,0.55);
+      border: 1px solid rgba(160,180,255,0.20);
+      border-radius: 12px;
+      padding: 7px 10px;
+      outline:none;
+    }
+    .searchBox::placeholder{ color: rgba(154,166,204,0.75); }
+    .searchBox:focus{
+      border-color: rgba(56,243,167,0.45);
+      box-shadow: 0 0 0 3px rgba(56,243,167,0.12);
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding: 7px 10px;
+      font-size: 12px;
+      border-radius: 12px;
+      color: var(--text);
+      background: rgba(27,42,90,0.75);
+      border: 1px solid rgba(160,180,255,0.18);
+      white-space: nowrap;
+      user-select: none;
+    }
+    .btn:hover{ background: rgba(36,55,122,0.75); }
+    .btn.danger{
+      background: rgba(255,77,109,0.12);
+      border-color: rgba(255,77,109,0.35);
+    }
+    .btn.danger:hover{ background: rgba(255,77,109,0.18); }
+
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(6,10,22,0.55);
+      border: 1px solid rgba(160,180,255,0.18);
+      font-size: 12px;
+      color: rgba(230,236,255,0.9);
+      user-select: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .toggle input{ margin: 0; accent-color: #38f3a7; cursor: pointer; }
+
+    .subtreeBadge{
+      font-size: 11px;
+      color: rgba(154,166,204,0.92);
+      border: 1px solid rgba(160,180,255,0.18);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(6,10,22,0.35);
+      max-width: min(420px, 70vw);
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .acList{
+      position:absolute;
+      left:0;
+      top: calc(100% + 6px);
+      width: min(560px, 78vw);
+      max-height: 340px;
+      overflow:auto;
+      border-radius: 14px;
+      border: 1px solid rgba(160,180,255,0.20);
+      background: rgba(11,16,32,0.96);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+      display:none;
+      z-index: 60;
+    }
+    .acList.show{ display:block; }
+    .acItem{
+      padding: 9px 10px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      border-bottom: 1px solid rgba(160,180,255,0.10);
+    }
+    .acItem:last-child{ border-bottom:none; }
+    .acItem:hover{ background: rgba(36,55,122,0.35); }
+    .acItem.selected{ background: rgba(36,55,122,0.52); }
+
+    .acTop{
+      display:flex;
+      gap:8px;
+      align-items:baseline;
+      flex-wrap:wrap;
+    }
+    .acTag{
+      font-size: 10px;
+      color: rgba(154,166,204,0.9);
+      border: 1px solid rgba(160,180,255,0.18);
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(6,10,22,0.35);
+      white-space: nowrap;
+    }
+    .acTag.active{
+      color: rgba(56,243,167,0.95);
+      border-color: rgba(56,243,167,0.35);
+      background: rgba(56,243,167,0.10);
+    }
+    .acTag.inactive{
+      color: rgba(154,166,204,0.85);
+      border-color: rgba(160,180,255,0.18);
+      background: rgba(81,96,138,0.12);
+    }
+    .acTag.clade{
+      color: rgba(180,190,255,0.88);
+      border-color: rgba(160,180,255,0.18);
+      background: rgba(42,58,122,0.10);
+    }
+
+    .acPrimary{
+      font-size: 12px;
+      color: rgba(230,236,255,0.95);
+      font-weight: 650;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    .acSecondary{
+      font-size: 11px;
+      color: rgba(154,166,204,0.85);
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guesses{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .guessesLabel{
+      font-size: 11px;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+    .guessChip{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border: 1px solid rgba(160,180,255,0.22);
+      background: rgba(14,22,48,0.7);
+      border-radius: 999px;
+      padding: 4px 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      max-width: 100%;
+    }
+    .guessMain{
+      display:flex;
+      flex-direction:column;
+      line-height: 1.05;
+      max-width: 320px;
+    }
+    .guessLine1{
+      font-size: 11px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .guessLine2{
+      font-size: 10px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .xbtn{
+      border:none;
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      cursor:pointer;
+      font-size: 12px;
+      padding: 0 4px;
+      border-radius: 8px;
+      user-select: none;
+    }
+    .xbtn:hover{ color: white; background: rgba(255,77,109,0.18); }
+
+    .main{ flex: 1 1 auto; min-height: 0; position:relative; }
+    svg{ width:100%; height:100%; display:block; }
+
+    .hint{
+      position:absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 11px;
+      color: rgba(230,236,255,0.72);
+      background: rgba(6,10,22,0.55);
+      border: 1px solid rgba(160,180,255,0.15);
+      border-radius: 10px;
+      padding: 8px 10px;
+      backdrop-filter: blur(8px);
+      max-width: 600px;
+    }
+    .hint b{ color: var(--text); }
+    .hint .dot{
+      display:inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 6px 0 0;
+      vertical-align: -1px;
+    }
+
+    /* tree styling */
+    .link{
+      fill:none;
+      stroke: var(--link);
+      stroke-opacity: 0.45;
+      stroke-width: 0.8;
+    }
+    .link.activePath{
+      stroke: var(--linkActive);
+      stroke-opacity: 0.75;
+      stroke-width: 1.05;
+    }
+
+    .node circle{ stroke-width: 1.2; }
+
+    .node.unlabeled circle{
+      fill: rgba(42,58,122,0.18);
+      stroke: rgba(42,58,122,0.75);
+    }
+
+    .node.labeled.active circle{
+      fill: rgba(56,243,167,0.20);
+      stroke: rgba(56,243,167,0.95);
+    }
+    .node.labeled.inactive circle{
+      fill: rgba(81,96,138,0.15);
+      stroke: rgba(81,96,138,0.75);
+    }
+
+    .node text{
+      font-size: 7px;
+      fill: rgba(230,236,255,0.86);
+      paint-order: stroke;
+      stroke: rgba(0,0,0,0.55);
+      stroke-width: 2px;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .node.labeled.inactive text{ fill: rgba(154,166,204,0.65); }
+
+    .node.best circle{
+      fill: rgba(255,61,245,0.22) !important;
+      stroke: rgba(255,61,245,0.98) !important;
+      stroke-width: 2.4 !important;
+      filter: drop-shadow(0 0 6px var(--bestGlow));
+    }
+    .node.best text{
+      fill: rgba(255,220,255,0.98);
+      filter: drop-shadow(0 0 6px var(--bestGlow));
+    }
+
+    .node.found circle{
+      fill: rgba(255, 209, 102, 0.20) !important;
+      stroke: rgba(255, 209, 102, 0.98) !important;
+      stroke-width: 2.6 !important;
+      filter: drop-shadow(0 0 10px var(--foundGlow));
+    }
+    .node.found text{
+      fill: rgba(255, 244, 214, 0.98) !important;
+      filter: drop-shadow(0 0 10px var(--foundGlow));
+    }
+    @keyframes pulseFound {
+      0% { transform: scale(1); }
+      35% { transform: scale(1.08); }
+      70% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+    .node.foundPulse { animation: pulseFound 850ms ease-in-out 1; transform-origin: center; }
+
+    .node.clickable{ cursor:pointer; }
+    .node.clickable:hover circle{
+      stroke-width: 2.1;
+      filter: drop-shadow(0 0 6px rgba(56,243,167,0.35));
+    }
+
+    /* modal */
+    .overlay{
+      position:absolute;
+      inset: 0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      z-index: 50;
+      padding: 20px;
+    }
+    .overlay.show{ display:flex; }
+
+    .modal{
+      width: min(720px, 96vw);
+      max-height: min(720px, 85vh);
+      overflow:hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(160,180,255,0.22);
+      background: linear-gradient(180deg, rgba(14,22,48,0.95), rgba(11,16,32,0.92));
+      box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+      display:flex;
+      flex-direction:column;
+    }
+    .modalHeader{
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(160,180,255,0.18);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .modalHeader h2{ margin:0; font-size: 13px; letter-spacing: 0.2px; }
+    .modalHeader p{ margin: 3px 0 0 0; font-size: 11px; color: var(--muted); }
+    .modalBody{ padding: 12px 14px; overflow:auto; }
+    .modalBody .opt{
+      width:100%;
+      text-align:left;
+      border: 1px solid rgba(160,180,255,0.16);
+      background: rgba(6,10,22,0.35);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor:pointer;
+      margin-bottom: 8px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:baseline;
+    }
+    .modalBody .opt:hover{
+      background: rgba(27,42,90,0.45);
+      border-color: rgba(160,180,255,0.26);
+    }
+    .modalBody .opt .left{
+      font-size: 12px;
+      font-weight: 650;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .modalBody .opt .right{
+      font-size: 11px;
+      color: var(--muted);
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 55%;
+    }
+    .modalFooter{
+      padding: 12px 14px;
+      border-top: 1px solid rgba(160,180,255,0.16);
+      display:flex;
+      justify-content:flex-end;
+      gap: 10px;
+      background: rgba(6,10,22,0.35);
+    }
+
+    .neon{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(56,243,167,0.65), rgba(255,61,245,0.65), transparent);
+      opacity: 0.75;
+      margin: 8px 0 2px 0;
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="titleRow">
+      <div class="title">
+        Metazooa MetaTree Solver <span class="pill">unofficial</span>
+      </div>
+
+      <div class="rightControls">
+        <div class="searchWrap">
+          <input id="searchBox" class="searchBox" type="text"
+                 placeholder="Search common/scientific name… (↑/↓, Enter)"
+                 autocomplete="off" spellcheck="false" />
+
+          <button id="searchBtn" class="btn" type="button" title="Find (exact common-name match, otherwise best hit)">Find</button>
+          <button id="bestBtn" class="btn" type="button" title="Zoom to the current best guess (or only remaining active)">Best guess</button>
+
+          <label class="toggle" title="When enabled, search is restricted to a subtree (set via 'Set subtree' or defaults to LCA of active nodes).">
+            <input id="subtreeToggle" type="checkbox" />
+            Subtree
+          </label>
+          <button id="setSubtreeBtn" class="btn" type="button" title="Set subtree root to the most recently found node (search hit)">Set subtree</button>
+          <button id="clearSubtreeBtn" class="btn danger" type="button" title="Disable subtree filter">Clear</button>
+
+          <span id="subtreeBadge" class="subtreeBadge" style="display:none"></span>
+
+          <div id="acList" class="acList" role="listbox" aria-label="Search suggestions"></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">Active: <b id="activeCount">–</b></div>
+          <div class="stat">Best guess: <b id="bestGuess">–</b></div>
+          <div class="stat">Tip: <b>scroll/drag</b> to zoom/pan</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="neon"></div>
+
+    <div class="guesses">
+      <span class="guessesLabel">Guesses:</span>
+      <span id="guessesContainer"></span>
+    </div>
+  </div>
+
+  <div class="main" id="main">
+    <svg id="svg" aria-label="phylogenetic tree"></svg>
+
+    <div class="hint">
+      <div style="margin-bottom:6px;color:rgba(230,236,255,0.82)">
+        Click an <b>active</b> common-name node to add a guess. Hover any node to see its <b>scientific name</b>.
+      </div>
+      <div style="margin-bottom:6px">
+        Search supports <b>common</b> and <b>scientific</b> names; use <b>↑/↓</b> to pick a suggestion, <b>Enter</b> to jump.
+      </div>
+      <div>
+        <span class="dot" style="background:rgba(56,243,167,0.9)"></span>active labeled
+        &nbsp;&nbsp;
+        <span class="dot" style="background:rgba(81,96,138,0.9)"></span>inactive labeled
+        &nbsp;&nbsp;
+        <span class="dot" style="background:rgba(43,70,168,0.95)"></span>links to active
+        &nbsp;&nbsp;
+        <span class="dot" style="background:rgba(255,61,245,0.95)"></span>best guess
+        &nbsp;&nbsp;
+        <span class="dot" style="background:rgba(255,209,102,0.95)"></span>search hit
+        &nbsp;&nbsp;
+        <span class="dot" style="background:rgba(42,58,122,0.9)"></span>no common name
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Select ancestor">
+      <div class="modal">
+        <div class="modalHeader">
+          <div>
+            <h2 id="modalTitle">Select the reported common ancestor</h2>
+            <p id="modalSubtitle"></p>
+          </div>
+          <button class="btn danger" id="modalCancelTop">Cancel</button>
+        </div>
+        <div class="modalBody" id="modalBody"></div>
+        <div class="modalFooter">
+          <button class="btn danger" id="modalCancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  // ---- configuration ----
+  const DATA_URL = "species-metazooa.json";
+  const NODE_RADIUS = 2.3;
+  const X_SPACING = 11;
+  const Y_SPACING = 75;
+  const MARGIN = {top: 12, right: 20, bottom: 18, left: 10};
+
+  // ---- state ----
+  let root = null;
+  let allNodes = [];
+  let allLinks = [];
+  let idToNode = new Map();
+  let labelToNode = new Map();
+
+  let guesses = []; // {gId,cId}
+  let bestGuessNode = null;
+  let activeLabeledNodes = [];
+
+  // Search state
+  let searchIndex = [];
+  let lastFoundNodeId = null;
+  let foundTimer = null;
+
+  // Autocomplete
+  let currentMatches = [];
+  let selectedMatchIndex = -1;
+
+  // Subtree filter
+  let subtreeEnabled = false;
+  let subtreeRootId = null; // if null & enabled => LCA(active)
+
+  // ---- DOM ----
+  const svg = d3.select("#svg");
+  const mainEl = document.getElementById("main");
+  const guessesContainer = document.getElementById("guessesContainer");
+  const activeCountEl = document.getElementById("activeCount");
+  const bestGuessEl = document.getElementById("bestGuess");
+
+  const overlay = document.getElementById("overlay");
+  const modalBody = document.getElementById("modalBody");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSubtitle = document.getElementById("modalSubtitle");
+  const modalCancel = document.getElementById("modalCancel");
+  const modalCancelTop = document.getElementById("modalCancelTop");
+
+  const searchBox = document.getElementById("searchBox");
+  const searchBtn = document.getElementById("searchBtn");
+  const bestBtn = document.getElementById("bestBtn");
+  const acList = document.getElementById("acList");
+
+  const subtreeToggle = document.getElementById("subtreeToggle");
+  const setSubtreeBtn = document.getElementById("setSubtreeBtn");
+  const clearSubtreeBtn = document.getElementById("clearSubtreeBtn");
+  const subtreeBadge = document.getElementById("subtreeBadge");
+
+  function showOverlay(show){
+    overlay.classList.toggle("show", !!show);
+  }
+  modalCancel.addEventListener("click", () => showOverlay(false));
+  modalCancelTop.addEventListener("click", () => showOverlay(false));
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) showOverlay(false); });
+
+  // ---- LCA helpers ----
+  function lca(a,b){
+    if (!a || !b) return null;
+    let x=a, y=b;
+    while (x.depth > y.depth) x = x.parent;
+    while (y.depth > x.depth) y = y.parent;
+    while (x !== y) { x = x.parent; y = y.parent; }
+    return x;
+  }
+  function lcaAll(nodes){
+    if (!nodes.length) return null;
+    let cur = nodes[0];
+    for (let i=1;i<nodes.length;i++){
+      cur = lca(cur, nodes[i]);
+      if (!cur) break;
+    }
+    return cur;
+  }
+  function isDescendantOrSelf(node, ancestor){
+    let cur=node;
+    while (cur){
+      if (cur === ancestor) return true;
+      cur = cur.parent;
+    }
+    return false;
+  }
+
+  // ---- compatibility / active ----
+  function isCompatible(candidate, guess){
+    const gNode = idToNode.get(guess.gId);
+    const cNode = idToNode.get(guess.cId);
+    if (!gNode || !cNode) return false;
+    return lca(gNode, candidate) === cNode;
+  }
+
+  function computeBestGuess(){
+    let cur = root;
+    while (cur.children && cur.children.length){
+      let bestChild = null, bestA = -1;
+      for (const c of cur.children){
+        const a = c._A || 0;
+        if (a > bestA){
+          bestA = a;
+          bestChild = c;
+        }
+      }
+      if (!bestChild) break;
+      cur = bestChild;
+    }
+    if (!cur.data.label){
+      const activeLeaves = cur.descendants().filter(n => n._labeled && n._active && (!n.children || n.children.length === 0));
+      return activeLeaves.length ? activeLeaves[0] : null;
+    }
+    return cur._active ? cur : null;
+  }
+
+  function recomputeActiveAndCounts(){
+    activeLabeledNodes = [];
+    for (const n of allNodes){
+      const labeled = !!n.data.label;
+      n._labeled = labeled;
+
+      if (!labeled){
+        n._active = false;
+        continue;
+      }
+
+      let ok = true;
+      for (const g of guesses){
+        if (!isCompatible(n, g)) { ok = false; break; }
+      }
+      n._active = ok;
+      if (ok) activeLabeledNodes.push(n);
+    }
+
+    root.eachAfter(n => {
+      let sum = (n._labeled && n._active) ? 1 : 0;
+      if (n.children){
+        for (const c of n.children) sum += (c._A || 0);
+      }
+      n._A = sum;
+    });
+
+    bestGuessNode = null;
+    if (activeLabeledNodes.length === 1){
+      const only = activeLabeledNodes[0];
+      const isG = guesses.some(g => g.gId === only.id);
+      if (!isG) bestGuessNode = computeBestGuess();
+    } else if (activeLabeledNodes.length > 1){
+      bestGuessNode = computeBestGuess();
+    }
+
+    // Mark links that are on a path to at least one active labeled node
+    // A link (parent->child) is activePath if child's subtree contains any active labeled node => child._A > 0
+    for (const l of allLinks){
+      l._activePath = ((l.target._A || 0) > 0);
+    }
+  }
+
+  // ---- UI (top) ----
+  function updateTopUI(){
+    activeCountEl.textContent = String(activeLabeledNodes.length);
+
+    if (bestGuessNode){
+      bestGuessEl.textContent = bestGuessNode.data.label || "–";
+    } else {
+      if (activeLabeledNodes.length === 1 && guesses.some(g => g.gId === activeLabeledNodes[0].id)){
+        bestGuessEl.textContent = "solved";
+      } else if (activeLabeledNodes.length === 0){
+        bestGuessEl.textContent = "none (inconsistent)";
+      } else {
+        bestGuessEl.textContent = "–";
+      }
+    }
+
+    guessesContainer.innerHTML = "";
+    if (!guesses.length){
+      const empty = document.createElement("span");
+      empty.style.color = "rgba(154,166,204,0.9)";
+      empty.style.fontSize = "11px";
+      empty.textContent = "(none yet)";
+      guessesContainer.appendChild(empty);
+      return;
+    }
+
+    guesses.forEach((g, idx) => {
+      const gNode = idToNode.get(g.gId);
+      const cNode = idToNode.get(g.cId);
+
+      const chip = document.createElement("span");
+      chip.className = "guessChip";
+
+      const main = document.createElement("span");
+      main.className = "guessMain";
+
+      const line1 = document.createElement("span");
+      line1.className = "guessLine1";
+      line1.textContent = `${gNode?.data?.label ?? "?"}`;
+
+      const line2 = document.createElement("span");
+      line2.className = "guessLine2";
+      line2.textContent = `ancestor: ${cNode?.data?.name ?? "?"}`;
+
+      main.appendChild(line1);
+      main.appendChild(line2);
+
+      const x = document.createElement("button");
+      x.className = "xbtn";
+      x.title = "Remove this guess";
+      x.textContent = "×";
+      x.addEventListener("click", () => {
+        guesses.splice(idx, 1);
+        recomputeActiveAndCounts();
+        updateTopUI();
+        updateTreeClasses();
+        updateLinkClasses();
+        refreshAutocomplete();
+        updateSubtreeBadge();
+      });
+
+      chip.appendChild(main);
+      chip.appendChild(x);
+      guessesContainer.appendChild(chip);
+    });
+  }
+
+  // ---- modal (ancestor selection) ----
+  function openAncestorModal(gNode){
+    const lcaActive = lcaAll(activeLabeledNodes);
+    if (!lcaActive) return;
+
+    const options = [];
+    let cur = gNode;
+    while (cur){
+      options.push(cur);
+      if (cur === lcaActive) break;
+      cur = cur.parent;
+    }
+
+    modalTitle.textContent = "Select the reported common ancestor";
+    modalSubtitle.textContent = `Select the reported common ancestor between “${gNode.data.label}” and the mystery animal.`;
+
+    modalBody.innerHTML = "";
+
+    const cancelOpt = document.createElement("button");
+    cancelOpt.className = "opt";
+    cancelOpt.innerHTML = `<span class="left">Cancel</span><span class="right">discard this guess</span>`;
+    cancelOpt.addEventListener("click", () => showOverlay(false));
+    modalBody.appendChild(cancelOpt);
+
+    for (const n of options){
+      const btn = document.createElement("button");
+      btn.className = "opt";
+      const left = document.createElement("span");
+      left.className = "left";
+      left.textContent = n.data.name;
+
+      const right = document.createElement("span");
+      right.className = "right";
+      right.textContent = n.data.label ? `(${n.data.label})` : "";
+
+      btn.appendChild(left);
+      btn.appendChild(right);
+
+      btn.addEventListener("click", () => {
+        guesses.push({ gId: gNode.id, cId: n.id });
+        showOverlay(false);
+        recomputeActiveAndCounts();
+        updateTopUI();
+        updateTreeClasses();
+        updateLinkClasses();
+        refreshAutocomplete();
+        updateSubtreeBadge();
+      });
+
+      modalBody.appendChild(btn);
+    }
+
+    showOverlay(true);
+  }
+
+  // ---- drawing ----
+  const gZoom = svg.append("g").attr("class","zoomLayer");
+  const gLinks = gZoom.append("g").attr("class","links");
+  const gNodes = gZoom.append("g").attr("class","nodes");
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.12, 3.2])
+    .on("zoom", (event) => gZoom.attr("transform", event.transform));
+
+  svg.call(zoom);
+
+  function layoutAndRenderOnce(){
+    const treeLayout = d3.tree()
+      .nodeSize([X_SPACING, Y_SPACING])
+      .separation((a,b) => (a.parent === b.parent ? 1 : 1.15));
+
+    treeLayout(root);
+
+    allNodes = root.descendants();
+    allLinks = root.links();
+
+    const xs = allNodes.map(n => n.x);
+    const ys = allNodes.map(n => n.y);
+
+    const x0 = d3.min(xs), x1 = d3.max(xs);
+    const y0 = d3.min(ys), y1 = d3.max(ys);
+
+    const width = mainEl.clientWidth;
+    const height = mainEl.clientHeight;
+    svg.attr("viewBox", [0, 0, width, height]);
+
+    gLinks.selectAll("path")
+      .data(allLinks, d => d.target.id)
+      .join("path")
+      .attr("class","link")
+      .attr("d", d3.linkHorizontal()
+        .x(d => d.y + MARGIN.left)
+        .y(d => d.x + MARGIN.top)
+      );
+
+    const node = gNodes.selectAll("g.node")
+      .data(allNodes, d => d.id)
+      .join(enter => {
+        const ng = enter.append("g")
+          .attr("class","node")
+          .attr("transform", d => `translate(${d.y + MARGIN.left},${d.x + MARGIN.top})`);
+
+        ng.append("circle").attr("r", NODE_RADIUS);
+        ng.append("title").text(d => d.data.name || "");
+        ng.append("text")
+          .attr("dx", 4.5)
+          .attr("dy", "0.31em")
+          .text(d => d.data.label ? d.data.label : "");
+        return ng;
+      });
+
+    node.on("click", (event, d) => {
+      if (event.altKey){
+        subtreeEnabled = true;
+        subtreeToggle.checked = true;
+        subtreeRootId = d.id;
+        updateSubtreeBadge();
+        refreshAutocomplete();
+        focusNodeById(d.id, true);
+        return;
+      }
+      if (!d._labeled || !d._active) return;
+      openAncestorModal(d);
+    });
+
+    // initial zoom-to-fit-ish
+    const treeW = (y1 - y0) + MARGIN.left + MARGIN.right;
+    const treeH = (x1 - x0) + MARGIN.top + MARGIN.bottom;
+
+    const scale = Math.min(width / (treeW + 40), height / (treeH + 40));
+    const clamped = Math.max(0.12, Math.min(1.2, scale));
+
+    const tx = (width - clamped * (y0 + y1 + MARGIN.left)) / 2;
+    const ty = (height - clamped * (x0 + x1 + MARGIN.top)) / 2;
+
+    svg.call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(clamped));
+  }
+
+  function updateTreeClasses(){
+    gNodes.selectAll("g.node")
+      .attr("class", d => {
+        const classes = ["node"];
+        if (d._labeled) classes.push("labeled");
+        else classes.push("unlabeled");
+
+        if (d._labeled){
+          classes.push(d._active ? "active" : "inactive");
+        }
+        if (bestGuessNode && d.id === bestGuessNode.id) classes.push("best");
+        if (d._labeled && d._active) classes.push("clickable");
+        if (lastFoundNodeId && d.id === lastFoundNodeId) classes.push("found");
+        return classes.join(" ");
+      })
+      .select("circle")
+      .attr("r", d => (bestGuessNode && d.id === bestGuessNode.id) ? (NODE_RADIUS + 1.1) : NODE_RADIUS);
+
+    gNodes.selectAll("g.node").select("text")
+      .text(d => d.data.label ? d.data.label : "");
+
+    gNodes.selectAll("g.node").select("title")
+      .text(d => d.data.name || "");
+  }
+
+  function updateLinkClasses(){
+    // brighter links on paths to active labeled nodes
+    gLinks.selectAll("path")
+      .attr("class", d => d._activePath ? "link activePath" : "link");
+  }
+
+  // ---- Search helpers ----
+  function nodePathString(n, maxParts = 6){
+    const parts = [];
+    let cur = n;
+    while (cur){
+      parts.push(cur.data?.name || "");
+      cur = cur.parent;
+    }
+    parts.reverse();
+    if (parts.length <= maxParts) return parts.join(" > ");
+    const tail = parts.slice(parts.length - (maxParts - 1));
+    return ["…", ...tail].join(" > ");
+  }
+
+  function buildSearchIndex(){
+    searchIndex = allNodes.map(n => {
+      const label = (n.data && n.data.label) ? String(n.data.label) : "";
+      const name = (n.data && n.data.name) ? String(n.data.name) : "";
+      const path = nodePathString(n, 6);
+      const primary = label ? label : name;
+      const secondary = label ? name : path;
+      const kind = label ? "common" : "scientific";
+      return {
+        nodeId: n.id,
+        label, name,
+        labelLower: label.toLowerCase(),
+        nameLower: name.toLowerCase(),
+        path,
+        primary, secondary, kind
+      };
+    });
+  }
+
+  function getSubtreeRootNode(){
+    if (!subtreeEnabled) return null;
+    if (subtreeRootId) return idToNode.get(subtreeRootId) || null;
+    return lcaAll(activeLabeledNodes);
+  }
+
+  function updateSubtreeBadge(){
+    if (!subtreeEnabled){
+      subtreeBadge.style.display = "none";
+      subtreeBadge.textContent = "";
+      return;
+    }
+    const r = getSubtreeRootNode();
+    subtreeBadge.style.display = "inline-block";
+    if (!r){
+      subtreeBadge.textContent = "Subtree: (none)";
+      return;
+    }
+    const label = r.data?.label ? ` (${r.data.label})` : "";
+    subtreeBadge.textContent = `Subtree: ${r.data?.name ?? "?"}${label}`;
+  }
+
+  function rankMatch(entry, q){
+    const ql = q.toLowerCase();
+    const inLabel = entry.labelLower.includes(ql);
+    const inName  = entry.nameLower.includes(ql);
+    if (!inLabel && !inName) return null;
+
+    let score = 1000;
+    if (inLabel){
+      score -= 200;
+      if (entry.labelLower.startsWith(ql)) score -= 200;
+      score -= Math.min(120, entry.labelLower.length);
+    }
+    if (inName){
+      score -= 80;
+      if (entry.nameLower.startsWith(ql)) score -= 140;
+      score -= Math.min(80, entry.nameLower.length / 2);
+    }
+    if (entry.label) score -= 30;
+    return score;
+  }
+
+  function getMatches(q, limit = 24){
+    const qq = q.trim();
+    if (!qq) return [];
+    const subtreeRoot = getSubtreeRootNode();
+
+    const scored = [];
+    for (const e of searchIndex){
+      if (subtreeEnabled && subtreeRoot){
+        const node = idToNode.get(e.nodeId);
+        if (!node || !isDescendantOrSelf(node, subtreeRoot)) continue;
+      }
+      const s = rankMatch(e, qq);
+      if (s === null) continue;
+      scored.push({ e, s });
+    }
+    scored.sort((a,b) => a.s - b.s);
+    return scored.slice(0, limit).map(x => x.e);
+  }
+
+  function closeAutocomplete(){
+    acList.classList.remove("show");
+    acList.innerHTML = "";
+    currentMatches = [];
+    selectedMatchIndex = -1;
+  }
+
+  function ensureSelectedVisible(){
+    if (selectedMatchIndex < 0) return;
+    const el = acList.querySelector(`[data-idx="${selectedMatchIndex}"]`);
+    if (el) el.scrollIntoView({block:"nearest"});
+  }
+
+  function setSelectedIndex(i){
+    if (i < 0 || i >= currentMatches.length) return;
+    selectedMatchIndex = i;
+    const items = acList.querySelectorAll(".acItem");
+    items.forEach((el, idx) => el.classList.toggle("selected", idx === selectedMatchIndex));
+    ensureSelectedVisible();
+  }
+
+  function chooseMatchIndex(i){
+    if (i < 0 || i >= currentMatches.length) return;
+    const m = currentMatches[i];
+    searchBox.value = m.primary;
+    closeAutocomplete();
+    focusNodeById(m.nodeId, true);
+  }
+
+  function renderAutocomplete(matches){
+    currentMatches = matches;
+    selectedMatchIndex = matches.length ? 0 : -1;
+
+    acList.innerHTML = "";
+    if (!matches.length){
+      closeAutocomplete();
+      return;
+    }
+
+    for (let i=0;i<matches.length;i++){
+      const m = matches[i];
+      const node = idToNode.get(m.nodeId);
+
+      const div = document.createElement("div");
+      div.className = "acItem" + (i === selectedMatchIndex ? " selected" : "");
+      div.setAttribute("role","option");
+      div.dataset.idx = String(i);
+
+      const top = document.createElement("div");
+      top.className = "acTop";
+
+      const kindTag = document.createElement("span");
+      kindTag.className = "acTag";
+      kindTag.textContent = (m.kind === "common") ? "common" : "scientific";
+
+      const statusTag = document.createElement("span");
+      statusTag.className = "acTag";
+      if (node && node._labeled){
+        if (node._active){
+          statusTag.classList.add("active");
+          statusTag.textContent = "active";
+        } else {
+          statusTag.classList.add("inactive");
+          statusTag.textContent = "inactive";
+        }
+      } else {
+        statusTag.classList.add("clade");
+        statusTag.textContent = "clade";
+      }
+
+      const primary = document.createElement("span");
+      primary.className = "acPrimary";
+      primary.textContent = m.primary;
+
+      top.appendChild(kindTag);
+      top.appendChild(statusTag);
+      top.appendChild(primary);
+
+      const secondary = document.createElement("div");
+      secondary.className = "acSecondary";
+      secondary.textContent = m.secondary || m.path;
+
+      div.appendChild(top);
+      div.appendChild(secondary);
+
+      div.addEventListener("mouseenter", () => setSelectedIndex(i));
+      div.addEventListener("click", () => chooseMatchIndex(i));
+
+      acList.appendChild(div);
+    }
+
+    acList.classList.add("show");
+    ensureSelectedVisible();
+  }
+
+  function focusNodeById(nodeId, animate=true){
+    const n = idToNode.get(nodeId);
+    if (!n) return;
+
+    lastFoundNodeId = nodeId;
+    updateTreeClasses();
+
+    const sel = gNodes.selectAll("g.node").filter(d => d.id === nodeId);
+    sel.classed("foundPulse", false);
+    requestAnimationFrame(() => sel.classed("foundPulse", true));
+
+    if (foundTimer) clearTimeout(foundTimer);
+    foundTimer = setTimeout(() => {
+      lastFoundNodeId = null;
+      updateTreeClasses();
+    }, 3200);
+
+    const width = mainEl.clientWidth;
+    const height = mainEl.clientHeight;
+
+    const nx = n.y + MARGIN.left;
+    const ny = n.x + MARGIN.top;
+
+    const current = d3.zoomTransform(svg.node());
+    const targetScale = Math.max(current.k, 1.0);
+    const k = Math.min(2.2, Math.max(0.6, targetScale));
+
+    const tx = width / 2 - k * nx;
+    const ty = height / 2 - k * ny;
+    const t = d3.zoomIdentity.translate(tx, ty).scale(k);
+
+    if (animate){
+      svg.transition().duration(650).ease(d3.easeCubicOut).call(zoom.transform, t);
+    } else {
+      svg.call(zoom.transform, t);
+    }
+  }
+
+  function doSearchExactOrFirst(){
+    const q = searchBox.value.trim();
+    if (!q) return;
+
+    const labelHit = labelToNode.get(q);
+    if (labelHit){
+      closeAutocomplete();
+      focusNodeById(labelHit.id, true);
+      return;
+    }
+
+    if (acList.classList.contains("show") && selectedMatchIndex >= 0 && selectedMatchIndex < currentMatches.length){
+      chooseMatchIndex(selectedMatchIndex);
+      return;
+    }
+
+    const matches = getMatches(q, 1);
+    if (matches.length){
+      closeAutocomplete();
+      focusNodeById(matches[0].nodeId, true);
+    } else {
+      closeAutocomplete();
+    }
+  }
+
+  function refreshAutocomplete(){
+    const q = searchBox.value.trim();
+    if (!q) { closeAutocomplete(); return; }
+    renderAutocomplete(getMatches(q, 24));
+  }
+
+  // ---- events ----
+  searchBox.addEventListener("input", () => {
+    const q = searchBox.value.trim();
+    if (!q){ closeAutocomplete(); return; }
+    renderAutocomplete(getMatches(q, 24));
+  });
+
+  searchBox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown"){
+      if (!acList.classList.contains("show")) refreshAutocomplete();
+      else setSelectedIndex(Math.min(currentMatches.length - 1, selectedMatchIndex + 1));
+      e.preventDefault();
+    } else if (e.key === "ArrowUp"){
+      if (acList.classList.contains("show")){
+        setSelectedIndex(Math.max(0, selectedMatchIndex - 1));
+        e.preventDefault();
+      }
+    } else if (e.key === "Enter"){
+      e.preventDefault();
+      doSearchExactOrFirst();
+    } else if (e.key === "Escape"){
+      closeAutocomplete();
+      searchBox.blur();
+    }
+  });
+
+  searchBtn.addEventListener("click", () => doSearchExactOrFirst());
+
+  bestBtn.addEventListener("click", () => {
+    if (bestGuessNode){
+      focusNodeById(bestGuessNode.id, true);
+      return;
+    }
+    if (activeLabeledNodes.length === 1){
+      focusNodeById(activeLabeledNodes[0].id, true);
+      return;
+    }
+    const l = lcaAll(activeLabeledNodes);
+    if (l) focusNodeById(l.id, true);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!acList.contains(e.target) && e.target !== searchBox) closeAutocomplete();
+  });
+
+  subtreeToggle.addEventListener("change", () => {
+    subtreeEnabled = subtreeToggle.checked;
+    if (!subtreeEnabled) subtreeRootId = null;
+    updateSubtreeBadge();
+    refreshAutocomplete();
+  });
+
+  setSubtreeBtn.addEventListener("click", () => {
+    subtreeEnabled = true;
+    subtreeToggle.checked = true;
+    subtreeRootId = lastFoundNodeId ? lastFoundNodeId : null; // otherwise use LCA(active)
+    updateSubtreeBadge();
+    refreshAutocomplete();
+  });
+
+  clearSubtreeBtn.addEventListener("click", () => {
+    subtreeEnabled = false;
+    subtreeToggle.checked = false;
+    subtreeRootId = null;
+    updateSubtreeBadge();
+    refreshAutocomplete();
+  });
+
+  // ---- init ----
+  async function init(){
+    let data;
+    try{
+      const res = await fetch(DATA_URL, {cache: "no-store"});
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      data = await res.json();
+    } catch (e){
+      console.error(e);
+      activeCountEl.textContent = "error";
+      bestGuessEl.textContent = "error";
+      guessesContainer.innerHTML = `<span style="color:rgba(255,77,109,0.95);font-size:11px">
+        Failed to load ${DATA_URL}. Make sure this HTML file is served from the same directory as the JSON.
+      </span>`;
+      return;
+    }
+
+    root = d3.hierarchy(data, d => d.children);
+
+    let nextId = 1;
+    root.each(n => {
+      n.id = nextId++;
+      idToNode.set(n.id, n);
+      if (n.data && typeof n.data.label === "string" && n.data.label.length){
+        labelToNode.set(n.data.label, n);
+      }
+    });
+
+    allNodes = root.descendants();
+
+    // First layout to populate allLinks
+    layoutAndRenderOnce();
+
+    // Now compute active counts and mark link activePath flags
+    recomputeActiveAndCounts();
+
+    buildSearchIndex();
+    updateTopUI();
+    updateTreeClasses();
+    updateLinkClasses();
+    updateSubtreeBadge();
+
+    window.addEventListener("resize", () => {
+      const width = mainEl.clientWidth;
+      const height = mainEl.clientHeight;
+      svg.attr("viewBox", [0, 0, width, height]);
+    });
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
+

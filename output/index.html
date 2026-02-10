@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metazooa Solver</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#060d18;--panel:rgba(8,18,35,0.95);--border:#1a3050;
+  --active:#00e5c8;--inactive:#263040;--inactiveText:#3a5060;
+  --best:#ffd700;--link:#152535;--text:#8ab4d9;--textDim:#4a6a80;
+  --accent:#00b8ff;--danger:#ff4466;--orange:#ff6600;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif}
+body{display:flex;flex-direction:column}
+
+/* ── Header ────────────────────────────── */
+#header{
+  position:relative;z-index:10;
+  background:var(--panel);border-bottom:1px solid var(--border);
+  padding:6px 14px;display:flex;align-items:center;gap:12px;flex-shrink:0;
+  flex-wrap:wrap;min-height:40px;
+}
+#header h1{
+  font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;
+  letter-spacing:2px;color:var(--active);text-transform:uppercase;
+  white-space:nowrap;text-shadow:0 0 20px rgba(0,229,200,0.3);
+  cursor:pointer;
+}
+#status{
+  font-family:'Share Tech Mono',monospace;font-size:12px;
+  color:var(--text);display:flex;align-items:center;gap:6px;white-space:nowrap;
+}
+#status .best-label{color:var(--best);font-weight:600;text-shadow:0 0 10px rgba(255,215,0,0.4)}
+#status .solved{color:#44ff88;text-shadow:0 0 12px rgba(68,255,136,0.5)}
+#status .count{color:var(--textDim);font-size:11px}
+#status .est{color:#bb88ff;font-size:11px}
+#guesses-row{
+  display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-left:auto;
+  max-width:60%;
+}
+.guess-chip{
+  display:flex;align-items:center;gap:4px;
+  background:rgba(0,229,200,0.08);border:1px solid rgba(0,229,200,0.2);
+  border-radius:3px;padding:2px 6px;font-size:11px;
+  font-family:'Share Tech Mono',monospace;color:var(--active);
+  cursor:default;transition:background .15s,border-color .15s;
+}
+.guess-chip:hover{background:rgba(0,229,200,0.18);border-color:rgba(0,229,200,0.4)}
+.guess-chip .sci{color:var(--textDim);font-size:10px}
+.guess-chip .del{
+  cursor:pointer;color:var(--danger);font-size:12px;line-height:1;
+  margin-left:2px;opacity:0.5;transition:opacity .15s;
+}
+.guess-chip .del:hover{opacity:1}
+.hdr-btn{
+  background:transparent;border:1px solid var(--border);color:var(--textDim);
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+  padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.hdr-btn:hover{border-color:var(--accent);color:var(--accent)}
+.hdr-btn.danger{border-color:rgba(255,68,102,0.4);color:var(--danger)}
+.hdr-btn.danger:hover{border-color:var(--danger);color:#ff6688}
+#game-switch{display:flex;gap:3px}
+#game-switch .hdr-btn.active-game{border-color:var(--active);color:var(--active);background:rgba(0,229,200,0.1)}
+
+/* ── Search ────────────────────────────── */
+#search-wrap{position:relative;flex-shrink:0}
+#search-input{
+  background:rgba(0,180,255,0.06);border:1px solid var(--border);
+  border-radius:3px;padding:3px 8px 3px 22px;width:170px;
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+  color:var(--text);outline:none;transition:border-color .2s,width .2s;
+}
+#search-input::placeholder{color:var(--textDim);opacity:0.5}
+#search-input:focus{border-color:var(--accent);width:230px}
+#search-icon{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--textDim);pointer-events:none}
+#search-results{
+  position:absolute;top:100%;left:0;margin-top:2px;min-width:280px;
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  max-height:300px;overflow-y:auto;display:none;z-index:50;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+#search-results.open{display:block}
+.sr-item{
+  padding:4px 10px;cursor:pointer;font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--text);display:flex;align-items:baseline;gap:6px;
+  border-bottom:1px solid rgba(26,48,80,0.25);transition:background .1s;
+}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover,.sr-item.sr-active{background:rgba(0,229,200,0.1)}
+.sr-item .sr-label{color:var(--active);font-weight:600}
+.sr-item .sr-sci{color:var(--accent);font-style:italic;font-size:10px}
+.sr-item .sr-type{color:var(--textDim);font-size:9px;margin-left:auto}
+.sr-match{color:var(--best);font-weight:bold}
+
+/* ── Tree ──────────────────────────────── */
+#tree-container{flex:1;position:relative;overflow:hidden}
+#tree-container svg{width:100%;height:100%;display:block}
+.link{fill:none;stroke:var(--link);stroke-width:1;transition:stroke .4s,stroke-width .4s,opacity .4s}
+.link.link-active{stroke:#1a4060;stroke-width:1.2}
+.link.link-hot{stroke:#2a6888;stroke-width:1.5}
+.link.link-dead{stroke:#0c1520;stroke-width:0.6;opacity:0.35}
+.link.link-guess-path{stroke:var(--orange) !important;stroke-width:2 !important;opacity:1 !important}
+.link.link-guess-persistent{stroke:rgba(255,68,102,0.35) !important;stroke-width:1.4 !important;opacity:1 !important}
+.node-dot{cursor:default;transition:fill .25s,r .25s,stroke .25s}
+.node-dot.labeled{cursor:pointer}
+.node-dot.active{fill:var(--active)}
+.node-dot.inactive{fill:var(--inactive)}
+.node-dot.internal{fill:#0d1a28;stroke:#1a3050;stroke-width:0.5}
+.node-dot.best-guess{fill:var(--best);filter:url(#glow);animation:pulse 2s ease-in-out infinite}
+.node-dot.search-highlight{stroke:var(--orange);stroke-width:2.5;filter:url(#glowSearch);animation:searchPulse 1.5s ease-in-out 3}
+.node-dot.guess-g{stroke:var(--orange);stroke-width:2}
+.node-dot.guess-c{stroke:#ff00aa;stroke-width:2}
+@keyframes pulse{0%,100%{filter:url(#glow)}50%{filter:url(#glowBright)}}
+@keyframes searchPulse{0%,100%{stroke-opacity:1;stroke-width:2.5}50%{stroke-opacity:0.4;stroke-width:4}}
+.node-label{
+  font-family:'Share Tech Mono',monospace;font-size:9px;
+  fill:var(--active);pointer-events:none;transition:fill .25s,opacity .25s;
+}
+.node-label.inactive{fill:var(--inactiveText);opacity:0.45}
+.node-label.best-guess{fill:var(--best);font-weight:bold;font-size:9.5px}
+
+/* ── Tooltip ───────────────────────────── */
+#tooltip{
+  position:fixed;z-index:100;pointer-events:none;
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:4px;padding:6px 9px;font-size:13px;
+  font-family:'Share Tech Mono',monospace;color:var(--text);
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);display:none;max-width:360px;
+}
+#tooltip .tt-sci{color:var(--accent);font-style:italic}
+#tooltip .tt-label{color:var(--active);font-weight:600}
+#tooltip .tt-info{color:var(--textDim);font-size:11px;margin-top:2px}
+#tooltip .tt-path{color:var(--textDim);font-size:10px;margin-top:3px;line-height:1.4;opacity:0.7}
+
+/* ── Modal ─────────────────────────────── */
+#modal-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;
+  background:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;
+  backdrop-filter:blur(4px);
+}
+#modal-overlay.show{display:flex}
+#modal{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:8px;padding:16px;min-width:320px;max-width:500px;
+  max-height:80vh;display:flex;flex-direction:column;
+  box-shadow:0 8px 40px rgba(0,0,0,0.6);
+}
+#modal h2{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;color:var(--active);letter-spacing:1px;margin-bottom:4px}
+#modal .modal-subtitle{color:var(--textDim);font-size:12px;margin-bottom:12px;font-family:'Share Tech Mono',monospace}
+#modal-options{overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:2px}
+.modal-option{
+  display:flex;align-items:center;gap:8px;
+  padding:6px 10px;border-radius:4px;cursor:pointer;
+  font-family:'Share Tech Mono',monospace;font-size:12px;
+  color:var(--text);transition:background .15s;border:1px solid transparent;
+}
+.modal-option:hover{background:rgba(0,229,200,0.1);border-color:rgba(0,229,200,0.2)}
+.modal-option .opt-name{color:var(--accent);flex:1}
+.modal-option .opt-self{color:var(--best);font-size:10px}
+#modal-cancel{
+  margin-top:12px;padding:6px;text-align:center;
+  border:1px solid var(--border);border-radius:4px;
+  cursor:pointer;font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--textDim);transition:all .15s;
+}
+#modal-cancel:hover{border-color:var(--danger);color:var(--danger)}
+
+/* ── Help Overlay ──────────────────────── */
+#help-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:300;
+  background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;
+  backdrop-filter:blur(6px);
+}
+#help-overlay.show{display:flex}
+#help-box{
+  background:var(--panel);border:1px solid var(--border);border-radius:10px;
+  padding:24px 28px;max-width:560px;width:90%;max-height:85vh;overflow-y:auto;
+  box-shadow:0 12px 60px rgba(0,0,0,0.6);
+}
+#help-box h2{font-family:'Orbitron',sans-serif;font-size:14px;color:var(--active);letter-spacing:2px;margin-bottom:16px}
+.help-section{margin-bottom:14px}
+.help-section h3{font-family:'Orbitron',sans-serif;font-size:10px;color:var(--accent);letter-spacing:1px;margin-bottom:6px;text-transform:uppercase}
+.help-row{display:flex;gap:10px;margin-bottom:4px;font-family:'Share Tech Mono',monospace;font-size:11px;line-height:1.5}
+.help-key{
+  min-width:80px;color:var(--best);text-align:right;flex-shrink:0;
+  background:rgba(255,215,0,0.06);padding:1px 6px;border-radius:3px;
+  border:1px solid rgba(255,215,0,0.15);font-size:10px;
+  display:flex;align-items:center;justify-content:flex-end;
+}
+.help-desc{color:var(--text)}
+.help-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.help-swatch{display:flex;align-items:center;gap:5px;font-family:'Share Tech Mono',monospace;font-size:10px}
+.help-swatch .sw{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+/* ── Minimap ───────────────────────────── */
+#minimap{
+  position:absolute;bottom:10px;right:10px;z-index:20;
+  width:140px;height:140px;
+  background:rgba(6,13,24,0.85);border:1px solid var(--border);border-radius:6px;
+  overflow:hidden;cursor:pointer;transition:opacity .2s;
+}
+#minimap:hover{opacity:0.95}
+#minimap canvas{width:100%;height:100%;display:block}
+#minimap-viewport{
+  position:absolute;border:1px solid var(--accent);pointer-events:none;
+  box-shadow:0 0 6px rgba(0,184,255,0.3);
+}
+
+/* ── Toolbar ───────────────────────────── */
+#toolbar{
+  position:absolute;top:10px;right:10px;z-index:20;
+  display:flex;flex-direction:column;gap:4px;
+}
+.tb-btn{
+  width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  color:var(--textDim);font-size:14px;cursor:pointer;transition:all .15s;
+  font-family:'Share Tech Mono',monospace;position:relative;
+}
+.tb-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tb-btn .tb-tip{
+  display:none;position:absolute;right:36px;top:50%;transform:translateY(-50%);
+  background:var(--panel);border:1px solid var(--border);border-radius:3px;
+  padding:2px 6px;font-size:9px;white-space:nowrap;color:var(--text);
+}
+.tb-btn:hover .tb-tip{display:block}
+
+/* ── Loading ───────────────────────────── */
+#loading{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Orbitron',sans-serif;color:var(--active);font-size:14px;letter-spacing:3px;
+}
+
+/* ── Toast ─────────────────────────────── */
+#toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(60px);
+  background:var(--panel);border:1px solid var(--active);border-radius:6px;
+  padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:11px;
+  color:var(--active);z-index:400;opacity:0;transition:all .3s ease;
+  pointer-events:none;box-shadow:0 4px 20px rgba(0,229,200,0.2);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1 id="title-btn"><span id="game-title">Metazooa</span> Solver</h1>
+  <div id="game-switch">
+    <button class="hdr-btn" id="switch-zooa">🐾 Zooa</button>
+    <button class="hdr-btn" id="switch-flora">🌿 Flora</button>
+  </div>
+  <div id="search-wrap">
+    <span id="search-icon">🔍</span>
+    <input id="search-input" type="text" placeholder="Search  (/)" autocomplete="off" spellcheck="false">
+    <div id="search-results"></div>
+  </div>
+  <div id="status"></div>
+  <div id="guesses-row"></div>
+</div>
+<div id="tree-container">
+  <div id="loading">LOADING PHYLOGENY...</div>
+  <svg id="tree-svg">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glowBright" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="4" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glowSearch" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <div id="toolbar"></div>
+  <div id="minimap"><canvas></canvas><div id="minimap-viewport"></div></div>
+</div>
+<div id="tooltip"></div>
+<div id="toast"></div>
+<div id="modal-overlay">
+  <div id="modal">
+    <h2 id="modal-title">SELECT COMMON ANCESTOR</h2>
+    <div class="modal-subtitle" id="modal-subtitle"></div>
+    <div id="modal-options"></div>
+    <div id="modal-cancel">Cancel</div>
+  </div>
+</div>
+<div id="help-overlay">
+  <div id="help-box">
+    <h2>HOW TO USE</h2>
+    <div class="help-section">
+      <h3>Game Flow</h3>
+      <div class="help-row"><div class="help-desc">This tool shows the optimal guessing strategy for <a href="https://metazooa.com" target="_blank" style="color:var(--accent)">Metazooa</a> and <a href="https://metaflora.com" target="_blank" style="color:var(--accent)">Metaflora</a>. Use the toggle buttons to switch games. The golden node is always the best next guess &mdash; it sits at the deepest point of the heaviest active subtree, maximizing information gain.</div></div>
+      <div class="help-row"><div class="help-desc">Click an <span style="color:var(--active)">active species</span> to record a guess and the common ancestor the game reported. The tree updates automatically. Hover guess chips to see their paths highlighted on the tree.</div></div>
+    </div>
+    <div class="help-section">
+      <h3>Keyboard Shortcuts</h3>
+      <div class="help-row"><div class="help-key">/</div><div class="help-desc">Focus search box</div></div>
+      <div class="help-row"><div class="help-key">?</div><div class="help-desc">Toggle this help</div></div>
+      <div class="help-row"><div class="help-key">F</div><div class="help-desc">Fit entire tree in view</div></div>
+      <div class="help-row"><div class="help-key">A</div><div class="help-desc">Zoom to fit active subtree</div></div>
+      <div class="help-row"><div class="help-key">B</div><div class="help-desc">Zoom to best guess</div></div>
+      <div class="help-row"><div class="help-key">Z</div><div class="help-desc">Undo last guess</div></div>
+      <div class="help-row"><div class="help-key">Esc</div><div class="help-desc">Close dialogs / blur search</div></div>
+      <div class="help-row"><div class="help-key">Dbl-click</div><div class="help-desc">Zoom to any node</div></div>
+      <div class="help-row"><div class="help-key">Right-click</div><div class="help-desc">Copy species name to clipboard</div></div>
+    </div>
+    <div class="help-section">
+      <h3>Color Legend</h3>
+      <div class="help-legend">
+        <div class="help-swatch"><span class="sw" style="background:#00e5c8"></span>Active species</div>
+        <div class="help-swatch"><span class="sw" style="background:#ffd700"></span>Best guess</div>
+        <div class="help-swatch"><span class="sw" style="background:#263040"></span>Inactive</div>
+        <div class="help-swatch"><span class="sw" style="background:#ff6600"></span>Search / guess highlight</div>
+      </div>
+    </div>
+    <div class="help-section">
+      <h3>Tips</h3>
+      <div class="help-row"><div class="help-desc">Your guesses are saved in the URL hash &mdash; bookmark or share to resume later. The minimap in the bottom-right corner lets you navigate quickly. Click on it to jump to that area. Click the guess chips to zoom to their species on the tree.</div></div>
+    </div>
+    <div style="margin-top:16px;padding:6px;text-align:center;border:1px solid var(--border);border-radius:4px;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--textDim);transition:all .15s" onmouseover="this.style.borderColor='var(--danger)';this.style.color='var(--danger)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--textDim)'" onclick="document.getElementById('help-overlay').classList.remove('show')">Close</div>
+  </div>
+</div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(async function(){
+
+/* ── Game Selection ───────────────────────────────── */
+const params = new URLSearchParams(location.search);
+const currentGame = params.get('game') === 'metaflora' ? 'metaflora' : 'metazooa';
+const dataFile = currentGame === 'metaflora' ? 'species-metaflora.json' : 'species-metazooa.json';
+document.getElementById('game-title').textContent = currentGame === 'metaflora' ? 'Metaflora' : 'Metazooa';
+document.title = (currentGame === 'metaflora' ? 'Metaflora' : 'Metazooa') + ' Solver';
+document.getElementById(currentGame === 'metaflora' ? 'switch-flora' : 'switch-zooa').classList.add('active-game');
+document.getElementById('switch-zooa').onclick = () => {
+  if (currentGame !== 'metazooa') location.href = location.pathname + '?game=metazooa';
+};
+document.getElementById('switch-flora').onclick = () => {
+  if (currentGame !== 'metaflora') location.href = location.pathname + '?game=metaflora';
+};
+
+/* ── Load Data ───────────────────────────────────── */
+const resp = await fetch(dataFile);
+const treeData = await resp.json();
+document.getElementById('loading').remove();
+
+/* ── Build Hierarchy ─────────────────────────────── */
+const root = d3.hierarchy(treeData);
+let uid = 0;
+root.each(n => { n._uid = uid++; });
+const allNodes = root.descendants();
+const allLinks = root.links();
+const labeledNodes = allNodes.filter(n => n.data.label);
+const totalLabeled = labeledNodes.length;
+
+/* Index maps */
+const uidToNode = new Map();
+allNodes.forEach(n => uidToNode.set(n._uid, n));
+const nameToNode = new Map();
+allNodes.forEach(n => nameToNode.set(n.data.name, n));
+const labelToNode = new Map();
+labeledNodes.forEach(n => labelToNode.set(n.data.label, n));
+
+/* ── Ancestor helpers ────────────────────────────── */
+function ancestors(node) {
+  const a = []; let n = node;
+  while (n) { a.push(n); n = n.parent; }
+  return a;
+}
+function lca(a, b) {
+  const sa = new Set(ancestors(a).map(n => n._uid));
+  let n = b;
+  while (n) { if (sa.has(n._uid)) return n; n = n.parent; }
+  return root;
+}
+function pathBetween(a, b) {
+  const l = lca(a, b);
+  const s = new Set();
+  let n = a; while (n) { s.add(n._uid); if (n._uid === l._uid) break; n = n.parent; }
+  n = b; while (n) { s.add(n._uid); if (n._uid === l._uid) break; n = n.parent; }
+  return s;
+}
+function ancestryPath(node) {
+  return ancestors(node).reverse().map(n => n.data.label || n.data.name);
+}
+
+/* ── State ───────────────────────────────────────── */
+let guesses = [];
+let guessIdCounter = 0;
+const activeMap = new Map();
+labeledNodes.forEach(n => activeMap.set(n._uid, true));
+
+function recomputeActive() {
+  labeledNodes.forEach(x => {
+    let ok = true;
+    for (const guess of guesses) {
+      if (lca(guess.g, x)._uid !== guess.c._uid) { ok = false; break; }
+    }
+    activeMap.set(x._uid, ok);
+  });
+}
+function computeA(node) {
+  let a = 0;
+  if (node.data.label && activeMap.get(node._uid)) a = 1;
+  if (node.children) for (const c of node.children) a += computeA(c);
+  node._A = a;
+  return a;
+}
+function totalActive() {
+  let c = 0;
+  labeledNodes.forEach(n => { if (activeMap.get(n._uid)) c++; });
+  return c;
+}
+function computeBestGuess() {
+  computeA(root);
+  const ta = totalActive();
+  if (ta === 0) return null;
+  if (ta === 1) {
+    const winner = labeledNodes.find(n => activeMap.get(n._uid));
+    if (guesses.some(g => g.g._uid === winner._uid)) return { solved: true, node: winner };
+  }
+  let cur = root;
+  while (cur.children) {
+    let best = null, bestA = -1;
+    for (const c of cur.children) { if (c._A > bestA) { bestA = c._A; best = c; } }
+    if (bestA === 0) break;
+    cur = best;
+  }
+  return { solved: false, node: cur };
+}
+function lcaOfAllActive() {
+  computeA(root);
+  const ta = totalActive();
+  if (ta === 0) return root;
+  let cur = root;
+  while (cur.children) {
+    let found = null;
+    for (const c of cur.children) { if (c._A === ta) { found = c; break; } }
+    if (!found) break;
+    cur = found;
+  }
+  return cur;
+}
+
+/* Compute exact expected (avg) and worst-case (max) guesses remaining */
+function computeGuessStats(node) {
+  if (node._A === 0) return { avg: 0, max: 0 };
+  /* Gather parts: each child with A>0, plus self if labeled+active */
+  const parts = [];
+  if (node.children) {
+    for (const c of node.children) {
+      if (c._A > 0) parts.push({ A: c._A, ...computeGuessStats(c) });
+    }
+  }
+  /* If node itself is labeled and active, treat as a virtual leaf (needs 1 guess) */
+  if (node.data.label && activeMap.get(node._uid)) {
+    parts.push({ A: 1, avg: 1, max: 1 });
+  }
+  /* Single branch: no branching cost */
+  if (parts.length <= 1) return parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
+  /* Average: sort by A descending, add rank, weighted average by A */
+  const byA = [...parts].sort((a, b) => b.A - a.A);
+  let wSum = 0, aSum = 0;
+  byA.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
+  const avg = aSum > 0 ? wSum / aSum : 0;
+  /* Maximum: sort by A descending, add rank to each max, take overall max */
+  let mx = 0;
+  byA.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+  return { avg, max: mx };
+}
+
+/* ── Layout ──────────────────────────────────────── */
+const svg = d3.select('#tree-svg');
+const container = document.getElementById('tree-container');
+const RADIUS = 520;
+const treeLayout = d3.cluster().size([2 * Math.PI, RADIUS]).separation(() => 1);
+treeLayout(root);
+
+function rx(d) { return d.y * Math.cos(d.x - Math.PI / 2); }
+function ry(d) { return d.y * Math.sin(d.x - Math.PI / 2); }
+
+const g = svg.append('g');
+const zoom = d3.zoom().scaleExtent([0.15, 14]).on('zoom', e => {
+  g.attr('transform', e.transform);
+  updateMinimap();
+});
+svg.call(zoom);
+
+function fitView() {
+  const w = container.clientWidth, h = container.clientHeight;
+  const scale = Math.min(w, h) / (2 * (RADIUS + 140));
+  svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(w/2, h/2).scale(scale));
+}
+function zoomToNode(node, scale) {
+  scale = scale || 4;
+  const nx = rx(node), ny = ry(node);
+  const w = container.clientWidth, h = container.clientHeight;
+  svg.transition().duration(700).ease(d3.easeCubicInOut)
+    .call(zoom.transform, d3.zoomIdentity.translate(w/2 - nx*scale, h/2 - ny*scale).scale(scale));
+}
+function zoomToActive() {
+  const active = labeledNodes.filter(n => activeMap.get(n._uid));
+  if (!active.length) return;
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  active.forEach(n => {
+    const x = rx(n), y = ry(n);
+    if (x < minX) minX = x; if (x > maxX) maxX = x;
+    if (y < minY) minY = y; if (y > maxY) maxY = y;
+  });
+  const cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+  const w = container.clientWidth, h = container.clientHeight;
+  const dx = maxX - minX + 80, dy = maxY - minY + 80;
+  const scale = Math.min(w / Math.max(dx,1), h / Math.max(dy,1), 8);
+  svg.transition().duration(700).ease(d3.easeCubicInOut)
+    .call(zoom.transform, d3.zoomIdentity.translate(w/2 - cx*scale, h/2 - cy*scale).scale(scale));
+}
+setTimeout(fitView, 60);
+window.addEventListener('resize', () => setTimeout(fitView, 50));
+
+/* ── Draw Links ──────────────────────────────────── */
+const linkG = g.append('g');
+const links = linkG.selectAll('path').data(allLinks).join('path')
+  .attr('class', 'link')
+  .attr('d', d3.linkRadial().angle(d => d.x).radius(d => d.y));
+
+/* ── Draw Nodes ──────────────────────────────────── */
+const nodeG = g.append('g');
+const nodeGroups = nodeG.selectAll('g').data(allNodes).join('g')
+  .attr('transform', d => `translate(${rx(d)},${ry(d)})`);
+
+const dots = nodeGroups.append('circle')
+  .attr('class', d => d.data.label ? 'node-dot labeled' : 'node-dot internal')
+  .attr('r', d => d.data.label ? 2.5 : 1.2);
+
+const labels = nodeGroups.filter(d => d.data.label).append('text')
+  .attr('class', 'node-label').attr('dy', '0.31em')
+  .attr('transform', d => {
+    const ang = d.x * 180 / Math.PI, flip = d.x > Math.PI;
+    return `rotate(${flip ? ang - 270 : ang - 90}) translate(${flip ? -5 : 5},0)`;
+  })
+  .attr('text-anchor', d => d.x > Math.PI ? 'end' : 'start')
+  .text(d => d.data.label);
+
+/* ── Tooltip ─────────────────────────────────────── */
+const tooltip = document.getElementById('tooltip');
+nodeGroups.on('mouseenter', (e, d) => {
+  let html = `<div class="tt-sci">${d.data.name}</div>`;
+  if (d.data.label) html += `<div class="tt-label">${d.data.label}</div>`;
+  const parts = [];
+  if (d.data.label) parts.push(activeMap.get(d._uid) ? '● Active' : '○ Inactive');
+  if (d._A !== undefined) parts.push('Active species: ' + d._A);
+  if (parts.length) html += `<div class="tt-info">${parts.join(' · ')}</div>`;
+  const path = ancestryPath(d);
+  if (path.length > 1) html += `<div class="tt-path">${path.join(' › ')}</div>`;
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+})
+.on('mousemove', e => {
+  tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 370) + 'px';
+  tooltip.style.top = (e.clientY - 10) + 'px';
+})
+.on('mouseleave', () => { tooltip.style.display = 'none'; });
+
+/* ── Click → Guess, Double-click → Zoom, Right-click → Copy ── */
+nodeGroups.filter(d => d.data.label)
+  .on('click', (e, d) => { e.stopPropagation(); if (activeMap.get(d._uid)) showModal(d); })
+  .on('contextmenu', (e, d) => {
+    e.preventDefault();
+    if (d.data.label) {
+      navigator.clipboard.writeText(d.data.label).then(() => showToast(`Copied "${d.data.label}"`));
+    }
+  });
+/* Dbl-click any node to zoom */
+nodeGroups.on('dblclick', (e, d) => { e.stopPropagation(); e.preventDefault(); zoomToNode(d, d.data.label ? 4 : 3); });
+
+/* ── Modal ───────────────────────────────────────── */
+const modalOverlay = document.getElementById('modal-overlay');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalOptions = document.getElementById('modal-options');
+document.getElementById('modal-cancel').onclick = () => modalOverlay.classList.remove('show');
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.classList.remove('show'); });
+
+function showModal(gNode) {
+  modalSubtitle.textContent = `Common ancestor between ? and "${gNode.data.label}"`;
+  modalOptions.innerHTML = '';
+  const lcaAll = lcaOfAllActive();
+  const ancs = [];
+  let n = gNode;
+  while (n) { ancs.push(n); if (n._uid === lcaAll._uid) break; n = n.parent; }
+  for (const a of ancs) {
+    const div = document.createElement('div');
+    div.className = 'modal-option';
+    div.innerHTML = `<span class="opt-name">${a.data.name}</span>${a.data.label ? `<span class="opt-self">[${a.data.label}]</span>` : ''}`;
+    div.onclick = () => { addGuess(gNode, a); modalOverlay.classList.remove('show'); };
+    modalOptions.appendChild(div);
+  }
+  modalOverlay.classList.add('show');
+}
+
+/* ── Guess Management ────────────────────────────── */
+function addGuess(gNode, cNode) {
+  guesses.push({ id: guessIdCounter++, g: gNode, c: cNode });
+  recomputeActive();
+  updateAll();
+  saveHash();
+}
+function removeGuess(id) {
+  guesses = guesses.filter(g => g.id !== id);
+  recomputeActive();
+  updateAll();
+  saveHash();
+}
+function undoGuess() {
+  if (!guesses.length) return;
+  guesses.pop();
+  recomputeActive();
+  updateAll();
+  saveHash();
+  showToast('Undid last guess');
+}
+function resetGuesses() {
+  guesses = [];
+  guessIdCounter = 0;
+  recomputeActive();
+  updateAll();
+  saveHash();
+}
+
+/* ── URL Hash Persistence ────────────────────────── */
+function saveHash() {
+  if (guesses.length === 0) { history.replaceState(null, '', location.pathname + location.search); return; }
+  const parts = guesses.map(g => encodeURIComponent(g.g.data.label) + ':' + encodeURIComponent(g.c.data.name));
+  history.replaceState(null, '', '#' + parts.join(','));
+}
+function loadHash() {
+  if (!location.hash || location.hash.length < 2) return;
+  try {
+    const raw = location.hash.slice(1);
+    const pairs = raw.split(',');
+    for (const p of pairs) {
+      const sep = p.indexOf(':');
+      if (sep < 0) continue;
+      const gLabel = decodeURIComponent(p.slice(0, sep));
+      const cName = decodeURIComponent(p.slice(sep + 1));
+      const gNode = labelToNode.get(gLabel);
+      const cNode = nameToNode.get(cName);
+      if (gNode && cNode) guesses.push({ id: guessIdCounter++, g: gNode, c: cNode });
+    }
+    if (guesses.length) recomputeActive();
+  } catch (e) { console.warn('Failed to parse URL hash', e); }
+}
+
+/* ── Guess Chip Hover → Path Highlight ───────────── */
+function setGuessHover(id) {
+  const guess = id !== null ? guesses.find(g => g.id === id) : null;
+  const pathUids = guess ? pathBetween(guess.g, guess.c) : null;
+  links.classed('link-guess-path', false);
+  dots.classed('guess-g', false).classed('guess-c', false);
+  if (pathUids) {
+    links.each(function(d) {
+      if (pathUids.has(d.source._uid) && pathUids.has(d.target._uid))
+        d3.select(this).classed('link-guess-path', true);
+    });
+    dots.filter(d => d._uid === guess.g._uid).classed('guess-g', true);
+    dots.filter(d => d._uid === guess.c._uid).classed('guess-c', true);
+  }
+}
+
+/* ── Render Updates ──────────────────────────────── */
+function updateAll() {
+  const bg = computeBestGuess();
+  const bestUid = bg && !bg.solved ? bg.node._uid : null;
+  const solvedNode = bg && bg.solved ? bg.node : null;
+  const bestPath = new Set();
+  if (bg) { let n = bg.node; while (n) { bestPath.add(n._uid); n = n.parent; } }
+
+  /* Compute persistent guess paths (dim red for all guesses) */
+  const guessPaths = new Set();
+  for (const guess of guesses) {
+    const p = pathBetween(guess.g, guess.c);
+    p.forEach(uid => guessPaths.add(uid));
+  }
+
+  links.each(function(d) {
+    const el = d3.select(this), targetA = d.target._A || 0;
+    el.classed('link-active', false).classed('link-hot', false).classed('link-dead', false).classed('link-guess-persistent', false);
+    const onGuessPath = guessPaths.has(d.source._uid) && guessPaths.has(d.target._uid);
+    if (onGuessPath) { el.classed('link-guess-persistent', true); }
+    else if (targetA === 0) el.classed('link-dead', true);
+    else if (bestPath.has(d.target._uid)) el.classed('link-hot', true);
+    else el.classed('link-active', true);
+  });
+
+  dots.each(function(d) {
+    const el = d3.select(this);
+    el.classed('active', false).classed('inactive', false).classed('internal', false).classed('best-guess', false);
+    if (d.data.label) {
+      const a = activeMap.get(d._uid);
+      el.classed('active', a && d._uid !== bestUid).classed('inactive', !a).classed('best-guess', d._uid === bestUid);
+      el.attr('r', d._uid === bestUid ? 4 : 2.5);
+    } else { el.classed('internal', true).attr('r', 1.2); }
+  });
+
+  labels.each(function(d) {
+    const el = d3.select(this), a = activeMap.get(d._uid);
+    el.classed('active', a).classed('inactive', !a).classed('best-guess', d._uid === bestUid);
+  });
+
+  const ta = totalActive();
+  const statusEl = document.getElementById('status');
+  const stats = ta > 1 ? computeGuessStats(root) : { avg: 0, max: 0 };
+  if (solvedNode) {
+    statusEl.innerHTML = `<span class="solved">✦ SOLVED: ${solvedNode.data.label}</span> <span class="count">in ${guesses.length} guess${guesses.length !== 1 ? 'es' : ''}</span>`;
+  } else if (bg) {
+    statusEl.innerHTML = `Guess: <span class="best-label">${bg.node.data.label}</span> <span class="count">${ta}/${totalLabeled}</span>`;
+    if (ta > 1) statusEl.innerHTML += ` <span class="est">avg ${stats.avg.toFixed(1)} · max ${stats.max}</span>`;
+    if (!guesses.length) statusEl.innerHTML += ` <span class="count">· click species or press ?</span>`;
+  } else {
+    statusEl.innerHTML = `<span class="count">No active — undo or reset</span>`;
+  }
+
+  const guessesEl = document.getElementById('guesses-row');
+  guessesEl.innerHTML = '';
+  for (const guess of guesses) {
+    const chip = document.createElement('div');
+    chip.className = 'guess-chip';
+    chip.innerHTML = `${guess.g.data.label}<span class="sci"> → ${guess.c.data.name}</span><span class="del">×</span>`;
+    chip.querySelector('.del').onclick = ev => { ev.stopPropagation(); removeGuess(guess.id); };
+    chip.addEventListener('mouseenter', () => setGuessHover(guess.id));
+    chip.addEventListener('mouseleave', () => setGuessHover(null));
+    chip.addEventListener('click', () => zoomToNode(guess.g, 3));
+    guessesEl.appendChild(chip);
+  }
+  if (guesses.length > 1) {
+    const btn = document.createElement('button');
+    btn.className = 'hdr-btn'; btn.textContent = 'Undo'; btn.onclick = undoGuess;
+    guessesEl.appendChild(btn);
+  }
+  if (guesses.length > 0) {
+    const btn = document.createElement('button');
+    btn.className = 'hdr-btn danger'; btn.textContent = 'Reset'; btn.onclick = resetGuesses;
+    guessesEl.appendChild(btn);
+  }
+  updateMinimap();
+}
+
+/* ── Search ──────────────────────────────────────── */
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+let searchHighlightUid = null, searchHighlightTimer = null, srSelectedIdx = -1;
+const searchIndex = [];
+allNodes.forEach(n => {
+  if (n.data.label) searchIndex.push({ text: n.data.label.toLowerCase(), display: n.data.label, sci: n.data.name, type: 'common', node: n });
+  searchIndex.push({ text: n.data.name.toLowerCase(), display: n.data.name, sci: n.data.name, type: n.data.label ? 'sci' : 'clade', node: n });
+});
+function highlightMatch(text, query) {
+  const i = text.toLowerCase().indexOf(query.toLowerCase());
+  if (i < 0) return text;
+  return text.slice(0, i) + '<span class="sr-match">' + text.slice(i, i + query.length) + '</span>' + text.slice(i + query.length);
+}
+function doSearch(query) {
+  srSelectedIdx = -1;
+  if (!query) { searchResults.classList.remove('open'); return; }
+  const q = query.toLowerCase(), matches = [];
+  for (const entry of searchIndex) {
+    const idx = entry.text.indexOf(q);
+    if (idx < 0) continue;
+    matches.push({ ...entry, priority: (idx === 0 ? 0 : 100) + ({ common: 0, sci: 10, clade: 20 }[entry.type]) });
+  }
+  matches.sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text));
+  const top = matches.slice(0, 15);
+  searchResults.innerHTML = '';
+  if (!top.length) { searchResults.classList.remove('open'); return; }
+  top.forEach((m, i) => {
+    const div = document.createElement('div');
+    div.className = 'sr-item'; div.dataset.idx = i;
+    const tp = m.type === 'common' ? '' : m.type === 'sci' ? 'sci' : 'clade';
+    div.innerHTML = m.type === 'common'
+      ? `<span class="sr-label">${highlightMatch(m.display, query)}</span><span class="sr-sci">${m.sci}</span><span class="sr-type">${tp}</span>`
+      : `<span class="sr-sci">${highlightMatch(m.display, query)}</span>${m.node.data.label ? '<span class="sr-label">' + m.node.data.label + '</span>' : ''}<span class="sr-type">${tp}</span>`;
+    div.addEventListener('mousedown', e => { e.preventDefault(); selectSearchResult(m.node); });
+    searchResults.appendChild(div);
+  });
+  searchResults.classList.add('open');
+}
+function selectSearchResult(node) {
+  searchInput.value = ''; searchResults.classList.remove('open'); searchInput.blur();
+  searchZoomTo(node);
+}
+function searchZoomTo(node) {
+  if (searchHighlightTimer) clearTimeout(searchHighlightTimer);
+  if (searchHighlightUid !== null) dots.filter(d => d._uid === searchHighlightUid).classed('search-highlight', false);
+  zoomToNode(node);
+  searchHighlightUid = node._uid;
+  dots.filter(d => d._uid === node._uid).classed('search-highlight', true).raise();
+  searchHighlightTimer = setTimeout(() => {
+    dots.filter(d => d._uid === node._uid).classed('search-highlight', false);
+    searchHighlightUid = null;
+  }, 5000);
+}
+searchInput.addEventListener('input', () => doSearch(searchInput.value.trim()));
+searchInput.addEventListener('focus', () => { if (searchInput.value.trim()) doSearch(searchInput.value.trim()); });
+searchInput.addEventListener('blur', () => { setTimeout(() => searchResults.classList.remove('open'), 150); });
+searchInput.addEventListener('keydown', e => {
+  const items = searchResults.querySelectorAll('.sr-item');
+  if (e.key === 'ArrowDown' && items.length) { e.preventDefault(); srSelectedIdx = Math.min(srSelectedIdx + 1, items.length - 1); items.forEach((el, i) => el.classList.toggle('sr-active', i === srSelectedIdx)); items[srSelectedIdx]?.scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'ArrowUp' && items.length) { e.preventDefault(); srSelectedIdx = Math.max(srSelectedIdx - 1, 0); items.forEach((el, i) => el.classList.toggle('sr-active', i === srSelectedIdx)); items[srSelectedIdx]?.scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'Enter' && srSelectedIdx >= 0) { e.preventDefault(); items[srSelectedIdx]?.dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); }
+  else if (e.key === 'Escape') { searchResults.classList.remove('open'); searchInput.blur(); }
+});
+
+/* ── Keyboard Shortcuts ──────────────────────────── */
+const helpOverlay = document.getElementById('help-overlay');
+document.addEventListener('keydown', e => {
+  if (e.target === searchInput) return;
+  if (modalOverlay.classList.contains('show')) { if (e.key === 'Escape') modalOverlay.classList.remove('show'); return; }
+  if (helpOverlay.classList.contains('show')) { if (e.key === 'Escape' || e.key === '?') helpOverlay.classList.remove('show'); return; }
+  if (e.key === '/') { e.preventDefault(); searchInput.focus(); }
+  else if (e.key === '?') helpOverlay.classList.add('show');
+  else if (e.key.toLowerCase() === 'f') fitView();
+  else if (e.key.toLowerCase() === 'a') zoomToActive();
+  else if (e.key.toLowerCase() === 'b') { const bg = computeBestGuess(); if (bg) zoomToNode(bg.node); }
+  else if (e.key.toLowerCase() === 'z') undoGuess();
+  else if (e.key === 'Escape') { searchResults.classList.remove('open'); searchInput.blur(); }
+});
+helpOverlay.addEventListener('click', e => { if (e.target === helpOverlay) helpOverlay.classList.remove('show'); });
+
+/* ── Toolbar Buttons ─────────────────────────────── */
+const toolbar = document.getElementById('toolbar');
+[
+  { icon: '?', fn: () => helpOverlay.classList.add('show'), tip: 'Help (?)' },
+  { icon: '⊙', fn: fitView, tip: 'Fit all (F)' },
+  { icon: '◎', fn: zoomToActive, tip: 'Fit active (A)' },
+  { icon: '★', fn: () => { const bg = computeBestGuess(); if (bg) zoomToNode(bg.node); }, tip: 'Best guess (B)' },
+].forEach(b => {
+  const btn = document.createElement('div');
+  btn.className = 'tb-btn';
+  btn.innerHTML = `${b.icon}<span class="tb-tip">${b.tip}</span>`;
+  btn.onclick = b.fn;
+  toolbar.appendChild(btn);
+});
+
+/* ── Toast ───────────────────────────────────────── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+/* ── Minimap ─────────────────────────────────────── */
+const minimapEl = document.getElementById('minimap');
+const minimapCanvas = minimapEl.querySelector('canvas');
+const minimapCtx = minimapCanvas.getContext('2d');
+const minimapVP = document.getElementById('minimap-viewport');
+const MM = 140, MM2 = MM * 2;
+minimapCanvas.width = MM2; minimapCanvas.height = MM2;
+
+function drawMinimapBase() {
+  const s = MM / (RADIUS + 100);
+  minimapCtx.clearRect(0, 0, MM2, MM2);
+  minimapCtx.strokeStyle = '#152535'; minimapCtx.lineWidth = 0.5;
+  minimapCtx.beginPath();
+  allLinks.forEach(l => {
+    minimapCtx.moveTo(MM + rx(l.source) * s, MM + ry(l.source) * s);
+    minimapCtx.lineTo(MM + rx(l.target) * s, MM + ry(l.target) * s);
+  });
+  minimapCtx.stroke();
+  labeledNodes.forEach(n => {
+    minimapCtx.fillStyle = activeMap.get(n._uid) ? '#00e5c8' : '#1a2530';
+    minimapCtx.beginPath();
+    minimapCtx.arc(MM + rx(n) * s, MM + ry(n) * s, 1, 0, 2 * Math.PI);
+    minimapCtx.fill();
+  });
+}
+
+function updateMinimap() {
+  drawMinimapBase();
+  const t = d3.zoomTransform(svg.node());
+  const w = container.clientWidth, h = container.clientHeight;
+  const s = MM / (RADIUS + 100);
+  const x0 = -t.x / t.k, y0 = -t.y / t.k;
+  const x1 = (w - t.x) / t.k, y1 = (h - t.y) / t.k;
+  const ml = (MM + x0 * s) / 2, mt = (MM + y0 * s) / 2;
+  const mw = (x1 - x0) * s / 2, mh = (y1 - y0) * s / 2;
+  minimapVP.style.left = ml + 'px'; minimapVP.style.top = mt + 'px';
+  minimapVP.style.width = Math.max(mw, 4) + 'px'; minimapVP.style.height = Math.max(mh, 4) + 'px';
+}
+
+minimapEl.addEventListener('click', e => {
+  const rect = minimapCanvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) / rect.width * MM2;
+  const my = (e.clientY - rect.top) / rect.height * MM2;
+  const s = MM / (RADIUS + 100);
+  const treeX = (mx - MM) / s, treeY = (my - MM) / s;
+  const t = d3.zoomTransform(svg.node());
+  const w = container.clientWidth, h = container.clientHeight;
+  svg.transition().duration(400).call(zoom.transform,
+    d3.zoomIdentity.translate(w/2 - treeX * t.k, h/2 - treeY * t.k).scale(t.k));
+});
+
+/* ── Title click → fit view ──────────────────────── */
+document.getElementById('title-btn').onclick = fitView;
+
+/* ── Init ────────────────────────────────────────── */
+loadHash();
+updateAll();
+
+})();
+</script>
+</body>
+</html>

@@ -49,6 +49,18 @@ class TreeNode:
         for child in self.children:
             child.print_tree(f, indent + 1)
 
+def tree_to_json(tree):
+    if tree.species is not None:
+        ret = {"name": tree.scientific, "label": tree.species}
+    elif len(tree.children) == 1:
+        return tree_to_json(next(iter(tree.children)))
+    else:
+        ret = {"name": tree.scientific, "desc": f"({len(tree.leaves)} species)"}
+    if len(tree.children) > 0:
+        tree.children.sort(key=lambda x: x.scientific)
+        ret["children"] = [tree_to_json(child) for child in tree.children]
+    return ret
+
 def calculate_depth(line):
     """
     Calculate the depth of a node based on its prefix characters.
@@ -248,13 +260,42 @@ def print_decision_tree(tree, depth=0):
     # output resulting string + statistics
     return desc, max_guesses, sum_guesses, tot_species
 
+def decision_tree_to_json(tree):
+    node, guess, subs = tree
+    # Sort children
+    subs.sort(key=lambda x: x[0].depth) # sort phylogenetically
+    # Recurse to print tree structure.
+    subret = []
+    max_guesses = 1
+    sum_guesses = 1
+    tot_species = 1
+    for sub in subs:
+        substr, submax, subsum, subcnt = decision_tree_to_json(sub)
+        max_guesses = max(max_guesses, submax + 1)
+        sum_guesses += subsum + subcnt
+        tot_species += subcnt
+        subret.append(substr)
+    outstr = {"name": node.scientific, "label": guess}
+    if tot_species > 1:
+        outstr["desc"] = f"{tot_species} options\n(max {max_guesses} guesses, avg {sum_guesses/tot_species:.4g})"
+    if len(subret) > 0:
+        outstr["children"] = subret
+    return outstr, max_guesses, sum_guesses, tot_species
+
 with open(f"output/species-{DATASET}.txt", "w") as f:
     TREE.print_tree(f)
+
+with open(f"output/species-{DATASET}.json", "w", encoding='utf-8') as f:
+    json.dump(tree_to_json(TREE), f, indent=2)
 
 ORDER, _ = build_minavg_order(TREE)
 DECIDE = order_to_decision_tree(TREE, set(TREE.leaves), ORDER)
 assert check_decision_tree(DECIDE, set()) == TREE.leaves
 
 with open(f"output/decision-{DATASET}.txt", "w") as f:
-    desc, _, _, species = print_decision_tree(DECIDE, 0)
+    desc, _, _, _ = print_decision_tree(DECIDE, 0)
     f.write(desc)
+
+with open(f"output/decision-{DATASET}.json", "w", encoding='utf-8') as f:
+    desc, _, _, _ = decision_tree_to_json(DECIDE)
+    json.dump(desc, f, indent=2)
