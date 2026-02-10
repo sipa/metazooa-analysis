@@ -65,6 +65,8 @@ body{display:flex;flex-direction:column}
 .hdr-btn.danger:hover{border-color:var(--danger);color:#ff6688}
 #game-switch{display:flex;gap:3px}
 #game-switch .hdr-btn.active-game{border-color:var(--active);color:var(--active);background:rgba(0,229,200,0.1)}
+.toggle-group{display:flex;gap:2px}
+.toggle-group .hdr-btn.tog-active{border-color:var(--accent);color:var(--accent);background:rgba(0,184,255,0.1)}
 
 /* ── Search ────────────────────────────── */
 #search-wrap{position:relative;flex-shrink:0}
@@ -253,6 +255,14 @@ body{display:flex;flex-direction:column}
     <button class="hdr-btn" id="switch-zooa">🐾 Zooa</button>
     <button class="hdr-btn" id="switch-flora">🌿 Flora</button>
   </div>
+  <div class="toggle-group" id="layout-switch">
+    <button class="hdr-btn tog-active" id="switch-radial">Radial</button>
+    <button class="hdr-btn" id="switch-tidy">Tidy</button>
+  </div>
+  <div class="toggle-group" id="strategy-switch">
+    <button class="hdr-btn tog-active" id="switch-minavg">Min avg</button>
+    <button class="hdr-btn" id="switch-minimax">Minimax</button>
+  </div>
   <div id="search-wrap">
     <span id="search-icon">🔍</span>
     <input id="search-input" type="text" placeholder="Search  (/)" autocomplete="off" spellcheck="false">
@@ -418,8 +428,11 @@ function totalActive() {
   labeledNodes.forEach(n => { if (activeMap.get(n._uid)) c++; });
   return c;
 }
+let strategyMode = 'minavg'; /* 'minavg' or 'minimax' */
+
 function computeBestGuess() {
   computeA(root);
+  computeGuessStats(root);
   const ta = totalActive();
   if (ta === 0) return null;
   if (ta === 1) {
@@ -428,9 +441,18 @@ function computeBestGuess() {
   }
   let cur = root;
   while (cur.children) {
-    let best = null, bestA = -1;
-    for (const c of cur.children) { if (c._A > bestA) { bestA = c._A; best = c; } }
-    if (bestA === 0) break;
+    let best = null, bestPrimary = -1, bestA = -1;
+    for (const c of cur.children) {
+      if (c._A === 0) continue;
+      if (strategyMode === 'minimax') {
+        if (c._maxG > bestPrimary || (c._maxG === bestPrimary && c._A > bestA)) {
+          bestPrimary = c._maxG; bestA = c._A; best = c;
+        }
+      } else {
+        if (c._A > bestA) { bestA = c._A; best = c; }
+      }
+    }
+    if (!best) break;
     cur = best;
   }
   return { solved: false, node: cur };
@@ -451,28 +473,32 @@ function lcaOfAllActive() {
 
 /* Compute exact expected (avg) and worst-case (max) guesses remaining */
 function computeGuessStats(node) {
-  if (node._A === 0) return { avg: 0, max: 0 };
-  /* Gather parts: each child with A>0, plus self if labeled+active */
+  if (node._A === 0) { node._avgG = 0; node._maxG = 0; return { avg: 0, max: 0 }; }
   const parts = [];
   if (node.children) {
     for (const c of node.children) {
       if (c._A > 0) parts.push({ A: c._A, ...computeGuessStats(c) });
     }
   }
-  /* If node itself is labeled and active, treat as a virtual leaf (needs 1 guess) */
   if (node.data.label && activeMap.get(node._uid)) {
     parts.push({ A: 1, avg: 1, max: 1 });
   }
-  /* Single branch: no branching cost */
-  if (parts.length <= 1) return parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
-  /* Average: sort by A descending, add rank, weighted average by A */
-  const byA = [...parts].sort((a, b) => b.A - a.A);
+  if (parts.length <= 1) {
+    const r = parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
+    node._avgG = r.avg; node._maxG = r.max; return r;
+  }
+  let sorted;
+  if (strategyMode === 'minimax') {
+    sorted = [...parts].sort((a, b) => b.max - a.max || b.A - a.A);
+  } else {
+    sorted = [...parts].sort((a, b) => b.A - a.A);
+  }
   let wSum = 0, aSum = 0;
-  byA.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
+  sorted.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
   const avg = aSum > 0 ? wSum / aSum : 0;
-  /* Maximum: sort by A descending, add rank to each max, take overall max */
   let mx = 0;
-  byA.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+  sorted.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+  node._avgG = avg; node._maxG = mx;
   return { avg, max: mx };
 }
 
@@ -480,11 +506,54 @@ function computeGuessStats(node) {
 const svg = d3.select('#tree-svg');
 const container = document.getElementById('tree-container');
 const RADIUS = 520;
-const treeLayout = d3.cluster().size([2 * Math.PI, RADIUS]).separation(() => 1);
-treeLayout(root);
+let layoutMode = 'radial'; /* 'radial' or 'tidy' */
+let treeCx = 0, treeCy = 0, treeRange = RADIUS * 2 + 200;
 
-function rx(d) { return d.y * Math.cos(d.x - Math.PI / 2); }
-function ry(d) { return d.y * Math.sin(d.x - Math.PI / 2); }
+function applyLayout() {
+  if (layoutMode === 'radial') {
+    d3.cluster().size([2 * Math.PI, RADIUS]).separation(() => 1)(root);
+    allNodes.forEach(d => {
+      d._rx = d.y * Math.cos(d.x - Math.PI / 2);
+      d._ry = d.y * Math.sin(d.x - Math.PI / 2);
+    });
+  } else {
+    d3.tree().size([totalLabeled * 6, RADIUS * 1.6]).separation(() => 1)(root);
+    allNodes.forEach(d => { d._rx = d.y; d._ry = d.x; });
+  }
+  /* Compute bounding box for minimap and fitView */
+  let minRx = Infinity, maxRx = -Infinity, minRy = Infinity, maxRy = -Infinity;
+  allNodes.forEach(d => {
+    if (d._rx < minRx) minRx = d._rx; if (d._rx > maxRx) maxRx = d._rx;
+    if (d._ry < minRy) minRy = d._ry; if (d._ry > maxRy) maxRy = d._ry;
+  });
+  treeCx = (minRx + maxRx) / 2; treeCy = (minRy + maxRy) / 2;
+  treeRange = Math.max(maxRx - minRx, maxRy - minRy) + 100;
+}
+applyLayout();
+
+function rx(d) { return d._rx; }
+function ry(d) { return d._ry; }
+
+function linkPath(d) {
+  if (layoutMode === 'radial') {
+    return d3.linkRadial().angle(d => d.x).radius(d => d.y)(d);
+  } else {
+    const sx = d.source._rx, sy = d.source._ry, tx = d.target._rx, ty = d.target._ry;
+    const mx = (sx + tx) / 2;
+    return `M${sx},${sy}C${mx},${sy} ${mx},${ty} ${tx},${ty}`;
+  }
+}
+function labelTransform(d) {
+  if (layoutMode === 'radial') {
+    const ang = d.x * 180 / Math.PI, flip = d.x > Math.PI;
+    return `rotate(${flip ? ang - 270 : ang - 90}) translate(${flip ? -6 : 6},0)`;
+  }
+  return `translate(6,0)`;
+}
+function labelAnchor(d) {
+  if (layoutMode === 'radial') return d.x > Math.PI ? 'end' : 'start';
+  return 'start';
+}
 
 const g = svg.append('g');
 const zoom = d3.zoom().scaleExtent([0.15, 14]).on('zoom', e => {
@@ -495,8 +564,22 @@ svg.call(zoom);
 
 function fitView() {
   const w = container.clientWidth, h = container.clientHeight;
-  const scale = Math.min(w, h) / (2 * (RADIUS + 140));
-  svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(w/2, h/2).scale(scale));
+  if (layoutMode === 'radial') {
+    const scale = Math.min(w, h) / (2 * (RADIUS + 140));
+    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(w/2, h/2).scale(scale));
+  } else {
+    const pad = 80;
+    let minRx = Infinity, maxRx = -Infinity, minRy = Infinity, maxRy = -Infinity;
+    allNodes.forEach(d => {
+      if (d._rx < minRx) minRx = d._rx; if (d._rx > maxRx) maxRx = d._rx;
+      if (d._ry < minRy) minRy = d._ry; if (d._ry > maxRy) maxRy = d._ry;
+    });
+    const dx = maxRx - minRx + pad * 2, dy = maxRy - minRy + pad * 2;
+    const cx = (minRx + maxRx) / 2, cy = (minRy + maxRy) / 2;
+    const scale = Math.min(w / dx, h / dy);
+    svg.transition().duration(400).call(zoom.transform,
+      d3.zoomIdentity.translate(w/2 - cx*scale, h/2 - cy*scale).scale(scale));
+  }
 }
 function zoomToNode(node, scale) {
   scale = scale || 4;
@@ -521,6 +604,13 @@ function zoomToActive() {
   svg.transition().duration(700).ease(d3.easeCubicInOut)
     .call(zoom.transform, d3.zoomIdentity.translate(w/2 - cx*scale, h/2 - cy*scale).scale(scale));
 }
+function transitionLayout(dur) {
+  dur = dur || 800;
+  nodeGroups.transition().duration(dur).attr('transform', d => `translate(${d._rx},${d._ry})`);
+  links.transition().duration(dur).attr('d', linkPath);
+  labels.transition().duration(dur).attr('transform', labelTransform).attr('text-anchor', labelAnchor);
+  setTimeout(fitView, dur + 50);
+}
 setTimeout(fitView, 60);
 window.addEventListener('resize', () => setTimeout(fitView, 50));
 
@@ -528,12 +618,12 @@ window.addEventListener('resize', () => setTimeout(fitView, 50));
 const linkG = g.append('g');
 const links = linkG.selectAll('path').data(allLinks).join('path')
   .attr('class', 'link')
-  .attr('d', d3.linkRadial().angle(d => d.x).radius(d => d.y));
+  .attr('d', linkPath);
 
 /* ── Draw Nodes ──────────────────────────────────── */
 const nodeG = g.append('g');
 const nodeGroups = nodeG.selectAll('g').data(allNodes).join('g')
-  .attr('transform', d => `translate(${rx(d)},${ry(d)})`);
+  .attr('transform', d => `translate(${d._rx},${d._ry})`);
 
 const dots = nodeGroups.append('circle')
   .attr('class', d => d.data.label ? 'node-dot labeled' : 'node-dot internal')
@@ -541,11 +631,8 @@ const dots = nodeGroups.append('circle')
 
 const labels = nodeGroups.filter(d => d.data.label).append('text')
   .attr('class', 'node-label').attr('dy', '0.31em')
-  .attr('transform', d => {
-    const ang = d.x * 180 / Math.PI, flip = d.x > Math.PI;
-    return `rotate(${flip ? ang - 270 : ang - 90}) translate(${flip ? -5 : 5},0)`;
-  })
-  .attr('text-anchor', d => d.x > Math.PI ? 'end' : 'start')
+  .attr('transform', labelTransform)
+  .attr('text-anchor', labelAnchor)
   .text(d => d.data.label);
 
 /* ── Tooltip ─────────────────────────────────────── */
@@ -715,7 +802,7 @@ function updateAll() {
 
   const ta = totalActive();
   const statusEl = document.getElementById('status');
-  const stats = ta > 1 ? computeGuessStats(root) : { avg: 0, max: 0 };
+  const stats = ta > 1 ? { avg: root._avgG, max: root._maxG } : { avg: 0, max: 0 };
   if (solvedNode) {
     statusEl.innerHTML = `<span class="solved">✦ SOLVED: ${solvedNode.data.label}</span> <span class="count">in ${guesses.length} guess${guesses.length !== 1 ? 'es' : ''}</span>`;
   } else if (bg) {
@@ -864,20 +951,22 @@ const minimapVP = document.getElementById('minimap-viewport');
 const MM = 140, MM2 = MM * 2;
 minimapCanvas.width = MM2; minimapCanvas.height = MM2;
 
+function mmScale() { return (MM - 10) / (treeRange / 2); }
+
 function drawMinimapBase() {
-  const s = MM / (RADIUS + 100);
+  const s = mmScale();
   minimapCtx.clearRect(0, 0, MM2, MM2);
   minimapCtx.strokeStyle = '#152535'; minimapCtx.lineWidth = 0.5;
   minimapCtx.beginPath();
   allLinks.forEach(l => {
-    minimapCtx.moveTo(MM + rx(l.source) * s, MM + ry(l.source) * s);
-    minimapCtx.lineTo(MM + rx(l.target) * s, MM + ry(l.target) * s);
+    minimapCtx.moveTo(MM + (l.source._rx - treeCx) * s, MM + (l.source._ry - treeCy) * s);
+    minimapCtx.lineTo(MM + (l.target._rx - treeCx) * s, MM + (l.target._ry - treeCy) * s);
   });
   minimapCtx.stroke();
   labeledNodes.forEach(n => {
     minimapCtx.fillStyle = activeMap.get(n._uid) ? '#00e5c8' : '#1a2530';
     minimapCtx.beginPath();
-    minimapCtx.arc(MM + rx(n) * s, MM + ry(n) * s, 1, 0, 2 * Math.PI);
+    minimapCtx.arc(MM + (n._rx - treeCx) * s, MM + (n._ry - treeCy) * s, 1, 0, 2 * Math.PI);
     minimapCtx.fill();
   });
 }
@@ -886,10 +975,10 @@ function updateMinimap() {
   drawMinimapBase();
   const t = d3.zoomTransform(svg.node());
   const w = container.clientWidth, h = container.clientHeight;
-  const s = MM / (RADIUS + 100);
+  const s = mmScale();
   const x0 = -t.x / t.k, y0 = -t.y / t.k;
   const x1 = (w - t.x) / t.k, y1 = (h - t.y) / t.k;
-  const ml = (MM + x0 * s) / 2, mt = (MM + y0 * s) / 2;
+  const ml = (MM + (x0 - treeCx) * s) / 2, mt = (MM + (y0 - treeCy) * s) / 2;
   const mw = (x1 - x0) * s / 2, mh = (y1 - y0) * s / 2;
   minimapVP.style.left = ml + 'px'; minimapVP.style.top = mt + 'px';
   minimapVP.style.width = Math.max(mw, 4) + 'px'; minimapVP.style.height = Math.max(mh, 4) + 'px';
@@ -899,8 +988,8 @@ minimapEl.addEventListener('click', e => {
   const rect = minimapCanvas.getBoundingClientRect();
   const mx = (e.clientX - rect.left) / rect.width * MM2;
   const my = (e.clientY - rect.top) / rect.height * MM2;
-  const s = MM / (RADIUS + 100);
-  const treeX = (mx - MM) / s, treeY = (my - MM) / s;
+  const s = mmScale();
+  const treeX = (mx - MM) / s + treeCx, treeY = (my - MM) / s + treeCy;
   const t = d3.zoomTransform(svg.node());
   const w = container.clientWidth, h = container.clientHeight;
   svg.transition().duration(400).call(zoom.transform,
@@ -909,6 +998,44 @@ minimapEl.addEventListener('click', e => {
 
 /* ── Title click → fit view ──────────────────────── */
 document.getElementById('title-btn').onclick = fitView;
+
+/* ── Layout Toggle ───────────────────────────────── */
+document.getElementById('switch-radial').onclick = () => {
+  if (layoutMode === 'radial') return;
+  layoutMode = 'radial';
+  document.getElementById('switch-radial').classList.add('tog-active');
+  document.getElementById('switch-tidy').classList.remove('tog-active');
+  applyLayout();
+  transitionLayout();
+  updateMinimap();
+};
+document.getElementById('switch-tidy').onclick = () => {
+  if (layoutMode === 'tidy') return;
+  layoutMode = 'tidy';
+  document.getElementById('switch-tidy').classList.add('tog-active');
+  document.getElementById('switch-radial').classList.remove('tog-active');
+  applyLayout();
+  transitionLayout();
+  updateMinimap();
+};
+
+/* ── Strategy Toggle ─────────────────────────────── */
+document.getElementById('switch-minavg').onclick = () => {
+  if (strategyMode === 'minavg') return;
+  strategyMode = 'minavg';
+  document.getElementById('switch-minavg').classList.add('tog-active');
+  document.getElementById('switch-minimax').classList.remove('tog-active');
+  updateAll();
+  showToast('Switched to min-average strategy');
+};
+document.getElementById('switch-minimax').onclick = () => {
+  if (strategyMode === 'minimax') return;
+  strategyMode = 'minimax';
+  document.getElementById('switch-minimax').classList.add('tog-active');
+  document.getElementById('switch-minavg').classList.remove('tog-active');
+  updateAll();
+  showToast('Switched to minimax strategy');
+};
 
 /* ── Init ────────────────────────────────────────── */
 loadHash();
