@@ -252,13 +252,30 @@ body{display:flex;flex-direction:column}
 
 /* ── Toast ─────────────────────────────── */
 #toast{
-  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(60px);
+  position:fixed;bottom:50px;left:50%;transform:translateX(-50%) translateY(60px);
   background:var(--panel);border:1px solid var(--active);border-radius:6px;
   padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:11px;
   color:var(--active);z-index:400;opacity:0;transition:all .3s ease;
   pointer-events:none;box-shadow:0 4px 20px rgba(0,229,200,0.2);
 }
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── Bottom Legend ─────────────────────── */
+#bottom-legend{
+  position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:30;
+  background:var(--panel);border:1px solid var(--border);border-radius:6px;
+  padding:6px 14px;display:flex;align-items:center;gap:14px;
+  font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--textDim);
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);opacity:0.85;transition:opacity .2s;
+  white-space:nowrap;
+}
+#bottom-legend:hover{opacity:1}
+#bottom-legend .bl-item{display:flex;align-items:center;gap:4px}
+#bottom-legend .bl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+#bottom-legend .bl-line{width:14px;height:2px;border-radius:1px;flex-shrink:0}
+#bottom-legend .bl-sep{width:1px;height:14px;background:var(--border)}
+#bottom-legend a{color:var(--accent);text-decoration:none}
+#bottom-legend a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -307,6 +324,15 @@ body{display:flex;flex-direction:column}
 </div>
 <div id="tooltip"></div>
 <div id="toast"></div>
+<div id="bottom-legend">
+  <div class="bl-item"><div class="bl-dot" style="background:#00e5c8"></div>Active</div>
+  <div class="bl-item"><div class="bl-dot" style="background:#ffd700;box-shadow:0 0 6px rgba(255,215,0,0.5)"></div>Best guess</div>
+  <div class="bl-item"><div class="bl-dot" style="background:#263040"></div>Inactive</div>
+  <div class="bl-item"><div class="bl-line" style="background:#2a6888"></div>Best path</div>
+  <div class="bl-item"><div class="bl-line" style="background:rgba(255,68,102,0.5)"></div>Guess path</div>
+  <div class="bl-sep"></div>
+  <span>Click a species to guess · Press <a href="#" onclick="document.getElementById('help-overlay').classList.add('show');return false">?</a> for help</span>
+</div>
 <div id="modal-overlay">
   <div id="modal">
     <h2 id="modal-title">SELECT COMMON ANCESTOR</h2>
