@@ -21,7 +21,7 @@ body{display:flex;flex-direction:column}
   position:relative;z-index:10;
   background:var(--panel);border-bottom:1px solid var(--border);
   padding:6px 14px;display:flex;align-items:center;gap:12px;flex-shrink:0;
-  flex-wrap:wrap;min-height:40px;
+  flex-wrap:wrap;min-height:40px;overflow:visible;
 }
 #header h1{
   font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;
@@ -67,6 +67,14 @@ body{display:flex;flex-direction:column}
 #game-switch .hdr-btn.active-game{border-color:var(--active);color:var(--active);background:rgba(0,229,200,0.1)}
 .toggle-group{display:flex;gap:2px}
 .toggle-group .hdr-btn.tog-active{border-color:var(--accent);color:var(--accent);background:rgba(0,184,255,0.1)}
+[data-tip]{position:relative}
+[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  padding:4px 8px;font-size:10px;font-family:'Share Tech Mono',monospace;
+  color:var(--text);white-space:nowrap;z-index:200;pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
 
 /* ── Search ────────────────────────────── */
 #search-wrap{position:relative;flex-shrink:0}
@@ -111,7 +119,9 @@ body{display:flex;flex-direction:column}
 .node-dot.labeled{cursor:pointer}
 .node-dot.active{fill:var(--active)}
 .node-dot.inactive{fill:var(--inactive)}
-.node-dot.internal{fill:#0d1a28;stroke:#1a3050;stroke-width:0.5}
+.node-dot.internal{fill:#0d1a28;stroke:#1a3050;stroke-width:0.5;cursor:pointer}
+.node-dot.internal-active{fill:#1a3858;stroke:#2a5878;stroke-width:0.8;cursor:pointer}
+.node-dot.selected-root{fill:var(--accent);stroke:var(--accent);stroke-width:1.5;filter:url(#glow)}
 .node-dot.best-guess{fill:var(--best);filter:url(#glow);animation:pulse 2s ease-in-out infinite}
 .node-dot.search-highlight{stroke:var(--orange);stroke-width:2.5;filter:url(#glowSearch);animation:searchPulse 1.5s ease-in-out 3}
 .node-dot.guess-g{stroke:var(--orange);stroke-width:2}
@@ -131,12 +141,15 @@ body{display:flex;flex-direction:column}
   background:var(--panel);border:1px solid var(--border);
   border-radius:4px;padding:6px 9px;font-size:13px;
   font-family:'Share Tech Mono',monospace;color:var(--text);
-  box-shadow:0 4px 20px rgba(0,0,0,0.5);display:none;max-width:360px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);display:none;max-width:420px;
 }
 #tooltip .tt-sci{color:var(--accent);font-style:italic}
 #tooltip .tt-label{color:var(--active);font-weight:600}
 #tooltip .tt-info{color:var(--textDim);font-size:11px;margin-top:2px}
 #tooltip .tt-path{color:var(--textDim);font-size:10px;margin-top:3px;line-height:1.4;opacity:0.7}
+#tooltip .tt-species{color:var(--textDim);font-size:9px;margin-top:3px;line-height:1.5;opacity:0.8}
+#tooltip .tt-species .tt-sp-label{color:var(--active);opacity:0.7}
+#tooltip .tt-species .tt-sp-more{color:var(--textDim);font-style:italic}
 
 /* ── Modal ─────────────────────────────── */
 #modal-overlay{
@@ -256,12 +269,12 @@ body{display:flex;flex-direction:column}
     <button class="hdr-btn" id="switch-flora">🌿 Flora</button>
   </div>
   <div class="toggle-group" id="layout-switch">
-    <button class="hdr-btn tog-active" id="switch-radial">Radial</button>
-    <button class="hdr-btn" id="switch-tidy">Tidy</button>
+    <button class="hdr-btn" id="switch-radial">Radial</button>
+    <button class="hdr-btn tog-active" id="switch-tidy">Tree</button>
   </div>
   <div class="toggle-group" id="strategy-switch">
-    <button class="hdr-btn tog-active" id="switch-minavg">Min avg</button>
-    <button class="hdr-btn" id="switch-minimax">Minimax</button>
+    <button class="hdr-btn tog-active" id="switch-minavg" data-tip="Optimize average number of guesses">Min avg</button>
+    <button class="hdr-btn" id="switch-minimax" data-tip="Optimize worst-case number of guesses">Minimax</button>
   </div>
   <div id="search-wrap">
     <span id="search-icon">🔍</span>
@@ -306,9 +319,14 @@ body{display:flex;flex-direction:column}
   <div id="help-box">
     <h2>HOW TO USE</h2>
     <div class="help-section">
-      <h3>Game Flow</h3>
-      <div class="help-row"><div class="help-desc">This tool shows the optimal guessing strategy for <a href="https://metazooa.com" target="_blank" style="color:var(--accent)">Metazooa</a> and <a href="https://metaflora.com" target="_blank" style="color:var(--accent)">Metaflora</a>. Use the toggle buttons to switch games. The golden node is always the best next guess &mdash; it sits at the deepest point of the heaviest active subtree, maximizing information gain.</div></div>
-      <div class="help-row"><div class="help-desc">Click an <span style="color:var(--active)">active species</span> to record a guess and the common ancestor the game reported. The tree updates automatically. Hover guess chips to see their paths highlighted on the tree.</div></div>
+      <h3>About</h3>
+      <div class="help-row"><div class="help-desc">This site demonstrates the optimal solving strategy for the games <a href="https://metazooa.com" target="_blank" style="color:var(--accent)">Metazooa</a> and <a href="https://flora.metazooa.com/" target="_blank" style="color:var(--accent)">Metaflora</a>, which it is <strong style="color:var(--text)">unofficial and unaffiliated with</strong>. The goal of those games is finding a mystery animal or plant by making guesses and learning the last common ancestor between each guess and the mystery species.</div></div>
+    </div>
+    <div class="help-section">
+      <h3>How to Play</h3>
+      <div class="help-row"><div class="help-desc">The best possible guess is always shown in <span style="color:var(--best)">gold</span>. Click on a species to enter a guess, after which you'll be asked to select the last common ancestor that the game reported. The tree updates automatically, narrowing down the remaining candidates.</div></div>
+      <div class="help-row"><div class="help-desc">The non-species clades are shown as internal unlabeled nodes in the tree. Hover over them to see their scientific name, statistics, and the species they contain. To help explore the tree, you can click on an inner node to restrict the solver to that subtree. Click it again to clear the restriction.</div></div>
+      <div class="help-row"><div class="help-desc">Use the <span style="color:var(--accent)">Min avg</span> strategy to minimize the average number of guesses, or <span style="color:var(--accent)">Minimax</span> to minimize the worst case. Hover the guess chips to see their paths highlighted on the tree.</div></div>
     </div>
     <div class="help-section">
       <h3>Keyboard Shortcuts</h3>
@@ -404,14 +422,28 @@ function ancestryPath(node) {
 /* ── State ───────────────────────────────────────── */
 let guesses = [];
 let guessIdCounter = 0;
+let selectedRoot = null; /* null = whole tree; or a node */
 const activeMap = new Map();
 labeledNodes.forEach(n => activeMap.set(n._uid, true));
+
+function effectiveRoot() { return selectedRoot || root; }
+
+function isDescendantOf(node, ancestor) {
+  let n = node;
+  while (n) { if (n._uid === ancestor._uid) return true; n = n.parent; }
+  return false;
+}
 
 function recomputeActive() {
   labeledNodes.forEach(x => {
     let ok = true;
-    for (const guess of guesses) {
-      if (lca(guess.g, x)._uid !== guess.c._uid) { ok = false; break; }
+    /* Selected root constraint */
+    if (selectedRoot && !isDescendantOf(x, selectedRoot)) { ok = false; }
+    /* Guess constraints */
+    if (ok) {
+      for (const guess of guesses) {
+        if (lca(guess.g, x)._uid !== guess.c._uid) { ok = false; break; }
+      }
     }
     activeMap.set(x._uid, ok);
   });
@@ -430,6 +462,14 @@ function totalActive() {
 }
 let strategyMode = 'minavg'; /* 'minavg' or 'minimax' */
 
+/* Unified child ordering: returns sorted array of parts */
+function sortParts(parts) {
+  if (strategyMode === 'minimax') {
+    return parts.sort((a, b) => b.max - a.max || b.A - a.A || a.name.localeCompare(b.name));
+  }
+  return parts.sort((a, b) => b.A - a.A || b.max - a.max || a.name.localeCompare(b.name));
+}
+
 function computeBestGuess() {
   computeA(root);
   computeGuessStats(root);
@@ -439,29 +479,24 @@ function computeBestGuess() {
     const winner = labeledNodes.find(n => activeMap.get(n._uid));
     if (guesses.some(g => g.g._uid === winner._uid)) return { solved: true, node: winner };
   }
-  let cur = root;
+  let cur = effectiveRoot();
   while (cur.children) {
-    let best = null, bestPrimary = -1, bestA = -1;
+    /* Build parts for children, pick first in unified order */
+    const parts = [];
     for (const c of cur.children) {
-      if (c._A === 0) continue;
-      if (strategyMode === 'minimax') {
-        if (c._maxG > bestPrimary || (c._maxG === bestPrimary && c._A > bestA)) {
-          bestPrimary = c._maxG; bestA = c._A; best = c;
-        }
-      } else {
-        if (c._A > bestA) { bestA = c._A; best = c; }
-      }
+      if (c._A > 0) parts.push({ node: c, A: c._A, max: c._maxG, name: c.data.name });
     }
-    if (!best) break;
-    cur = best;
+    if (parts.length === 0) break;
+    sortParts(parts);
+    cur = parts[0].node;
   }
   return { solved: false, node: cur };
 }
 function lcaOfAllActive() {
   computeA(root);
   const ta = totalActive();
-  if (ta === 0) return root;
-  let cur = root;
+  if (ta === 0) return effectiveRoot();
+  let cur = effectiveRoot();
   while (cur.children) {
     let found = null;
     for (const c of cur.children) { if (c._A === ta) { found = c; break; } }
@@ -477,27 +512,25 @@ function computeGuessStats(node) {
   const parts = [];
   if (node.children) {
     for (const c of node.children) {
-      if (c._A > 0) parts.push({ A: c._A, ...computeGuessStats(c) });
+      if (c._A > 0) {
+        const s = computeGuessStats(c);
+        parts.push({ A: c._A, avg: s.avg, max: s.max, name: c.data.name });
+      }
     }
   }
   if (node.data.label && activeMap.get(node._uid)) {
-    parts.push({ A: 1, avg: 1, max: 1 });
+    parts.push({ A: 1, avg: 1, max: 1, name: node.data.name });
   }
   if (parts.length <= 1) {
     const r = parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
     node._avgG = r.avg; node._maxG = r.max; return r;
   }
-  let sorted;
-  if (strategyMode === 'minimax') {
-    sorted = [...parts].sort((a, b) => b.max - a.max || b.A - a.A);
-  } else {
-    sorted = [...parts].sort((a, b) => b.A - a.A);
-  }
+  sortParts(parts);
   let wSum = 0, aSum = 0;
-  sorted.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
+  parts.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
   const avg = aSum > 0 ? wSum / aSum : 0;
   let mx = 0;
-  sorted.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+  parts.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
   node._avgG = avg; node._maxG = mx;
   return { avg, max: mx };
 }
@@ -506,18 +539,21 @@ function computeGuessStats(node) {
 const svg = d3.select('#tree-svg');
 const container = document.getElementById('tree-container');
 const RADIUS = 520;
-let layoutMode = 'radial'; /* 'radial' or 'tidy' */
+let layoutMode = 'tidy'; /* 'radial' or 'tidy' */
 let treeCx = 0, treeCy = 0, treeRange = RADIUS * 2 + 200;
 
 function applyLayout() {
   if (layoutMode === 'radial') {
+    /* Sort hierarchy so subtrees are contiguous in angular space (prevents crossings) */
+    root.sort((a, b) => a.height - b.height || a.data.name.localeCompare(b.data.name));
     d3.cluster().size([2 * Math.PI, RADIUS]).separation(() => 1)(root);
     allNodes.forEach(d => {
       d._rx = d.y * Math.cos(d.x - Math.PI / 2);
       d._ry = d.y * Math.sin(d.x - Math.PI / 2);
     });
   } else {
-    d3.tree().size([totalLabeled * 6, RADIUS * 1.6]).separation(() => 1)(root);
+    root.sort((a, b) => a.height - b.height || a.data.name.localeCompare(b.data.name));
+    d3.cluster().size([totalLabeled * 9, RADIUS * 1.6]).separation(() => 1)(root);
     allNodes.forEach(d => { d._rx = d.y; d._ry = d.x; });
   }
   /* Compute bounding box for minimap and fitView */
@@ -637,6 +673,29 @@ const labels = nodeGroups.filter(d => d.data.label).append('text')
 
 /* ── Tooltip ─────────────────────────────────────── */
 const tooltip = document.getElementById('tooltip');
+
+/* Collect all labeled descendants of a node */
+function getLabeledDescendants(node) {
+  const result = [];
+  function walk(n) {
+    if (n.data.label) result.push(n.data.label);
+    if (n.children) n.children.forEach(walk);
+  }
+  walk(node);
+  return result;
+}
+
+/* Pick a random sample of size k from array (Fisher-Yates partial shuffle) */
+function sampleArray(arr, k) {
+  const a = arr.slice();
+  const n = a.length;
+  for (let i = 0; i < Math.min(k, n); i++) {
+    const j = i + Math.floor(Math.random() * (n - i));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, k).sort();
+}
+
 nodeGroups.on('mouseenter', (e, d) => {
   let html = `<div class="tt-sci">${d.data.name}</div>`;
   if (d.data.label) html += `<div class="tt-label">${d.data.label}</div>`;
@@ -644,13 +703,23 @@ nodeGroups.on('mouseenter', (e, d) => {
   if (d.data.label) parts.push(activeMap.get(d._uid) ? '● Active' : '○ Inactive');
   if (d._A !== undefined) parts.push('Active species: ' + d._A);
   if (parts.length) html += `<div class="tt-info">${parts.join(' · ')}</div>`;
+  /* Species list */
+  const allSp = getLabeledDescendants(d);
+  if (allSp.length > 1 || (allSp.length > 0 && !d.data.label)) {
+    const MAX_SHOW = 10;
+    const sample = allSp.length <= MAX_SHOW ? allSp.slice().sort() : sampleArray(allSp, MAX_SHOW);
+    html += `<div class="tt-species">${allSp.length} species: `;
+    html += sample.map(s => `<span class="tt-sp-label">${s}</span>`).join(', ');
+    if (allSp.length > MAX_SHOW) html += ` <span class="tt-sp-more">… and ${allSp.length - MAX_SHOW} more</span>`;
+    html += `</div>`;
+  }
   const path = ancestryPath(d);
   if (path.length > 1) html += `<div class="tt-path">${path.join(' › ')}</div>`;
   tooltip.innerHTML = html;
   tooltip.style.display = 'block';
 })
 .on('mousemove', e => {
-  tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 370) + 'px';
+  tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 440) + 'px';
   tooltip.style.top = (e.clientY - 10) + 'px';
 })
 .on('mouseleave', () => { tooltip.style.display = 'none'; });
@@ -663,6 +732,20 @@ nodeGroups.filter(d => d.data.label)
     if (d.data.label) {
       navigator.clipboard.writeText(d.data.label).then(() => showToast(`Copied "${d.data.label}"`));
     }
+  });
+/* Click internal node → set as subtree root */
+nodeGroups.filter(d => !d.data.label)
+  .on('click', (e, d) => {
+    e.stopPropagation();
+    if (selectedRoot && selectedRoot._uid === d._uid) {
+      selectedRoot = null;
+      showToast('Root reset to full tree');
+    } else if (d._A > 0) {
+      selectedRoot = d;
+      showToast('Root set to ' + d.data.name);
+    }
+    recomputeActive();
+    updateAll();
   });
 /* Dbl-click any node to zoom */
 nodeGroups.on('dblclick', (e, d) => { e.stopPropagation(); e.preventDefault(); zoomToNode(d, d.data.label ? 4 : 3); });
@@ -715,6 +798,7 @@ function undoGuess() {
 function resetGuesses() {
   guesses = [];
   guessIdCounter = 0;
+  selectedRoot = null;
   recomputeActive();
   updateAll();
   saveHash();
@@ -787,12 +871,18 @@ function updateAll() {
 
   dots.each(function(d) {
     const el = d3.select(this);
-    el.classed('active', false).classed('inactive', false).classed('internal', false).classed('best-guess', false);
+    el.classed('active', false).classed('inactive', false).classed('internal', false)
+      .classed('internal-active', false).classed('best-guess', false).classed('selected-root', false);
     if (d.data.label) {
       const a = activeMap.get(d._uid);
       el.classed('active', a && d._uid !== bestUid).classed('inactive', !a).classed('best-guess', d._uid === bestUid);
       el.attr('r', d._uid === bestUid ? 4 : 2.5);
-    } else { el.classed('internal', true).attr('r', 1.2); }
+    } else {
+      const hasActive = (d._A || 0) > 0;
+      el.classed(hasActive ? 'internal-active' : 'internal', true);
+      if (selectedRoot && d._uid === selectedRoot._uid) el.classed('selected-root', true);
+      el.attr('r', hasActive ? 2.5 : 1.8);
+    }
   });
 
   labels.each(function(d) {
@@ -802,12 +892,13 @@ function updateAll() {
 
   const ta = totalActive();
   const statusEl = document.getElementById('status');
-  const stats = ta > 1 ? { avg: root._avgG, max: root._maxG } : { avg: 0, max: 0 };
+  const er = effectiveRoot();
+  const stats = ta > 1 ? { avg: er._avgG, max: er._maxG } : { avg: 0, max: 0 };
   if (solvedNode) {
     statusEl.innerHTML = `<span class="solved">✦ SOLVED: ${solvedNode.data.label}</span> <span class="count">in ${guesses.length} guess${guesses.length !== 1 ? 'es' : ''}</span>`;
   } else if (bg) {
-    statusEl.innerHTML = `Guess: <span class="best-label">${bg.node.data.label}</span> <span class="count">${ta}/${totalLabeled}</span>`;
-    if (ta > 1) statusEl.innerHTML += ` <span class="est">avg ${stats.avg.toFixed(1)} · max ${stats.max}</span>`;
+    statusEl.innerHTML = `Best guess: <span class="best-label">${bg.node.data.label}</span> <span class="count">${ta}/${totalLabeled}</span>`;
+    if (ta > 1) statusEl.innerHTML += ` <span class="est" title="Average guesses needed (following best-guess suggestions)">avg ${stats.avg.toFixed(1)}</span> · <span class="est" title="Worst-case guesses needed (following best-guess suggestions)">max ${stats.max}</span>`;
     if (!guesses.length) statusEl.innerHTML += ` <span class="count">· click species or press ?</span>`;
   } else {
     statusEl.innerHTML = `<span class="count">No active — undo or reset</span>`;
@@ -1007,7 +1098,6 @@ document.getElementById('switch-radial').onclick = () => {
   document.getElementById('switch-tidy').classList.remove('tog-active');
   applyLayout();
   transitionLayout();
-  updateMinimap();
 };
 document.getElementById('switch-tidy').onclick = () => {
   if (layoutMode === 'tidy') return;
@@ -1016,7 +1106,6 @@ document.getElementById('switch-tidy').onclick = () => {
   document.getElementById('switch-radial').classList.remove('tog-active');
   applyLayout();
   transitionLayout();
-  updateMinimap();
 };
 
 /* ── Strategy Toggle ─────────────────────────────── */
@@ -1040,6 +1129,15 @@ document.getElementById('switch-minimax').onclick = () => {
 /* ── Init ────────────────────────────────────────── */
 loadHash();
 updateAll();
+
+/* Show help on first visit */
+try {
+  const helpKey = 'metazooa-solver-seen-help';
+  if (!localStorage.getItem(helpKey)) {
+    helpOverlay.classList.add('show');
+    localStorage.setItem(helpKey, '1');
+  }
+} catch(e) { /* localStorage unavailable, just skip */ }
 
 })();
 </script>
