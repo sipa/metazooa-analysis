@@ -1000,16 +1000,12 @@ function updateAll() {
   if (bg) { let n = bg.node; while (n) { bestPath.add(n._uid); n = n.parent; } }
 
   /* Compute persistent guess paths (dim red for all guesses) */
-  const guessPaths = new Set();
-  for (const guess of guesses) {
-    const p = pathBetween(guess.g, guess.c);
-    p.forEach(uid => guessPaths.add(uid));
-  }
+  const guessPathSets = guesses.map(guess => pathBetween(guess.g, guess.c));
 
   links.each(function(d) {
     const el = d3.select(this), targetA = d.target._A || 0;
     el.classed('link-active', false).classed('link-hot', false).classed('link-dead', false).classed('link-guess-persistent', false);
-    const onGuessPath = guessPaths.has(d.source._uid) && guessPaths.has(d.target._uid);
+    const onGuessPath = guessPathSets.some(p => p.has(d.source._uid) && p.has(d.target._uid));
     if (onGuessPath) { el.classed('link-guess-persistent', true); }
     else if (targetA === 0) el.classed('link-dead', true);
     else if (bestPath.has(d.target._uid)) el.classed('link-hot', true);
