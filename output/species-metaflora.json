@@ -1,0 +1,1622 @@
+{
+  "name": "Viridiplantae",
+  "desc": "(215 species)",
+  "children": [
+    {
+      "name": "Caulerpa prolifera",
+      "label": "seaweed"
+    },
+    {
+      "name": "Embryophyta",
+      "desc": "(214 species)",
+      "children": [
+        {
+          "name": "Leucobryum glaucum",
+          "label": "moss"
+        },
+        {
+          "name": "Euphyllophyta",
+          "desc": "(213 species)",
+          "children": [
+            {
+              "name": "Sphaeropteris medullaris",
+              "label": "fern"
+            },
+            {
+              "name": "Spermatophyta",
+              "desc": "(212 species)",
+              "children": [
+                {
+                  "name": "Acrogymnospermae",
+                  "desc": "(7 species)",
+                  "children": [
+                    {
+                      "name": "Ginkgo biloba",
+                      "label": "ginkgo"
+                    },
+                    {
+                      "name": "Pinidae",
+                      "desc": "(6 species)",
+                      "children": [
+                        {
+                          "name": "Pinaceae",
+                          "desc": "(5 species)",
+                          "children": [
+                            {
+                              "name": "Cedrus libani",
+                              "label": "cedar of lebanon"
+                            },
+                            {
+                              "name": "Picea",
+                              "desc": "(2 species)",
+                              "children": [
+                                {
+                                  "name": "Picea abies",
+                                  "label": "spruce"
+                                },
+                                {
+                                  "name": "Picea pungens",
+                                  "label": "blue spruce"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Pinus sylvestris",
+                              "label": "baltic pine"
+                            },
+                            {
+                              "name": "Pseudotsuga menziesii",
+                              "label": "douglas fir"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Sequoiadendron giganteum",
+                          "label": "giant sequoia"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Magnoliopsida",
+                  "desc": "(205 species)",
+                  "children": [
+                    {
+                      "name": "Mesangiospermae",
+                      "desc": "(204 species)",
+                      "children": [
+                        {
+                          "name": "Liliopsida",
+                          "desc": "(34 species)",
+                          "children": [
+                            {
+                              "name": "Colocasia esculenta",
+                              "label": "taro"
+                            },
+                            {
+                              "name": "Petrosaviidae",
+                              "desc": "(33 species)",
+                              "children": [
+                                {
+                                  "name": "Asparagales",
+                                  "desc": "(10 species)",
+                                  "children": [
+                                    {
+                                      "name": "Amaryllidaceae",
+                                      "desc": "(4 species)",
+                                      "children": [
+                                        {
+                                          "name": "Allium",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Allium ampeloprasum",
+                                              "label": "leek"
+                                            },
+                                            {
+                                              "name": "Allium cepa",
+                                              "label": "onion"
+                                            },
+                                            {
+                                              "name": "Allium sativum",
+                                              "label": "garlic"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Narcissus poeticus",
+                                          "label": "daffodil"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Asparagaceae",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Agave americana",
+                                          "label": "agave"
+                                        },
+                                        {
+                                          "name": "Asparagus officinalis",
+                                          "label": "asparagus"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Aloe vera",
+                                      "label": "aloe"
+                                    },
+                                    {
+                                      "name": "Hyacinthus orientalis",
+                                      "label": "hyacinth"
+                                    },
+                                    {
+                                      "name": "Orchidaceae",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Ophrys apifera",
+                                          "label": "orchid"
+                                        },
+                                        {
+                                          "name": "Vanilla planifolia",
+                                          "label": "vanilla"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Dioscorea cayenensis",
+                                  "label": "yam"
+                                },
+                                {
+                                  "name": "Liliaceae",
+                                  "desc": "(2 species)",
+                                  "children": [
+                                    {
+                                      "name": "Lilium lancifolium",
+                                      "label": "tiger lily"
+                                    },
+                                    {
+                                      "name": "Tulipa gesneriana",
+                                      "label": "tulip"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "commelinids",
+                                  "desc": "(20 species)",
+                                  "children": [
+                                    {
+                                      "name": "Arecaceae",
+                                      "desc": "(3 species)",
+                                      "children": [
+                                        {
+                                          "name": "Cocoseae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Cocos nucifera",
+                                              "label": "coconut"
+                                            },
+                                            {
+                                              "name": "Elaeis guineensis",
+                                              "label": "oil palm"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Phoenix dactylifera",
+                                          "label": "date"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Poales",
+                                      "desc": "(13 species)",
+                                      "children": [
+                                        {
+                                          "name": "Ananas comosus",
+                                          "label": "pineapple"
+                                        },
+                                        {
+                                          "name": "Poaceae",
+                                          "desc": "(12 species)",
+                                          "children": [
+                                            {
+                                              "name": "BOP clade",
+                                              "desc": "(8 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Bambusa textilis",
+                                                  "label": "bamboo"
+                                                },
+                                                {
+                                                  "name": "Oryza sativa",
+                                                  "label": "rice"
+                                                },
+                                                {
+                                                  "name": "Pooideae",
+                                                  "desc": "(6 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Poeae",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Avena sativa",
+                                                          "label": "oat"
+                                                        },
+                                                        {
+                                                          "name": "Dactylis glomerata",
+                                                          "label": "orchard grass"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Triticeae",
+                                                      "desc": "(4 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Hordeinae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Hordeum vulgare",
+                                                              "label": "barley"
+                                                            },
+                                                            {
+                                                              "name": "Secale cereale",
+                                                              "label": "rye"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Triticum",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Triticum aestivum",
+                                                              "label": "wheat"
+                                                            },
+                                                            {
+                                                              "name": "Triticum spelta",
+                                                              "label": "spelt"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Panicoideae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Andropogoneae",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Cymbopogon citratus",
+                                                      "label": "lemongrass"
+                                                    },
+                                                    {
+                                                      "name": "Saccharum officinarum",
+                                                      "label": "sugarcane"
+                                                    },
+                                                    {
+                                                      "name": "Zea mays",
+                                                      "label": "corn"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Cenchrus americanus",
+                                                  "label": "pearl millet"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Zingiberales",
+                                      "desc": "(4 species)",
+                                      "children": [
+                                        {
+                                          "name": "Musa x paradisiaca",
+                                          "label": "banana"
+                                        },
+                                        {
+                                          "name": "Zingiberaceae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Curcuma longa",
+                                              "label": "turmeric"
+                                            },
+                                            {
+                                              "name": "Elettaria cardamomum",
+                                              "label": "cardamom"
+                                            },
+                                            {
+                                              "name": "Zingiber officinale",
+                                              "label": "ginger"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Magnoliidae",
+                          "desc": "(6 species)",
+                          "children": [
+                            {
+                              "name": "Lauraceae",
+                              "desc": "(2 species)",
+                              "children": [
+                                {
+                                  "name": "Cinnamomum verum",
+                                  "label": "cinnamon"
+                                },
+                                {
+                                  "name": "Persea americana",
+                                  "label": "avocado"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Magnoliales",
+                              "desc": "(3 species)",
+                              "children": [
+                                {
+                                  "name": "Asimina triloba",
+                                  "label": "pawpaw"
+                                },
+                                {
+                                  "name": "Magnolia sieboldii",
+                                  "label": "magnolia"
+                                },
+                                {
+                                  "name": "Myristica fragrans",
+                                  "label": "mace"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Piper nigrum",
+                              "label": "black pepper"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Proteales",
+                          "desc": "(3 species)",
+                          "children": [
+                            {
+                              "name": "Nelumbo nucifera",
+                              "label": "lotus"
+                            },
+                            {
+                              "name": "Platanus occidentalis",
+                              "label": "sycamore"
+                            },
+                            {
+                              "name": "Macadamia integrifolia",
+                              "label": "macadamia nut"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Papaver somniferum",
+                          "label": "poppy"
+                        },
+                        {
+                          "name": "Pentapetalae",
+                          "desc": "(160 species)",
+                          "children": [
+                            {
+                              "name": "Caryophyllales",
+                              "desc": "(13 species)",
+                              "children": [
+                                {
+                                  "name": "Cactaceae",
+                                  "desc": "(4 species)",
+                                  "children": [
+                                    {
+                                      "name": "Cactoideae",
+                                      "desc": "(3 species)",
+                                      "children": [
+                                        {
+                                          "name": "Cacteae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Echinocactus grusonii",
+                                              "label": "barrel cactus"
+                                            },
+                                            {
+                                              "name": "Ferocactus flavovirens",
+                                              "label": "cactus"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Selenicereus costaricensis",
+                                          "label": "dragon fruit"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Opuntia macrorhiza",
+                                      "label": "prickly pear"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Dianthus caryophyllus",
+                                  "label": "carnation"
+                                },
+                                {
+                                  "name": "Chenopodiaceae",
+                                  "desc": "(4 species)",
+                                  "children": [
+                                    {
+                                      "name": "Beta vulgaris",
+                                      "label": "beetroot"
+                                    },
+                                    {
+                                      "name": "Chenopodioideae",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Spinacia oleracea",
+                                          "label": "spinach"
+                                        },
+                                        {
+                                          "name": "Chenopodium quinoa",
+                                          "label": "quinoa"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Salsola tragus",
+                                      "label": "tumbleweed"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Dionaea muscipula",
+                                  "label": "venus flytrap"
+                                },
+                                {
+                                  "name": "Nepenthes attenboroughii",
+                                  "label": "pitcher plant"
+                                },
+                                {
+                                  "name": "Polygonoideae",
+                                  "desc": "(2 species)",
+                                  "children": [
+                                    {
+                                      "name": "Fagopyrum esculentum",
+                                      "label": "buckwheat"
+                                    },
+                                    {
+                                      "name": "Rheum rhabarbarum",
+                                      "label": "rhubarb"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Santalales",
+                              "desc": "(2 species)",
+                              "children": [
+                                {
+                                  "name": "Santalum album",
+                                  "label": "sandalwood"
+                                },
+                                {
+                                  "name": "Viscum album",
+                                  "label": "mistletoe"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Saxifragales",
+                              "desc": "(2 species)",
+                              "children": [
+                                {
+                                  "name": "Ribes uva-crispa",
+                                  "label": "gooseberry"
+                                },
+                                {
+                                  "name": "Paeonia officinalis",
+                                  "label": "peony"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "asterids",
+                              "desc": "(48 species)",
+                              "children": [
+                                {
+                                  "name": "Ericales",
+                                  "desc": "(7 species)",
+                                  "children": [
+                                    {
+                                      "name": "Actinidia deliciosa",
+                                      "label": "kiwi"
+                                    },
+                                    {
+                                      "name": "Diospyros virginiana",
+                                      "label": "persimmon"
+                                    },
+                                    {
+                                      "name": "Vaccinium",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Vaccinium macrocarpon",
+                                          "label": "cranberry"
+                                        },
+                                        {
+                                          "name": "Vaccinium uliginosum",
+                                          "label": "blueberry"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Bertholletia excelsa",
+                                      "label": "brazil nut"
+                                    },
+                                    {
+                                      "name": "Vitellaria paradoxa",
+                                      "label": "shea nut"
+                                    },
+                                    {
+                                      "name": "Camellia sinensis",
+                                      "label": "tea"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "campanulids",
+                                  "desc": "(23 species)",
+                                  "children": [
+                                    {
+                                      "name": "Apiineae",
+                                      "desc": "(10 species)",
+                                      "children": [
+                                        {
+                                          "name": "Apioideae",
+                                          "desc": "(8 species)",
+                                          "children": [
+                                            {
+                                              "name": "Daucus carota",
+                                              "label": "carrot"
+                                            },
+                                            {
+                                              "name": "apioid superclade",
+                                              "desc": "(7 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Apieae",
+                                                  "desc": "(4 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Anethum",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Anethum foeniculum",
+                                                          "label": "fennel"
+                                                        },
+                                                        {
+                                                          "name": "Anethum graveolens",
+                                                          "label": "dill"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Apium graveolens",
+                                                      "label": "celery"
+                                                    },
+                                                    {
+                                                      "name": "Petroselinum crispum",
+                                                      "label": "parsley"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Coriandrum sativum",
+                                                  "label": "coriander"
+                                                },
+                                                {
+                                                  "name": "Pimpinella anisum",
+                                                  "label": "anise"
+                                                },
+                                                {
+                                                  "name": "Pastinaca sativa",
+                                                  "label": "parsnip"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Araliaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Hedera helix",
+                                              "label": "common ivy"
+                                            },
+                                            {
+                                              "name": "Panax ginseng",
+                                              "label": "ginseng"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Ilex aquifolium",
+                                      "label": "holly"
+                                    },
+                                    {
+                                      "name": "Asteraceae",
+                                      "desc": "(10 species)",
+                                      "children": [
+                                        {
+                                          "name": "Asteroideae",
+                                          "desc": "(6 species)",
+                                          "children": [
+                                            {
+                                              "name": "Anthemideae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Artemisiinae",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Artemisia absinthium",
+                                                      "label": "common wormwood"
+                                                    },
+                                                    {
+                                                      "name": "Chrysanthemum indicum",
+                                                      "label": "chrysanthemum"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Matricaria chamomilla",
+                                                  "label": "chamomile"
+                                                },
+                                                {
+                                                  "name": "Glebionis coronaria",
+                                                  "label": "daisy"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Heliantheae alliance",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Dahlia pinnata",
+                                                  "label": "dahlia"
+                                                },
+                                                {
+                                                  "name": "Helianthus annuus",
+                                                  "label": "sunflower"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Cynara cardunculus",
+                                          "label": "artichoke"
+                                        },
+                                        {
+                                          "name": "Cichorieae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Cichorium intybus",
+                                              "label": "chicory"
+                                            },
+                                            {
+                                              "name": "Taraxacum officinale",
+                                              "label": "dandelion"
+                                            },
+                                            {
+                                              "name": "Lactuca sativa",
+                                              "label": "lettuce"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Dipsacales",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Sambucus nigra",
+                                          "label": "black elderberry"
+                                        },
+                                        {
+                                          "name": "Lonicera japonica",
+                                          "label": "honeysuckle"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "lamiids",
+                                  "desc": "(18 species)",
+                                  "children": [
+                                    {
+                                      "name": "Myosotis scorpioides",
+                                      "label": "forget-me-not"
+                                    },
+                                    {
+                                      "name": "Coffea arabica",
+                                      "label": "coffee"
+                                    },
+                                    {
+                                      "name": "Lamiales",
+                                      "desc": "(9 species)",
+                                      "children": [
+                                        {
+                                          "name": "Nepetoideae",
+                                          "desc": "(6 species)",
+                                          "children": [
+                                            {
+                                              "name": "Mentheae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Mentha spicata",
+                                                  "label": "spearmint"
+                                                },
+                                                {
+                                                  "name": "Salvia",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Salvia rosmarinus",
+                                                      "label": "rosemary"
+                                                    },
+                                                    {
+                                                      "name": "Salvia officinalis",
+                                                      "label": "sage"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Thymus vulgaris",
+                                                  "label": "thyme"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Ocimeae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Lavandula angustifolia",
+                                                  "label": "lavender"
+                                                },
+                                                {
+                                                  "name": "Ocimum basilicum",
+                                                  "label": "basil"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Oleaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Jasminum officinale",
+                                              "label": "jasmine"
+                                            },
+                                            {
+                                              "name": "Olea europaea",
+                                              "label": "olive"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Sesamum indicum",
+                                          "label": "sesame"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Solanales",
+                                      "desc": "(7 species)",
+                                      "children": [
+                                        {
+                                          "name": "Ipomoea batatas",
+                                          "label": "sweet potato"
+                                        },
+                                        {
+                                          "name": "Solanaceae",
+                                          "desc": "(6 species)",
+                                          "children": [
+                                            {
+                                              "name": "Nicotiana tabacum",
+                                              "label": "tobacco"
+                                            },
+                                            {
+                                              "name": "Petunia integrifolia",
+                                              "label": "petunia"
+                                            },
+                                            {
+                                              "name": "Solanoideae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Capsicum annuum",
+                                                  "label": "sweet pepper"
+                                                },
+                                                {
+                                                  "name": "Solanum",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Solanum melongena",
+                                                      "label": "eggplant"
+                                                    },
+                                                    {
+                                                      "name": "Solanum lycopersicum",
+                                                      "label": "tomato"
+                                                    },
+                                                    {
+                                                      "name": "Solanum tuberosum",
+                                                      "label": "potato"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "rosids",
+                              "desc": "(95 species)",
+                              "children": [
+                                {
+                                  "name": "fabids",
+                                  "desc": "(61 species)",
+                                  "children": [
+                                    {
+                                      "name": "Cucurbitaceae",
+                                      "desc": "(5 species)",
+                                      "children": [
+                                        {
+                                          "name": "Benincaseae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Citrullus lanatus",
+                                              "label": "watermelon"
+                                            },
+                                            {
+                                              "name": "Cucumis",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Cucumis melo",
+                                                  "label": "melon"
+                                                },
+                                                {
+                                                  "name": "Cucumis sativus",
+                                                  "label": "cucumber"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Cucurbita",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Cucurbita moschata",
+                                              "label": "butternut squash"
+                                            },
+                                            {
+                                              "name": "Cucurbita pepo",
+                                              "label": "pumpkin"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Fabaceae",
+                                      "desc": "(20 species)",
+                                      "children": [
+                                        {
+                                          "name": "Caesalpinioideae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Senna alexandrina",
+                                              "label": "senna"
+                                            },
+                                            {
+                                              "name": "mimosoid clade",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Vachellia nilotica",
+                                                  "label": "gum arabic tree"
+                                                },
+                                                {
+                                                  "name": "Mimosa pudica",
+                                                  "label": "touch-me-not"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Ceratonia siliqua",
+                                          "label": "carob"
+                                        },
+                                        {
+                                          "name": "Tamarindus indica",
+                                          "label": "tamarind"
+                                        },
+                                        {
+                                          "name": "50 kb inversion clade",
+                                          "desc": "(15 species)",
+                                          "children": [
+                                            {
+                                              "name": "NPAAA clade",
+                                              "desc": "(12 species)",
+                                              "children": [
+                                                {
+                                                  "name": "IRL clade",
+                                                  "desc": "(8 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Cicer arietinum",
+                                                      "label": "chickpea"
+                                                    },
+                                                    {
+                                                      "name": "Fabeae",
+                                                      "desc": "(4 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Lathyrus",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Lathyrus odoratus",
+                                                              "label": "sweet pea"
+                                                            },
+                                                            {
+                                                              "name": "Pisum sativum",
+                                                              "label": "garden pea"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Lens culinaris",
+                                                          "label": "lentil"
+                                                        },
+                                                        {
+                                                          "name": "Vicia faba",
+                                                          "label": "fava bean"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Glycyrrhiza glabra",
+                                                      "label": "licorice"
+                                                    },
+                                                    {
+                                                      "name": "Trifolieae",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Medicago sativa",
+                                                          "label": "alfalfa"
+                                                        },
+                                                        {
+                                                          "name": "Trifolium dubium",
+                                                          "label": "clover"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "indigoferoid/millettioid clade",
+                                                  "desc": "(4 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Phaseoleae",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Glycine max",
+                                                          "label": "soy bean"
+                                                        },
+                                                        {
+                                                          "name": "Phaseolus vulgaris",
+                                                          "label": "common bean"
+                                                        },
+                                                        {
+                                                          "name": "Vigna unguiculata",
+                                                          "label": "black eyed pea"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Wisteria floribunda",
+                                                      "label": "wisteria"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Arachis hypogaea",
+                                              "label": "peanut"
+                                            },
+                                            {
+                                              "name": "core genistoids",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Aspalathus linearis",
+                                                  "label": "rooibos"
+                                                },
+                                                {
+                                                  "name": "Ulex europaeus",
+                                                  "label": "gorse"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Fagales",
+                                      "desc": "(7 species)",
+                                      "children": [
+                                        {
+                                          "name": "Betulaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Betula pendula",
+                                              "label": "silver birch"
+                                            },
+                                            {
+                                              "name": "Corylus avellana",
+                                              "label": "hazelnut"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Fagaceae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Castanea sativa",
+                                              "label": "chestnut"
+                                            },
+                                            {
+                                              "name": "Fagus sylvatica",
+                                              "label": "common beech"
+                                            },
+                                            {
+                                              "name": "Quercus robur",
+                                              "label": "oak"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Juglandaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Carya illinoinensis",
+                                              "label": "pecan"
+                                            },
+                                            {
+                                              "name": "Juglans nigra",
+                                              "label": "walnut"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Malpighiales",
+                                      "desc": "(10 species)",
+                                      "children": [
+                                        {
+                                          "name": "Garcinia mangostana",
+                                          "label": "mangosteen"
+                                        },
+                                        {
+                                          "name": "Erythroxylum coca",
+                                          "label": "coca"
+                                        },
+                                        {
+                                          "name": "Euphorbiaceae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Ricinus communis",
+                                              "label": "ricin"
+                                            },
+                                            {
+                                              "name": "Crotonoideae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Manihot esculenta",
+                                                  "label": "cassava"
+                                                },
+                                                {
+                                                  "name": "Hevea brasiliensis",
+                                                  "label": "rubber"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Linum usitatissimum",
+                                          "label": "flax"
+                                        },
+                                        {
+                                          "name": "Passiflora edulis",
+                                          "label": "passionfruit"
+                                        },
+                                        {
+                                          "name": "Rhizophora mangle",
+                                          "label": "red mangrove"
+                                        },
+                                        {
+                                          "name": "Salix babylonica",
+                                          "label": "weeping willow"
+                                        },
+                                        {
+                                          "name": "Viola cucullata",
+                                          "label": "violet"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Rosales",
+                                      "desc": "(19 species)",
+                                      "children": [
+                                        {
+                                          "name": "Cannabaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Cannabis sativa",
+                                              "label": "hemp"
+                                            },
+                                            {
+                                              "name": "Humulus lupulus",
+                                              "label": "hop"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Moraceae",
+                                          "desc": "(4 species)",
+                                          "children": [
+                                            {
+                                              "name": "Artocarpus",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Artocarpus altilis",
+                                                  "label": "breadfruit"
+                                                },
+                                                {
+                                                  "name": "Artocarpus heterophyllus",
+                                                  "label": "jackfruit"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Ficus carica",
+                                              "label": "fig"
+                                            },
+                                            {
+                                              "name": "Morus alba",
+                                              "label": "silkworm mulberry"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Rosaceae",
+                                          "desc": "(12 species)",
+                                          "children": [
+                                            {
+                                              "name": "Amygdaloideae",
+                                              "desc": "(8 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Prunus",
+                                                  "desc": "(5 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Prunus armeniaca",
+                                                      "label": "apricot"
+                                                    },
+                                                    {
+                                                      "name": "Prunus avium",
+                                                      "label": "cherry"
+                                                    },
+                                                    {
+                                                      "name": "Prunus domestica",
+                                                      "label": "plum"
+                                                    },
+                                                    {
+                                                      "name": "Prunus dulcis",
+                                                      "label": "almond"
+                                                    },
+                                                    {
+                                                      "name": "Prunus persica",
+                                                      "label": "peach"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Maleae",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Eriobotrya japonica",
+                                                      "label": "loquat"
+                                                    },
+                                                    {
+                                                      "name": "Malus sylvestris",
+                                                      "label": "apple"
+                                                    },
+                                                    {
+                                                      "name": "Pyrus communis",
+                                                      "label": "pear"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Rosoideae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Fragaria x ananassa",
+                                                  "label": "strawberry"
+                                                },
+                                                {
+                                                  "name": "Rosoideae incertae sedis",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Rosa x centifolia",
+                                                      "label": "rose"
+                                                    },
+                                                    {
+                                                      "name": "Rubus",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Rubus allegheniensis",
+                                                          "label": "blackberry"
+                                                        },
+                                                        {
+                                                          "name": "Rubus idaeus",
+                                                          "label": "raspberry"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Urtica dioica",
+                                          "label": "nettle"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "malvids",
+                                  "desc": "(33 species)",
+                                  "children": [
+                                    {
+                                      "name": "Brassicales",
+                                      "desc": "(9 species)",
+                                      "children": [
+                                        {
+                                          "name": "Brassicaceae",
+                                          "desc": "(7 species)",
+                                          "children": [
+                                            {
+                                              "name": "Brassiceae",
+                                              "desc": "(4 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Brassica",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Brassica nigra",
+                                                      "label": "black mustard"
+                                                    },
+                                                    {
+                                                      "name": "Brassica oleracea",
+                                                      "label": "cabbage"
+                                                    },
+                                                    {
+                                                      "name": "Brassica rapa",
+                                                      "label": "bok choy"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Raphanus sativus",
+                                                  "label": "radish"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Cardamineae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Armoracia rusticana",
+                                                  "label": "horseradish"
+                                                },
+                                                {
+                                                  "name": "Nasturtium officinale",
+                                                  "label": "watercress"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Eutrema japonicum",
+                                              "label": "wasabi"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Capparis spinosa",
+                                          "label": "caper"
+                                        },
+                                        {
+                                          "name": "Carica papaya",
+                                          "label": "papaya"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Geranium phaeum",
+                                      "label": "geranium"
+                                    },
+                                    {
+                                      "name": "Malvaceae",
+                                      "desc": "(6 species)",
+                                      "children": [
+                                        {
+                                          "name": "Adansonia digitata",
+                                          "label": "baobab"
+                                        },
+                                        {
+                                          "name": "Theobroma cacao",
+                                          "label": "cacao"
+                                        },
+                                        {
+                                          "name": "Durio zibethinus",
+                                          "label": "durian"
+                                        },
+                                        {
+                                          "name": "Malvoideae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Abelmoschus esculentus",
+                                              "label": "okra"
+                                            },
+                                            {
+                                              "name": "Gossypium hirsutum",
+                                              "label": "cotton"
+                                            },
+                                            {
+                                              "name": "Hibiscus syriacus",
+                                              "label": "hibiscus"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Myrtales",
+                                      "desc": "(5 species)",
+                                      "children": [
+                                        {
+                                          "name": "Lythraceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Lawsonia inermis",
+                                              "label": "henna"
+                                            },
+                                            {
+                                              "name": "Punica granatum",
+                                              "label": "pomegranate"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Myrtoideae",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Eucalyptus obliqua",
+                                              "label": "eucalyptus tree"
+                                            },
+                                            {
+                                              "name": "Myrteae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Psidium guajava",
+                                                  "label": "guava"
+                                                },
+                                                {
+                                                  "name": "Myrtus communis",
+                                                  "label": "myrtle"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Sapindales",
+                                      "desc": "(12 species)",
+                                      "children": [
+                                        {
+                                          "name": "Anacardiaceae",
+                                          "desc": "(4 species)",
+                                          "children": [
+                                            {
+                                              "name": "Anacardium occidentale",
+                                              "label": "cashew"
+                                            },
+                                            {
+                                              "name": "Mangifera indica",
+                                              "label": "mango"
+                                            },
+                                            {
+                                              "name": "Pistacia vera",
+                                              "label": "pistachio"
+                                            },
+                                            {
+                                              "name": "Toxicodendron radicans",
+                                              "label": "poison ivy"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Citrus",
+                                          "desc": "(6 species)",
+                                          "children": [
+                                            {
+                                              "name": "Citrus medica",
+                                              "label": "citron"
+                                            },
+                                            {
+                                              "name": "Citrus reticulata",
+                                              "label": "mandarin"
+                                            },
+                                            {
+                                              "name": "Citrus sinensis",
+                                              "label": "orange"
+                                            },
+                                            {
+                                              "name": "Citrus x aurantiifolia",
+                                              "label": "lime"
+                                            },
+                                            {
+                                              "name": "Citrus x limon",
+                                              "label": "lemon"
+                                            },
+                                            {
+                                              "name": "Citrus x paradisi",
+                                              "label": "grapefruit"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Sapindaceae",
+                                          "desc": "(2 species)",
+                                          "children": [
+                                            {
+                                              "name": "Acer saccharum",
+                                              "label": "sugar maple"
+                                            },
+                                            {
+                                              "name": "Litchi chinensis",
+                                              "label": "lychee"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Vitis vinifera",
+                                  "label": "grape"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Nymphaea alba",
+                      "label": "water lily"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

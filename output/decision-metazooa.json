@@ -1,0 +1,1775 @@
+{
+  "name": "Metazoa",
+  "label": "ferret",
+  "desc": "329 options\n(max 7 guesses, avg 4.146)",
+  "children": [
+    {
+      "name": "Metazoa",
+      "label": "sea sponge"
+    },
+    {
+      "name": "Eumetazoa",
+      "label": "anemone",
+      "desc": "6 options\n(max 4 guesses, avg 2.5)",
+      "children": [
+        {
+          "name": "Cnidaria",
+          "label": "freshwater polyp",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Cnidaria",
+              "label": "jellyfish",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Semaeostomeae",
+                  "label": "lions mane jellyfish"
+                }
+              ]
+            },
+            {
+              "name": "Hydroidolina",
+              "label": "man o war"
+            }
+          ]
+        },
+        {
+          "name": "Hexacorallia",
+          "label": "brain coral"
+        }
+      ]
+    },
+    {
+      "name": "Bilateria",
+      "label": "bumble bee",
+      "desc": "75 options\n(max 5 guesses, avg 3.333)",
+      "children": [
+        {
+          "name": "Protostomia",
+          "label": "bigfin squid",
+          "desc": "16 options\n(max 4 guesses, avg 2.688)",
+          "children": [
+            {
+              "name": "Lophotrochozoa",
+              "label": "earthworm",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Lophotrochozoa",
+                  "label": "tapeworm"
+                },
+                {
+                  "name": "Clitellata",
+                  "label": "leech"
+                }
+              ]
+            },
+            {
+              "name": "Mollusca",
+              "label": "mussel",
+              "desc": "6 options\n(max 3 guesses, avg 2.167)",
+              "children": [
+                {
+                  "name": "Mollusca",
+                  "label": "banana slug",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Helicina",
+                      "label": "snail"
+                    }
+                  ]
+                },
+                {
+                  "name": "Autobranchia",
+                  "label": "sea clam"
+                },
+                {
+                  "name": "Pteriomorphia",
+                  "label": "oyster",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Pteriomorphia",
+                      "label": "scallop"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Cephalopoda",
+              "label": "nautilus"
+            },
+            {
+              "name": "Coleoidea",
+              "label": "blue-ringed octopus",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Octopodiformes",
+                  "label": "vampire squid"
+                },
+                {
+                  "name": "Octopodidae",
+                  "label": "giant octopus"
+                }
+              ]
+            },
+            {
+              "name": "Decapodiformes",
+              "label": "cuttlefish",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Decapodiformes",
+                  "label": "giant squid"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ecdysozoa",
+          "label": "heartworm",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Rhabditida",
+              "label": "nematode"
+            }
+          ]
+        },
+        {
+          "name": "Panarthropoda",
+          "label": "tardigrade",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Panarthropoda",
+              "label": "velvet worm"
+            }
+          ]
+        },
+        {
+          "name": "Arthropoda",
+          "label": "black widow",
+          "desc": "11 options\n(max 4 guesses, avg 2.364)",
+          "children": [
+            {
+              "name": "Chelicerata",
+              "label": "horseshoe crab"
+            },
+            {
+              "name": "Arachnida",
+              "label": "bark scorpion",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Arachnida",
+                  "label": "harvestman",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Arachnida",
+                      "label": "tick"
+                    }
+                  ]
+                },
+                {
+                  "name": "Scorpiones",
+                  "label": "emperor scorpion"
+                }
+              ]
+            },
+            {
+              "name": "Araneae",
+              "label": "tarantula"
+            },
+            {
+              "name": "Araneomorphae",
+              "label": "brown recluse",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Haplogynae",
+                  "label": "cellar spider"
+                }
+              ]
+            },
+            {
+              "name": "Entelegynae",
+              "label": "huntsman spider"
+            },
+            {
+              "name": "Araneoidea",
+              "label": "orbweaver spider"
+            }
+          ]
+        },
+        {
+          "name": "Mandibulata",
+          "label": "giant centipede",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Myriapoda",
+              "label": "millipede"
+            },
+            {
+              "name": "Chilopoda",
+              "label": "house centipede"
+            }
+          ]
+        },
+        {
+          "name": "Pancrustacea",
+          "label": "coconut crab",
+          "desc": "10 options\n(max 4 guesses, avg 2.3)",
+          "children": [
+            {
+              "name": "Multicrustacea",
+              "label": "barnacle"
+            },
+            {
+              "name": "Eumalacostraca",
+              "label": "mantis shrimp",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Eumalacostraca",
+                  "label": "pillbug"
+                }
+              ]
+            },
+            {
+              "name": "Eucarida",
+              "label": "krill"
+            },
+            {
+              "name": "Decapoda",
+              "label": "tiger prawn"
+            },
+            {
+              "name": "Pleocyemata",
+              "label": "fiddler crab",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Pleocyemata",
+                  "label": "lobster",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Pleocyemata",
+                      "label": "pistol shrimp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Paguroidea",
+              "label": "hermit crab"
+            }
+          ]
+        },
+        {
+          "name": "Dicondylia",
+          "label": "silverfish"
+        },
+        {
+          "name": "Pterygota",
+          "label": "dragonfly",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Palaeoptera",
+              "label": "mayfly"
+            }
+          ]
+        },
+        {
+          "name": "Neoptera",
+          "label": "cockroach",
+          "desc": "10 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Neoptera",
+              "label": "cicada",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Hemiptera",
+                  "label": "water bug"
+                }
+              ]
+            },
+            {
+              "name": "Polyneoptera",
+              "label": "grasshopper",
+              "desc": "5 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Polyneoptera",
+                  "label": "earwig",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Polyneoptera",
+                      "label": "stick bug"
+                    }
+                  ]
+                },
+                {
+                  "name": "Orthoptera",
+                  "label": "cricket"
+                },
+                {
+                  "name": "Schistocerca",
+                  "label": "locust"
+                }
+              ]
+            },
+            {
+              "name": "Dictyoptera",
+              "label": "praying mantis"
+            },
+            {
+              "name": "Blattoidea",
+              "label": "termite"
+            }
+          ]
+        },
+        {
+          "name": "Endopterygota",
+          "label": "dung beetle",
+          "desc": "11 options\n(max 4 guesses, avg 2.818)",
+          "children": [
+            {
+              "name": "Endopterygota",
+              "label": "atlas moth",
+              "desc": "7 options\n(max 3 guesses, avg 2.286)",
+              "children": [
+                {
+                  "name": "Endopterygota",
+                  "label": "fruit fly",
+                  "desc": "4 options\n(max 2 guesses, avg 1.75)",
+                  "children": [
+                    {
+                      "name": "Endopterygota",
+                      "label": "flea"
+                    },
+                    {
+                      "name": "Diptera",
+                      "label": "mosquito"
+                    },
+                    {
+                      "name": "Schizophora",
+                      "label": "house fly"
+                    }
+                  ]
+                },
+                {
+                  "name": "Obtectomera",
+                  "label": "monarch butterfly"
+                },
+                {
+                  "name": "Bombycoidea",
+                  "label": "silkworm"
+                }
+              ]
+            },
+            {
+              "name": "Polyphaga",
+              "label": "firefly",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Polyphaga",
+                  "label": "ladybug"
+                }
+              ]
+            },
+            {
+              "name": "Scarabaeidae",
+              "label": "hercules beetle"
+            }
+          ]
+        },
+        {
+          "name": "Aculeata",
+          "label": "carpenter ant",
+          "desc": "5 options\n(max 3 guesses, avg 2.2)",
+          "children": [
+            {
+              "name": "Aculeata",
+              "label": "hornet",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Aculeata",
+                  "label": "tarantula hawk wasp"
+                },
+                {
+                  "name": "Vespinae",
+                  "label": "wasp"
+                }
+              ]
+            },
+            {
+              "name": "Formicidae",
+              "label": "fire ant"
+            }
+          ]
+        },
+        {
+          "name": "Apinae",
+          "label": "honey bee"
+        }
+      ]
+    },
+    {
+      "name": "Deuterostomia",
+      "label": "sand dollar",
+      "desc": "4 options\n(max 2 guesses, avg 1.75)",
+      "children": [
+        {
+          "name": "Eleutherozoa",
+          "label": "starfish"
+        },
+        {
+          "name": "Echinozoa",
+          "label": "sea cucumber"
+        },
+        {
+          "name": "Euechinoidea",
+          "label": "sea urchin"
+        }
+      ]
+    },
+    {
+      "name": "Vertebrata",
+      "label": "lamprey"
+    },
+    {
+      "name": "Gnathostomata",
+      "label": "goblin shark",
+      "desc": "7 options\n(max 3 guesses, avg 2.286)",
+      "children": [
+        {
+          "name": "Elasmobranchii",
+          "label": "manta ray",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Myliobatiformes",
+              "label": "sting ray"
+            }
+          ]
+        },
+        {
+          "name": "Galeoidea",
+          "label": "hammerhead shark",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Galeoidea",
+              "label": "whale shark"
+            },
+            {
+              "name": "Carcharhinidae",
+              "label": "tiger shark"
+            }
+          ]
+        },
+        {
+          "name": "Lamniformes",
+          "label": "great white shark"
+        }
+      ]
+    },
+    {
+      "name": "Euteleostomi",
+      "label": "anglerfish",
+      "desc": "28 options\n(max 6 guesses, avg 3.357)",
+      "children": [
+        {
+          "name": "Teleostei",
+          "label": "moray eel"
+        },
+        {
+          "name": "Clupeocephala",
+          "label": "catfish",
+          "desc": "6 options\n(max 3 guesses, avg 2.167)",
+          "children": [
+            {
+              "name": "Otomorpha",
+              "label": "herring"
+            },
+            {
+              "name": "Otophysi",
+              "label": "carp",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Cyprininae",
+                  "label": "goldfish"
+                }
+              ]
+            },
+            {
+              "name": "Characiphysae",
+              "label": "electric eel",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Characiphysae",
+                  "label": "piranha"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Euteleosteomorpha",
+          "label": "salmon",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Protacanthopterygii",
+              "label": "pike"
+            },
+            {
+              "name": "Salmoninae",
+              "label": "trout"
+            }
+          ]
+        },
+        {
+          "name": "Acanthomorphata",
+          "label": "cod",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Acanthomorphata",
+              "label": "oarfish"
+            }
+          ]
+        },
+        {
+          "name": "Percomorphaceae",
+          "label": "flying fish",
+          "desc": "12 options\n(max 5 guesses, avg 3.167)",
+          "children": [
+            {
+              "name": "Percomorphaceae",
+              "label": "barracuda",
+              "desc": "8 options\n(max 4 guesses, avg 2.75)",
+              "children": [
+                {
+                  "name": "Percomorphaceae",
+                  "label": "betta fish",
+                  "desc": "5 options\n(max 3 guesses, avg 2.2)",
+                  "children": [
+                    {
+                      "name": "Percomorphaceae",
+                      "label": "mackerel",
+                      "desc": "3 options\n(max 2 guesses, avg 1.667)",
+                      "children": [
+                        {
+                          "name": "Percomorphaceae",
+                          "label": "seahorse"
+                        },
+                        {
+                          "name": "Scombrinae",
+                          "label": "tuna"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Anabantaria",
+                      "label": "fire eel"
+                    }
+                  ]
+                },
+                {
+                  "name": "Carangaria",
+                  "label": "halibut",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Carangaria",
+                      "label": "swordfish"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ovalentaria",
+              "label": "clownfish",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Ovalentaria",
+                  "label": "tilapia"
+                }
+              ]
+            },
+            {
+              "name": "Atherinomorphae",
+              "label": "guppy"
+            }
+          ]
+        },
+        {
+          "name": "Eupercaria",
+          "label": "bass",
+          "desc": "3 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Eupercaria",
+              "label": "perch",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Eupercaria",
+                  "label": "pufferfish"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sarcopterygii",
+      "label": "coelacanth"
+    },
+    {
+      "name": "Tetrapoda",
+      "label": "axolotl",
+      "desc": "6 options\n(max 3 guesses, avg 2.167)",
+      "children": [
+        {
+          "name": "Batrachia",
+          "label": "poison frog",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Neobatrachia",
+              "label": "bullfrog"
+            },
+            {
+              "name": "Hyloidea",
+              "label": "toad"
+            }
+          ]
+        },
+        {
+          "name": "Caudata",
+          "label": "salamander"
+        },
+        {
+          "name": "Salamandroidea",
+          "label": "newt"
+        }
+      ]
+    },
+    {
+      "name": "Amniota",
+      "label": "crow",
+      "desc": "76 options\n(max 6 guesses, avg 3.474)",
+      "children": [
+        {
+          "name": "Sauria",
+          "label": "black mamba",
+          "desc": "15 options\n(max 4 guesses, avg 2.533)",
+          "children": [
+            {
+              "name": "Bifurcata",
+              "label": "gecko"
+            },
+            {
+              "name": "Unidentata",
+              "label": "skink"
+            },
+            {
+              "name": "Toxicofera",
+              "label": "chameleon",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Toxicofera",
+                  "label": "gila monster",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Anguimorpha",
+                      "label": "komodo dragon"
+                    }
+                  ]
+                },
+                {
+                  "name": "Iguania",
+                  "label": "iguana"
+                }
+              ]
+            },
+            {
+              "name": "Serpentes",
+              "label": "anaconda",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Henophidia",
+                  "label": "burmese python",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Pythonidae",
+                      "label": "green tree python"
+                    }
+                  ]
+                },
+                {
+                  "name": "Boinae",
+                  "label": "boa constrictor"
+                }
+              ]
+            },
+            {
+              "name": "Colubroidea",
+              "label": "rattlesnake",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Viperidae",
+                  "label": "viper"
+                }
+              ]
+            },
+            {
+              "name": "Elapidae",
+              "label": "sea snake"
+            },
+            {
+              "name": "Elapinae",
+              "label": "king cobra"
+            }
+          ]
+        },
+        {
+          "name": "Archelosauria",
+          "label": "box turtle",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Durocryptodira",
+              "label": "sea turtle",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Americhelydia",
+                  "label": "snapping turtle"
+                }
+              ]
+            },
+            {
+              "name": "Testudinoidea",
+              "label": "tortoise"
+            }
+          ]
+        },
+        {
+          "name": "Archosauria",
+          "label": "alligator",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Crocodylia",
+              "label": "crocodile"
+            },
+            {
+              "name": "Alligatoridae",
+              "label": "caiman"
+            }
+          ]
+        },
+        {
+          "name": "Aves",
+          "label": "cassowary",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Palaeognathae",
+              "label": "kiwi",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Palaeognathae",
+                  "label": "ostrich"
+                }
+              ]
+            },
+            {
+              "name": "Casuariiformes",
+              "label": "emu"
+            }
+          ]
+        },
+        {
+          "name": "Neognathae",
+          "label": "chicken",
+          "desc": "7 options\n(max 3 guesses, avg 2.286)",
+          "children": [
+            {
+              "name": "Galloanserae",
+              "label": "goose",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Anatidae",
+                  "label": "duck"
+                },
+                {
+                  "name": "Anserinae",
+                  "label": "swan"
+                }
+              ]
+            },
+            {
+              "name": "Phasianidae",
+              "label": "turkey"
+            },
+            {
+              "name": "Phasianinae",
+              "label": "peacock",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Phasianinae",
+                  "label": "pheasant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Neoaves",
+          "label": "egret",
+          "desc": "12 options\n(max 5 guesses, avg 3.083)",
+          "children": [
+            {
+              "name": "Neoaves",
+              "label": "dove",
+              "desc": "7 options\n(max 4 guesses, avg 2.714)",
+              "children": [
+                {
+                  "name": "Neoaves",
+                  "label": "hummingbird",
+                  "desc": "5 options\n(max 3 guesses, avg 2.2)",
+                  "children": [
+                    {
+                      "name": "Neoaves",
+                      "label": "puffin",
+                      "desc": "3 options\n(max 2 guesses, avg 1.667)",
+                      "children": [
+                        {
+                          "name": "Neoaves",
+                          "label": "flamingo"
+                        },
+                        {
+                          "name": "Charadriiformes",
+                          "label": "seagull"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Apodiformes",
+                      "label": "swift"
+                    }
+                  ]
+                },
+                {
+                  "name": "Columbidae",
+                  "label": "pigeon"
+                }
+              ]
+            },
+            {
+              "name": "Aequornithes",
+              "label": "emperor penguin",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Aequornithes",
+                  "label": "albatross"
+                },
+                {
+                  "name": "Spheniscidae",
+                  "label": "macaroni penguin"
+                }
+              ]
+            },
+            {
+              "name": "Ardea",
+              "label": "heron"
+            }
+          ]
+        },
+        {
+          "name": "Telluraves",
+          "label": "bald eagle",
+          "desc": "11 options\n(max 4 guesses, avg 2.727)",
+          "children": [
+            {
+              "name": "Telluraves",
+              "label": "barn owl",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Telluraves",
+                  "label": "toucan",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Piciformes",
+                      "label": "woodpecker"
+                    }
+                  ]
+                },
+                {
+                  "name": "Strigiformes",
+                  "label": "snowy owl"
+                }
+              ]
+            },
+            {
+              "name": "Accipitriformes",
+              "label": "black vulture",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Accipitriformes",
+                  "label": "osprey"
+                },
+                {
+                  "name": "Cathartidae",
+                  "label": "condor",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Cathartidae",
+                      "label": "turkey vulture"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Accipitrinae",
+              "label": "hawk",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Accipitrinae",
+                  "label": "kite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Australaves",
+          "label": "grey parrot",
+          "desc": "7 options\n(max 3 guesses, avg 2.286)",
+          "children": [
+            {
+              "name": "Australaves",
+              "label": "falcon",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Falco",
+                  "label": "kestrel"
+                }
+              ]
+            },
+            {
+              "name": "Psittaciformes",
+              "label": "cockatiel",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Cacatuidae",
+                  "label": "cockatoo"
+                }
+              ]
+            },
+            {
+              "name": "Psittacidae",
+              "label": "macaw",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Psittacidae",
+                  "label": "parakeet"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Passeriformes",
+          "label": "blackbird",
+          "desc": "9 options\n(max 5 guesses, avg 2.889)",
+          "children": [
+            {
+              "name": "Passeriformes",
+              "label": "canary",
+              "desc": "6 options\n(max 4 guesses, avg 2.333)",
+              "children": [
+                {
+                  "name": "Passeriformes",
+                  "label": "mockingbird",
+                  "desc": "3 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Passeriformes",
+                      "label": "swallow",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Passeriformes",
+                          "label": "wren"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Passeroidea",
+                  "label": "sparrow"
+                },
+                {
+                  "name": "Fringillidae",
+                  "label": "finch"
+                }
+              ]
+            },
+            {
+              "name": "Turdidae",
+              "label": "nightingale",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Turdidae",
+                  "label": "robin"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Corvidae",
+          "label": "blue jay",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Corvidae",
+              "label": "magpie"
+            }
+          ]
+        },
+        {
+          "name": "Corvus",
+          "label": "raven"
+        }
+      ]
+    },
+    {
+      "name": "Mammalia",
+      "label": "echidna",
+      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+      "children": [
+        {
+          "name": "Monotremata",
+          "label": "platypus"
+        }
+      ]
+    },
+    {
+      "name": "Theria",
+      "label": "kangaroo",
+      "desc": "7 options\n(max 5 guesses, avg 2.857)",
+      "children": [
+        {
+          "name": "Metatheria",
+          "label": "opossum",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Metatheria",
+              "label": "tasmanian devil"
+            }
+          ]
+        },
+        {
+          "name": "Diprotodontia",
+          "label": "koala",
+          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Diprotodontia",
+              "label": "possum",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Diprotodontia",
+                  "label": "sugar glider",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Diprotodontia",
+                      "label": "wombat"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eutheria",
+      "label": "aardvark",
+      "desc": "7 options\n(max 4 guesses, avg 2.571)",
+      "children": [
+        {
+          "name": "Eutheria",
+          "label": "anteater",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Xenarthra",
+              "label": "armadillo"
+            },
+            {
+              "name": "Pilosa",
+              "label": "two-toed sloth"
+            }
+          ]
+        },
+        {
+          "name": "Afrotheria",
+          "label": "elephant",
+          "desc": "3 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Afrotheria",
+              "label": "hyrax",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Afrotheria",
+                  "label": "manatee"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boreoeutheria",
+      "label": "capybara",
+      "desc": "30 options\n(max 5 guesses, avg 3.3)",
+      "children": [
+        {
+          "name": "Euarchontoglires",
+          "label": "bonobo",
+          "desc": "13 options\n(max 4 guesses, avg 2.385)",
+          "children": [
+            {
+              "name": "Primates",
+              "label": "lemur"
+            },
+            {
+              "name": "Simiiformes",
+              "label": "capuchin",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Platyrrhini",
+                  "label": "howler monkey"
+                },
+                {
+                  "name": "Cebidae",
+                  "label": "tamarin"
+                }
+              ]
+            },
+            {
+              "name": "Catarrhini",
+              "label": "baboon",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Cercopithecinae",
+                  "label": "macaque",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Cercopithecinae",
+                      "label": "mandrill"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hominoidea",
+              "label": "gibbon"
+            },
+            {
+              "name": "Hominidae",
+              "label": "orangutan"
+            },
+            {
+              "name": "Homininae",
+              "label": "gorilla",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Homininae",
+                  "label": "human"
+                }
+              ]
+            },
+            {
+              "name": "Pan",
+              "label": "chimpanzee"
+            }
+          ]
+        },
+        {
+          "name": "Glires",
+          "label": "hare",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Leporidae",
+              "label": "rabbit"
+            }
+          ]
+        },
+        {
+          "name": "Rodentia",
+          "label": "chipmunk",
+          "desc": "10 options\n(max 3 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Rodentia",
+              "label": "mouse",
+              "desc": "5 options\n(max 2 guesses, avg 1.8)",
+              "children": [
+                {
+                  "name": "Rodentia",
+                  "label": "beaver"
+                },
+                {
+                  "name": "Muroidea",
+                  "label": "hamster"
+                },
+                {
+                  "name": "Muridae",
+                  "label": "gerbil"
+                },
+                {
+                  "name": "Murinae",
+                  "label": "rat"
+                }
+              ]
+            },
+            {
+              "name": "Sciuridae",
+              "label": "flying squirrel",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Sciurinae",
+                  "label": "squirrel"
+                }
+              ]
+            },
+            {
+              "name": "Marmotini",
+              "label": "groundhog",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Marmotini",
+                  "label": "prairie dog"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hystricomorpha",
+          "label": "chinchilla",
+          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Hystricomorpha",
+              "label": "guinea pig",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Hystricomorpha",
+                  "label": "naked mole rat",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Hystricomorpha",
+                      "label": "porcupine"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Laurasiatheria",
+      "label": "cattle",
+      "desc": "39 options\n(max 5 guesses, avg 3.385)",
+      "children": [
+        {
+          "name": "Laurasiatheria",
+          "label": "donkey",
+          "desc": "10 options\n(max 4 guesses, avg 2.7)",
+          "children": [
+            {
+              "name": "Laurasiatheria",
+              "label": "fruit bat",
+              "desc": "5 options\n(max 3 guesses, avg 2.2)",
+              "children": [
+                {
+                  "name": "Laurasiatheria",
+                  "label": "hedgehog",
+                  "desc": "3 options\n(max 2 guesses, avg 1.667)",
+                  "children": [
+                    {
+                      "name": "Laurasiatheria",
+                      "label": "pangolin"
+                    },
+                    {
+                      "name": "Eulipotyphla",
+                      "label": "mole"
+                    }
+                  ]
+                },
+                {
+                  "name": "Chiroptera",
+                  "label": "vampire bat"
+                }
+              ]
+            },
+            {
+              "name": "Perissodactyla",
+              "label": "rhinoceros",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Perissodactyla",
+                  "label": "tapir"
+                }
+              ]
+            },
+            {
+              "name": "Equus",
+              "label": "horse",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Equus",
+                  "label": "zebra"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Artiodactyla",
+          "label": "beluga whale",
+          "desc": "14 options\n(max 4 guesses, avg 2.714)",
+          "children": [
+            {
+              "name": "Artiodactyla",
+              "label": "alpaca",
+              "desc": "5 options\n(max 3 guesses, avg 2.2)",
+              "children": [
+                {
+                  "name": "Artiodactyla",
+                  "label": "pig",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Suidae",
+                      "label": "warthog"
+                    }
+                  ]
+                },
+                {
+                  "name": "Camelidae",
+                  "label": "camel",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Camelidae",
+                      "label": "llama"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Whippomorpha",
+              "label": "hippopotamus"
+            },
+            {
+              "name": "Cetacea",
+              "label": "blue whale",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Balaenopteridae",
+                  "label": "humpback whale"
+                }
+              ]
+            },
+            {
+              "name": "Odontoceti",
+              "label": "dolphin",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Odontoceti",
+                  "label": "porpoise",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Odontoceti",
+                      "label": "sperm whale"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delphinidae",
+                  "label": "orca"
+                }
+              ]
+            },
+            {
+              "name": "Monodontidae",
+              "label": "narwhal"
+            }
+          ]
+        },
+        {
+          "name": "Pecora",
+          "label": "caribou",
+          "desc": "5 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Pecora",
+              "label": "giraffe"
+            },
+            {
+              "name": "Cervidae",
+              "label": "elk"
+            },
+            {
+              "name": "Odocoileinae",
+              "label": "deer",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Odocoileinae",
+                  "label": "moose"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bovidae",
+          "label": "goat",
+          "desc": "6 options\n(max 4 guesses, avg 2.333)",
+          "children": [
+            {
+              "name": "Bovidae",
+              "label": "antelope",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Bovidae",
+                  "label": "gazelle",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Bovidae",
+                      "label": "wildebeest"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Caprinae",
+              "label": "sheep"
+            },
+            {
+              "name": "Capra",
+              "label": "ibex"
+            }
+          ]
+        },
+        {
+          "name": "Bovinae",
+          "label": "bison",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Bovinae",
+              "label": "water buffalo"
+            }
+          ]
+        },
+        {
+          "name": "Bos",
+          "label": "yak"
+        }
+      ]
+    },
+    {
+      "name": "Carnivora",
+      "label": "bobcat",
+      "desc": "14 options\n(max 5 guesses, avg 3.071)",
+      "children": [
+        {
+          "name": "Feliformia",
+          "label": "meerkat",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Feliformia",
+              "label": "civet",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Feliformia",
+                  "label": "hyena"
+                }
+              ]
+            },
+            {
+              "name": "Herpestidae",
+              "label": "mongoose"
+            }
+          ]
+        },
+        {
+          "name": "Felidae",
+          "label": "jaguar",
+          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Panthera",
+              "label": "leopard",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Panthera",
+                  "label": "lion",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Panthera",
+                      "label": "tiger"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Felinae",
+          "label": "cat",
+          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Felinae",
+              "label": "cheetah",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Felinae",
+                  "label": "ocelot",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Felinae",
+                      "label": "puma"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lynx",
+          "label": "lynx"
+        }
+      ]
+    },
+    {
+      "name": "Caniformia",
+      "label": "dog",
+      "desc": "14 options\n(max 5 guesses, avg 2.857)",
+      "children": [
+        {
+          "name": "Caniformia",
+          "label": "black bear",
+          "desc": "7 options\n(max 4 guesses, avg 2.429)",
+          "children": [
+            {
+              "name": "Caniformia",
+              "label": "sea lion",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Pinnipedia",
+                  "label": "seal",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Pinnipedia",
+                      "label": "walrus"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ursidae",
+              "label": "giant panda"
+            },
+            {
+              "name": "Ursus",
+              "label": "brown bear",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Ursus",
+                  "label": "polar bear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Canidae",
+          "label": "arctic fox",
+          "desc": "3 options\n(max 2 guesses, avg 1.667)",
+          "children": [
+            {
+              "name": "Canidae",
+              "label": "tanuki"
+            },
+            {
+              "name": "Vulpes",
+              "label": "red fox"
+            }
+          ]
+        },
+        {
+          "name": "Canis",
+          "label": "coyote",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Canis",
+              "label": "jackal"
+            }
+          ]
+        },
+        {
+          "name": "Canis lupus",
+          "label": "wolf"
+        }
+      ]
+    },
+    {
+      "name": "Musteloidea",
+      "label": "kinkajou",
+      "desc": "4 options\n(max 3 guesses, avg 2)",
+      "children": [
+        {
+          "name": "Musteloidea",
+          "label": "red panda",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Musteloidea",
+              "label": "skunk"
+            }
+          ]
+        },
+        {
+          "name": "Procyonidae",
+          "label": "raccoon"
+        }
+      ]
+    },
+    {
+      "name": "Mustelidae",
+      "label": "river otter",
+      "desc": "4 options\n(max 3 guesses, avg 2)",
+      "children": [
+        {
+          "name": "Mustelidae",
+          "label": "badger",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Mustelidae",
+              "label": "wolverine"
+            }
+          ]
+        },
+        {
+          "name": "Lutrinae",
+          "label": "sea otter"
+        }
+      ]
+    },
+    {
+      "name": "Mustelinae",
+      "label": "weasel"
+    },
+    {
+      "name": "Mustela",
+      "label": "mink"
+    }
+  ]
+}

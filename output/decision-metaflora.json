@@ -1,0 +1,1178 @@
+{
+  "name": "Viridiplantae",
+  "label": "garden pea",
+  "desc": "215 options\n(max 10 guesses, avg 4.437)",
+  "children": [
+    {
+      "name": "Viridiplantae",
+      "label": "seaweed"
+    },
+    {
+      "name": "Embryophyta",
+      "label": "moss"
+    },
+    {
+      "name": "Euphyllophyta",
+      "label": "fern"
+    },
+    {
+      "name": "Spermatophyta",
+      "label": "blue spruce",
+      "desc": "7 options\n(max 4 guesses, avg 2.286)",
+      "children": [
+        {
+          "name": "Acrogymnospermae",
+          "label": "ginkgo"
+        },
+        {
+          "name": "Pinidae",
+          "label": "giant sequoia"
+        },
+        {
+          "name": "Pinaceae",
+          "label": "baltic pine",
+          "desc": "3 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Pinaceae",
+              "label": "cedar of lebanon",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Pinaceae",
+                  "label": "douglas fir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Picea",
+          "label": "spruce"
+        }
+      ]
+    },
+    {
+      "name": "Magnoliopsida",
+      "label": "water lily"
+    },
+    {
+      "name": "Mesangiospermae",
+      "label": "barley",
+      "desc": "44 options\n(max 6 guesses, avg 3.25)",
+      "children": [
+        {
+          "name": "Mesangiospermae",
+          "label": "mace",
+          "desc": "10 options\n(max 4 guesses, avg 2.6)",
+          "children": [
+            {
+              "name": "Mesangiospermae",
+              "label": "lotus",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Mesangiospermae",
+                  "label": "poppy"
+                },
+                {
+                  "name": "Proteales",
+                  "label": "macadamia nut",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Proteales",
+                      "label": "sycamore"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Magnoliidae",
+              "label": "avocado",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Magnoliidae",
+                  "label": "black pepper"
+                },
+                {
+                  "name": "Lauraceae",
+                  "label": "cinnamon"
+                }
+              ]
+            },
+            {
+              "name": "Magnoliales",
+              "label": "magnolia",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Magnoliales",
+                  "label": "pawpaw"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Liliopsida",
+          "label": "taro"
+        },
+        {
+          "name": "Petrosaviidae",
+          "label": "garlic",
+          "desc": "13 options\n(max 5 guesses, avg 2.846)",
+          "children": [
+            {
+              "name": "Petrosaviidae",
+              "label": "tiger lily",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Petrosaviidae",
+                  "label": "yam"
+                },
+                {
+                  "name": "Liliaceae",
+                  "label": "tulip"
+                }
+              ]
+            },
+            {
+              "name": "Asparagales",
+              "label": "agave",
+              "desc": "6 options\n(max 4 guesses, avg 2.5)",
+              "children": [
+                {
+                  "name": "Asparagales",
+                  "label": "orchid",
+                  "desc": "4 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Asparagales",
+                      "label": "aloe",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Asparagales",
+                          "label": "hyacinth"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Orchidaceae",
+                      "label": "vanilla"
+                    }
+                  ]
+                },
+                {
+                  "name": "Asparagaceae",
+                  "label": "asparagus"
+                }
+              ]
+            },
+            {
+              "name": "Amaryllidaceae",
+              "label": "daffodil"
+            },
+            {
+              "name": "Allium",
+              "label": "leek",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Allium",
+                  "label": "onion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "commelinids",
+          "label": "cardamom",
+          "desc": "7 options\n(max 3 guesses, avg 2.286)",
+          "children": [
+            {
+              "name": "commelinids",
+              "label": "coconut",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Arecaceae",
+                  "label": "date"
+                },
+                {
+                  "name": "Cocoseae",
+                  "label": "oil palm"
+                }
+              ]
+            },
+            {
+              "name": "Zingiberales",
+              "label": "banana"
+            },
+            {
+              "name": "Zingiberaceae",
+              "label": "ginger",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Zingiberaceae",
+                  "label": "turmeric"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Poales",
+          "label": "pineapple"
+        },
+        {
+          "name": "Poaceae",
+          "label": "corn",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Panicoideae",
+              "label": "pearl millet"
+            },
+            {
+              "name": "Andropogoneae",
+              "label": "lemongrass",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Andropogoneae",
+                  "label": "sugarcane"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BOP clade",
+          "label": "bamboo",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "BOP clade",
+              "label": "rice"
+            }
+          ]
+        },
+        {
+          "name": "Pooideae",
+          "label": "oat",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Poeae",
+              "label": "orchard grass"
+            }
+          ]
+        },
+        {
+          "name": "Triticeae",
+          "label": "spelt",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Triticum",
+              "label": "wheat"
+            }
+          ]
+        },
+        {
+          "name": "Hordeinae",
+          "label": "rye"
+        }
+      ]
+    },
+    {
+      "name": "Pentapetalae",
+      "label": "chrysanthemum",
+      "desc": "65 options\n(max 8 guesses, avg 3.769)",
+      "children": [
+        {
+          "name": "Pentapetalae",
+          "label": "quinoa",
+          "desc": "17 options\n(max 6 guesses, avg 3.118)",
+          "children": [
+            {
+              "name": "Pentapetalae",
+              "label": "gooseberry",
+              "desc": "4 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Pentapetalae",
+                  "label": "mistletoe",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Santalales",
+                      "label": "sandalwood"
+                    }
+                  ]
+                },
+                {
+                  "name": "Saxifragales",
+                  "label": "peony"
+                }
+              ]
+            },
+            {
+              "name": "Caryophyllales",
+              "label": "barrel cactus",
+              "desc": "9 options\n(max 5 guesses, avg 2.667)",
+              "children": [
+                {
+                  "name": "Caryophyllales",
+                  "label": "buckwheat",
+                  "desc": "5 options\n(max 4 guesses, avg 2.4)",
+                  "children": [
+                    {
+                      "name": "Caryophyllales",
+                      "label": "carnation",
+                      "desc": "3 options\n(max 3 guesses, avg 2)",
+                      "children": [
+                        {
+                          "name": "Caryophyllales",
+                          "label": "pitcher plant",
+                          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                          "children": [
+                            {
+                              "name": "Caryophyllales",
+                              "label": "venus flytrap"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Polygonoideae",
+                      "label": "rhubarb"
+                    }
+                  ]
+                },
+                {
+                  "name": "Cactaceae",
+                  "label": "prickly pear"
+                },
+                {
+                  "name": "Cactoideae",
+                  "label": "dragon fruit"
+                },
+                {
+                  "name": "Cacteae",
+                  "label": "cactus"
+                }
+              ]
+            },
+            {
+              "name": "Chenopodiaceae",
+              "label": "beetroot",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Chenopodiaceae",
+                  "label": "tumbleweed"
+                }
+              ]
+            },
+            {
+              "name": "Chenopodioideae",
+              "label": "spinach"
+            }
+          ]
+        },
+        {
+          "name": "asterids",
+          "label": "rosemary",
+          "desc": "25 options\n(max 7 guesses, avg 3.2)",
+          "children": [
+            {
+              "name": "asterids",
+              "label": "blueberry",
+              "desc": "7 options\n(max 6 guesses, avg 3.286)",
+              "children": [
+                {
+                  "name": "Ericales",
+                  "label": "brazil nut",
+                  "desc": "5 options\n(max 5 guesses, avg 3)",
+                  "children": [
+                    {
+                      "name": "Ericales",
+                      "label": "kiwi",
+                      "desc": "4 options\n(max 4 guesses, avg 2.5)",
+                      "children": [
+                        {
+                          "name": "Ericales",
+                          "label": "persimmon",
+                          "desc": "3 options\n(max 3 guesses, avg 2)",
+                          "children": [
+                            {
+                              "name": "Ericales",
+                              "label": "shea nut",
+                              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                              "children": [
+                                {
+                                  "name": "Ericales",
+                                  "label": "tea"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Vaccinium",
+                  "label": "cranberry"
+                }
+              ]
+            },
+            {
+              "name": "lamiids",
+              "label": "eggplant",
+              "desc": "9 options\n(max 3 guesses, avg 2.222)",
+              "children": [
+                {
+                  "name": "lamiids",
+                  "label": "coffee",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "lamiids",
+                      "label": "forget-me-not"
+                    }
+                  ]
+                },
+                {
+                  "name": "Solanales",
+                  "label": "sweet potato"
+                },
+                {
+                  "name": "Solanaceae",
+                  "label": "petunia",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Solanaceae",
+                      "label": "tobacco"
+                    }
+                  ]
+                },
+                {
+                  "name": "Solanoideae",
+                  "label": "sweet pepper"
+                },
+                {
+                  "name": "Solanum",
+                  "label": "potato",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Solanum",
+                      "label": "tomato"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lamiales",
+              "label": "jasmine",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Lamiales",
+                  "label": "sesame"
+                },
+                {
+                  "name": "Oleaceae",
+                  "label": "olive"
+                }
+              ]
+            },
+            {
+              "name": "Nepetoideae",
+              "label": "basil",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Ocimeae",
+                  "label": "lavender"
+                }
+              ]
+            },
+            {
+              "name": "Mentheae",
+              "label": "spearmint",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Mentheae",
+                  "label": "thyme"
+                }
+              ]
+            },
+            {
+              "name": "Salvia",
+              "label": "sage"
+            }
+          ]
+        },
+        {
+          "name": "campanulids",
+          "label": "dill",
+          "desc": "13 options\n(max 4 guesses, avg 2.462)",
+          "children": [
+            {
+              "name": "campanulids",
+              "label": "black elderberry",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "campanulids",
+                  "label": "holly"
+                },
+                {
+                  "name": "Dipsacales",
+                  "label": "honeysuckle"
+                }
+              ]
+            },
+            {
+              "name": "Apiineae",
+              "label": "common ivy",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Araliaceae",
+                  "label": "ginseng"
+                }
+              ]
+            },
+            {
+              "name": "Apioideae",
+              "label": "carrot"
+            },
+            {
+              "name": "apioid superclade",
+              "label": "anise",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "apioid superclade",
+                  "label": "coriander",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "apioid superclade",
+                      "label": "parsnip"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Apieae",
+              "label": "celery",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Apieae",
+                  "label": "parsley"
+                }
+              ]
+            },
+            {
+              "name": "Anethum",
+              "label": "fennel"
+            }
+          ]
+        },
+        {
+          "name": "Asteraceae",
+          "label": "chicory",
+          "desc": "4 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Asteraceae",
+              "label": "artichoke"
+            },
+            {
+              "name": "Cichorieae",
+              "label": "dandelion",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Cichorieae",
+                  "label": "lettuce"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Asteroideae",
+          "label": "dahlia",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Heliantheae alliance",
+              "label": "sunflower"
+            }
+          ]
+        },
+        {
+          "name": "Anthemideae",
+          "label": "chamomile",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Anthemideae",
+              "label": "daisy"
+            }
+          ]
+        },
+        {
+          "name": "Artemisiinae",
+          "label": "common wormwood"
+        }
+      ]
+    },
+    {
+      "name": "rosids",
+      "label": "citron",
+      "desc": "34 options\n(max 6 guesses, avg 3.853)",
+      "children": [
+        {
+          "name": "rosids",
+          "label": "grape"
+        },
+        {
+          "name": "malvids",
+          "label": "black mustard",
+          "desc": "21 options\n(max 5 guesses, avg 3.143)",
+          "children": [
+            {
+              "name": "malvids",
+              "label": "cotton",
+              "desc": "12 options\n(max 4 guesses, avg 2.75)",
+              "children": [
+                {
+                  "name": "malvids",
+                  "label": "guava",
+                  "desc": "6 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "malvids",
+                      "label": "geranium"
+                    },
+                    {
+                      "name": "Myrtales",
+                      "label": "henna",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Lythraceae",
+                          "label": "pomegranate"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Myrtoideae",
+                      "label": "eucalyptus tree"
+                    },
+                    {
+                      "name": "Myrteae",
+                      "label": "myrtle"
+                    }
+                  ]
+                },
+                {
+                  "name": "Malvaceae",
+                  "label": "baobab",
+                  "desc": "3 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Malvaceae",
+                      "label": "cacao",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Malvaceae",
+                          "label": "durian"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Malvoideae",
+                  "label": "hibiscus",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Malvoideae",
+                      "label": "okra"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Brassicales",
+              "label": "caper",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Brassicales",
+                  "label": "papaya"
+                }
+              ]
+            },
+            {
+              "name": "Brassicaceae",
+              "label": "horseradish",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Brassicaceae",
+                  "label": "wasabi"
+                },
+                {
+                  "name": "Cardamineae",
+                  "label": "watercress"
+                }
+              ]
+            },
+            {
+              "name": "Brassiceae",
+              "label": "radish"
+            },
+            {
+              "name": "Brassica",
+              "label": "bok choy",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Brassica",
+                  "label": "cabbage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sapindales",
+          "label": "cashew",
+          "desc": "6 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Sapindales",
+              "label": "lychee",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Sapindaceae",
+                  "label": "sugar maple"
+                }
+              ]
+            },
+            {
+              "name": "Anacardiaceae",
+              "label": "mango",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Anacardiaceae",
+                  "label": "pistachio",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Anacardiaceae",
+                      "label": "poison ivy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Citrus",
+          "label": "grapefruit",
+          "desc": "5 options\n(max 5 guesses, avg 3)",
+          "children": [
+            {
+              "name": "Citrus",
+              "label": "lemon",
+              "desc": "4 options\n(max 4 guesses, avg 2.5)",
+              "children": [
+                {
+                  "name": "Citrus",
+                  "label": "lime",
+                  "desc": "3 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Citrus",
+                      "label": "mandarin",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Citrus",
+                          "label": "orange"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fabids",
+      "label": "almond",
+      "desc": "41 options\n(max 9 guesses, avg 4.024)",
+      "children": [
+        {
+          "name": "fabids",
+          "label": "cassava",
+          "desc": "22 options\n(max 8 guesses, avg 3.864)",
+          "children": [
+            {
+              "name": "fabids",
+              "label": "chestnut",
+              "desc": "12 options\n(max 4 guesses, avg 2.75)",
+              "children": [
+                {
+                  "name": "fabids",
+                  "label": "cucumber",
+                  "desc": "5 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Cucurbitaceae",
+                      "label": "butternut squash",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Cucurbita",
+                          "label": "pumpkin"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Benincaseae",
+                      "label": "watermelon"
+                    },
+                    {
+                      "name": "Cucumis",
+                      "label": "melon"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fagales",
+                  "label": "hazelnut",
+                  "desc": "4 options\n(max 3 guesses, avg 2)",
+                  "children": [
+                    {
+                      "name": "Fagales",
+                      "label": "pecan",
+                      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                      "children": [
+                        {
+                          "name": "Juglandaceae",
+                          "label": "walnut"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Betulaceae",
+                      "label": "silver birch"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fagaceae",
+                  "label": "common beech",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Fagaceae",
+                      "label": "oak"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Malpighiales",
+              "label": "coca",
+              "desc": "7 options\n(max 7 guesses, avg 4)",
+              "children": [
+                {
+                  "name": "Malpighiales",
+                  "label": "flax",
+                  "desc": "6 options\n(max 6 guesses, avg 3.5)",
+                  "children": [
+                    {
+                      "name": "Malpighiales",
+                      "label": "mangosteen",
+                      "desc": "5 options\n(max 5 guesses, avg 3)",
+                      "children": [
+                        {
+                          "name": "Malpighiales",
+                          "label": "passionfruit",
+                          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+                          "children": [
+                            {
+                              "name": "Malpighiales",
+                              "label": "red mangrove",
+                              "desc": "3 options\n(max 3 guesses, avg 2)",
+                              "children": [
+                                {
+                                  "name": "Malpighiales",
+                                  "label": "violet",
+                                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                                  "children": [
+                                    {
+                                      "name": "Malpighiales",
+                                      "label": "weeping willow"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Euphorbiaceae",
+              "label": "ricin"
+            },
+            {
+              "name": "Crotonoideae",
+              "label": "rubber"
+            }
+          ]
+        },
+        {
+          "name": "Rosales",
+          "label": "breadfruit",
+          "desc": "7 options\n(max 3 guesses, avg 2.286)",
+          "children": [
+            {
+              "name": "Rosales",
+              "label": "hemp",
+              "desc": "3 options\n(max 2 guesses, avg 1.667)",
+              "children": [
+                {
+                  "name": "Rosales",
+                  "label": "nettle"
+                },
+                {
+                  "name": "Cannabaceae",
+                  "label": "hop"
+                }
+              ]
+            },
+            {
+              "name": "Moraceae",
+              "label": "fig",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Moraceae",
+                  "label": "silkworm mulberry"
+                }
+              ]
+            },
+            {
+              "name": "Artocarpus",
+              "label": "jackfruit"
+            }
+          ]
+        },
+        {
+          "name": "Rosaceae",
+          "label": "blackberry",
+          "desc": "4 options\n(max 2 guesses, avg 1.75)",
+          "children": [
+            {
+              "name": "Rosoideae",
+              "label": "strawberry"
+            },
+            {
+              "name": "Rosoideae incertae sedis",
+              "label": "rose"
+            },
+            {
+              "name": "Rubus",
+              "label": "raspberry"
+            }
+          ]
+        },
+        {
+          "name": "Amygdaloideae",
+          "label": "apple",
+          "desc": "3 options\n(max 3 guesses, avg 2)",
+          "children": [
+            {
+              "name": "Maleae",
+              "label": "loquat",
+              "desc": "2 options\n(max 2 guesses, avg 1.5)",
+              "children": [
+                {
+                  "name": "Maleae",
+                  "label": "pear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prunus",
+          "label": "apricot",
+          "desc": "4 options\n(max 4 guesses, avg 2.5)",
+          "children": [
+            {
+              "name": "Prunus",
+              "label": "cherry",
+              "desc": "3 options\n(max 3 guesses, avg 2)",
+              "children": [
+                {
+                  "name": "Prunus",
+                  "label": "peach",
+                  "desc": "2 options\n(max 2 guesses, avg 1.5)",
+                  "children": [
+                    {
+                      "name": "Prunus",
+                      "label": "plum"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fabaceae",
+      "label": "gum arabic tree",
+      "desc": "5 options\n(max 3 guesses, avg 2)",
+      "children": [
+        {
+          "name": "Fabaceae",
+          "label": "carob",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Fabaceae",
+              "label": "tamarind"
+            }
+          ]
+        },
+        {
+          "name": "Caesalpinioideae",
+          "label": "senna"
+        },
+        {
+          "name": "mimosoid clade",
+          "label": "touch-me-not"
+        }
+      ]
+    },
+    {
+      "name": "50 kb inversion clade",
+      "label": "gorse",
+      "desc": "3 options\n(max 2 guesses, avg 1.667)",
+      "children": [
+        {
+          "name": "50 kb inversion clade",
+          "label": "peanut"
+        },
+        {
+          "name": "core genistoids",
+          "label": "rooibos"
+        }
+      ]
+    },
+    {
+      "name": "NPAAA clade",
+      "label": "black eyed pea",
+      "desc": "4 options\n(max 3 guesses, avg 2)",
+      "children": [
+        {
+          "name": "indigoferoid/millettioid clade",
+          "label": "wisteria"
+        },
+        {
+          "name": "Phaseoleae",
+          "label": "common bean",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "Phaseoleae",
+              "label": "soy bean"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IRL clade",
+      "label": "alfalfa",
+      "desc": "4 options\n(max 3 guesses, avg 2)",
+      "children": [
+        {
+          "name": "IRL clade",
+          "label": "chickpea",
+          "desc": "2 options\n(max 2 guesses, avg 1.5)",
+          "children": [
+            {
+              "name": "IRL clade",
+              "label": "licorice"
+            }
+          ]
+        },
+        {
+          "name": "Trifolieae",
+          "label": "clover"
+        }
+      ]
+    },
+    {
+      "name": "Fabeae",
+      "label": "fava bean",
+      "desc": "2 options\n(max 2 guesses, avg 1.5)",
+      "children": [
+        {
+          "name": "Fabeae",
+          "label": "lentil"
+        }
+      ]
+    },
+    {
+      "name": "Lathyrus",
+      "label": "sweet pea"
+    }
+  ]
+}

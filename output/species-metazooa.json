@@ -1,0 +1,2674 @@
+{
+  "name": "Metazoa",
+  "desc": "(329 species)",
+  "children": [
+    {
+      "name": "Eumetazoa",
+      "desc": "(328 species)",
+      "children": [
+        {
+          "name": "Bilateria",
+          "desc": "(322 species)",
+          "children": [
+            {
+              "name": "Deuterostomia",
+              "desc": "(247 species)",
+              "children": [
+                {
+                  "name": "Vertebrata",
+                  "desc": "(243 species)",
+                  "children": [
+                    {
+                      "name": "Eudontomyzon mariae",
+                      "label": "lamprey"
+                    },
+                    {
+                      "name": "Gnathostomata",
+                      "desc": "(242 species)",
+                      "children": [
+                        {
+                          "name": "Elasmobranchii",
+                          "desc": "(7 species)",
+                          "children": [
+                            {
+                              "name": "Myliobatiformes",
+                              "desc": "(2 species)",
+                              "children": [
+                                {
+                                  "name": "Hypanus americanus",
+                                  "label": "sting ray"
+                                },
+                                {
+                                  "name": "Mobula birostris",
+                                  "label": "manta ray"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Galeoidea",
+                              "desc": "(5 species)",
+                              "children": [
+                                {
+                                  "name": "Carcharhinidae",
+                                  "desc": "(2 species)",
+                                  "children": [
+                                    {
+                                      "name": "Galeocerdo cuvier",
+                                      "label": "tiger shark"
+                                    },
+                                    {
+                                      "name": "Sphyrna mokarran",
+                                      "label": "hammerhead shark"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Lamniformes",
+                                  "desc": "(2 species)",
+                                  "children": [
+                                    {
+                                      "name": "Carcharodon carcharias",
+                                      "label": "great white shark"
+                                    },
+                                    {
+                                      "name": "Mitsukurina owstoni",
+                                      "label": "goblin shark"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Rhincodon typus",
+                                  "label": "whale shark"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Euteleostomi",
+                          "desc": "(235 species)",
+                          "children": [
+                            {
+                              "name": "Teleostei",
+                              "desc": "(28 species)",
+                              "children": [
+                                {
+                                  "name": "Enchelycore pardalis",
+                                  "label": "moray eel"
+                                },
+                                {
+                                  "name": "Clupeocephala",
+                                  "desc": "(27 species)",
+                                  "children": [
+                                    {
+                                      "name": "Euteleosteomorpha",
+                                      "desc": "(21 species)",
+                                      "children": [
+                                        {
+                                          "name": "Acanthomorphata",
+                                          "desc": "(18 species)",
+                                          "children": [
+                                            {
+                                              "name": "Percomorphaceae",
+                                              "desc": "(16 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Anabantaria",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Betta tussyae",
+                                                      "label": "betta fish"
+                                                    },
+                                                    {
+                                                      "name": "Mastacembelus erythrotaenia",
+                                                      "label": "fire eel"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Carangaria",
+                                                  "desc": "(3 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Sphyraena barracuda",
+                                                      "label": "barracuda"
+                                                    },
+                                                    {
+                                                      "name": "Xiphias gladius",
+                                                      "label": "swordfish"
+                                                    },
+                                                    {
+                                                      "name": "Hippoglossus stenolepis",
+                                                      "label": "halibut"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Eupercaria",
+                                                  "desc": "(4 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Micropterus salmoides",
+                                                      "label": "bass"
+                                                    },
+                                                    {
+                                                      "name": "Lophius piscatorius",
+                                                      "label": "anglerfish"
+                                                    },
+                                                    {
+                                                      "name": "Perca flavescens",
+                                                      "label": "perch"
+                                                    },
+                                                    {
+                                                      "name": "Arothron meleagris",
+                                                      "label": "pufferfish"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Ovalentaria",
+                                                  "desc": "(4 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Atherinomorphae",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Cheilopogon melanurus",
+                                                          "label": "flying fish"
+                                                        },
+                                                        {
+                                                          "name": "Poecilia reticulata",
+                                                          "label": "guppy"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Oreochromis tanganicae",
+                                                      "label": "tilapia"
+                                                    },
+                                                    {
+                                                      "name": "Amphiprion percula",
+                                                      "label": "clownfish"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Scombrinae",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Scomber australasicus",
+                                                      "label": "mackerel"
+                                                    },
+                                                    {
+                                                      "name": "Thunnus albacares",
+                                                      "label": "tuna"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Hippocampus comes",
+                                                  "label": "seahorse"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Regalecus glesne",
+                                              "label": "oarfish"
+                                            },
+                                            {
+                                              "name": "Gadus morhua",
+                                              "label": "cod"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Protacanthopterygii",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Esox lucius",
+                                              "label": "pike"
+                                            },
+                                            {
+                                              "name": "Salmoninae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Oncorhynchus mykiss",
+                                                  "label": "trout"
+                                                },
+                                                {
+                                                  "name": "Salmo salar",
+                                                  "label": "salmon"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Otomorpha",
+                                      "desc": "(6 species)",
+                                      "children": [
+                                        {
+                                          "name": "Clupea harengus",
+                                          "label": "herring"
+                                        },
+                                        {
+                                          "name": "Otophysi",
+                                          "desc": "(5 species)",
+                                          "children": [
+                                            {
+                                              "name": "Characiphysae",
+                                              "desc": "(3 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Pygocentrus nattereri",
+                                                  "label": "piranha"
+                                                },
+                                                {
+                                                  "name": "Electrophorus electricus",
+                                                  "label": "electric eel"
+                                                },
+                                                {
+                                                  "name": "Ictalurus punctatus",
+                                                  "label": "catfish"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Cyprininae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Carassius auratus",
+                                                  "label": "goldfish"
+                                                },
+                                                {
+                                                  "name": "Cyprinus carpio",
+                                                  "label": "carp"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Sarcopterygii",
+                              "desc": "(207 species)",
+                              "children": [
+                                {
+                                  "name": "Latimeria chalumnae",
+                                  "label": "coelacanth"
+                                },
+                                {
+                                  "name": "Tetrapoda",
+                                  "desc": "(206 species)",
+                                  "children": [
+                                    {
+                                      "name": "Amniota",
+                                      "desc": "(200 species)",
+                                      "children": [
+                                        {
+                                          "name": "Mammalia",
+                                          "desc": "(124 species)",
+                                          "children": [
+                                            {
+                                              "name": "Monotremata",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Ornithorhynchus anatinus",
+                                                  "label": "platypus"
+                                                },
+                                                {
+                                                  "name": "Tachyglossus aculeatus",
+                                                  "label": "echidna"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Theria",
+                                              "desc": "(122 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Eutheria",
+                                                  "desc": "(115 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Afrotheria",
+                                                      "desc": "(4 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Procavia capensis",
+                                                          "label": "hyrax"
+                                                        },
+                                                        {
+                                                          "name": "Loxodonta africana",
+                                                          "label": "elephant"
+                                                        },
+                                                        {
+                                                          "name": "Trichechus manatus",
+                                                          "label": "manatee"
+                                                        },
+                                                        {
+                                                          "name": "Orycteropus afer",
+                                                          "label": "aardvark"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Boreoeutheria",
+                                                      "desc": "(108 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Euarchontoglires",
+                                                          "desc": "(30 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Glires",
+                                                              "desc": "(17 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Leporidae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Lepus californicus",
+                                                                      "label": "hare"
+                                                                    },
+                                                                    {
+                                                                      "name": "Oryctolagus cuniculus",
+                                                                      "label": "rabbit"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Rodentia",
+                                                                  "desc": "(15 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Castor canadensis",
+                                                                      "label": "beaver"
+                                                                    },
+                                                                    {
+                                                                      "name": "Hystricomorpha",
+                                                                      "desc": "(5 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Heterocephalus glaber",
+                                                                          "label": "naked mole rat"
+                                                                        },
+                                                                        {
+                                                                          "name": "Cavia porcellus",
+                                                                          "label": "guinea pig"
+                                                                        },
+                                                                        {
+                                                                          "name": "Chinchilla chinchilla",
+                                                                          "label": "chinchilla"
+                                                                        },
+                                                                        {
+                                                                          "name": "Hydrochoerus hydrochaeris",
+                                                                          "label": "capybara"
+                                                                        },
+                                                                        {
+                                                                          "name": "Hystrix africaeaustralis",
+                                                                          "label": "porcupine"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Muroidea",
+                                                                      "desc": "(4 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Mesocricetus auratus",
+                                                                          "label": "hamster"
+                                                                        },
+                                                                        {
+                                                                          "name": "Muridae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Meriones unguiculatus",
+                                                                              "label": "gerbil"
+                                                                            },
+                                                                            {
+                                                                              "name": "Murinae",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Mus musculus",
+                                                                                  "label": "mouse"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Rattus norvegicus",
+                                                                                  "label": "rat"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Sciuridae",
+                                                                      "desc": "(5 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Sciurinae",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Hylopetes nigripes",
+                                                                              "label": "flying squirrel"
+                                                                            },
+                                                                            {
+                                                                              "name": "Sciurus carolinensis",
+                                                                              "label": "squirrel"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Marmotini",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Cynomys ludovicianus",
+                                                                              "label": "prairie dog"
+                                                                            },
+                                                                            {
+                                                                              "name": "Marmota monax",
+                                                                              "label": "groundhog"
+                                                                            },
+                                                                            {
+                                                                              "name": "Tamias striatus",
+                                                                              "label": "chipmunk"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Primates",
+                                                              "desc": "(13 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Simiiformes",
+                                                                  "desc": "(12 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Catarrhini",
+                                                                      "desc": "(9 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Cercopithecinae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Macaca fuscata",
+                                                                              "label": "macaque"
+                                                                            },
+                                                                            {
+                                                                              "name": "Mandrillus sphinx",
+                                                                              "label": "mandrill"
+                                                                            },
+                                                                            {
+                                                                              "name": "Papio papio",
+                                                                              "label": "baboon"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Hominoidea",
+                                                                          "desc": "(6 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Hominidae",
+                                                                              "desc": "(5 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Homininae",
+                                                                                  "desc": "(4 species)",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Gorilla gorilla",
+                                                                                      "label": "gorilla"
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Homo sapiens",
+                                                                                      "label": "human"
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Pan",
+                                                                                      "desc": "(2 species)",
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "name": "Pan paniscus",
+                                                                                          "label": "bonobo"
+                                                                                        },
+                                                                                        {
+                                                                                          "name": "Pan troglodytes",
+                                                                                          "label": "chimpanzee"
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "name": "Pongo abelii",
+                                                                                  "label": "orangutan"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Nomascus leucogenys",
+                                                                              "label": "gibbon"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Platyrrhini",
+                                                                      "desc": "(3 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Alouatta pigra",
+                                                                          "label": "howler monkey"
+                                                                        },
+                                                                        {
+                                                                          "name": "Cebidae",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Leontopithecus rosalia",
+                                                                              "label": "tamarin"
+                                                                            },
+                                                                            {
+                                                                              "name": "Cebus olivaceus",
+                                                                              "label": "capuchin"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Lemur catta",
+                                                                  "label": "lemur"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Laurasiatheria",
+                                                          "desc": "(78 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Artiodactyla",
+                                                              "desc": "(29 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Pecora",
+                                                                  "desc": "(15 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Bovidae",
+                                                                      "desc": "(10 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Connochaetes taurinus",
+                                                                          "label": "wildebeest"
+                                                                        },
+                                                                        {
+                                                                          "name": "Gazella dorcas",
+                                                                          "label": "gazelle"
+                                                                        },
+                                                                        {
+                                                                          "name": "Bovinae",
+                                                                          "desc": "(4 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Bison bison",
+                                                                              "label": "bison"
+                                                                            },
+                                                                            {
+                                                                              "name": "Bos",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Bos grunniens",
+                                                                                  "label": "yak"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Bos taurus",
+                                                                                  "label": "cattle"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Bubalus bubalis",
+                                                                              "label": "water buffalo"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Caprinae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Capra",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Capra hircus",
+                                                                                  "label": "goat"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Capra ibex",
+                                                                                  "label": "ibex"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Ovis aries",
+                                                                              "label": "sheep"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Hippotragus niger",
+                                                                          "label": "antelope"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Cervidae",
+                                                                      "desc": "(4 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Cervus canadensis",
+                                                                          "label": "elk"
+                                                                        },
+                                                                        {
+                                                                          "name": "Odocoileinae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Alces alces",
+                                                                              "label": "moose"
+                                                                            },
+                                                                            {
+                                                                              "name": "Odocoileus virginianus",
+                                                                              "label": "deer"
+                                                                            },
+                                                                            {
+                                                                              "name": "Rangifer tarandus",
+                                                                              "label": "caribou"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Giraffa camelopardalis",
+                                                                      "label": "giraffe"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Suidae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Phacochoerus africanus",
+                                                                      "label": "warthog"
+                                                                    },
+                                                                    {
+                                                                      "name": "Sus scrofa",
+                                                                      "label": "pig"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Camelidae",
+                                                                  "desc": "(3 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Camelus dromedarius",
+                                                                      "label": "camel"
+                                                                    },
+                                                                    {
+                                                                      "name": "Lama glama",
+                                                                      "label": "llama"
+                                                                    },
+                                                                    {
+                                                                      "name": "Vicugna pacos",
+                                                                      "label": "alpaca"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Whippomorpha",
+                                                                  "desc": "(9 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Hippopotamus amphibius",
+                                                                      "label": "hippopotamus"
+                                                                    },
+                                                                    {
+                                                                      "name": "Cetacea",
+                                                                      "desc": "(8 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Balaenopteridae",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Balaenoptera musculus",
+                                                                              "label": "blue whale"
+                                                                            },
+                                                                            {
+                                                                              "name": "Megaptera novaeangliae",
+                                                                              "label": "humpback whale"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Odontoceti",
+                                                                          "desc": "(6 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Delphinidae",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Orcinus orca",
+                                                                                  "label": "orca"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Tursiops truncatus",
+                                                                                  "label": "dolphin"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Monodontidae",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Delphinapterus leucas",
+                                                                                  "label": "beluga whale"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Monodon monoceros",
+                                                                                  "label": "narwhal"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Phocoena phocoena",
+                                                                              "label": "porpoise"
+                                                                            },
+                                                                            {
+                                                                              "name": "Physeter macrocephalus",
+                                                                              "label": "sperm whale"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Carnivora",
+                                                              "desc": "(39 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Caniformia",
+                                                                  "desc": "(25 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Canidae",
+                                                                      "desc": "(7 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Canis",
+                                                                          "desc": "(4 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Canis aureus",
+                                                                              "label": "jackal"
+                                                                            },
+                                                                            {
+                                                                              "name": "Canis latrans",
+                                                                              "label": "coyote"
+                                                                            },
+                                                                            {
+                                                                              "name": "Canis lupus",
+                                                                              "label": "wolf",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Canis lupus familiaris",
+                                                                                  "label": "dog"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Nyctereutes viverrinus",
+                                                                          "label": "tanuki"
+                                                                        },
+                                                                        {
+                                                                          "name": "Vulpes",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Vulpes lagopus",
+                                                                              "label": "arctic fox"
+                                                                            },
+                                                                            {
+                                                                              "name": "Vulpes vulpes",
+                                                                              "label": "red fox"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Musteloidea",
+                                                                      "desc": "(11 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Ailurus fulgens",
+                                                                          "label": "red panda"
+                                                                        },
+                                                                        {
+                                                                          "name": "Mephitis mephitis",
+                                                                          "label": "skunk"
+                                                                        },
+                                                                        {
+                                                                          "name": "Mustelidae",
+                                                                          "desc": "(7 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Gulo gulo",
+                                                                              "label": "wolverine"
+                                                                            },
+                                                                            {
+                                                                              "name": "Lutrinae",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Enhydra lutris",
+                                                                                  "label": "sea otter"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Lontra canadensis",
+                                                                                  "label": "river otter"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Mustelinae",
+                                                                              "desc": "(3 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Mustela",
+                                                                                  "desc": "(2 species)",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Mustela lutreola",
+                                                                                      "label": "mink"
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Mustela putorius furo",
+                                                                                      "label": "ferret"
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "name": "Neogale frenata",
+                                                                                  "label": "weasel"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Taxidea taxus",
+                                                                              "label": "badger"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Procyonidae",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Potos flavus",
+                                                                              "label": "kinkajou"
+                                                                            },
+                                                                            {
+                                                                              "name": "Procyon lotor",
+                                                                              "label": "raccoon"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Pinnipedia",
+                                                                      "desc": "(3 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Odobenus rosmarus",
+                                                                          "label": "walrus"
+                                                                        },
+                                                                        {
+                                                                          "name": "Zalophus californianus",
+                                                                          "label": "sea lion"
+                                                                        },
+                                                                        {
+                                                                          "name": "Halichoerus grypus",
+                                                                          "label": "seal"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Ursidae",
+                                                                      "desc": "(4 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Ailuropoda melanoleuca",
+                                                                          "label": "giant panda"
+                                                                        },
+                                                                        {
+                                                                          "name": "Ursus",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Ursus americanus",
+                                                                              "label": "black bear"
+                                                                            },
+                                                                            {
+                                                                              "name": "Ursus arctos",
+                                                                              "label": "brown bear"
+                                                                            },
+                                                                            {
+                                                                              "name": "Ursus maritimus",
+                                                                              "label": "polar bear"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Feliformia",
+                                                                  "desc": "(14 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Felidae",
+                                                                      "desc": "(10 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Felinae",
+                                                                          "desc": "(6 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Acinonyx jubatus",
+                                                                              "label": "cheetah"
+                                                                            },
+                                                                            {
+                                                                              "name": "Felis catus",
+                                                                              "label": "cat"
+                                                                            },
+                                                                            {
+                                                                              "name": "Leopardus pardalis",
+                                                                              "label": "ocelot"
+                                                                            },
+                                                                            {
+                                                                              "name": "Lynx",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Lynx lynx",
+                                                                                  "label": "lynx"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Lynx rufus",
+                                                                                  "label": "bobcat"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Puma concolor",
+                                                                              "label": "puma"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Panthera",
+                                                                          "desc": "(4 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Panthera leo",
+                                                                              "label": "lion"
+                                                                            },
+                                                                            {
+                                                                              "name": "Panthera onca",
+                                                                              "label": "jaguar"
+                                                                            },
+                                                                            {
+                                                                              "name": "Panthera pardus",
+                                                                              "label": "leopard"
+                                                                            },
+                                                                            {
+                                                                              "name": "Panthera tigris",
+                                                                              "label": "tiger"
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Herpestidae",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Herpestes ichneumon",
+                                                                          "label": "mongoose"
+                                                                        },
+                                                                        {
+                                                                          "name": "Suricata suricatta",
+                                                                          "label": "meerkat"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Crocuta crocuta",
+                                                                      "label": "hyena"
+                                                                    },
+                                                                    {
+                                                                      "name": "Civettictis civetta",
+                                                                      "label": "civet"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Chiroptera",
+                                                              "desc": "(2 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Desmodus rotundus",
+                                                                  "label": "vampire bat"
+                                                                },
+                                                                {
+                                                                  "name": "Acerodon jubatus",
+                                                                  "label": "fruit bat"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Eulipotyphla",
+                                                              "desc": "(2 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Erinaceus europaeus",
+                                                                  "label": "hedgehog"
+                                                                },
+                                                                {
+                                                                  "name": "Talpa europaea",
+                                                                  "label": "mole"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Perissodactyla",
+                                                              "desc": "(5 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Equus",
+                                                                  "desc": "(3 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Equus asinus",
+                                                                      "label": "donkey"
+                                                                    },
+                                                                    {
+                                                                      "name": "Equus caballus",
+                                                                      "label": "horse"
+                                                                    },
+                                                                    {
+                                                                      "name": "Equus quagga",
+                                                                      "label": "zebra"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Ceratotherium simum",
+                                                                  "label": "rhinoceros"
+                                                                },
+                                                                {
+                                                                  "name": "Tapirus indicus",
+                                                                  "label": "tapir"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Manis javanica",
+                                                              "label": "pangolin"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Xenarthra",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Chaetophractus vellerosus",
+                                                          "label": "armadillo"
+                                                        },
+                                                        {
+                                                          "name": "Pilosa",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Choloepus didactylus",
+                                                              "label": "two-toed sloth"
+                                                            },
+                                                            {
+                                                              "name": "Cyclopes didactylus",
+                                                              "label": "anteater"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Metatheria",
+                                                  "desc": "(7 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Sarcophilus harrisii",
+                                                      "label": "tasmanian devil"
+                                                    },
+                                                    {
+                                                      "name": "Didelphis marsupialis",
+                                                      "label": "opossum"
+                                                    },
+                                                    {
+                                                      "name": "Diprotodontia",
+                                                      "desc": "(5 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Osphranter rufus",
+                                                          "label": "kangaroo"
+                                                        },
+                                                        {
+                                                          "name": "Petaurus breviceps",
+                                                          "label": "sugar glider"
+                                                        },
+                                                        {
+                                                          "name": "Phascolarctos cinereus",
+                                                          "label": "koala"
+                                                        },
+                                                        {
+                                                          "name": "Pseudocheirus peregrinus",
+                                                          "label": "possum"
+                                                        },
+                                                        {
+                                                          "name": "Vombatus ursinus",
+                                                          "label": "wombat"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Sauria",
+                                          "desc": "(76 species)",
+                                          "children": [
+                                            {
+                                              "name": "Archelosauria",
+                                              "desc": "(61 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Archosauria",
+                                                  "desc": "(57 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Crocodylia",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Alligatoridae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Alligator mississippiensis",
+                                                              "label": "alligator"
+                                                            },
+                                                            {
+                                                              "name": "Caiman latirostris",
+                                                              "label": "caiman"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Crocodylus porosus",
+                                                          "label": "crocodile"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Aves",
+                                                      "desc": "(54 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Neognathae",
+                                                          "desc": "(50 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Galloanserae",
+                                                              "desc": "(7 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Anatidae",
+                                                                  "desc": "(3 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Anas platyrhynchos",
+                                                                      "label": "duck"
+                                                                    },
+                                                                    {
+                                                                      "name": "Anserinae",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Branta canadensis",
+                                                                          "label": "goose"
+                                                                        },
+                                                                        {
+                                                                          "name": "Cygnus olor",
+                                                                          "label": "swan"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Phasianidae",
+                                                                  "desc": "(4 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Meleagris gallopavo",
+                                                                      "label": "turkey"
+                                                                    },
+                                                                    {
+                                                                      "name": "Phasianinae",
+                                                                      "desc": "(3 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Gallus gallus",
+                                                                          "label": "chicken"
+                                                                        },
+                                                                        {
+                                                                          "name": "Lophura bulweri",
+                                                                          "label": "pheasant"
+                                                                        },
+                                                                        {
+                                                                          "name": "Pavo cristatus",
+                                                                          "label": "peacock"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Neoaves",
+                                                              "desc": "(43 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Aequornithes",
+                                                                  "desc": "(5 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Ardea",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Ardea alba",
+                                                                          "label": "egret"
+                                                                        },
+                                                                        {
+                                                                          "name": "Ardea herodias",
+                                                                          "label": "heron"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Diomedea exulans",
+                                                                      "label": "albatross"
+                                                                    },
+                                                                    {
+                                                                      "name": "Spheniscidae",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Aptenodytes forsteri",
+                                                                          "label": "emperor penguin"
+                                                                        },
+                                                                        {
+                                                                          "name": "Eudyptes chrysolophus",
+                                                                          "label": "macaroni penguin"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Charadriiformes",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Fratercula arctica",
+                                                                      "label": "puffin"
+                                                                    },
+                                                                    {
+                                                                      "name": "Larus argentatus",
+                                                                      "label": "seagull"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Columbidae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Hemiphaga novaeseelandiae",
+                                                                      "label": "pigeon"
+                                                                    },
+                                                                    {
+                                                                      "name": "Leptotila verreauxi",
+                                                                      "label": "dove"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Phoenicopterus roseus",
+                                                                  "label": "flamingo"
+                                                                },
+                                                                {
+                                                                  "name": "Apodiformes",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Apus apus",
+                                                                      "label": "swift"
+                                                                    },
+                                                                    {
+                                                                      "name": "Mellisuga helenae",
+                                                                      "label": "hummingbird"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Telluraves",
+                                                                  "desc": "(31 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Accipitriformes",
+                                                                      "desc": "(7 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Accipitrinae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Accipiter gundlachi",
+                                                                              "label": "hawk"
+                                                                            },
+                                                                            {
+                                                                              "name": "Haliaeetus leucocephalus",
+                                                                              "label": "bald eagle"
+                                                                            },
+                                                                            {
+                                                                              "name": "Milvus migrans",
+                                                                              "label": "kite"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Cathartidae",
+                                                                          "desc": "(3 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Cathartes aura",
+                                                                              "label": "turkey vulture"
+                                                                            },
+                                                                            {
+                                                                              "name": "Coragyps atratus",
+                                                                              "label": "black vulture"
+                                                                            },
+                                                                            {
+                                                                              "name": "Vultur gryphus",
+                                                                              "label": "condor"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Pandion haliaetus",
+                                                                          "label": "osprey"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Australaves",
+                                                                      "desc": "(20 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Falco",
+                                                                          "desc": "(2 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Falco peregrinus",
+                                                                              "label": "falcon"
+                                                                            },
+                                                                            {
+                                                                              "name": "Falco sparverius",
+                                                                              "label": "kestrel"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Passeriformes",
+                                                                          "desc": "(13 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Troglodytes troglodytes",
+                                                                              "label": "wren"
+                                                                            },
+                                                                            {
+                                                                              "name": "Corvidae",
+                                                                              "desc": "(4 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Corvus",
+                                                                                  "desc": "(2 species)",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Corvus brachyrhynchos",
+                                                                                      "label": "crow"
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Corvus corax",
+                                                                                      "label": "raven"
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "name": "Cyanocitta cristata",
+                                                                                  "label": "blue jay"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Pica pica",
+                                                                                  "label": "magpie"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Mimus polyglottos",
+                                                                              "label": "mockingbird"
+                                                                            },
+                                                                            {
+                                                                              "name": "Passeroidea",
+                                                                              "desc": "(3 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Fringillidae",
+                                                                                  "desc": "(2 species)",
+                                                                                  "children": [
+                                                                                    {
+                                                                                      "name": "Pyrrhula pyrrhula",
+                                                                                      "label": "finch"
+                                                                                    },
+                                                                                    {
+                                                                                      "name": "Crithagra flaviventris",
+                                                                                      "label": "canary"
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "name": "Passer domesticus",
+                                                                                  "label": "sparrow"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Hirundo rustica",
+                                                                              "label": "swallow"
+                                                                            },
+                                                                            {
+                                                                              "name": "Turdidae",
+                                                                              "desc": "(3 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Erithacus rubecula",
+                                                                                  "label": "robin"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Luscinia megarhynchos",
+                                                                                  "label": "nightingale"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Turdus merula",
+                                                                                  "label": "blackbird"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "name": "Psittaciformes",
+                                                                          "desc": "(5 species)",
+                                                                          "children": [
+                                                                            {
+                                                                              "name": "Cacatuidae",
+                                                                              "desc": "(2 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Cacatua goffiniana",
+                                                                                  "label": "cockatoo"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Nymphicus hollandicus",
+                                                                                  "label": "cockatiel"
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "name": "Psittacidae",
+                                                                              "desc": "(3 species)",
+                                                                              "children": [
+                                                                                {
+                                                                                  "name": "Anodorhynchus hyacinthinus",
+                                                                                  "label": "macaw"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Aratinga nenday",
+                                                                                  "label": "parakeet"
+                                                                                },
+                                                                                {
+                                                                                  "name": "Psittacus erithacus",
+                                                                                  "label": "grey parrot"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Piciformes",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Dryocopus pileatus",
+                                                                          "label": "woodpecker"
+                                                                        },
+                                                                        {
+                                                                          "name": "Ramphastos toco",
+                                                                          "label": "toucan"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Strigiformes",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Bubo scandiacus",
+                                                                          "label": "snowy owl"
+                                                                        },
+                                                                        {
+                                                                          "name": "Tyto alba",
+                                                                          "label": "barn owl"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Palaeognathae",
+                                                          "desc": "(4 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Apteryx rowi",
+                                                              "label": "kiwi"
+                                                            },
+                                                            {
+                                                              "name": "Casuariiformes",
+                                                              "desc": "(2 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Casuarius casuarius",
+                                                                  "label": "cassowary"
+                                                                },
+                                                                {
+                                                                  "name": "Dromaius novaehollandiae",
+                                                                  "label": "emu"
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Struthio camelus",
+                                                              "label": "ostrich"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Durocryptodira",
+                                                  "desc": "(4 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Americhelydia",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Dermochelys coriacea",
+                                                          "label": "sea turtle"
+                                                        },
+                                                        {
+                                                          "name": "Chelydra serpentina",
+                                                          "label": "snapping turtle"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Testudinoidea",
+                                                      "desc": "(2 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Terrapene carolina",
+                                                          "label": "box turtle"
+                                                        },
+                                                        {
+                                                          "name": "Chelonoidis niger",
+                                                          "label": "tortoise"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Bifurcata",
+                                              "desc": "(15 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Lygodactylus capensis",
+                                                  "label": "gecko"
+                                                },
+                                                {
+                                                  "name": "Unidentata",
+                                                  "desc": "(14 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Toxicofera",
+                                                      "desc": "(13 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Anguimorpha",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Heloderma suspectum",
+                                                              "label": "gila monster"
+                                                            },
+                                                            {
+                                                              "name": "Varanus komodoensis",
+                                                              "label": "komodo dragon"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Iguania",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Chamaeleo chamaeleon",
+                                                              "label": "chameleon"
+                                                            },
+                                                            {
+                                                              "name": "Iguana iguana",
+                                                              "label": "iguana"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Serpentes",
+                                                          "desc": "(9 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Colubroidea",
+                                                              "desc": "(5 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Elapidae",
+                                                                  "desc": "(3 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Elapinae",
+                                                                      "desc": "(2 species)",
+                                                                      "children": [
+                                                                        {
+                                                                          "name": "Dendroaspis polylepis",
+                                                                          "label": "black mamba"
+                                                                        },
+                                                                        {
+                                                                          "name": "Ophiophagus hannah",
+                                                                          "label": "king cobra"
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "name": "Hydrophis platurus",
+                                                                      "label": "sea snake"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Viperidae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Crotalus atrox",
+                                                                      "label": "rattlesnake"
+                                                                    },
+                                                                    {
+                                                                      "name": "Cerastes cerastes",
+                                                                      "label": "viper"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "name": "Henophidia",
+                                                              "desc": "(4 species)",
+                                                              "children": [
+                                                                {
+                                                                  "name": "Boinae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Boa constrictor",
+                                                                      "label": "boa constrictor"
+                                                                    },
+                                                                    {
+                                                                      "name": "Eunectes murinus",
+                                                                      "label": "anaconda"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "name": "Pythonidae",
+                                                                  "desc": "(2 species)",
+                                                                  "children": [
+                                                                    {
+                                                                      "name": "Morelia viridis",
+                                                                      "label": "green tree python"
+                                                                    },
+                                                                    {
+                                                                      "name": "Python bivittatus",
+                                                                      "label": "burmese python"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Tiliqua gigas",
+                                                      "label": "skink"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Batrachia",
+                                      "desc": "(6 species)",
+                                      "children": [
+                                        {
+                                          "name": "Neobatrachia",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Hyloidea",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Bufo bufo",
+                                                  "label": "toad"
+                                                },
+                                                {
+                                                  "name": "Oophaga histrionica",
+                                                  "label": "poison frog"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Aquarana catesbeiana",
+                                              "label": "bullfrog"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Caudata",
+                                          "desc": "(3 species)",
+                                          "children": [
+                                            {
+                                              "name": "Hynobius retardatus",
+                                              "label": "salamander"
+                                            },
+                                            {
+                                              "name": "Salamandroidea",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Ambystoma mexicanum",
+                                                  "label": "axolotl"
+                                                },
+                                                {
+                                                  "name": "Ichthyosaura alpestris",
+                                                  "label": "newt"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Eleutherozoa",
+                  "desc": "(4 species)",
+                  "children": [
+                    {
+                      "name": "Asterias rubens",
+                      "label": "starfish"
+                    },
+                    {
+                      "name": "Echinozoa",
+                      "desc": "(3 species)",
+                      "children": [
+                        {
+                          "name": "Euechinoidea",
+                          "desc": "(2 species)",
+                          "children": [
+                            {
+                              "name": "Strongylocentrotus droebachiensis",
+                              "label": "sea urchin"
+                            },
+                            {
+                              "name": "Mellita quinquiesperforata",
+                              "label": "sand dollar"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Actinopyga echinites",
+                          "label": "sea cucumber"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Protostomia",
+              "desc": "(75 species)",
+              "children": [
+                {
+                  "name": "Ecdysozoa",
+                  "desc": "(59 species)",
+                  "children": [
+                    {
+                      "name": "Rhabditida",
+                      "desc": "(2 species)",
+                      "children": [
+                        {
+                          "name": "Caenorhabditis elegans",
+                          "label": "nematode"
+                        },
+                        {
+                          "name": "Dirofilaria immitis",
+                          "label": "heartworm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Panarthropoda",
+                      "desc": "(57 species)",
+                      "children": [
+                        {
+                          "name": "Arthropoda",
+                          "desc": "(55 species)",
+                          "children": [
+                            {
+                              "name": "Chelicerata",
+                              "desc": "(11 species)",
+                              "children": [
+                                {
+                                  "name": "Arachnida",
+                                  "desc": "(10 species)",
+                                  "children": [
+                                    {
+                                      "name": "Ixodes ricinus",
+                                      "label": "tick"
+                                    },
+                                    {
+                                      "name": "Araneae",
+                                      "desc": "(6 species)",
+                                      "children": [
+                                        {
+                                          "name": "Araneomorphae",
+                                          "desc": "(5 species)",
+                                          "children": [
+                                            {
+                                              "name": "Entelegynae",
+                                              "desc": "(3 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Araneoidea",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Nephila pilipes",
+                                                      "label": "orbweaver spider"
+                                                    },
+                                                    {
+                                                      "name": "Latrodectus tredecimguttatus",
+                                                      "label": "black widow"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Heteropoda maxima",
+                                                  "label": "huntsman spider"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Haplogynae",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Pholcus opilionoides",
+                                                  "label": "cellar spider"
+                                                },
+                                                {
+                                                  "name": "Loxosceles reclusa",
+                                                  "label": "brown recluse"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Theraphosa blondi",
+                                          "label": "tarantula"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Rilaena triangularis",
+                                      "label": "harvestman"
+                                    },
+                                    {
+                                      "name": "Scorpiones",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Centruroides sculpturatus",
+                                          "label": "bark scorpion"
+                                        },
+                                        {
+                                          "name": "Pandinus imperator",
+                                          "label": "emperor scorpion"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Limulus polyphemus",
+                                  "label": "horseshoe crab"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Mandibulata",
+                              "desc": "(44 species)",
+                              "children": [
+                                {
+                                  "name": "Myriapoda",
+                                  "desc": "(3 species)",
+                                  "children": [
+                                    {
+                                      "name": "Chilopoda",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Scutigera coleoptrata",
+                                          "label": "house centipede"
+                                        },
+                                        {
+                                          "name": "Scolopendra cataracta",
+                                          "label": "giant centipede"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Oxidus gracilis",
+                                      "label": "millipede"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Pancrustacea",
+                                  "desc": "(41 species)",
+                                  "children": [
+                                    {
+                                      "name": "Multicrustacea",
+                                      "desc": "(10 species)",
+                                      "children": [
+                                        {
+                                          "name": "Eumalacostraca",
+                                          "desc": "(9 species)",
+                                          "children": [
+                                            {
+                                              "name": "Eucarida",
+                                              "desc": "(7 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Decapoda",
+                                                  "desc": "(6 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Penaeus monodon",
+                                                      "label": "tiger prawn"
+                                                    },
+                                                    {
+                                                      "name": "Pleocyemata",
+                                                      "desc": "(5 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Paguroidea",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Birgus latro",
+                                                              "label": "coconut crab"
+                                                            },
+                                                            {
+                                                              "name": "Dardanus calidus",
+                                                              "label": "hermit crab"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Homarus gammarus",
+                                                          "label": "lobster"
+                                                        },
+                                                        {
+                                                          "name": "Tubuca urvillei",
+                                                          "label": "fiddler crab"
+                                                        },
+                                                        {
+                                                          "name": "Alpheus digitalis",
+                                                          "label": "pistol shrimp"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Euphausia pacifica",
+                                                  "label": "krill"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Odontodactylus scyllarus",
+                                              "label": "mantis shrimp"
+                                            },
+                                            {
+                                              "name": "Armadillidium vulgare",
+                                              "label": "pillbug"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Balanus glandula",
+                                          "label": "barnacle"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Dicondylia",
+                                      "desc": "(31 species)",
+                                      "children": [
+                                        {
+                                          "name": "Pterygota",
+                                          "desc": "(30 species)",
+                                          "children": [
+                                            {
+                                              "name": "Neoptera",
+                                              "desc": "(28 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Endopterygota",
+                                                  "desc": "(18 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Obtectomera",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Bombycoidea",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Bombyx mori",
+                                                              "label": "silkworm"
+                                                            },
+                                                            {
+                                                              "name": "Attacus atlas",
+                                                              "label": "atlas moth"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Danaus plexippus",
+                                                          "label": "monarch butterfly"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Polyphaga",
+                                                      "desc": "(4 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Coccinella septempunctata",
+                                                          "label": "ladybug"
+                                                        },
+                                                        {
+                                                          "name": "Nipponoluciola cruciata",
+                                                          "label": "firefly"
+                                                        },
+                                                        {
+                                                          "name": "Scarabaeidae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Dynastes hercules",
+                                                              "label": "hercules beetle"
+                                                            },
+                                                            {
+                                                              "name": "Scarabaeus sacer",
+                                                              "label": "dung beetle"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Diptera",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Schizophora",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Drosophila melanogaster",
+                                                              "label": "fruit fly"
+                                                            },
+                                                            {
+                                                              "name": "Musca domestica",
+                                                              "label": "house fly"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Aedes aegypti",
+                                                          "label": "mosquito"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Aculeata",
+                                                      "desc": "(7 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Apinae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Apis mellifera",
+                                                              "label": "honey bee"
+                                                            },
+                                                            {
+                                                              "name": "Bombus impatiens",
+                                                              "label": "bumble bee"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Formicidae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Camponotus floridanus",
+                                                              "label": "carpenter ant"
+                                                            },
+                                                            {
+                                                              "name": "Solenopsis invicta",
+                                                              "label": "fire ant"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Pepsis grossa",
+                                                          "label": "tarantula hawk wasp"
+                                                        },
+                                                        {
+                                                          "name": "Vespinae",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Vespa crabro",
+                                                              "label": "hornet"
+                                                            },
+                                                            {
+                                                              "name": "Vespula pensylvanica",
+                                                              "label": "wasp"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Ctenocephalides canis",
+                                                      "label": "flea"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Hemiptera",
+                                                  "desc": "(2 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Magicicada septendecim",
+                                                      "label": "cicada"
+                                                    },
+                                                    {
+                                                      "name": "Lethocerus indicus",
+                                                      "label": "water bug"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "Polyneoptera",
+                                                  "desc": "(8 species)",
+                                                  "children": [
+                                                    {
+                                                      "name": "Forficula auricularia",
+                                                      "label": "earwig"
+                                                    },
+                                                    {
+                                                      "name": "Dictyoptera",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Blattoidea",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Periplaneta americana",
+                                                              "label": "cockroach"
+                                                            },
+                                                            {
+                                                              "name": "Coptotermes formosanus",
+                                                              "label": "termite"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Mantis religiosa",
+                                                          "label": "praying mantis"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Orthoptera",
+                                                      "desc": "(3 species)",
+                                                      "children": [
+                                                        {
+                                                          "name": "Schistocerca",
+                                                          "desc": "(2 species)",
+                                                          "children": [
+                                                            {
+                                                              "name": "Schistocerca americana",
+                                                              "label": "grasshopper"
+                                                            },
+                                                            {
+                                                              "name": "Schistocerca gregaria",
+                                                              "label": "locust"
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "name": "Gryllus campestris",
+                                                          "label": "cricket"
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "Carausius morosus",
+                                                      "label": "stick bug"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "name": "Palaeoptera",
+                                              "desc": "(2 species)",
+                                              "children": [
+                                                {
+                                                  "name": "Rhithrogena germanica",
+                                                  "label": "mayfly"
+                                                },
+                                                {
+                                                  "name": "Aeshna canadensis",
+                                                  "label": "dragonfly"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Lepisma saccharinum",
+                                          "label": "silverfish"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Eoperipatus totoro",
+                          "label": "velvet worm"
+                        },
+                        {
+                          "name": "Milnesium tardigradum",
+                          "label": "tardigrade"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Lophotrochozoa",
+                  "desc": "(16 species)",
+                  "children": [
+                    {
+                      "name": "Clitellata",
+                      "desc": "(2 species)",
+                      "children": [
+                        {
+                          "name": "Hirudo medicinalis",
+                          "label": "leech"
+                        },
+                        {
+                          "name": "Lumbricus terrestris",
+                          "label": "earthworm"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Mollusca",
+                      "desc": "(13 species)",
+                      "children": [
+                        {
+                          "name": "Autobranchia",
+                          "desc": "(4 species)",
+                          "children": [
+                            {
+                              "name": "Spisula solidissima",
+                              "label": "sea clam"
+                            },
+                            {
+                              "name": "Pteriomorphia",
+                              "desc": "(3 species)",
+                              "children": [
+                                {
+                                  "name": "Mytilus edulis",
+                                  "label": "mussel"
+                                },
+                                {
+                                  "name": "Magallana gigas",
+                                  "label": "oyster"
+                                },
+                                {
+                                  "name": "Pecten novaezelandiae",
+                                  "label": "scallop"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Cephalopoda",
+                          "desc": "(7 species)",
+                          "children": [
+                            {
+                              "name": "Coleoidea",
+                              "desc": "(6 species)",
+                              "children": [
+                                {
+                                  "name": "Decapodiformes",
+                                  "desc": "(3 species)",
+                                  "children": [
+                                    {
+                                      "name": "Sepioteuthis lessoniana",
+                                      "label": "bigfin squid"
+                                    },
+                                    {
+                                      "name": "Architeuthis dux",
+                                      "label": "giant squid"
+                                    },
+                                    {
+                                      "name": "Sepia officinalis",
+                                      "label": "cuttlefish"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Octopodiformes",
+                                  "desc": "(3 species)",
+                                  "children": [
+                                    {
+                                      "name": "Octopodidae",
+                                      "desc": "(2 species)",
+                                      "children": [
+                                        {
+                                          "name": "Enteroctopus dofleini",
+                                          "label": "giant octopus"
+                                        },
+                                        {
+                                          "name": "Hapalochlaena lunulata",
+                                          "label": "blue-ringed octopus"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Vampyroteuthis infernalis",
+                                      "label": "vampire squid"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Nautilus belauensis",
+                              "label": "nautilus"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Helicina",
+                          "desc": "(2 species)",
+                          "children": [
+                            {
+                              "name": "Ariolimax columbianus",
+                              "label": "banana slug"
+                            },
+                            {
+                              "name": "Helix pomatia",
+                              "label": "snail"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Taenia saginata",
+                      "label": "tapeworm"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cnidaria",
+          "desc": "(6 species)",
+          "children": [
+            {
+              "name": "Hexacorallia",
+              "desc": "(2 species)",
+              "children": [
+                {
+                  "name": "Actinia tenebrosa",
+                  "label": "anemone"
+                },
+                {
+                  "name": "Diploria labyrinthiformis",
+                  "label": "brain coral"
+                }
+              ]
+            },
+            {
+              "name": "Hydroidolina",
+              "desc": "(2 species)",
+              "children": [
+                {
+                  "name": "Hydra vulgaris",
+                  "label": "freshwater polyp"
+                },
+                {
+                  "name": "Physalia physalis",
+                  "label": "man o war"
+                }
+              ]
+            },
+            {
+              "name": "Semaeostomeae",
+              "desc": "(2 species)",
+              "children": [
+                {
+                  "name": "Cyanea capillata",
+                  "label": "lions mane jellyfish"
+                },
+                {
+                  "name": "Aurelia aurita",
+                  "label": "jellyfish"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aplysina fistularis",
+      "label": "sea sponge"
+    }
+  ]
+}
