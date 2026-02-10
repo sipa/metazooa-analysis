@@ -537,6 +537,26 @@ let strategyMode = 'minavg'; /* 'minavg' or 'minimax' */
   }
   computeLayoutStats(root, 'minavg', '_layoutMaxAvg');
   computeLayoutStats(root, 'minimax', '_layoutMaxMinimax');
+
+  /* Check if the two layout orders are actually different */
+  function getLeafOrder(mode) {
+    function sortKey(a, b) {
+      const aA = a._layoutA || 0, bA = b._layoutA || 0;
+      if (mode === 'minimax') {
+        const aM = a._layoutMaxMinimax || 0, bM = b._layoutMaxMinimax || 0;
+        return bM - aM || bA - aA || a.data.name.localeCompare(b.data.name);
+      }
+      const aM = a._layoutMaxAvg || 0, bM = b._layoutMaxAvg || 0;
+      return bA - aA || bM - aM || a.data.name.localeCompare(b.data.name);
+    }
+    root.sort(sortKey);
+    return root.leaves().map(n => n._uid).join(',');
+  }
+  const orderAvg = getLeafOrder('minavg');
+  const orderMax = getLeafOrder('minimax');
+  if (orderAvg === orderMax) {
+    document.getElementById('strategy-switch').style.display = 'none';
+  }
 })();
 
 /* Unified child ordering: returns sorted array of parts */
