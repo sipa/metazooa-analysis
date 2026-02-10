@@ -150,6 +150,10 @@ body{display:flex;flex-direction:column}
 #tooltip .tt-species{color:var(--textDim);font-size:9px;margin-top:3px;line-height:1.5;opacity:0.8}
 #tooltip .tt-species .tt-sp-label{color:var(--active);opacity:0.7}
 #tooltip .tt-species .tt-sp-more{color:var(--textDim);font-style:italic}
+#tooltip .tt-wiki{margin-top:5px;display:flex;gap:8px;align-items:flex-start;border-top:1px solid var(--border);padding-top:5px}
+#tooltip .tt-wiki img{width:64px;height:64px;object-fit:cover;border-radius:3px;flex-shrink:0;background:#0d1a28}
+#tooltip .tt-wiki-text{font-size:10px;color:var(--text);line-height:1.4;font-family:'Exo 2',sans-serif;font-style:normal;opacity:0.85;max-height:80px;overflow:hidden}
+#tooltip .tt-wiki-loading{font-size:9px;color:var(--textDim);font-style:italic;margin-top:4px;opacity:0.5}
 
 /* ── Modal ─────────────────────────────── */
 #modal-overlay{
@@ -699,6 +703,7 @@ const labels = nodeGroups.filter(d => d.data.label).append('text')
 
 /* ── Tooltip ─────────────────────────────────────── */
 const tooltip = document.getElementById('tooltip');
+let hoveredUid = null;
 
 /* Collect all labeled descendants of a node */
 function getLabeledDescendants(node) {
@@ -722,7 +727,50 @@ function sampleArray(arr, k) {
   return a.slice(0, k).sort();
 }
 
-nodeGroups.on('mouseenter', (e, d) => {
+/* Wikipedia cache and fetcher */
+const wikiCache = new Map(); /* name → { extract, thumb } | null */
+const wikiFetching = new Set();
+
+function truncateSentences(text, max) {
+  const sentences = text.match(/[^.!?]*[.!?]+/g) || [text];
+  let result = '';
+  for (let i = 0; i < Math.min(sentences.length, max); i++) {
+    result += sentences[i];
+  }
+  return result.trim() || text.slice(0, 200);
+}
+
+async function fetchWiki(name, forUid) {
+  if (wikiCache.has(name) || wikiFetching.has(name)) return;
+  wikiFetching.add(name);
+  try {
+    const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(name);
+    const resp = await fetch(url);
+    if (!resp.ok) { wikiCache.set(name, null); return; }
+    const data = await resp.json();
+    if (data.type === 'disambiguation' || !data.extract) { wikiCache.set(name, null); return; }
+    wikiCache.set(name, {
+      extract: truncateSentences(data.extract, 2),
+      thumb: data.thumbnail ? data.thumbnail.source : null
+    });
+  } catch (e) { wikiCache.set(name, null); }
+  finally { wikiFetching.delete(name); }
+  /* If still hovering the same node, update tooltip */
+  if (hoveredUid === forUid) {
+    const wikiEl = tooltip.querySelector('.tt-wiki-slot');
+    const cached = wikiCache.get(name);
+    if (wikiEl && cached) {
+      let wh = '<div class="tt-wiki">';
+      if (cached.thumb) wh += `<img src="${cached.thumb}" alt="">`;
+      wh += `<div class="tt-wiki-text">${cached.extract}</div></div>`;
+      wikiEl.innerHTML = wh;
+    } else if (wikiEl && !cached) {
+      wikiEl.innerHTML = '';
+    }
+  }
+}
+
+function buildTooltipHtml(d) {
   let html = `<div class="tt-sci">${d.data.name}</div>`;
   if (d.data.label) html += `<div class="tt-label">${d.data.label}</div>`;
   const parts = [];
@@ -739,16 +787,34 @@ nodeGroups.on('mouseenter', (e, d) => {
     if (allSp.length > MAX_SHOW) html += ` <span class="tt-sp-more">… and ${allSp.length - MAX_SHOW} more</span>`;
     html += `</div>`;
   }
+  /* Wikipedia slot */
+  const cached = wikiCache.get(d.data.name);
+  html += `<div class="tt-wiki-slot">`;
+  if (cached) {
+    html += `<div class="tt-wiki">`;
+    if (cached.thumb) html += `<img src="${cached.thumb}" alt="">`;
+    html += `<div class="tt-wiki-text">${cached.extract}</div></div>`;
+  } else if (cached === undefined) {
+    html += `<div class="tt-wiki-loading">Loading from Wikipedia…</div>`;
+  }
+  html += `</div>`;
   const path = ancestryPath(d);
   if (path.length > 1) html += `<div class="tt-path">${path.join(' › ')}</div>`;
-  tooltip.innerHTML = html;
+  return html;
+}
+
+nodeGroups.on('mouseenter', (e, d) => {
+  hoveredUid = d._uid;
+  tooltip.innerHTML = buildTooltipHtml(d);
   tooltip.style.display = 'block';
+  /* Kick off Wikipedia fetch if not cached */
+  if (!wikiCache.has(d.data.name)) fetchWiki(d.data.name, d._uid);
 })
 .on('mousemove', e => {
   tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 440) + 'px';
   tooltip.style.top = (e.clientY - 10) + 'px';
 })
-.on('mouseleave', () => { tooltip.style.display = 'none'; });
+.on('mouseleave', () => { hoveredUid = null; tooltip.style.display = 'none'; });
 
 /* ── Click → Guess, Double-click → Zoom, Right-click → Copy ── */
 nodeGroups.filter(d => d.data.label)
