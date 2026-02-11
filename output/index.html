@@ -133,6 +133,7 @@ body{display:flex;flex-direction:column}
   fill:var(--active);cursor:pointer;transition:fill .25s,opacity .25s;
 }
 .node-label.inactive{fill:var(--inactiveText);opacity:0.45;cursor:default}
+.node-label.hover-path{fill:var(--orange) !important;opacity:1 !important}
 .node-label.best-guess{fill:var(--best);font-weight:bold;font-size:9.5px}
 
 /* ── Tooltip ───────────────────────────── */
@@ -900,6 +901,9 @@ nodeGroups.on('mouseenter', (e, d) => {
     if (anc.has(l.source._uid) && anc.has(l.target._uid))
       d3.select(this).classed('link-guess-path', true);
   });
+  labels.each(function(l) {
+    if (anc.has(l._uid)) d3.select(this).classed('hover-path', true);
+  });
   /* Kick off Wikipedia fetch if not cached */
   if (!wikiCache.has(d.data.name)) fetchWiki(d.data.name, d._uid);
 })
@@ -911,6 +915,7 @@ nodeGroups.on('mouseenter', (e, d) => {
   hoveredUid = null;
   tooltip.style.display = 'none';
   links.classed('link-guess-path', false);
+  labels.classed('hover-path', false);
 });
 
 /* ── Click → Guess, Double-click → Zoom, Right-click → Copy ── */
