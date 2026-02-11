@@ -885,6 +885,12 @@ nodeGroups.on('mouseenter', (e, d) => {
   hoveredUid = d._uid;
   tooltip.innerHTML = buildTooltipHtml(d);
   tooltip.style.display = 'block';
+  /* Highlight path from root to this node */
+  const anc = new Set(ancestors(d).map(n => n._uid));
+  links.each(function(l) {
+    if (anc.has(l.source._uid) && anc.has(l.target._uid))
+      d3.select(this).classed('link-guess-path', true);
+  });
   /* Kick off Wikipedia fetch if not cached */
   if (!wikiCache.has(d.data.name)) fetchWiki(d.data.name, d._uid);
 })
@@ -892,7 +898,11 @@ nodeGroups.on('mouseenter', (e, d) => {
   tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 440) + 'px';
   tooltip.style.top = (e.clientY - 10) + 'px';
 })
-.on('mouseleave', () => { hoveredUid = null; tooltip.style.display = 'none'; });
+.on('mouseleave', () => {
+  hoveredUid = null;
+  tooltip.style.display = 'none';
+  links.classed('link-guess-path', false);
+});
 
 /* ── Click → Guess, Double-click → Zoom, Right-click → Copy ── */
 nodeGroups.filter(d => d.data.label)
