@@ -113,8 +113,8 @@ body{display:flex;flex-direction:column}
 .link.link-active{stroke:#1a4060;stroke-width:1.2}
 .link.link-hot{stroke:#2a6888;stroke-width:1.5}
 .link.link-dead{stroke:#0c1520;stroke-width:0.6;opacity:0.35}
-.link.link-guess-path{stroke:var(--orange) !important;stroke-width:2 !important;opacity:1 !important}
 .link.link-guess-persistent{stroke:rgba(255,68,102,0.35) !important;stroke-width:1.4 !important;opacity:1 !important}
+.link.link-guess-path{stroke:var(--orange) !important;stroke-width:2 !important;opacity:1 !important}
 .node-dot{cursor:default;transition:fill .25s,r .25s,stroke .25s}
 .node-dot.labeled{cursor:pointer}
 .node-dot.active{fill:var(--active)}
@@ -334,6 +334,7 @@ body{display:flex;flex-direction:column}
   <div class="bl-item"><div class="bl-dot" style="background:#263040"></div>Inactive</div>
   <div class="bl-item"><div class="bl-line" style="background:#2a6888"></div>Best path</div>
   <div class="bl-item"><div class="bl-line" style="background:rgba(255,68,102,0.5)"></div>Guess path</div>
+  <div class="bl-item"><div class="bl-dot" style="background:transparent;border:2px solid #ff6600;width:7px;height:7px"></div>Search</div>
   <div class="bl-sep"></div>
   <span>Click a species to guess · Press <a href="#" onclick="document.getElementById('help-overlay').classList.add('show');return false">?</a> for help</span>
 </div>
@@ -376,7 +377,9 @@ body{display:flex;flex-direction:column}
         <div class="help-swatch"><span class="sw" style="background:#00e5c8"></span>Active species</div>
         <div class="help-swatch"><span class="sw" style="background:#ffd700"></span>Best guess</div>
         <div class="help-swatch"><span class="sw" style="background:#263040"></span>Inactive</div>
-        <div class="help-swatch"><span class="sw" style="background:#ff6600"></span>Search / guess highlight</div>
+        <div class="help-swatch"><span class="sw" style="background:#2a6888;width:14px;height:3px;border-radius:1px"></span>Best path</div>
+        <div class="help-swatch"><span class="sw" style="background:rgba(255,68,102,0.5);width:14px;height:3px;border-radius:1px"></span>Guess path</div>
+        <div class="help-swatch"><span class="sw" style="background:transparent;border:2px solid #ff6600"></span>Search highlight</div>
       </div>
     </div>
     <div class="help-section">
@@ -1013,6 +1016,7 @@ function setGuessHover(id) {
 
 /* ── Render Updates ──────────────────────────────── */
 function updateAll() {
+  setGuessHover(null); /* clear any stale hover highlights */
   const bg = computeBestGuess();
   const bestUid = bg && !bg.solved ? bg.node._uid : null;
   const solvedNode = bg && bg.solved ? bg.node : null;
