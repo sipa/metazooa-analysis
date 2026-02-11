@@ -291,7 +291,7 @@ body{display:flex;flex-direction:column}
   </div>
   <div class="toggle-group" id="layout-switch">
     <button class="hdr-btn" id="switch-radial">Radial</button>
-    <button class="hdr-btn tog-active" id="switch-tidy">Tree</button>
+    <button class="hdr-btn" id="switch-tidy">Tree</button>
   </div>
   <div class="toggle-group" id="strategy-switch">
     <button class="hdr-btn tog-active" id="switch-minavg" data-tip="Optimize average number of guesses">Min avg</button>
@@ -639,7 +639,7 @@ function computeGuessStats(node) {
 const svg = d3.select('#tree-svg');
 const container = document.getElementById('tree-container');
 const RADIUS = 520;
-let layoutMode = 'tidy'; /* 'radial' or 'tidy' */
+let layoutMode = localStorage.getItem('metazooa-layout') || 'tidy'; /* 'radial' or 'tidy' */
 let treeCx = 0, treeCy = 0, treeRange = RADIUS * 2 + 200;
 
 function applyLayout() {
@@ -1268,9 +1268,12 @@ minimapEl.addEventListener('click', e => {
 document.getElementById('title-btn').onclick = fitView;
 
 /* ── Layout Toggle ───────────────────────────────── */
+document.getElementById('switch-radial').classList.toggle('tog-active', layoutMode === 'radial');
+document.getElementById('switch-tidy').classList.toggle('tog-active', layoutMode === 'tidy');
 document.getElementById('switch-radial').onclick = () => {
   if (layoutMode === 'radial') return;
   layoutMode = 'radial';
+  localStorage.setItem('metazooa-layout', 'radial');
   document.getElementById('switch-radial').classList.add('tog-active');
   document.getElementById('switch-tidy').classList.remove('tog-active');
   applyLayout();
@@ -1279,6 +1282,7 @@ document.getElementById('switch-radial').onclick = () => {
 document.getElementById('switch-tidy').onclick = () => {
   if (layoutMode === 'tidy') return;
   layoutMode = 'tidy';
+  localStorage.setItem('metazooa-layout', 'tidy');
   document.getElementById('switch-tidy').classList.add('tog-active');
   document.getElementById('switch-radial').classList.remove('tog-active');
   applyLayout();
