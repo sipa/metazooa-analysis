@@ -130,9 +130,9 @@ body{display:flex;flex-direction:column}
 @keyframes searchPulse{0%,100%{stroke-opacity:1;stroke-width:2.5}50%{stroke-opacity:0.4;stroke-width:4}}
 .node-label{
   font-family:'Share Tech Mono',monospace;font-size:9px;
-  fill:var(--active);pointer-events:none;transition:fill .25s,opacity .25s;
+  fill:var(--active);cursor:pointer;transition:fill .25s,opacity .25s;
 }
-.node-label.inactive{fill:var(--inactiveText);opacity:0.45}
+.node-label.inactive{fill:var(--inactiveText);opacity:0.45;cursor:default}
 .node-label.best-guess{fill:var(--best);font-weight:bold;font-size:9.5px}
 
 /* ── Tooltip ───────────────────────────── */
