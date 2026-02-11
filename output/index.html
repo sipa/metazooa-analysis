@@ -108,7 +108,7 @@ body{display:flex;flex-direction:column}
 
 /* ── Tree ──────────────────────────────── */
 #tree-container{flex:1;position:relative;overflow:hidden}
-#tree-container svg{width:100%;height:100%;display:block}
+#tree-container svg{width:100%;height:100%;display:block;opacity:0;transition:opacity .3s}
 .link{fill:none;stroke:var(--link);stroke-width:1;transition:stroke .4s,stroke-width .4s,opacity .4s}
 .link.link-active{stroke:#1a4060;stroke-width:1.2}
 .link.link-hot{stroke:#2a6888;stroke-width:1.5}
@@ -706,11 +706,12 @@ const zoom = d3.zoom().scaleExtent([0.15, 14]).on('zoom', e => {
 });
 svg.call(zoom);
 
-function fitView() {
+function fitView(instant) {
   const w = container.clientWidth, h = container.clientHeight;
+  let t;
   if (layoutMode === 'radial') {
     const scale = Math.min(w, h) / (2 * (RADIUS + 140));
-    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity.translate(w/2, h/2).scale(scale));
+    t = d3.zoomIdentity.translate(w/2, h/2).scale(scale);
   } else {
     const pad = 80;
     let minRx = Infinity, maxRx = -Infinity, minRy = Infinity, maxRy = -Infinity;
@@ -721,8 +722,12 @@ function fitView() {
     const dx = maxRx - minRx + pad * 2, dy = maxRy - minRy + pad * 2;
     const cx = (minRx + maxRx) / 2, cy = (minRy + maxRy) / 2;
     const scale = Math.min(w / dx, h / dy);
-    svg.transition().duration(400).call(zoom.transform,
-      d3.zoomIdentity.translate(w/2 - cx*scale, h/2 - cy*scale).scale(scale));
+    t = d3.zoomIdentity.translate(w/2 - cx*scale, h/2 - cy*scale).scale(scale);
+  }
+  if (instant) {
+    svg.call(zoom.transform, t);
+  } else {
+    svg.transition().duration(400).call(zoom.transform, t);
   }
 }
 function zoomToNode(node, scale) {
@@ -753,10 +758,14 @@ function transitionLayout(dur) {
   nodeGroups.transition().duration(dur).attr('transform', d => `translate(${d._rx},${d._ry})`);
   links.transition().duration(dur).attr('d', linkPath);
   labels.transition().duration(dur).attr('transform', labelTransform).attr('text-anchor', labelAnchor);
-  setTimeout(fitView, dur + 50);
+  fitView(); /* animate zoom concurrently with layout transition */
 }
-setTimeout(fitView, 60);
-window.addEventListener('resize', () => setTimeout(fitView, 50));
+/* Initial fit: instant (no animation), then reveal SVG */
+requestAnimationFrame(() => {
+  fitView(true);
+  document.getElementById('tree-svg').style.opacity = '1';
+});
+window.addEventListener('resize', () => fitView());
 
 /* ── Draw Links ──────────────────────────────────── */
 const linkG = g.append('g');
