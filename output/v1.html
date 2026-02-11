@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metazooa Solver</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#060d18;--panel:rgba(8,18,35,0.95);--border:#1a3050;
+  --active:#00e5c8;--inactive:#263040;--inactiveText:#3a5060;
+  --best:#ffd700;--link:#152535;--text:#8ab4d9;--textDim:#4a6a80;
+  --accent:#00b8ff;--danger:#ff4466;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif}
+body{display:flex;flex-direction:column}
+#header{
+  position:relative;z-index:10;
+  background:var(--panel);border-bottom:1px solid var(--border);
+  padding:8px 16px;display:flex;align-items:center;gap:16px;flex-shrink:0;
+  flex-wrap:wrap;min-height:42px;
+}
+#header h1{
+  font-family:'Orbitron',sans-serif;font-size:14px;font-weight:900;
+  letter-spacing:2px;color:var(--active);text-transform:uppercase;
+  white-space:nowrap;text-shadow:0 0 20px rgba(0,229,200,0.3);
+}
+#status{
+  font-family:'Share Tech Mono',monospace;font-size:12px;
+  color:var(--text);display:flex;align-items:center;gap:8px;white-space:nowrap;
+}
+#status .best-label{
+  color:var(--best);font-weight:600;
+  text-shadow:0 0 10px rgba(255,215,0,0.4);
+}
+#status .solved{color:#44ff88;text-shadow:0 0 12px rgba(68,255,136,0.5)}
+#status .count{color:var(--textDim);font-size:11px}
+#guesses{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-left:auto}
+.guess-chip{
+  display:flex;align-items:center;gap:4px;
+  background:rgba(0,229,200,0.1);border:1px solid rgba(0,229,200,0.25);
+  border-radius:3px;padding:2px 6px;font-size:10px;
+  font-family:'Share Tech Mono',monospace;color:var(--active);
+}
+.guess-chip .sci{color:var(--textDim);font-size:9px}
+.guess-chip .del{
+  cursor:pointer;color:var(--danger);font-size:12px;line-height:1;
+  margin-left:2px;opacity:0.6;transition:opacity .15s;
+}
+.guess-chip .del:hover{opacity:1}
+#reset-btn{
+  background:transparent;border:1px solid var(--danger);color:var(--danger);
+  font-family:'Share Tech Mono',monospace;font-size:10px;
+  padding:2px 8px;border-radius:3px;cursor:pointer;opacity:0.6;transition:opacity .15s;
+}
+#reset-btn:hover{opacity:1}
+#tree-container{flex:1;position:relative;overflow:hidden}
+#tree-container svg{width:100%;height:100%;display:block}
+.link{fill:none;stroke:var(--link);stroke-width:1}
+.node-dot{cursor:default;transition:fill .3s,r .3s}
+.node-dot.labeled{cursor:pointer}
+.node-dot.active{fill:var(--active)}
+.node-dot.inactive{fill:var(--inactive)}
+.node-dot.internal{fill:#0d1a28;stroke:#1a3050;stroke-width:0.5}
+.node-dot.best-guess{
+  fill:var(--best);
+  filter:url(#glow);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{filter:url(#glow)}
+  50%{filter:url(#glowBright)}
+}
+.node-label{
+  font-family:'Share Tech Mono',monospace;font-size:7px;
+  fill:var(--active);pointer-events:none;transition:fill .3s,opacity .3s;
+}
+.node-label.inactive{fill:var(--inactiveText);opacity:0.5}
+.node-label.best-guess{fill:var(--best);font-weight:bold;font-size:7.5px}
+#tooltip{
+  position:fixed;z-index:100;pointer-events:none;
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:4px;padding:5px 8px;font-size:11px;
+  font-family:'Share Tech Mono',monospace;color:var(--text);
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);display:none;
+  max-width:300px;
+}
+#tooltip .tt-sci{color:var(--accent);font-style:italic}
+#tooltip .tt-label{color:var(--active);font-weight:600}
+#tooltip .tt-info{color:var(--textDim);font-size:10px;margin-top:2px}
+#modal-overlay{
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;
+  background:rgba(0,0,0,0.7);display:none;
+  justify-content:center;align-items:center;
+  backdrop-filter:blur(4px);
+}
+#modal-overlay.show{display:flex}
+#modal{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:8px;padding:16px;min-width:320px;max-width:500px;
+  max-height:80vh;display:flex;flex-direction:column;
+  box-shadow:0 8px 40px rgba(0,0,0,0.6);
+}
+#modal h2{
+  font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;
+  color:var(--active);letter-spacing:1px;margin-bottom:4px;
+}
+#modal .modal-subtitle{
+  color:var(--textDim);font-size:11px;margin-bottom:12px;
+  font-family:'Share Tech Mono',monospace;
+}
+#modal-options{
+  overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:2px;
+}
+.modal-option{
+  display:flex;align-items:center;gap:8px;
+  padding:6px 10px;border-radius:4px;cursor:pointer;
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+  color:var(--text);transition:background .15s;border:1px solid transparent;
+}
+.modal-option:hover{background:rgba(0,229,200,0.1);border-color:rgba(0,229,200,0.2)}
+.modal-option .opt-depth{color:var(--textDim);font-size:9px;min-width:20px}
+.modal-option .opt-name{color:var(--accent);flex:1}
+.modal-option .opt-self{color:var(--best);font-size:9px}
+#modal-cancel{
+  margin-top:12px;padding:6px;text-align:center;
+  border:1px solid var(--border);border-radius:4px;
+  cursor:pointer;font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--textDim);transition:all .15s;
+}
+#modal-cancel:hover{border-color:var(--danger);color:var(--danger)}
+#loading{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Orbitron',sans-serif;color:var(--active);font-size:14px;
+  letter-spacing:3px;
+}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>Metazooa Solver</h1>
+  <div id="status"></div>
+  <div id="guesses"></div>
+</div>
+<div id="tree-container">
+  <div id="loading">LOADING PHYLOGENY...</div>
+  <svg id="tree-svg">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glowBright" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="4" result="g"/>
+        <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+</div>
+<div id="tooltip"></div>
+<div id="modal-overlay">
+  <div id="modal">
+    <h2>SELECT COMMON ANCESTOR</h2>
+    <div class="modal-subtitle" id="modal-subtitle"></div>
+    <div id="modal-options"></div>
+    <div id="modal-cancel">Cancel</div>
+  </div>
+</div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(async function(){
+
+/* ── Load Data ───────────────────────────────────── */
+const resp = await fetch('species-metazooa.json');
+const treeData = await resp.json();
+document.getElementById('loading').remove();
+
+/* ── Build Hierarchy ─────────────────────────────── */
+const root = d3.hierarchy(treeData);
+let uid = 0;
+root.each(n => { n._uid = uid++; });
+const allNodes = root.descendants();
+const allLinks = root.links();
+const labeledNodes = allNodes.filter(n => n.data.label);
+const totalLabeled = labeledNodes.length;
+
+/* ── Parent / Ancestor helpers ───────────────────── */
+function ancestors(node) {
+  const a = [];
+  let n = node;
+  while (n) { a.push(n); n = n.parent; }
+  return a; /* node → root */
+}
+function lca(a, b) {
+  const sa = new Set(ancestors(a).map(n => n._uid));
+  let n = b;
+  while (n) { if (sa.has(n._uid)) return n; n = n.parent; }
+  return root;
+}
+function isAncestorOf(anc, desc) {
+  let n = desc;
+  while (n) { if (n._uid === anc._uid) return true; n = n.parent; }
+  return false;
+}
+
+/* ── State ───────────────────────────────────────── */
+let guesses = []; /* {id, g:node, c:node} */
+let guessIdCounter = 0;
+const activeMap = new Map(); /* uid → bool for labeled nodes */
+labeledNodes.forEach(n => activeMap.set(n._uid, true));
+
+function recomputeActive() {
+  labeledNodes.forEach(x => {
+    let ok = true;
+    for (const guess of guesses) {
+      const l = lca(guess.g, x);
+      if (l._uid !== guess.c._uid) { ok = false; break; }
+    }
+    activeMap.set(x._uid, ok);
+  });
+}
+
+/* A(node) = count of active labeled descendants including self */
+function computeA(node) {
+  let a = 0;
+  if (node.data.label && activeMap.get(node._uid)) a = 1;
+  if (node.children) {
+    for (const c of node.children) a += computeA(c);
+  }
+  node._A = a;
+  return a;
+}
+
+function totalActive() {
+  let c = 0;
+  labeledNodes.forEach(n => { if (activeMap.get(n._uid)) c++; });
+  return c;
+}
+
+function computeBestGuess() {
+  computeA(root);
+  const ta = totalActive();
+  if (ta === 0) return null;
+  /* Check solved: exactly 1 active, and it's a G of some guess */
+  if (ta === 1) {
+    const winner = labeledNodes.find(n => activeMap.get(n._uid));
+    if (guesses.some(g => g.g._uid === winner._uid)) return { solved: true, node: winner };
+  }
+  let cur = root;
+  while (cur.children) {
+    let best = null, bestA = -1;
+    for (const c of cur.children) {
+      if (c._A > bestA) { bestA = c._A; best = c; }
+    }
+    if (bestA === 0) break; /* cur itself is the active node */
+    cur = best;
+  }
+  return { solved: false, node: cur };
+}
+
+function lcaOfAllActive() {
+  computeA(root);
+  const ta = totalActive();
+  if (ta === 0) return root;
+  let cur = root;
+  while (cur.children) {
+    let found = null;
+    for (const c of cur.children) {
+      if (c._A === ta) { found = c; break; }
+    }
+    if (!found) break;
+    cur = found;
+  }
+  return cur;
+}
+
+/* ── Layout ──────────────────────────────────────── */
+const svg = d3.select('#tree-svg');
+const container = document.getElementById('tree-container');
+
+const treeLayout = d3.cluster()
+  .size([2 * Math.PI, 420])
+  .separation((a, b) => (a.parent === b.parent ? 1 : 1) / a.depth || 1);
+
+treeLayout(root);
+
+/* Convert to cartesian */
+function rx(d) { return d.y * Math.cos(d.x - Math.PI / 2); }
+function ry(d) { return d.y * Math.sin(d.x - Math.PI / 2); }
+
+const g = svg.append('g');
+
+/* Zoom */
+const zoom = d3.zoom()
+  .scaleExtent([0.3, 8])
+  .on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+
+/* Initial fit */
+function fitView() {
+  const w = container.clientWidth, h = container.clientHeight;
+  const pad = 160; /* space for labels */
+  const r = 420 + pad;
+  const scale = Math.min(w, h) / (2 * r);
+  const tx = w / 2, ty = h / 2;
+  svg.call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+}
+setTimeout(fitView, 50);
+window.addEventListener('resize', fitView);
+
+/* ── Draw Links ──────────────────────────────────── */
+const linkG = g.append('g');
+linkG.selectAll('path')
+  .data(allLinks)
+  .join('path')
+  .attr('class', 'link')
+  .attr('d', d3.linkRadial().angle(d => d.x).radius(d => d.y));
+
+/* ── Draw Nodes ──────────────────────────────────── */
+const nodeG = g.append('g');
+const nodeGroups = nodeG.selectAll('g')
+  .data(allNodes)
+  .join('g')
+  .attr('transform', d => `translate(${rx(d)},${ry(d)})`);
+
+const dots = nodeGroups.append('circle')
+  .attr('class', d => d.data.label ? 'node-dot labeled' : 'node-dot internal')
+  .attr('r', d => d.data.label ? 2.5 : 1.2);
+
+/* Labels — only for labeled nodes */
+const labels = nodeGroups.filter(d => d.data.label)
+  .append('text')
+  .attr('class', 'node-label')
+  .attr('dy', '0.31em')
+  .attr('transform', d => {
+    const ang = d.x * 180 / Math.PI;
+    const flip = d.x > Math.PI;
+    const rot = flip ? ang - 270 : ang - 90;
+    return `rotate(${rot}) translate(${flip ? -5 : 5},0)`;
+  })
+  .attr('text-anchor', d => d.x > Math.PI ? 'end' : 'start')
+  .text(d => d.data.label);
+
+/* ── Tooltip ─────────────────────────────────────── */
+const tooltip = document.getElementById('tooltip');
+nodeGroups.on('mouseenter', (e, d) => {
+  let html = `<div class="tt-sci">${d.data.name}</div>`;
+  if (d.data.label) html += `<div class="tt-label">${d.data.label}</div>`;
+  if (d.data.label) {
+    const a = activeMap.get(d._uid);
+    html += `<div class="tt-info">${a ? 'Active' : 'Inactive'}${d._A !== undefined ? ' · A=' + d._A : ''}</div>`;
+  }
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+})
+.on('mousemove', e => {
+  tooltip.style.left = (e.clientX + 12) + 'px';
+  tooltip.style.top = (e.clientY - 10) + 'px';
+})
+.on('mouseleave', () => { tooltip.style.display = 'none'; });
+
+/* ── Click → Add Guess ───────────────────────────── */
+nodeGroups.filter(d => d.data.label)
+  .on('click', (e, d) => {
+    e.stopPropagation();
+    if (!activeMap.get(d._uid)) return;
+    showModal(d);
+  });
+
+/* ── Modal ───────────────────────────────────────── */
+const modalOverlay = document.getElementById('modal-overlay');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalOptions = document.getElementById('modal-options');
+document.getElementById('modal-cancel').onclick = () => modalOverlay.classList.remove('show');
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.classList.remove('show'); });
+
+function showModal(gNode) {
+  modalSubtitle.textContent = `Common ancestor between ? and "${gNode.data.label}"`;
+  modalOptions.innerHTML = '';
+  const lcaAll = lcaOfAllActive();
+  const ancs = [];
+  let n = gNode;
+  while (n) {
+    ancs.push(n);
+    if (n._uid === lcaAll._uid) break;
+    n = n.parent;
+  }
+  for (const a of ancs) {
+    const div = document.createElement('div');
+    div.className = 'modal-option';
+    const isSelf = a._uid === gNode._uid;
+    div.innerHTML = `
+      <span class="opt-name">${a.data.name}</span>
+      ${a.data.label ? `<span class="opt-self">[${a.data.label}]</span>` : ''}
+    `;
+    div.onclick = () => {
+      addGuess(gNode, a);
+      modalOverlay.classList.remove('show');
+    };
+    modalOptions.appendChild(div);
+  }
+  modalOverlay.classList.add('show');
+}
+
+/* ── Guess Management ────────────────────────────── */
+function addGuess(gNode, cNode) {
+  guesses.push({ id: guessIdCounter++, g: gNode, c: cNode });
+  recomputeActive();
+  updateAll();
+}
+function removeGuess(id) {
+  guesses = guesses.filter(g => g.id !== id);
+  recomputeActive();
+  updateAll();
+}
+function resetGuesses() {
+  guesses = [];
+  recomputeActive();
+  updateAll();
+}
+
+/* ── Render Updates ──────────────────────────────── */
+function updateAll() {
+  const bg = computeBestGuess();
+  const bestUid = bg && !bg.solved ? bg.node._uid : null;
+  const solvedNode = bg && bg.solved ? bg.node : null;
+
+  /* Update dots */
+  dots.each(function(d) {
+    const el = d3.select(this);
+    el.classed('active', false).classed('inactive', false)
+      .classed('internal', false).classed('best-guess', false);
+    if (d.data.label) {
+      const a = activeMap.get(d._uid);
+      el.classed('active', a && d._uid !== bestUid)
+        .classed('inactive', !a)
+        .classed('best-guess', d._uid === bestUid);
+      el.attr('r', d._uid === bestUid ? 4 : 2.5);
+    } else {
+      el.classed('internal', true).attr('r', 1.2);
+    }
+  });
+
+  /* Update labels */
+  labels.each(function(d) {
+    const el = d3.select(this);
+    const a = activeMap.get(d._uid);
+    el.classed('active', a).classed('inactive', !a)
+      .classed('best-guess', d._uid === bestUid);
+  });
+
+  /* Status bar */
+  const ta = totalActive();
+  const statusEl = document.getElementById('status');
+  if (solvedNode) {
+    statusEl.innerHTML = `<span class="solved">✦ SOLVED: ${solvedNode.data.label}</span> <span class="count">(${ta} remaining)</span>`;
+  } else if (bg) {
+    statusEl.innerHTML = `Best guess: <span class="best-label">${bg.node.data.label}</span> <span class="count">(${ta}/${totalLabeled} active)</span>`;
+  } else {
+    statusEl.innerHTML = `<span class="count">No active species</span>`;
+  }
+
+  /* Guess chips */
+  const guessesEl = document.getElementById('guesses');
+  guessesEl.innerHTML = '';
+  for (const guess of guesses) {
+    const chip = document.createElement('div');
+    chip.className = 'guess-chip';
+    chip.innerHTML = `
+      ${guess.g.data.label}
+      <span class="sci">→ ${guess.c.data.name}</span>
+      <span class="del" data-id="${guess.id}">×</span>
+    `;
+    chip.querySelector('.del').onclick = () => removeGuess(guess.id);
+    guessesEl.appendChild(chip);
+  }
+  if (guesses.length > 0) {
+    const btn = document.createElement('button');
+    btn.id = 'reset-btn';
+    btn.textContent = 'Reset';
+    btn.onclick = resetGuesses;
+    guessesEl.appendChild(btn);
+  }
+}
+
+/* Initial render */
+updateAll();
+
+})();
+</script>
+</body>
+</html>
