@@ -134,6 +134,7 @@ body{display:flex;flex-direction:column}
 }
 .node-label.inactive{fill:var(--inactiveText);opacity:0.45;cursor:default}
 .node-label.hover-path{fill:var(--orange) !important;opacity:1 !important}
+.node-dot.hover-path{stroke:var(--orange) !important;stroke-width:2 !important;fill:var(--orange) !important}
 .node-label.best-guess{fill:var(--best);font-weight:bold;font-size:9.5px}
 
 /* ── Tooltip ───────────────────────────── */
@@ -295,7 +296,7 @@ body{display:flex;flex-direction:column}
     <button class="hdr-btn" id="switch-tidy">Tree</button>
   </div>
   <div class="toggle-group" id="strategy-switch">
-    <button class="hdr-btn tog-active" id="switch-minavg" data-tip="Optimize average number of guesses">Min avg</button>
+    <button class="hdr-btn" id="switch-minavg" data-tip="Optimize average number of guesses">Min avg</button>
     <button class="hdr-btn" id="switch-minimax" data-tip="Optimize worst-case number of guesses">Minimax</button>
   </div>
   <div id="search-wrap">
@@ -494,7 +495,7 @@ function totalActive() {
   labeledNodes.forEach(n => { if (activeMap.get(n._uid)) c++; });
   return c;
 }
-let strategyMode = 'minavg'; /* 'minavg' or 'minimax' */
+let strategyMode = localStorage.getItem('metazooa-strategy') || 'minavg'; /* 'minavg' or 'minimax' */
 
 /* ── Precompute layout sort order (all-active, both strategies) ── */
 /* These values are fixed and independent of guesses. */
@@ -640,7 +641,7 @@ function computeGuessStats(node) {
 const svg = d3.select('#tree-svg');
 const container = document.getElementById('tree-container');
 const RADIUS = 520;
-let layoutMode = localStorage.getItem('metazooa-layout') || 'tidy'; /* 'radial' or 'tidy' */
+let layoutMode = localStorage.getItem('metazooa-layout') || 'radial'; /* 'radial' or 'tidy' */
 let treeCx = 0, treeCy = 0, treeRange = RADIUS * 2 + 200;
 
 function applyLayout() {
@@ -895,14 +896,25 @@ nodeGroups.on('mouseenter', (e, d) => {
   hoveredUid = d._uid;
   tooltip.innerHTML = buildTooltipHtml(d);
   tooltip.style.display = 'block';
-  /* Highlight path from root to this node */
-  const anc = new Set(ancestors(d).map(n => n._uid));
+  /* Collect ancestor UIDs (path to root) */
+  const highlight = new Set(ancestors(d).map(n => n._uid));
+  /* Collect all descendant UIDs */
+  function addDesc(node) {
+    highlight.add(node._uid);
+    if (node.children) node.children.forEach(addDesc);
+  }
+  addDesc(d);
+  /* Highlight links where both endpoints are in the set */
   links.each(function(l) {
-    if (anc.has(l.source._uid) && anc.has(l.target._uid))
+    if (highlight.has(l.source._uid) && highlight.has(l.target._uid))
       d3.select(this).classed('link-guess-path', true);
   });
+  /* Highlight labels and dots */
   labels.each(function(l) {
-    if (anc.has(l._uid)) d3.select(this).classed('hover-path', true);
+    if (highlight.has(l._uid)) d3.select(this).classed('hover-path', true);
+  });
+  dots.each(function(dd) {
+    if (highlight.has(dd._uid)) d3.select(this).classed('hover-path', true);
   });
   /* Kick off Wikipedia fetch if not cached */
   if (!wikiCache.has(d.data.name)) fetchWiki(d.data.name, d._uid);
@@ -916,6 +928,7 @@ nodeGroups.on('mouseenter', (e, d) => {
   tooltip.style.display = 'none';
   links.classed('link-guess-path', false);
   labels.classed('hover-path', false);
+  dots.classed('hover-path', false);
 });
 
 /* ── Click → Guess, Double-click → Zoom, Right-click → Copy ── */
@@ -1304,9 +1317,12 @@ document.getElementById('switch-tidy').onclick = () => {
 };
 
 /* ── Strategy Toggle ─────────────────────────────── */
+document.getElementById('switch-minavg').classList.toggle('tog-active', strategyMode === 'minavg');
+document.getElementById('switch-minimax').classList.toggle('tog-active', strategyMode === 'minimax');
 document.getElementById('switch-minavg').onclick = () => {
   if (strategyMode === 'minavg') return;
   strategyMode = 'minavg';
+  localStorage.setItem('metazooa-strategy', 'minavg');
   document.getElementById('switch-minavg').classList.add('tog-active');
   document.getElementById('switch-minimax').classList.remove('tog-active');
   updateAll();
@@ -1317,6 +1333,7 @@ document.getElementById('switch-minavg').onclick = () => {
 document.getElementById('switch-minimax').onclick = () => {
   if (strategyMode === 'minimax') return;
   strategyMode = 'minimax';
+  localStorage.setItem('metazooa-strategy', 'minimax');
   document.getElementById('switch-minimax').classList.add('tog-active');
   document.getElementById('switch-minavg').classList.remove('tog-active');
   updateAll();
