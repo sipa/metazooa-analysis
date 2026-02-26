@@ -1,0 +1,90 @@
+/* ── Shared Metazooa/Metaflora CSS ─────────────────── */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#060d18;--panel:rgba(8,18,35,0.95);--border:#1a3050;
+  --active:#00e5c8;--inactive:#263040;--inactiveText:#3a5060;
+  --best:#ffd700;--link:#152535;--text:#8ab4d9;--textDim:#4a6a80;
+  --accent:#00b8ff;--danger:#ff4466;--orange:#ff6600;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif}
+body{display:flex;flex-direction:column}
+
+/* ── Header ────────────────────────────── */
+#header{
+  position:relative;z-index:10;
+  background:var(--panel);border-bottom:1px solid var(--border);
+  padding:6px 14px;display:flex;align-items:center;gap:12px;flex-shrink:0;
+  flex-wrap:wrap;min-height:40px;overflow:visible;
+}
+#header h1{
+  font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;
+  letter-spacing:2px;color:var(--active);text-transform:uppercase;
+  white-space:nowrap;text-shadow:0 0 20px rgba(0,229,200,0.3);
+  cursor:pointer;
+}
+#guesses-row{
+  display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-left:auto;
+  max-width:60%;
+}
+
+/* ── Buttons ───────────────────────────── */
+.hdr-btn{
+  background:transparent;border:1px solid var(--border);color:var(--textDim);
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+  padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.hdr-btn:hover{border-color:var(--accent);color:var(--accent)}
+.hdr-btn.danger{border-color:rgba(255,68,102,0.4);color:var(--danger)}
+.hdr-btn.danger:hover{border-color:var(--danger);color:#ff6688}
+.toggle-group{display:flex;gap:2px}
+.toggle-group .hdr-btn.tog-active{border-color:var(--accent);color:var(--accent);background:rgba(0,184,255,0.1)}
+
+/* ── Tooltip (data-tip attribute) ──────── */
+[data-tip]{position:relative}
+[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  padding:4px 8px;font-size:10px;font-family:'Share Tech Mono',monospace;
+  color:var(--text);white-space:nowrap;z-index:200;pointer-events:none;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ── Search ────────────────────────────── */
+#search-wrap{position:relative;flex-shrink:0}
+#search-input{
+  background:rgba(0,180,255,0.06);border:1px solid var(--border);
+  border-radius:3px;padding:3px 8px 3px 22px;width:170px;
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+  color:var(--text);outline:none;transition:border-color .2s,width .2s;
+}
+#search-input::placeholder{color:var(--textDim);opacity:0.5}
+#search-input:focus{border-color:var(--accent);width:230px}
+#search-icon{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--textDim);pointer-events:none}
+#search-results{
+  position:absolute;top:100%;left:0;margin-top:2px;min-width:280px;
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  max-height:300px;overflow-y:auto;display:none;z-index:50;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+#search-results.open{display:block}
+.sr-item{
+  padding:4px 10px;cursor:pointer;font-family:'Share Tech Mono',monospace;
+  font-size:11px;color:var(--text);display:flex;align-items:baseline;gap:6px;
+  border-bottom:1px solid rgba(26,48,80,0.25);transition:background .1s;
+}
+.sr-item:last-child{border-bottom:none}
+.sr-item:hover,.sr-item.sr-active{background:rgba(0,229,200,0.1)}
+.sr-item .sr-label{color:var(--active);font-weight:600}
+.sr-item .sr-sci{color:var(--accent);font-style:italic;font-size:10px}
+.sr-item .sr-type{color:var(--textDim);font-size:9px;margin-left:auto}
+.sr-match{color:var(--best);font-weight:bold}
+
+/* ── Toast ─────────────────────────────── */
+#toast{
+  position:fixed;bottom:50px;left:50%;transform:translateX(-50%) translateY(60px);
+  background:var(--panel);border:1px solid var(--active);border-radius:6px;
+  padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:11px;
+  color:var(--active);z-index:400;opacity:0;transition:all .3s ease;
+  pointer-events:none;box-shadow:0 4px 20px rgba(0,229,200,0.2);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}

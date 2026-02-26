@@ -5,30 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Metazooa Solver</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="metazooa.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#060d18;--panel:rgba(8,18,35,0.95);--border:#1a3050;
-  --active:#00e5c8;--inactive:#263040;--inactiveText:#3a5060;
-  --best:#ffd700;--link:#152535;--text:#8ab4d9;--textDim:#4a6a80;
-  --accent:#00b8ff;--danger:#ff4466;--orange:#ff6600;
-}
-html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif}
-body{display:flex;flex-direction:column}
-
-/* ── Header ────────────────────────────── */
-#header{
-  position:relative;z-index:10;
-  background:var(--panel);border-bottom:1px solid var(--border);
-  padding:6px 14px;display:flex;align-items:center;gap:12px;flex-shrink:0;
-  flex-wrap:wrap;min-height:40px;overflow:visible;
-}
-#header h1{
-  font-family:'Orbitron',sans-serif;font-size:15px;font-weight:900;
-  letter-spacing:2px;color:var(--active);text-transform:uppercase;
-  white-space:nowrap;text-shadow:0 0 20px rgba(0,229,200,0.3);
-  cursor:pointer;
-}
+/* ── Index-specific styles ──────────────── */
 #status{
   font-family:'Share Tech Mono',monospace;font-size:12px;
   color:var(--text);display:flex;align-items:center;gap:6px;white-space:nowrap;
@@ -37,10 +16,6 @@ body{display:flex;flex-direction:column}
 #status .solved{color:#44ff88;text-shadow:0 0 12px rgba(68,255,136,0.5)}
 #status .count{color:var(--textDim);font-size:11px}
 #status .est{color:#bb88ff;font-size:11px}
-#guesses-row{
-  display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-left:auto;
-  max-width:60%;
-}
 .guess-chip{
   display:flex;align-items:center;gap:4px;
   background:rgba(0,229,200,0.08);border:1px solid rgba(0,229,200,0.2);
@@ -55,56 +30,8 @@ body{display:flex;flex-direction:column}
   margin-left:2px;opacity:0.5;transition:opacity .15s;
 }
 .guess-chip .del:hover{opacity:1}
-.hdr-btn{
-  background:transparent;border:1px solid var(--border);color:var(--textDim);
-  font-family:'Share Tech Mono',monospace;font-size:11px;
-  padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s;white-space:nowrap;
-}
-.hdr-btn:hover{border-color:var(--accent);color:var(--accent)}
-.hdr-btn.danger{border-color:rgba(255,68,102,0.4);color:var(--danger)}
-.hdr-btn.danger:hover{border-color:var(--danger);color:#ff6688}
 #game-switch{display:flex;gap:3px}
 #game-switch .hdr-btn.active-game{border-color:var(--active);color:var(--active);background:rgba(0,229,200,0.1)}
-.toggle-group{display:flex;gap:2px}
-.toggle-group .hdr-btn.tog-active{border-color:var(--accent);color:var(--accent);background:rgba(0,184,255,0.1)}
-[data-tip]{position:relative}
-[data-tip]:hover::after{
-  content:attr(data-tip);position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);
-  background:var(--panel);border:1px solid var(--border);border-radius:4px;
-  padding:4px 8px;font-size:10px;font-family:'Share Tech Mono',monospace;
-  color:var(--text);white-space:nowrap;z-index:200;pointer-events:none;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-}
-
-/* ── Search ────────────────────────────── */
-#search-wrap{position:relative;flex-shrink:0}
-#search-input{
-  background:rgba(0,180,255,0.06);border:1px solid var(--border);
-  border-radius:3px;padding:3px 8px 3px 22px;width:170px;
-  font-family:'Share Tech Mono',monospace;font-size:11px;
-  color:var(--text);outline:none;transition:border-color .2s,width .2s;
-}
-#search-input::placeholder{color:var(--textDim);opacity:0.5}
-#search-input:focus{border-color:var(--accent);width:230px}
-#search-icon{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--textDim);pointer-events:none}
-#search-results{
-  position:absolute;top:100%;left:0;margin-top:2px;min-width:280px;
-  background:var(--panel);border:1px solid var(--border);border-radius:4px;
-  max-height:300px;overflow-y:auto;display:none;z-index:50;
-  box-shadow:0 8px 30px rgba(0,0,0,0.5);
-}
-#search-results.open{display:block}
-.sr-item{
-  padding:4px 10px;cursor:pointer;font-family:'Share Tech Mono',monospace;
-  font-size:11px;color:var(--text);display:flex;align-items:baseline;gap:6px;
-  border-bottom:1px solid rgba(26,48,80,0.25);transition:background .1s;
-}
-.sr-item:last-child{border-bottom:none}
-.sr-item:hover,.sr-item.sr-active{background:rgba(0,229,200,0.1)}
-.sr-item .sr-label{color:var(--active);font-weight:600}
-.sr-item .sr-sci{color:var(--accent);font-style:italic;font-size:10px}
-.sr-item .sr-type{color:var(--textDim);font-size:9px;margin-left:auto}
-.sr-match{color:var(--best);font-weight:bold}
 
 /* ── Tree ──────────────────────────────── */
 #tree-container{flex:1;position:relative;overflow:hidden}
@@ -256,16 +183,6 @@ body{display:flex;flex-direction:column}
   font-family:'Orbitron',sans-serif;color:var(--active);font-size:14px;letter-spacing:3px;
 }
 
-/* ── Toast ─────────────────────────────── */
-#toast{
-  position:fixed;bottom:50px;left:50%;transform:translateX(-50%) translateY(60px);
-  background:var(--panel);border:1px solid var(--active);border-radius:6px;
-  padding:6px 16px;font-family:'Share Tech Mono',monospace;font-size:11px;
-  color:var(--active);z-index:400;opacity:0;transition:all .3s ease;
-  pointer-events:none;box-shadow:0 4px 20px rgba(0,229,200,0.2);
-}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 /* ── Bottom Legend ─────────────────────── */
 #bottom-legend{
   position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:30;
@@ -392,13 +309,17 @@ body{display:flex;flex-direction:column}
   </div>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="metazooa-shared.js"></script>
 <script>
 (async function(){
+
+/* ── Shared utilities ─────────────────────────────── */
+const { initTree, ancestors, lca, pathBetween, ancestryPath, isDescendantOf,
+        truncateSentences, highlightMatch, wikiCache, fetchWiki, showToast } = MetazooaShared;
 
 /* ── Game Selection ───────────────────────────────── */
 const params = new URLSearchParams(location.search);
 const currentGame = params.get('game') === 'metaflora' ? 'metaflora' : 'metazooa';
-const dataFile = currentGame === 'metaflora' ? 'species-metaflora.json' : 'species-metazooa.json';
 document.getElementById('game-title').textContent = currentGame === 'metaflora' ? 'Metaflora' : 'Metazooa';
 document.title = (currentGame === 'metaflora' ? 'Metaflora' : 'Metazooa') + ' Solver';
 document.getElementById(currentGame === 'metaflora' ? 'switch-flora' : 'switch-zooa').classList.add('active-game');
@@ -409,50 +330,10 @@ document.getElementById('switch-flora').onclick = () => {
   if (currentGame !== 'metaflora') location.href = location.pathname + '?game=metaflora';
 };
 
-/* ── Load Data ───────────────────────────────────── */
-const resp = await fetch(dataFile);
-const treeData = await resp.json();
+/* ── Load Data + Build Hierarchy ─────────────────── */
+const { root, allNodes, allLinks, labeledNodes, totalLabeled,
+        uidToNode, nameToNode, labelToNode } = await initTree(currentGame);
 document.getElementById('loading').remove();
-
-/* ── Build Hierarchy ─────────────────────────────── */
-const root = d3.hierarchy(treeData);
-let uid = 0;
-root.each(n => { n._uid = uid++; });
-const allNodes = root.descendants();
-const allLinks = root.links();
-const labeledNodes = allNodes.filter(n => n.data.label);
-const totalLabeled = labeledNodes.length;
-
-/* Index maps */
-const uidToNode = new Map();
-allNodes.forEach(n => uidToNode.set(n._uid, n));
-const nameToNode = new Map();
-allNodes.forEach(n => nameToNode.set(n.data.name, n));
-const labelToNode = new Map();
-labeledNodes.forEach(n => labelToNode.set(n.data.label, n));
-
-/* ── Ancestor helpers ────────────────────────────── */
-function ancestors(node) {
-  const a = []; let n = node;
-  while (n) { a.push(n); n = n.parent; }
-  return a;
-}
-function lca(a, b) {
-  const sa = new Set(ancestors(a).map(n => n._uid));
-  let n = b;
-  while (n) { if (sa.has(n._uid)) return n; n = n.parent; }
-  return root;
-}
-function pathBetween(a, b) {
-  const l = lca(a, b);
-  const s = new Set();
-  let n = a; while (n) { s.add(n._uid); if (n._uid === l._uid) break; n = n.parent; }
-  n = b; while (n) { s.add(n._uid); if (n._uid === l._uid) break; n = n.parent; }
-  return s;
-}
-function ancestryPath(node) {
-  return ancestors(node).reverse().map(n => n.data.label || n.data.name);
-}
 
 /* ── State ───────────────────────────────────────── */
 let guesses = [];
@@ -462,12 +343,6 @@ const activeMap = new Map();
 labeledNodes.forEach(n => activeMap.set(n._uid, true));
 
 function effectiveRoot() { return selectedRoot || root; }
-
-function isDescendantOf(node, ancestor) {
-  let n = node;
-  while (n) { if (n._uid === ancestor._uid) return true; n = n.parent; }
-  return false;
-}
 
 function recomputeActive() {
   labeledNodes.forEach(x => {
@@ -816,48 +691,6 @@ function sampleArray(arr, k) {
   return a.slice(0, k).sort();
 }
 
-/* Wikipedia cache and fetcher */
-const wikiCache = new Map(); /* name → { extract, thumb } | null */
-const wikiFetching = new Set();
-
-function truncateSentences(text, max) {
-  const sentences = text.match(/[^.!?]*[.!?]+/g) || [text];
-  let result = '';
-  for (let i = 0; i < Math.min(sentences.length, max); i++) {
-    result += sentences[i];
-  }
-  return result.trim() || text.slice(0, 200);
-}
-
-async function fetchWiki(name, forUid) {
-  if (wikiCache.has(name) || wikiFetching.has(name)) return;
-  wikiFetching.add(name);
-  try {
-    const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(name);
-    const resp = await fetch(url);
-    if (!resp.ok) { wikiCache.set(name, null); return; }
-    const data = await resp.json();
-    if (data.type === 'disambiguation' || !data.extract) { wikiCache.set(name, null); return; }
-    wikiCache.set(name, {
-      extract: truncateSentences(data.extract, 2),
-      thumb: data.thumbnail ? data.thumbnail.source : null
-    });
-  } catch (e) { wikiCache.set(name, null); }
-  finally { wikiFetching.delete(name); }
-  /* If still hovering the same node, update tooltip */
-  if (hoveredUid === forUid) {
-    const wikiEl = tooltip.querySelector('.tt-wiki-slot');
-    const cached = wikiCache.get(name);
-    if (wikiEl && cached) {
-      let wh = '<div class="tt-wiki">';
-      if (cached.thumb) wh += `<img src="${cached.thumb}" alt="">`;
-      wh += `<div class="tt-wiki-text">${cached.extract}</div></div>`;
-      wikiEl.innerHTML = wh;
-    } else if (wikiEl && !cached) {
-      wikiEl.innerHTML = '';
-    }
-  }
-}
 
 function buildTooltipHtml(d) {
   let html = `<div class="tt-sci">${d.data.name}</div>`;
@@ -917,7 +750,20 @@ nodeGroups.on('mouseenter', (e, d) => {
     if (highlight.has(dd._uid)) d3.select(this).classed('hover-path', true);
   });
   /* Kick off Wikipedia fetch if not cached */
-  if (!wikiCache.has(d.data.name)) fetchWiki(d.data.name, d._uid);
+  if (!wikiCache.has(d.data.name)) {
+    fetchWiki(d.data.name, cached => {
+      if (hoveredUid !== d._uid) return;
+      const wikiEl = tooltip.querySelector('.tt-wiki-slot');
+      if (wikiEl && cached) {
+        let wh = '<div class="tt-wiki">';
+        if (cached.thumb) wh += `<img src="${cached.thumb}" alt="">`;
+        wh += `<div class="tt-wiki-text">${cached.extract}</div></div>`;
+        wikiEl.innerHTML = wh;
+      } else if (wikiEl) {
+        wikiEl.innerHTML = '';
+      }
+    });
+  }
 })
 .on('mousemove', e => {
   tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 440) + 'px';
@@ -1142,11 +988,6 @@ allNodes.forEach(n => {
   if (n.data.label) searchIndex.push({ text: n.data.label.toLowerCase(), display: n.data.label, sci: n.data.name, type: 'common', node: n });
   searchIndex.push({ text: n.data.name.toLowerCase(), display: n.data.name, sci: n.data.name, type: n.data.label ? 'sci' : 'clade', node: n });
 });
-function highlightMatch(text, query) {
-  const i = text.toLowerCase().indexOf(query.toLowerCase());
-  if (i < 0) return text;
-  return text.slice(0, i) + '<span class="sr-match">' + text.slice(i, i + query.length) + '</span>' + text.slice(i + query.length);
-}
 function doSearch(query) {
   srSelectedIdx = -1;
   if (!query) { searchResults.classList.remove('open'); return; }
@@ -1228,15 +1069,6 @@ const toolbar = document.getElementById('toolbar');
   btn.onclick = b.fn;
   toolbar.appendChild(btn);
 });
-
-/* ── Toast ───────────────────────────────────────── */
-let toastTimer;
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
-}
 
 /* ── Minimap ─────────────────────────────────────── */
 const minimapEl = document.getElementById('minimap');

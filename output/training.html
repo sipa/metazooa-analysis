@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metazooa Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="metazooa.css">
+<style>
+/* ── Training-specific layout ───────────────────────── */
+#main{display:flex;flex:1;overflow:hidden;min-height:0}
+
+/* ── Main panel (left: input + table) ───────────────── */
+#main-panel{
+  width:430px;flex-shrink:0;display:flex;flex-direction:column;
+  border-right:1px solid var(--border);
+  background:var(--panel);overflow:hidden;
+}
+
+/* ── Tree area (tree + wiki, toggled together) ───────── */
+#tree-area{flex:1;display:flex;overflow:hidden;min-height:0}
+#tree-area.tree-hidden{display:none}
+
+/* ── Right column (tree) ─────────────────────────────── */
+#right-col{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+
+/* ── Tree panel ─────────────────────────────────────── */
+#tree-panel{
+  flex:1;position:relative;overflow:auto;min-height:0;
+  background:var(--bg);
+}
+#tree-panel svg{display:block}
+
+/* ── Mobile: single-panel toggle ────────────────────── */
+@media(max-width:640px){
+  #main-panel{display:flex}
+  #tree-area{display:none;flex-direction:column;width:100%;height:100%}
+  #right-col{flex:2;display:flex;flex-direction:column}
+  #main.view-tree #main-panel{display:none}
+  #main.view-tree #tree-area{display:flex}
+}
+
+/* ── JS tooltip (fixed-position, avoids overflow clipping) ─ */
+[data-tip]:hover::after{display:none}
+#tt{position:fixed;display:none;z-index:9999;background:var(--panel);
+  border:1px solid var(--border);border-radius:4px;padding:4px 8px;
+  font-size:10px;font-family:'Share Tech Mono',monospace;color:var(--text);
+  white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.5);pointer-events:none}
+
+/* ── Guess input section ────────────────────────────── */
+#guess-section{
+  flex-shrink:0;
+  padding:10px 12px 8px;
+  border-bottom:1px solid var(--border);
+}
+#guess-wrap{position:relative;margin-bottom:6px}
+#guess-input{
+  width:100%;background:rgba(0,180,255,0.06);
+  border:1px solid var(--border);border-radius:3px;
+  padding:5px 10px;font-family:'Share Tech Mono',monospace;
+  font-size:12px;color:var(--text);outline:none;
+  transition:border-color .2s;
+}
+#guess-input::placeholder{color:var(--textDim);opacity:0.5}
+#guess-input:focus{border-color:var(--accent)}
+#guess-input:disabled{opacity:0.4;cursor:not-allowed}
+#guess-results{
+  position:absolute;top:100%;left:0;right:0;margin-top:2px;
+  background:var(--panel);border:1px solid var(--border);border-radius:4px;
+  max-height:260px;overflow-y:auto;display:none;z-index:50;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+#guess-results.open{display:block}
+/* ── Ctrl bar (below guess list) ────────────────────── */
+#ctrl-bar{
+  flex-shrink:0;display:flex;gap:4px;
+  padding:8px 12px;border-top:1px solid var(--border);
+}
+#ctrl-bar .hdr-btn{flex:1;text-align:center;padding:5px 4px;font-size:11px}
+
+/* ── Game switch ────────────────────────────────────── */
+#game-switch .hdr-btn.active-game{
+  border-color:var(--active);color:var(--active);
+  background:rgba(0,229,200,0.1);
+}
+
+/* ── Node info panel (right column) ─────────────────── */
+#node-info{
+  width:220px;flex-shrink:0;
+  border-left:1px solid var(--border);
+  font-size:11px;overflow-y:auto;
+  background:var(--panel);
+}
+#ni-hint{padding:8px 12px;color:var(--textDim);font-style:italic;font-size:10px;font-family:'Share Tech Mono',monospace}
+#ni-body{display:flex;flex-direction:column}
+#ni-img{width:100%;height:auto;display:block;flex-shrink:0}
+#ni-col{padding:8px 12px 6px;display:flex;flex-direction:column;gap:3px}
+#ni-label{color:var(--active);font-weight:600;font-size:13px}
+#ni-sci{color:var(--accent);font-style:italic;font-size:10px;font-family:'Share Tech Mono',monospace}
+#ni-text{color:var(--text);font-size:10px;line-height:1.4;font-family:'Exo 2',sans-serif}
+.train-box.box-selected{border-color:var(--best) !important;box-shadow:0 0 8px rgba(255,215,0,0.25)}
+
+/* ── Win banner ─────────────────────────────────────── */
+#win-banner{
+  flex-shrink:0;
+  padding:10px 12px;
+  border-bottom:1px solid var(--border);
+  font-family:'Share Tech Mono',monospace;font-size:12px;
+  color:#44ff88;text-shadow:0 0 12px rgba(68,255,136,0.4);
+  display:none;
+}
+
+/* ── Guess table ─────────────────────────────────────── */
+#guess-table-wrap{
+  flex:1;overflow-y:auto;padding:8px 0;
+}
+#guess-table{
+  width:100%;border-collapse:collapse;
+  font-family:'Share Tech Mono',monospace;font-size:11px;
+}
+#guess-table th{
+  padding:3px 8px;text-align:left;
+  color:var(--textDim);font-size:10px;
+  border-bottom:1px solid var(--border);
+  background:rgba(0,0,0,0.2);
+  position:sticky;top:0;z-index:1;
+}
+#guess-table td{
+  padding:3px 8px;color:var(--text);
+  border-bottom:1px solid rgba(26,48,80,0.2);
+  vertical-align:middle;
+}
+#guess-table tr:last-child td{border-bottom:none}
+#guess-table .td-num{color:var(--textDim);font-size:10px;width:24px}
+#guess-table .td-guess{color:var(--active)}
+#guess-table .td-lca{color:var(--accent);font-style:italic;font-size:10px}
+
+/* ── Quality boxes ───────────────────────────────────── */
+.quality-box{
+  display:inline-block;
+  padding:1px 5px;border-radius:3px;
+  font-size:10px;font-family:'Share Tech Mono',monospace;
+  font-weight:600;
+}
+.quality-green{background:rgba(68,255,136,0.15);border:1px solid rgba(68,255,136,0.4);color:#44ff88}
+.quality-red{background:rgba(255,68,102,0.12);border:1px solid rgba(255,68,102,0.35);color:var(--danger)}
+.quality-orange{background:rgba(255,102,0,0.12);border:1px solid rgba(255,102,0,0.35);color:var(--orange)}
+.quality-pending{color:var(--textDim);font-style:italic}
+#guess-table .td-advice{font-size:10px}
+.adv-red{color:var(--danger);font-size:10px;font-family:'Share Tech Mono',monospace}
+.adv-green{color:#44ff88;font-size:10px;font-family:'Share Tech Mono',monospace}
+.adv-item{display:inline-block;color:var(--best);font-size:10px;font-family:'Share Tech Mono',monospace;margin-right:4px}
+.adv-more{background:none;border:1px solid var(--border);border-radius:3px;color:var(--textDim);font-family:'Share Tech Mono',monospace;font-size:10px;padding:0 4px;cursor:pointer;vertical-align:middle}
+.adv-more:hover{border-color:var(--accent);color:var(--accent)}
+#guess-tbody tr{cursor:pointer;transition:background .1s}
+#guess-tbody tr:hover{background:rgba(0,229,200,0.04)}
+#guess-tbody tr.tr-selected{background:rgba(255,215,0,0.06)}
+#candidates-count{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--textDim);padding:2px 2px 0;min-height:14px}
+
+/* ── Virtual tree nodes ──────────────────────────────── */
+.train-box{
+  font-family:'Exo 2',sans-serif;font-size:11px;
+  padding:5px 8px;border-radius:5px;cursor:default;
+  background:rgba(8,18,35,0.9);
+  border:1px solid var(--border);
+  line-height:1.35;
+  user-select:none;
+}
+.train-box.box-mystery{
+  border-color:rgba(255,215,0,0.6);
+  background:rgba(30,20,0,0.85);
+}
+.train-box.box-guess{
+  border-color:rgba(0,229,200,0.5);
+  background:rgba(0,18,12,0.85);
+}
+.train-box.box-lca{
+  border-color:rgba(0,100,160,0.5);
+  background:rgba(0,10,25,0.85);
+}
+.train-sci{
+  color:var(--accent);font-style:italic;font-size:10px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.train-label{
+  color:var(--active);font-weight:600;font-size:12px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.train-label.mystery-label{color:var(--best)}
+.train-wiki{
+  color:var(--textDim);font-size:9px;margin-top:2px;
+  line-height:1.3;max-height:36px;overflow:hidden;
+}
+
+/* ── Tree edges ──────────────────────────────────────── */
+.vtree-link{fill:none;stroke:var(--link);stroke-width:1.5}
+
+/* ── Loading ─────────────────────────────────────────── */
+#loading-msg{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Orbitron',sans-serif;color:var(--active);font-size:14px;
+  letter-spacing:3px;
+}
+
+/* ── Mobile: node-info layout (after base rules so overrides apply) ── */
+@media(max-width:640px){
+  #node-info{flex:1;min-height:0;display:flex;flex-direction:column;
+    border-left:none;border-top:1px solid var(--border);overflow:hidden;width:auto}
+  #ni-hint{padding:8px 12px}
+  #ni-body{flex:1;flex-direction:row;min-height:0;overflow:hidden}
+  #ni-img{width:40%;object-fit:cover;object-position:center top;flex-shrink:0;height:auto}
+  #ni-col{flex:1;min-width:0;overflow-y:auto;padding:8px 10px}
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>Metazooa Training</h1>
+  <div id="game-switch">
+    <button class="hdr-btn" id="switch-zooa">🐾 Zooa</button>
+    <button class="hdr-btn" id="switch-flora">🌿 Flora</button>
+  </div>
+  <button class="hdr-btn" id="btn-tree-toggle" data-tip="Show/hide tree">🌳 Tree</button>
+</div>
+
+<div id="main">
+  <div id="main-panel">
+    <div id="guess-section">
+      <div id="guess-wrap">
+        <input id="guess-input" type="text" placeholder="Type a species name…" autocomplete="off" spellcheck="false">
+        <div id="guess-results"></div>
+      </div>
+      <div id="candidates-count"></div>
+    </div>
+    <div id="win-banner"></div>
+    <div id="guess-table-wrap">
+      <table id="guess-table">
+        <thead>
+          <tr><th>#</th><th>Guess</th><th>LCA</th><th>Quality</th><th>Advice</th></tr>
+        </thead>
+        <tbody id="guess-tbody"></tbody>
+      </table>
+    </div>
+    <div id="ctrl-bar">
+      <button class="hdr-btn" id="btn-new" data-tip="Pick a new random mystery">↺ New</button>
+      <button class="hdr-btn" id="btn-reset" data-tip="Same mystery, clear guesses">↺ Reset</button>
+      <button class="hdr-btn" id="btn-undo" data-tip="Undo last guess">← Undo</button>
+    </div>
+  </div>
+  <div id="tree-area">
+  <div id="right-col">
+    <div id="tree-panel">
+      <div id="loading-msg">LOADING…</div>
+    </div>
+  </div>
+  <div id="node-info">
+    <div id="ni-hint">(click a node to see details)</div>
+    <div id="ni-body" style="display:none">
+      <img id="ni-img" style="display:none" alt="">
+      <div id="ni-col">
+        <div id="ni-label"></div>
+        <div id="ni-sci"></div>
+        <div id="ni-text"></div>
+      </div>
+    </div>
+  </div>
+  </div><!-- #tree-area -->
+</div>
+<div id="toast"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="metazooa-shared.js"></script>
+<script>
+(async function(){
+
+/* ── Shared utilities ─────────────────────────────── */
+const { initTree, ancestors, lca, pathBetween, ancestryPath,
+        isDescendantOf, wikiCache, fetchWiki, highlightMatch, showToast } = MetazooaShared;
+
+/* ── Game selection ───────────────────────────────── */
+const params = new URLSearchParams(location.search);
+const currentGame = params.get('game') === 'metaflora' ? 'metaflora' : 'metazooa';
+document.title = (currentGame === 'metaflora' ? 'Metaflora' : 'Metazooa') + ' Training';
+document.querySelector('#game-switch #switch-zooa').classList.toggle('active-game', currentGame === 'metazooa');
+document.querySelector('#game-switch #switch-flora').classList.toggle('active-game', currentGame === 'metaflora');
+document.getElementById('switch-zooa').onclick = () => {
+  if (currentGame !== 'metazooa') location.href = location.pathname + '?game=metazooa';
+};
+document.getElementById('switch-flora').onclick = () => {
+  if (currentGame !== 'metaflora') location.href = location.pathname + '?game=metaflora';
+};
+
+/* ── Load data ────────────────────────────────────── */
+const { root, allNodes, allLinks, labeledNodes, totalLabeled,
+        uidToNode, nameToNode, labelToNode } = await initTree(currentGame);
+document.getElementById('loading-msg').remove();
+
+/* ── Precompute leaf order index (preserve sibling order) ── */
+let leafOrderCounter = 0;
+root.eachBefore(n => { n._leafIdx = leafOrderCounter++; });
+
+/* ── Active map (for quality computation) ─────────── */
+const activeMap = new Map();
+labeledNodes.forEach(n => activeMap.set(n._uid, true));
+
+/* ── State ────────────────────────────────────────── */
+let mystery = null;
+let guesses = []; /* [{g, c}] where c = lca(g, mystery) */
+let guessedUids = new Set();
+let solved = false;
+let selectedNodeUid = null;
+
+function recomputeActive() {
+  labeledNodes.forEach(x => {
+    let ok = true;
+    for (const guess of guesses) {
+      if (lca(guess.g, x)._uid !== guess.c._uid) { ok = false; break; }
+    }
+    activeMap.set(x._uid, ok);
+  });
+}
+
+/* ── Auto-select deepest LCA ──────────────────────── */
+function autoSelectDeepestLca() {
+  if (!guesses.length) { selectedNodeUid = null; return; }
+  let deepest = guesses[0].c;
+  let deepestLen = ancestors(deepest).length;
+  for (const g of guesses) {
+    const len = ancestors(g.c).length;
+    if (len > deepestLen) { deepestLen = len; deepest = g.c; }
+  }
+  selectedNodeUid = deepest._uid;
+}
+
+/* ── computeA / computeGuessStats for quality ─────── */
+function computeA(node) {
+  let a = 0;
+  if (node.data.label && activeMap.get(node._uid)) a = 1;
+  if (node.children) for (const c of node.children) a += computeA(c);
+  node._A = a;
+  return a;
+}
+
+function computeGuessStats(node) {
+  if (node._A === 0) { node._avgG = 0; node._maxG = 0; return { avg: 0, max: 0 }; }
+  const parts = [];
+  if (node.children) {
+    for (const c of node.children) {
+      if (c._A > 0) {
+        const s = computeGuessStats(c);
+        parts.push({ A: c._A, avg: s.avg, max: s.max, name: c.data.name });
+      }
+    }
+  }
+  if (node.data.label && activeMap.get(node._uid)) {
+    parts.push({ A: 1, avg: 1, max: 1, name: node.data.name });
+  }
+  if (parts.length <= 1) {
+    const r = parts.length === 1 ? { avg: parts[0].avg, max: parts[0].max } : { avg: 1, max: 1 };
+    node._avgG = r.avg; node._maxG = r.max; return r;
+  }
+  parts.sort((a, b) => b.A - a.A || b.max - a.max || a.name.localeCompare(b.name));
+  let wSum = 0, aSum = 0;
+  parts.forEach((p, i) => { wSum += (p.avg + i) * p.A; aSum += p.A; });
+  const avg = aSum > 0 ? wSum / aSum : 0;
+  let mx = 0;
+  parts.forEach((p, i) => { mx = Math.max(mx, p.max + i); });
+  node._avgG = avg; node._maxG = mx;
+  return { avg, max: mx };
+}
+
+/* Walk down tree following best child (minavg strategy) */
+function computeBestGuess() {
+  computeA(root);
+  computeGuessStats(root);
+  const ta = labeledNodes.filter(n => activeMap.get(n._uid)).length;
+  if (ta === 0) return null;
+  if (ta === 1) return labeledNodes.find(n => activeMap.get(n._uid));
+  let cur = root;
+  while (cur.children) {
+    const parts = [];
+    for (const c of cur.children) {
+      if (c._A > 0) parts.push({ node: c, A: c._A, max: c._maxG, name: c.data.name });
+    }
+    if (!parts.length) break;
+    parts.sort((a, b) => b.A - a.A || b.max - a.max || a.name.localeCompare(b.name));
+    cur = parts[0].node;
+  }
+  return cur;
+}
+
+/* ── Quality computation ──────────────────────────── */
+function computeQuality(i) {
+  /* Save state */
+  const savedGuesses = guesses.slice();
+
+  /* Set to guesses[0..i-1] */
+  guesses = savedGuesses.slice(0, i);
+  recomputeActive();
+  computeA(root);
+  computeGuessStats(root);
+  const ta = labeledNodes.filter(n => activeMap.get(n._uid)).length;
+  if (ta === 0) { guesses = savedGuesses; recomputeActive(); return { reduction: 0, avgBefore: 0 }; }
+  const avgBefore = root._avgG;
+
+  /* The guess being evaluated */
+  const gi = savedGuesses[i];
+
+  /* Group active species by lca(gi.g, x) */
+  const partitions = new Map(); /* lca-uid → {lcaNode, members: [node]} */
+  for (const x of labeledNodes) {
+    if (!activeMap.get(x._uid)) continue;
+    const c = lca(gi.g, x);
+    if (!partitions.has(c._uid)) partitions.set(c._uid, { lcaNode: c, members: [] });
+    partitions.get(c._uid).members.push(x);
+  }
+
+  /* For each partition, compute avgLeft */
+  let eNew = 0;
+  for (const [, part] of partitions) {
+    const { lcaNode, members } = part;
+    let avgLeft;
+    if (lcaNode._uid === gi.g._uid) {
+      /* Correct guess case: mystery is gi.g, so 0 guesses remain */
+      avgLeft = 0;
+    } else {
+      /* Temporarily restrict activeMap to this partition */
+      labeledNodes.forEach(n => activeMap.set(n._uid, false));
+      members.forEach(n => activeMap.set(n._uid, true));
+      computeA(root);
+      computeGuessStats(root);
+      avgLeft = root._avgG;
+    }
+    eNew += (members.length / ta) * avgLeft;
+  }
+
+  const reduction = avgBefore - eNew;
+
+  /* Restore */
+  guesses = savedGuesses;
+  recomputeActive();
+
+  return { reduction, avgBefore, eNew };
+}
+
+/* ── Quality / advice helpers ──────────────────────── */
+function findIncompatibleGuess(i) {
+  const gi = guesses[i];
+  for (let j = 0; j < i; j++) {
+    const gj = guesses[j];
+    if (lca(gj.g, gi.g)._uid !== gj.c._uid) return gj;
+  }
+  return null;
+}
+
+/* Returns the incompatible prior guess whose LCA is closest to root */
+function findTopmostIncompatibleGuess(i) {
+  const gi = guesses[i];
+  let topmost = null, topmostDepth = Infinity;
+  for (let j = 0; j < i; j++) {
+    const gj = guesses[j];
+    if (lca(gj.g, gi.g)._uid !== gj.c._uid) {
+      const depth = ancestors(gj.c).length;
+      if (depth < topmostDepth) { topmostDepth = depth; topmost = gj; }
+    }
+  }
+  return topmost;
+}
+
+/* Render up to 3 names inline; if more, show 2 + "+N more" button */
+function speciesListHtml(escapedNames, cssClass) {
+  if (!escapedNames.length) return '';
+  const span = n => `<span class="${cssClass}">${n}</span>`;
+  if (escapedNames.length <= 3) return escapedNames.map(span).join(', ');
+  const allEncoded = escapedNames.join('|');
+  return escapedNames.slice(0, 2).map(span).join(', ')
+    + ` <button class="adv-more" data-all="${allEncoded}" data-cls="${cssClass}">+${escapedNames.length - 2}</button>`;
+}
+
+function adviceHtml(i, isOptimal, optimalNodes) {
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+  const guess = guesses[i];
+
+  if (findIncompatibleGuess(i)) {
+    /* Find deepest LCA among prior guesses */
+    let L = guesses[0].c, Llen = ancestors(guesses[0].c).length;
+    for (let j = 1; j < i; j++) {
+      const len = ancestors(guesses[j].c).length;
+      if (len > Llen) { Llen = len; L = guesses[j].c; }
+    }
+    /* Case A: guess not a descendant of L */
+    if (guess.g._uid !== L._uid && !isDescendantOf(guess.g, L)) {
+      return `<span class="adv-red">Not in ${esc(L.data.label || L.data.name)}</span>`;
+    }
+    /* Case B: guess under L but same sub-branch as some prior Gp */
+    for (let j = 0; j < i; j++) {
+      const gj = guesses[j];
+      if (lca(gj.g, guess.g)._uid !== gj.c._uid) {
+        const pairLca = lca(gj.g, guess.g);
+        const Lp = esc(pairLca.data.label || pairLca.data.name);
+        return `<span class="adv-red">In ${Lp} with ${esc(gj.g.data.label)}</span>`;
+      }
+    }
+    return `<span class="adv-red">Incompatible</span>`;
+  }
+
+  if (isOptimal) {
+    const others = optimalNodes.filter(n => n._uid !== guess.g._uid);
+    if (!others.length) return `<span class="adv-green">${esc(guess.g.data.label)} is best</span>`;
+    return `<span class="adv-green" style="opacity:.7">Also: </span>`
+      + speciesListHtml(others.map(n => esc(n.data.label)), 'adv-green');
+  }
+
+  /* Suboptimal: list optimal candidates */
+  if (!optimalNodes.length) return '';
+  return `<span class="adv-item" style="opacity:.7">Best: </span>`
+    + speciesListHtml(optimalNodes.map(n => esc(n.data.label)), 'adv-item');
+}
+
+/* Returns {bestReduction, optimalNodes} in state before guess i */
+function computeAllOptimalAt(i) {
+  const savedGuesses = guesses.slice();
+  guesses = savedGuesses.slice(0, i);
+  recomputeActive();
+  computeA(root);
+  computeGuessStats(root);
+  const activeCandidates = labeledNodes.filter(n => activeMap.get(n._uid));
+  const ta = activeCandidates.length;
+  if (ta <= 1) {
+    guesses = savedGuesses; recomputeActive();
+    return { bestReduction: 1, optimalNodes: activeCandidates.slice() };
+  }
+  const avgBefore = root._avgG;
+  const snapshot = new Map(activeMap);
+  function restoreSnapshot() { snapshot.forEach((v, k) => activeMap.set(k, v)); }
+  function reductionFor(gNode) {
+    restoreSnapshot();
+    const parts = new Map();
+    for (const x of activeCandidates) {
+      const c = lca(gNode, x);
+      if (!parts.has(c._uid)) parts.set(c._uid, { lcaNode: c, members: [] });
+      parts.get(c._uid).members.push(x);
+    }
+    let eNew = 0;
+    for (const [, { lcaNode, members }] of parts) {
+      let avgLeft;
+      if (lcaNode._uid === gNode._uid) {
+        avgLeft = 0;
+      } else {
+        labeledNodes.forEach(n => activeMap.set(n._uid, false));
+        members.forEach(n => activeMap.set(n._uid, true));
+        computeA(root); computeGuessStats(root);
+        avgLeft = root._avgG;
+      }
+      eNew += (members.length / ta) * avgLeft;
+    }
+    return avgBefore - eNew;
+  }
+  restoreSnapshot(); computeA(root); computeGuessStats(root);
+  const bestNode = computeBestGuess();
+  const bestReduction = reductionFor(bestNode);
+  const optimalNodes = [];
+  for (const x of activeCandidates) {
+    if (reductionFor(x) >= bestReduction - 0.0001) optimalNodes.push(x);
+  }
+  guesses = savedGuesses; recomputeActive();
+  return { bestReduction, optimalNodes };
+}
+
+/* ── Mystery selection ────────────────────────────── */
+function pickMystery() {
+  return labeledNodes[Math.floor(Math.random() * labeledNodes.length)];
+}
+
+function newGame() {
+  mystery = pickMystery();
+  guesses = [];
+  guessedUids = new Set();
+  solved = false;
+  selectedNodeUid = null;
+  labeledNodes.forEach(n => activeMap.set(n._uid, true));
+  render();
+}
+
+function resetGame() {
+  guesses = [];
+  guessedUids = new Set();
+  solved = false;
+  selectedNodeUid = null;
+  labeledNodes.forEach(n => activeMap.set(n._uid, true));
+  render();
+}
+
+function undoLast() {
+  if (!guesses.length) return;
+  const removed = guesses.pop();
+  guessedUids.delete(removed.g._uid);
+  solved = false;
+  recomputeActive();
+  if (guesses.length > 0) { autoSelectDeepestLca(); } else { selectedNodeUid = null; }
+  render();
+  showToast('Undid last guess');
+}
+
+/* ── Submit guess ─────────────────────────────────── */
+function submitGuess(gNode) {
+  if (solved || guessedUids.has(gNode._uid)) return;
+  const c = lca(gNode, mystery);
+  guesses.push({ g: gNode, c });
+  guessedUids.add(gNode._uid);
+  if (gNode._uid === mystery._uid) solved = true;
+  recomputeActive();
+  autoSelectDeepestLca();
+  render();
+}
+
+/* ── Node info panel ──────────────────────────────── */
+function updateNodeInfo(node) {
+  const niHint = document.getElementById('ni-hint');
+  const niBody = document.getElementById('ni-body');
+  if (!node) { niHint.style.display = ''; niBody.style.display = 'none'; return; }
+  const isMystery = node._uid === mystery._uid && !solved;
+  niHint.style.display = 'none'; niBody.style.display = '';
+  document.getElementById('ni-label').textContent = isMystery ? '???' : (node.data.label || '');
+  document.getElementById('ni-sci').textContent = isMystery ? '???' : node.data.name;
+  const niText = document.getElementById('ni-text');
+  const niImg = document.getElementById('ni-img');
+  niText.textContent = ''; niImg.style.display = 'none';
+  if (isMystery) return;
+  const cached = wikiCache.get(node.data.name);
+  if (cached) { applyWikiToInfoPanel(cached); }
+  else if (cached === undefined) {
+    niText.textContent = 'Loading…';
+    fetchWiki(node.data.name, entry => {
+      if (selectedNodeUid !== node._uid) return;
+      applyWikiToInfoPanel(entry);
+    });
+  }
+}
+
+function applyWikiToInfoPanel(entry) {
+  const niText = document.getElementById('ni-text');
+  const niImg = document.getElementById('ni-img');
+  if (!entry) { niText.textContent = ''; return; }
+  niText.textContent = entry.extract || '';
+  if (entry.thumb) { niImg.src = entry.thumb; niImg.style.display = ''; }
+}
+
+/* ── Autocomplete ─────────────────────────────────── */
+const guessInput = document.getElementById('guess-input');
+const guessResults = document.getElementById('guess-results');
+let acIdx = -1;
+
+/* Build search index: label + scientific name */
+const searchIndex = [];
+labeledNodes.forEach(n => {
+  searchIndex.push({ text: n.data.label.toLowerCase(), display: n.data.label, sci: n.data.name, node: n });
+  searchIndex.push({ text: n.data.name.toLowerCase(), display: n.data.name, sci: n.data.name, node: n, isSci: true });
+});
+
+function doAutocomplete(query) {
+  acIdx = -1;
+  if (!query) { guessResults.classList.remove('open'); return; }
+  const q = query.toLowerCase();
+  const matches = [];
+  const seen = new Set();
+  for (const entry of searchIndex) {
+    const idx = entry.text.indexOf(q);
+    if (idx < 0) continue;
+    if (guessedUids.has(entry.node._uid)) continue;
+    const key = entry.node._uid + ':' + (entry.isSci ? 1 : 0);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    matches.push({ ...entry, priority: (idx === 0 ? 0 : 100) + (entry.isSci ? 10 : 0) });
+  }
+  matches.sort((a, b) => a.priority - b.priority || a.text.localeCompare(b.text));
+  const top = matches.slice(0, 15);
+  guessResults.innerHTML = '';
+  if (!top.length) { guessResults.classList.remove('open'); return; }
+  top.forEach((m, i) => {
+    const div = document.createElement('div');
+    div.className = 'sr-item'; div.dataset.idx = i;
+    if (m.isSci) {
+      div.innerHTML = `<span class="sr-sci">${highlightMatch(m.display, query)}</span><span class="sr-label">${m.node.data.label}</span>`;
+    } else {
+      div.innerHTML = `<span class="sr-label">${highlightMatch(m.display, query)}</span><span class="sr-sci">${m.sci}</span>`;
+    }
+    div.addEventListener('mousedown', e => { e.preventDefault(); selectResult(m.node); });
+    guessResults.appendChild(div);
+  });
+  guessResults.classList.add('open');
+}
+
+function selectResult(node) {
+  guessInput.value = '';
+  guessResults.classList.remove('open');
+  submitGuess(node);
+  if (!solved) setTimeout(() => guessInput.focus(), 50);
+}
+
+guessInput.addEventListener('input', () => doAutocomplete(guessInput.value.trim()));
+guessInput.addEventListener('focus', () => { if (guessInput.value.trim()) doAutocomplete(guessInput.value.trim()); });
+guessInput.addEventListener('blur', () => setTimeout(() => guessResults.classList.remove('open'), 150));
+guessInput.addEventListener('keydown', e => {
+  const items = guessResults.querySelectorAll('.sr-item');
+  if (e.key === 'ArrowDown' && items.length) {
+    e.preventDefault();
+    acIdx = Math.min(acIdx + 1, items.length - 1);
+    items.forEach((el, i) => el.classList.toggle('sr-active', i === acIdx));
+    items[acIdx]?.scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp' && items.length) {
+    e.preventDefault();
+    acIdx = Math.max(acIdx - 1, 0);
+    items.forEach((el, i) => el.classList.toggle('sr-active', i === acIdx));
+    items[acIdx]?.scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter' && items.length) {
+    e.preventDefault();
+    const idx = acIdx >= 0 ? acIdx : 0;
+    items[idx]?.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+  } else if (e.key === 'Escape') {
+    guessResults.classList.remove('open');
+    guessInput.blur();
+  }
+});
+
+/* ── Control buttons ──────────────────────────────── */
+document.getElementById('btn-new').onclick = newGame;
+document.getElementById('btn-reset').onclick = resetGame;
+document.getElementById('btn-undo').onclick = undoLast;
+
+/* ── Tree toggle ──────────────────────────────────── */
+const mainEl = document.getElementById('main');
+const rightColEl = document.getElementById('right-col');
+const treeAreaEl = document.getElementById('tree-area');
+const btnTreeToggle = document.getElementById('btn-tree-toggle');
+btnTreeToggle.onclick = () => {
+  const mobile = window.innerWidth <= 640;
+  if (mobile) {
+    mainEl.classList.toggle('view-tree');
+    const treeNowVisible = mainEl.classList.contains('view-tree');
+    btnTreeToggle.textContent = treeNowVisible ? '📋 Table' : '🌳 Tree';
+    if (treeNowVisible && mystery) renderTree();
+  } else {
+    treeAreaEl.classList.toggle('tree-hidden');
+    if (!treeAreaEl.classList.contains('tree-hidden') && mystery) renderTree();
+  }
+};
+
+/* ── JS tooltip ───────────────────────────────────── */
+const ttEl = Object.assign(document.createElement('div'), {id:'tt'});
+document.body.appendChild(ttEl);
+document.addEventListener('mouseover', e => {
+  const t = e.target.closest('[data-tip]');
+  if (!t) { ttEl.style.display = 'none'; return; }
+  ttEl.textContent = t.dataset.tip;
+  ttEl.style.display = 'block';
+});
+document.addEventListener('mousemove', e => {
+  if (ttEl.style.display === 'none') return;
+  ttEl.style.left = (e.clientX + 12) + 'px';
+  ttEl.style.top = (e.clientY + 18) + 'px';
+});
+
+/* ── "Show more" advice delegation ───────────────── */
+document.getElementById('guess-tbody').addEventListener('click', e => {
+  const btn = e.target.closest('.adv-more');
+  if (!btn) return;
+  const cell = btn.closest('td');
+  const cls = btn.dataset.cls || 'adv-item';
+  cell.innerHTML = btn.dataset.all.split('|')
+    .map(name => `<span class="${cls}">${name}</span>`).join(', ');
+});
+
+/* ── Keyboard shortcuts ───────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (e.target === guessInput) return;
+  if (document.activeElement === guessInput) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.key.toLowerCase() === 'z') { undoLast(); return; }
+  if (e.key === '/') { e.preventDefault(); guessInput.focus(); return; }
+  if (e.key.length === 1 && !solved) guessInput.focus(); /* printable → feed to input */
+});
+
+/* ── Pruned tree rendering ────────────────────────── */
+const treePanelEl = document.getElementById('tree-panel');
+const BOX_W = 180, BOX_H = 55, DX = 220, DY = 120;
+
+function buildVirtualTree() {
+  if (!mystery) return null;
+
+  /* Collect key nodes */
+  const keySet = new Set();
+  keySet.add(root._uid);
+  keySet.add(mystery._uid);
+  guesses.forEach(g => { keySet.add(g.g._uid); keySet.add(g.c._uid); });
+  /* Also add LCA between every pair of guesses */
+  for (let i = 0; i < guesses.length; i++)
+    for (let j = i + 1; j < guesses.length; j++)
+      keySet.add(lca(guesses[i].g, guesses[j].g)._uid);
+
+  /* For each key node (except root), find virtual parent = deepest ancestor in keySet */
+  const vChildren = new Map(); /* uid → [uid] */
+  keySet.forEach(uid => vChildren.set(uid, []));
+
+  keySet.forEach(uid => {
+    if (uid === root._uid) return;
+    const node = uidToNode.get(uid);
+    let p = node.parent;
+    while (p && !keySet.has(p._uid)) p = p.parent;
+    if (p) vChildren.get(p._uid).push(uid);
+  });
+
+  /* Build recursive structure, preserving original sibling order */
+  function buildVNode(uid) {
+    const node = uidToNode.get(uid);
+    const children = vChildren.get(uid).slice();
+    /* Sort by original leaf order to preserve visual ordering */
+    children.sort((a, b) => uidToNode.get(a)._leafIdx - uidToNode.get(b)._leafIdx);
+    return { node, uid, children: children.map(buildVNode) };
+  }
+
+  return buildVNode(root._uid);
+}
+
+function nodeRole(uid, pairwiseLcaUids) {
+  if (uid === mystery._uid) return 'mystery';
+  if (guesses.some(g => g.g._uid === uid)) return 'guess';
+  if (guesses.some(g => g.c._uid === uid)) return 'lca';
+  if (pairwiseLcaUids && pairwiseLcaUids.has(uid)) return 'lca';
+  return 'root';
+}
+
+function renderTree() {
+  /* Remove existing SVG */
+  const old = treePanelEl.querySelector('svg');
+  if (old) old.remove();
+
+  const vtree = buildVirtualTree();
+  if (!vtree) return;
+
+  /* Build d3 hierarchy from virtual tree */
+  const hier = d3.hierarchy(vtree, d => d.children);
+
+  /* Compute layout */
+  const treeLayout = d3.tree()
+    .nodeSize([DX, DY])
+    .separation(() => 1);
+  treeLayout(hier);
+
+  /* Compute bounding box */
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  hier.each(d => {
+    if (d.x < minX) minX = d.x; if (d.x > maxX) maxX = d.x;
+    if (d.y < minY) minY = d.y; if (d.y > maxY) maxY = d.y;
+  });
+  const pad = 60;
+  const svgW = Math.max((maxX - minX) + BOX_W + pad * 2, treePanelEl.clientWidth);
+  const svgH = Math.max((maxY - minY) + BOX_H + pad * 2, treePanelEl.clientHeight);
+
+  /* Origin offset: center horizontally, top-align */
+  const ox = svgW / 2 - (minX + maxX) / 2;
+  const oy = pad - minY;
+
+  const svg = d3.select(treePanelEl).append('svg')
+    .attr('width', svgW)
+    .attr('height', svgH);
+
+  const g = svg.append('g');
+
+  /* Draw edges: bottom-center of source → top-center of target */
+  const linkG = g.append('g').attr('class', 'vtree-links');
+  hier.links().forEach(link => {
+    const sx = link.source.x + ox, sy = link.source.y + oy + BOX_H;
+    const tx = link.target.x + ox, ty = link.target.y + oy;
+    const my = (sy + ty) / 2;
+    linkG.append('path')
+      .attr('class', 'vtree-link')
+      .attr('d', `M${sx},${sy}C${sx},${my} ${tx},${my} ${tx},${ty}`);
+  });
+
+  /* Pairwise LCA set for role detection */
+  const pairwiseLcaUids = new Set();
+  for (let i = 0; i < guesses.length; i++)
+    for (let j = i + 1; j < guesses.length; j++)
+      pairwiseLcaUids.add(lca(guesses[i].g, guesses[j].g)._uid);
+
+  /* Draw nodes as foreignObject boxes */
+  hier.each(d => {
+    const nx = d.x + ox - BOX_W / 2;
+    const ny = d.y + oy;
+    const uid = d.data.uid;
+    const node = d.data.node;
+    const role = nodeRole(uid, pairwiseLcaUids);
+    const isMystery = role === 'mystery';
+    const isUnsolvedMystery = isMystery && !solved;
+
+    const fo = g.append('foreignObject')
+      .attr('x', nx).attr('y', ny)
+      .attr('width', BOX_W).attr('height', BOX_H);
+
+    const div = fo.append('xhtml:div')
+      .attr('class', `train-box box-${role === 'root' ? 'lca' : role}`);
+
+    /* Apply selection highlight */
+    if (uid === selectedNodeUid) div.classed('box-selected', true);
+
+    /* Scientific name: hidden for unsolved mystery */
+    if (!isUnsolvedMystery) {
+      div.append('xhtml:div')
+        .attr('class', 'train-sci')
+        .text(node.data.name);
+    }
+
+    /* Label */
+    div.append('xhtml:div')
+      .attr('class', 'train-label' + (isUnsolvedMystery ? ' mystery-label' : ''))
+      .text(isUnsolvedMystery ? '???' : (node.data.label || ''));
+
+    /* Click handler → info panel */
+    fo.style('cursor', 'pointer');
+    fo.on('click', () => {
+      selectedNodeUid = uid;
+      updateNodeInfo(node);
+      d3.selectAll('.train-box').classed('box-selected', false);
+      div.classed('box-selected', true);
+    });
+  });
+}
+
+/* ── Update guess table ───────────────────────────── */
+function updateGuessTable() {
+  const tbody = document.getElementById('guess-tbody');
+  tbody.innerHTML = '';
+  guesses.forEach((guess, i) => {
+    const tr = document.createElement('tr');
+    const lcaLabel = guess.c.data.label || guess.c.data.name;
+    let qHtml = '', advHtml = '';
+    try {
+      const incompatible = findIncompatibleGuess(i);
+      if (incompatible) {
+        qHtml = '<span class="quality-box quality-red">useless</span>';
+        advHtml = adviceHtml(i, false, []);
+      } else {
+        const { bestReduction, optimalNodes } = computeAllOptimalAt(i);
+        const isOptimal = optimalNodes.some(n => n._uid === guess.g._uid);
+        advHtml = adviceHtml(i, isOptimal, optimalNodes);
+        if (isOptimal) {
+          qHtml = '<span class="quality-box quality-green">optimal</span>';
+        } else {
+          const { reduction: giReduction } = computeQuality(i);
+          const norm = Math.max(0, Math.min(1, bestReduction > 0 ? giReduction / bestReduction : 0));
+          const pct = Math.floor(norm * 100);
+          const hue = Math.round(10 + norm * 90);
+          qHtml = `<span class="quality-box" style="color:hsl(${hue},75%,58%);background:hsla(${hue},75%,58%,0.13);border:1px solid hsla(${hue},75%,58%,0.4)">${pct}%</span>`;
+        }
+      }
+    } catch(e) {
+      qHtml = '<span class="quality-pending">…</span>';
+    }
+    tr.innerHTML = `
+      <td class="td-num">${i + 1}</td>
+      <td class="td-guess">${guess.g.data.label}</td>
+      <td class="td-lca">${lcaLabel}</td>
+      <td>${qHtml}</td>
+      <td class="td-advice">${advHtml}</td>
+    `;
+    if (guess.g._uid === selectedNodeUid) tr.classList.add('tr-selected');
+    tr.addEventListener('click', e => {
+      if (e.target.closest('.adv-more')) return;
+      selectedNodeUid = guess.g._uid;
+      updateNodeInfo(guess.g);
+      document.querySelectorAll('#guess-tbody tr').forEach(r => r.classList.remove('tr-selected'));
+      tr.classList.add('tr-selected');
+      const mobile = window.innerWidth <= 640;
+      if (mobile && !mainEl.classList.contains('view-tree')) {
+        mainEl.classList.add('view-tree');
+        btnTreeToggle.textContent = '📋 Table';
+      }
+      if (mystery) renderTree();
+    });
+    tbody.appendChild(tr);
+  });
+}
+
+/* ── Update win banner ────────────────────────────── */
+function updateWinBanner() {
+  const banner = document.getElementById('win-banner');
+  if (solved) {
+    banner.style.display = 'block';
+    banner.innerHTML = `✦ Solved! The mystery was <strong>${mystery.data.label}</strong> in ${guesses.length} guess${guesses.length !== 1 ? 'es' : ''}.`;
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
+/* ── Update input state ───────────────────────────── */
+function updateInputState() {
+  guessInput.disabled = solved;
+  guessInput.placeholder = solved ? 'Solved! Use ↺ New or ↺ Reset.' : 'Type a species name…';
+  const count = labeledNodes.filter(n => activeMap.get(n._uid)).length;
+  const el = document.getElementById('candidates-count');
+  if (el) el.textContent = solved ? '' : `${count} candidate${count !== 1 ? 's' : ''} remaining`;
+}
+
+/* ── Full render ──────────────────────────────────── */
+function render() {
+  updateWinBanner();
+  updateInputState();
+  updateGuessTable();
+  renderTree();
+  updateNodeInfo(selectedNodeUid ? uidToNode.get(selectedNodeUid) : null);
+}
+
+/* ── Handle panel resize ──────────────────────────── */
+window.addEventListener('resize', () => {
+  if (!mystery) return;
+  const mobile = window.innerWidth <= 640;
+  const treeVisible = mobile
+    ? mainEl.classList.contains('view-tree')
+    : !treeAreaEl.classList.contains('tree-hidden');
+  if (treeVisible) renderTree();
+});
+
+/* ── Start ────────────────────────────────────────── */
+newGame();
+
+})();
+</script>
+</body>
+</html>
